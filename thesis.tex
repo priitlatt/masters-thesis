@@ -4,13 +4,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage[estonian]{babel}
 \usepackage{geometry}
-\usepackage{hyperref}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{amsopn}
+
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{verbatim}
+
 
 \everymath{\displaystyle}
 
@@ -40,214 +44,15 @@
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%  Indutseeritud n-Lie algebra  %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sections/1_lie_algebra.tex}
+\input{sections/2_indutseeritud_n-lie_algebra.tex}
+\input{sections/3_lie_superalgebra.tex}
+\input{sections/4_indutseeritud_n-lie_superalgebra.tex}
+\input{sections/5_madaladimensionaalsete_n-lie_superalgebrate_klassifikatsioon.tex}
+\input{sections/5.1_(2,1)_3-lie_superalgebra_klassifikatsioon.tex}
+\input{sections/5.2_(1,2)_3-lie_superalgebra_klassifikatsioon.tex}
 
-\section{Indutseeritud \texorpdfstring{$n$}\ -Lie algebra}
-
-See peatükk tugineb artiklile \cite{AKMS:2014}
-
-Edasises eeldame, et kõik vektoruumid on üle vaadeldud üle
-$0$-karakteristikaga korpuse $\K$.
-
-\begin{dfn}[Lie algebra]\label{def:lie_algebra}
-    Vektorruumi $A$ nimetatakse \emph{Lie algebraks}, kui on
-    määratud bilineaarvorm
-    $\brac{\cdot}{\cdot} \colon A \times A \arr A$, mis
-    suvaliste $x, y, z \in A$ korral rahuldab tingimusi
-    \begin{itemize}
-        \item $\brac{x}{y} = -\brac{y}{x}$,
-        \item $\brac{x}{\brac{y}{z}} + 
-               \brac{z}{\brac{x}{y}} +
-               \brac{y}{\brac{z}{x}} = 0$.
-    \end{itemize}
-\end{dfn}
-
-Bilineaarvormi $\brac{\cdot}{\cdot}$ Lie algebra definistioonis
-nimetatakse selle Lie algebra suluks. Edaspidi tähistame konkreetsuse
-mõttes sageli Lie suluga $\brac{\cdot}{\cdot}$ varustatud vektorruumi
-$A$ paarina $(A, \brac{\cdot}{\cdot})$.
-
-\begin{dfn}[$n$-Lie algebra]
-    Vektorruumi $A$ nimetatakse \emph{$n$-Lie algebraks}, kui on
-    määratud $n$-lineaarne kaldsümmeetriline kujutus
-    $\nbrac{\cdot}{\cdot} \colon A^n \times A \arr A$, mis
-    suvaliste
-    \[ x_1, \dots, x_{n-1}, y_1, \dots, y_n \in A \]
-    korral rahuldab tingimust
-    \[
-        \left[ x_1, \dots, x_{n-1}, \nbrac{y_1}{y_n} \right] =
-        \sum_{i=1}^n \left[
-            y_1, \dots, \left[ x_1, \dots, x_{n-1}, y_i \right], \dots, y_n
-        \right].
-    \]
-\end{dfn}
-
-\begin{dfn}[Jälg]
-    Olgu $A$ vektorruum ning olgu $\phi \col A^n \arr A$. Me
-    ütleme, et lineaarkujutus $\tau \col A \arr \K$ on
-    \emph{$\phi$-jälg}, kui suvaliste $x_1, \dots, x_n \in A$ korral
-    $\tau \left( \phi \left( x_1, \dots, x_n \right) \right) = 0$.
-\end{dfn}
-
-Olgu $\phi \col A^n \arr A$ $n$-lineaarne ja
-$\tau \col A \arr \K$ lineaarne kujutus. Defineerime nende
-kujutuste abil uue $(n+1)$-lineaarse kujutuse
-$\phi_\tau \col A^{n+1} \arr A$ valemiga
-\begin{align}\label{eq:phi_tau}
-    \phi_\tau \left( x_1, \dots, x_{n+1} \right) =
-    \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i)
-        \phi(x_1, \dots, \hat{x_i}, \dots, x_{n+1}),
-\end{align}
-kus $\hat{x_i}$ tähistab kõrvalejäätavat elementi, see tähendab
-$\phi(x_1, \dots, \hat{x_i}, \dots, x_{n+1})$ arvutatakse elementidel
-$x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}$.
-
-Rikastame defineeritud kujutust ühe näitega. Võttes $n = 2$ saame
-valemi~\ref{eq:phi_tau} põhjal kirjutada
-\[
-    \phi_\tau (x_1, x_2, x_3) =
-        \tau(x_1) \phi(x_2, x_3) -
-        \tau(x_2) \phi(x_1, x_3) +
-        \tau(x_3) \phi(x_1, x_2).
-\]
-
-Edasises toome ära mõningad kujutuse $\phi_\tau$ tähtsamad omadused.
-
-\begin{lemma}
-    Olgu $A$ vektorruum ning $\phi \col A^n \arr A$ $n$-lineaarne kaldsümmeetriline kujutus
-    ja $\tau \col A \arr \K$ lineaarne. Siis kujutus
-    $\phi_\tau \col A^{n+1} \arr A$ on samuti kaldsümmeetriline. Lisaks,
-    kui $\tau$ on $\phi$-jälg, siis $\tau$ on ka $\phi_\tau$-jälg.
-\end{lemma}
-
-\begin{thm}\label{thm:n+1_lie_alg}
-    Olgu $(A, \phi)$ $n$-Lie algebra ning olgu $\tau$ lineaarkujutuse
-    $\phi$-jälg. Siis $(A, \phi_\tau)$ on $(n+1)$-Lie algebra.
-\end{thm}
-
-Teoreemis kirjeldatud viisil saadud $(n+1)$-Lie algebrat $(A, \phi_\tau)$
-nimetatakse $n$-Lie algebra $(A, \phi)$ poolt \emph{indutseeritud}
-$(n+1)$-Lie algebraks.
-
-Teoreemist~\ref{thm:n+1_lie_alg} saame teha olulise järlduse:
-
-\begin{jar}
-    Olgu $(A, \brac{\cdot}{\cdot})$ Lie algebra ning olgu antud
-    $\brac{\cdot}{\cdot}$ jälg $\tau \col A \arr \K$. Siis ternaarne sulg
-    $[ \cdot, \cdot, \cdot ] \col A^3 \arr A$, mis on defineeritud
-    valemiga
-    \[
-        [x, y, z] = \tau(x)[y, z] + \tau(y)[z, x] + \tau(z)[x, y],
-    \]
-    määrab $3$-Lie algebra struktuuri $A_\tau$ vektorruumil $A$.
-\end{jar}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-%% n-Lie superalgebra  %%
-%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{\texorpdfstring{$n$}\ -Lie superalgebra}
-
-See peatükk tugineb artiklile \cite{Abramov:2014}
-
-Järgnevas eeldame, et meil on antud supervektorruum
-ehk supervektorruum $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$
-ning $n$-lineaarne kujutus $\phi \col \G^n \arr \G$, mis rahuldab
-tingimusi
-\begin{itemize}
-    \item $| \phi(x_1, \dots, x_n) | = \sum_{i=1}^n |x_i|$,
-    \item $ \phi \left( x_1, \dots, x_i, x_{i+1}, \dots, x_n \right) =
-            -(-1)^{ |x_i| |x_{i+1}| } \phi \left(
-                x_1, \dots, x_{i+1}, x_i, \dots, x_n \right), $
-\end{itemize}
-kus $|x| \in \left\{ \overline{0}, \overline{1} \right\}$
-tähistab elemendi $x$ paartust. Samuti eeldame, et $S \col \G \arr \K$
-on lineaarne kujutus, mis rahuldab
-\begin{itemize}
-    \item $S \left( \phi \left( x_1, \dots, x_n \right) \right) = 0$,
-    \item $S(x) = 0$ iga $x \in \G_{\overline{1}}$.
-\end{itemize}
-
-Selge, et siin sisse toodud kujutused $\phi$ ja $S$ on eelnevas
-kirjeldatu analoogid supervektorruumis. Seejuures kujutust $S \col \G \arr \K$
-nimetatakse \emph{superjäljeks}.
-
-Kasutades kujutusi $\phi$ ja $S$ defineerime analoogiliselt
-vektorruumide situatsioonile, kuid nüüd juba supervektorruumi iseärasusi
-arvesse võttes, see tähendab paarsusi arvestades, uue kujutuse
-$\phi_S \col \G^{n+1} \arr G$ valemiga
-\[
-    \phi_S (x_1, \dots, x_{n+1}) =
-    \sum_{i=1}^{n+1} (-1)^{i-1}(-1)^{|x_i| \sum_{j=1}^{i-1} |x_j| }
-        S(x_i) \phi \left(
-            x_1, \dots, \hat{x_i}, \dots, x_{n+1}
-        \right).
-\]
-
-Saadud kujutuse tähtsamad omadused võtab kokku järgmine oluline lemma:
-
-\begin{lemma}
-    $(n+1)$-lineaarne kujutus $\phi_S \col \G^{n+1} \arr \G$
-    rahuldab tingimusi
-    \begin{enumerate}
-        \item $ | \phi_S \left(x_1, \dots, x_{n+1} \right) | =
-               \sum_{i=1}^{n+1} |x_i| $,
-        \item $ \phi_S \left(x_1, \dots, x_i, x_{i+1}, \dots, x_{n+1} \right) =
-               -(-1)^{|x_i| |x_{i+1}|} \phi_S \left(
-                    x_1, \dots, x_{i+1}, x_i, \dots, x_{n+1}
-                \right) $,
-        \item $S \left( \phi_S \left( x_1, \dots, x_{n+1} \right) \right)$.
-    \end{enumerate}
-\end{lemma}
-
-Üldistame nüüd definitsiooni~\ref{def:lie_algebra} supervektorruumi jaoks
-ning defineerime \emph{$n$-Lie superalgebra}.
-
-\begin{dfn}[$n$-Lie superalgebra]
-    Olgu $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$ 
-    supervektorruum. Me ütleme, et $\G$ on
-    \emph{$n$-Lie superalgebra}, kui $\G$ on varustatud
-    gradueeritud $n$-Lie suluga $\nbrac{\cdot}{\cdot} \col \G^n \arr \G$,
-    mis rahuldab tingimusi
-    \begin{enumerate}
-        \item $\left| \nbrac{x_1}{x_n} \right| = \sum_{i=1}^n |x_i| $,
-        \item $\left[ x_1, \dots, x_i, x_{i+1}, \dots, x_n \right] =
-            -(-1)^{|x_i| |x_{i+1}|} \left[
-                x_1, \dots, x_{i+1}, x_i, \dots, x_n
-            \right]$,
-        \item $\left[ y_1, \dots, y_{n-1}, \nbrac{x_1}{x_n} \right] = $ \\
-            $ = \sum_{i=1}^n (-1)^{\tau_x (i-1) \tau_y (n-1)}
-            \left[
-                x_1, \dots, x_{i-1},
-                \left[ y_1, \dots, y_{n-1}, x_i \right],
-                x_{i+1}, \dots, x_n
-            \right] $,
-    \end{enumerate}
-    kus $x = (x_1, \dots, x_n)$ ja $y = (y_1, \dots, y_{n-1})$ ning
-    $\tau_x (k) = \sum_{j=1}^{k-1} |x_i|$.
-\end{dfn}
-
-Võttes arvesse $n$-Lie superalgebra definitsiooni saame sõnastada 
-teoreemi \ref{thm:n+1_lie_alg} superanaloogi järgmiselt:
-
-\begin{thm}
-    Olgu $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$
-    $n$-Lie superalgebra suluga $\nbrac{\cdot}{\cdot} \col \G^n \arr \G$,
-    ning $V$ lõplikumõõtmeline vektorruum ja olgu
-    antud $\G$ esitus $\phi \col \G \arr \gl V$. Defineerides
-    $\nbrac{\cdot}{\cdot} \col \G^{n+1} \arr \G$ valemiga
-    \[
-        \nbrac{x_1}{x_{n+1}} = \sum_{i=1}{n+1}
-        (-1)^{i-1} (-1)^{|x_i| \tau_x (i-1)} S(\phi(x_i))
-        \left[ x_1, \dots, \hat{x_i}, \dots, x_{n+1} \right],
-    \]
-    on supervektorruum $\G$, varustatuna suluga
-    $\nbrac{\cdot}{\cdot} \col \G^{n+1} \arr \G$ $(n+1)$-Lie
-    superalgebra.
-\end{thm}
-
+\newpage
 \bibliographystyle{plain}
 \bibliography{references}
 

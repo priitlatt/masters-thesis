@@ -1,0 +1,175 @@
+%!TEX root = ../thesis.tex
+
+\subsection{\texorpdfstring{$(1, 2)\ 3$}\ -Lie superalgebrate klassifikatsioon}
+
+Olgu meil antud $(1, 2)$ 3-Lie superalgebra, millel on fikseeritud baas
+$\left\{ e_1, f_1, f_2 \right\}$, kus $e_1$ on paaris- ja
+$f_1, f_2$ on paaritud baasivektorid.
+
+Siis avaldub kommutaator baasielementidel järgmiselt:
+
+\begin{align}\label{samasused:1-2}
+    \begin{split}
+        & \left[ e_1, e_1, e_1 \right] = 0, \\
+        & \left[ e_1, e_1, f_1 \right] = 0, \\
+        & \left[ e_1, e_1, f_2 \right] = 0, \\
+        & \left[ e_1, f_1, f_1 \right] = l_1 \cdot e_1, \\
+        & \left[ e_1, f_1, f_2 \right] = l_2 \cdot e_1, \\
+        & \left[ e_1, f_2, f_2 \right] = l_3 \cdot e_1, \\
+        & \left[ f_1, f_1, f_1 \right] = m_1 \cdot f_1 + m_2 \cdot f_2, \\
+        & \left[ f_1, f_1, f_2 \right] = m_3 \cdot f_1 + m_4 \cdot f_2, \\
+        & \left[ f_1, f_2, f_2 \right] = m_5 \cdot f_1 + m_6 \cdot f_2, \\
+        & \left[ f_2, f_2, f_2 \right] = m_7 \cdot f_1 + m_8 \cdot f_2, \\
+    \end{split}
+\end{align}
+kus $m_1, m_2, m_3, m_4, m_5, m_6, m_7, m_8, l_1, l_2, l_3 \in \K$
+on mingid konstandid.
+
+Rakendades nullist erinevatele kommutaatoritele Filippovi samasuse analoogi
+supervektorruumis, saame järgmised võrrandid:
+\begin{enumerate}
+    \item $l_1 \cdot l_1 - l_1 \cdot l_1 - l_1 \cdot m_1 - l_2 \cdot m_2 - l_1 \cdot m_1 - l_2 \cdot m_2 = 0$,
+    \item $l_1 \cdot l_2 - l_1 \cdot l_2 - l_1 \cdot m_3 - l_2 \cdot m_4 - l_1 \cdot m_3 - l_2 \cdot m_4 = 0$,
+    \item $l_1 \cdot l_3 - l_1 \cdot l_3 - l_1 \cdot m_5 - l_2 \cdot m_6 - l_1 \cdot m_5 - l_2 \cdot m_6 = 0$,
+    \item $l_1 \cdot l_2 - l_1 \cdot l_2 - l_2 \cdot m_1 - l_3 \cdot m_2 - l_1 \cdot m_3 - l_2 \cdot m_4 = 0$,
+    \item $l_2 \cdot l_2 - l_2 \cdot l_2 - l_2 \cdot m_3 - l_3 \cdot m_4 - l_1 \cdot m_5 - l_2 \cdot m_6 = 0$,
+    \item $l_2 \cdot l_3 - l_2 \cdot l_3 - l_2 \cdot m_5 - l_3 \cdot m_6 - l_1 \cdot m_7 - l_2 \cdot m_8 = 0$,
+    \item $l_1 \cdot l_3 - l_1 \cdot l_3 - l_2 \cdot m_3 - l_3 \cdot m_4 - l_2 \cdot m_3 - l_3 \cdot m_4 = 0$,
+    \item $l_2 \cdot l_3 - l_2 \cdot l_3 - l_2 \cdot m_5 - l_3 \cdot m_6 - l_2 \cdot m_5 - l_3 \cdot m_6 = 0$,
+    \item $l_3 \cdot l_3 - l_3 \cdot l_3 - l_2 \cdot m_7 - l_3 \cdot m_8 - l_2 \cdot m_7 - l_3 \cdot m_8 = 0$,
+    \item $l_1 \cdot m_1 + l_2 \cdot m_2 - l_1 \cdot l_1 + l_1 \cdot l_1 - l_1 \cdot l_1 = 0$,
+    \item $l_2 \cdot m_1 + l_3 \cdot m_2 - l_1 \cdot l_2 + l_1 \cdot l_2 - l_1 \cdot l_2 = 0$,
+    \item $m_1 \cdot m_2 + m_2 \cdot m_4 - m_1 \cdot m_2 - m_2 \cdot m_4 - m_1 \cdot m_2 - m_2 \cdot m_4 - m_1 \cdot m_2 - m_2 \cdot m_4 = 0$,
+    \item $m_1 \cdot m_1 + m_2 \cdot m_3 - m_1 \cdot m_1 - m_2 \cdot m_3 - m_1 \cdot m_1 - m_2 \cdot m_3 - m_1 \cdot m_1 - m_2 \cdot m_3 = 0$,
+    \item $m_1 \cdot m_4 + m_2 \cdot m_6 - m_2 \cdot m_3 - m_4 \cdot m_4 - m_2 \cdot m_3 - m_4 \cdot m_4 - m_2 \cdot m_3 - m_4 \cdot m_4 = 0$,
+    \item $m_1 \cdot m_3 + m_2 \cdot m_5 - m_1 \cdot m_3 - m_3 \cdot m_4 - m_1 \cdot m_3 - m_3 \cdot m_4 - m_1 \cdot m_3 - m_3 \cdot m_4 = 0$,
+    \item $m_1 \cdot m_6 + m_2 \cdot m_8 - m_2 \cdot m_5 - m_4 \cdot m_6 - m_2 \cdot m_5 - m_4 \cdot m_6 - m_2 \cdot m_5 - m_4 \cdot m_6 = 0$,
+    \item $m_1 \cdot m_5 + m_2 \cdot m_7 - m_1 \cdot m_5 - m_3 \cdot m_6 - m_1 \cdot m_5 - m_3 \cdot m_6 - m_1 \cdot m_5 - m_3 \cdot m_6 = 0$,
+    \item $l_1 \cdot m_3 + l_2 \cdot m_4 - l_1 \cdot l_2 + l_1 \cdot l_2 - l_1 \cdot l_2 = 0$,
+    \item $l_2 \cdot m_3 + l_3 \cdot m_4 - l_2 \cdot l_2 + l_2 \cdot l_2 - l_1 \cdot l_3 = 0$,
+    \item $m_2 \cdot m_3 + m_4 \cdot m_4 - m_1 \cdot m_4 - m_2 \cdot m_6 - m_1 \cdot m_4 - m_2 \cdot m_6 - m_2 \cdot m_3 - m_4 \cdot m_4 = 0$,
+    \item $m_1 \cdot m_3 + m_3 \cdot m_4 - m_1 \cdot m_3 - m_2 \cdot m_5 - m_1 \cdot m_3 - m_2 \cdot m_5 - m_1 \cdot m_3 - m_3 \cdot m_4 = 0$,
+    \item $m_3 \cdot m_4 + m_4 \cdot m_6 - m_3 \cdot m_4 - m_4 \cdot m_6 - m_3 \cdot m_4 - m_4 \cdot m_6 - m_2 \cdot m_5 - m_4 \cdot m_6 = 0$,
+    \item $m_3 \cdot m_3 + m_4 \cdot m_5 - m_3 \cdot m_3 - m_4 \cdot m_5 - m_3 \cdot m_3 - m_4 \cdot m_5 - m_1 \cdot m_5 - m_3 \cdot m_6 = 0$,
+    \item $m_3 \cdot m_6 + m_4 \cdot m_8 - m_4 \cdot m_5 - m_6 \cdot m_6 - m_4 \cdot m_5 - m_6 \cdot m_6 - m_2 \cdot m_7 - m_4 \cdot m_8 = 0$,
+    \item $m_3 \cdot m_5 + m_4 \cdot m_7 - m_3 \cdot m_5 - m_5 \cdot m_6 - m_3 \cdot m_5 - m_5 \cdot m_6 - m_1 \cdot m_7 - m_3 \cdot m_8 = 0$,
+    \item $l_1 \cdot m_5 + l_2 \cdot m_6 - l_1 \cdot l_3 + l_2 \cdot l_2 - l_2 \cdot l_2 = 0$,
+    \item $l_2 \cdot m_5 + l_3 \cdot m_6 - l_2 \cdot l_3 + l_2 \cdot l_3 - l_2 \cdot l_3 = 0$,
+    \item $m_2 \cdot m_5 + m_4 \cdot m_6 - m_1 \cdot m_6 - m_2 \cdot m_8 - m_3 \cdot m_4 - m_4 \cdot m_6 - m_3 \cdot m_4 - m_4 \cdot m_6 = 0$,
+    \item $m_1 \cdot m_5 + m_3 \cdot m_6 - m_1 \cdot m_5 - m_2 \cdot m_7 - m_3 \cdot m_3 - m_4 \cdot m_5 - m_3 \cdot m_3 - m_4 \cdot m_5 = 0$,
+    \item $m_4 \cdot m_5 + m_6 \cdot m_6 - m_3 \cdot m_6 - m_4 \cdot m_8 - m_4 \cdot m_5 - m_6 \cdot m_6 - m_4 \cdot m_5 - m_6 \cdot m_6 = 0$,
+    \item $m_3 \cdot m_5 + m_5 \cdot m_6 - m_3 \cdot m_5 - m_4 \cdot m_7 - m_3 \cdot m_5 - m_5 \cdot m_6 - m_3 \cdot m_5 - m_5 \cdot m_6 = 0$,
+    \item $m_5 \cdot m_6 + m_6 \cdot m_8 - m_5 \cdot m_6 - m_6 \cdot m_8 - m_4 \cdot m_7 - m_6 \cdot m_8 - m_4 \cdot m_7 - m_6 \cdot m_8 = 0$,
+    \item $m_5 \cdot m_5 + m_6 \cdot m_7 - m_5 \cdot m_5 - m_6 \cdot m_7 - m_3 \cdot m_7 - m_5 \cdot m_8 - m_3 \cdot m_7 - m_5 \cdot m_8 = 0$,
+    \item $l_1 \cdot m_7 + l_2 \cdot m_8 - l_2 \cdot l_3 + l_2 \cdot l_3 - l_2 \cdot l_3 = 0$,
+    \item $l_2 \cdot m_7 + l_3 \cdot m_8 - l_3 \cdot l_3 + l_3 \cdot l_3 - l_3 \cdot l_3 = 0$,
+    \item $m_2 \cdot m_7 + m_4 \cdot m_8 - m_3 \cdot m_6 - m_4 \cdot m_8 - m_3 \cdot m_6 - m_4 \cdot m_8 - m_3 \cdot m_6 - m_4 \cdot m_8 = 0$,
+    \item $m_1 \cdot m_7 + m_3 \cdot m_8 - m_3 \cdot m_5 - m_4 \cdot m_7 - m_3 \cdot m_5 - m_4 \cdot m_7 - m_3 \cdot m_5 - m_4 \cdot m_7 = 0$,
+    \item $m_4 \cdot m_7 + m_6 \cdot m_8 - m_5 \cdot m_6 - m_6 \cdot m_8 - m_5 \cdot m_6 - m_6 \cdot m_8 - m_5 \cdot m_6 - m_6 \cdot m_8 = 0$,
+    \item $m_3 \cdot m_7 + m_5 \cdot m_8 - m_5 \cdot m_5 - m_6 \cdot m_7 - m_5 \cdot m_5 - m_6 \cdot m_7 - m_5 \cdot m_5 - m_6 \cdot m_7 = 0$,
+    \item $m_6 \cdot m_7 + m_8 \cdot m_8 - m_6 \cdot m_7 - m_8 \cdot m_8 - m_6 \cdot m_7 - m_8 \cdot m_8 - m_6 \cdot m_7 - m_8 \cdot m_8 = 0$,
+    \item $m_5 \cdot m_7 + m_7 \cdot m_8 - m_5 \cdot m_7 - m_7 \cdot m_8 - m_5 \cdot m_7 - m_7 \cdot m_8 - m_5 \cdot m_7 - m_7 \cdot m_8 = 0$.
+\end{enumerate}
+
+Kui koondame võrrandites samasugused kuid erinevate märkidega liikmed, siis
+jäävad järele järgmised võrrandid:
+\begin{enumerate}
+    \item $l_1 \cdot m_1 + l_2 \cdot m_2 = 0$,
+    \item $l_1 \cdot m_3 + l_2 \cdot m_4 = 0$,
+    \item $l_1 \cdot m_5 + l_2 \cdot m_6 = 0$,
+    \item $l_2 \cdot m_1 + l_3 \cdot m_2 + l_1 \cdot m_3 + l_2 \cdot m_4 = 0$,
+    \item $l_2 \cdot m_3 + l_3 \cdot m_4 + l_1 \cdot m_5 + l_2 \cdot m_6 = 0$,
+    \item $l_2 \cdot m_5 + l_3 \cdot m_6 + l_1 \cdot m_7 + l_2 \cdot m_8 = 0$,
+    \item $l_2 \cdot m_3 + l_3 \cdot m_4 = 0$,
+    \item $l_2 \cdot m_5 + l_3 \cdot m_6 = 0$,
+    \item $l_2 \cdot m_7 + l_3 \cdot m_8 = 0$,
+    \item $l_1 \cdot m_1 + l_2 \cdot m_2 - l_1 \cdot l_1 = 0$,
+    \item $l_2 \cdot m_1 + l_3 \cdot m_2 - l_1 \cdot l_2 = 0$,
+    \item $m_1 \cdot m_2 + m_2 \cdot m_4 = 0$,
+    \item $m_1 \cdot m_1 + m_2 \cdot m_3 = 0$,
+    \item $m_1 \cdot m_4 + m_2 \cdot m_6 - 3 \cdot m_2 \cdot m_3 - 3 \cdot m_4 \cdot m_4 = 0$,
+    \item $m_2 \cdot m_5 - 3 \cdot m_3 \cdot m_4 - 2 \cdot m_1 \cdot m_3 = 0$,
+    \item $m_1 \cdot m_6 + m_2 \cdot m_8 - 3 \cdot m_2 \cdot m_5 - 3 \cdot m_4 \cdot m_6 = 0$,
+    \item $m_2 \cdot m_7 - 3 \cdot m_3 \cdot m_6 - 2 \cdot m_1 \cdot m_5 = 0$,
+    \item $l_1 \cdot m_3 + l_2 \cdot m_4 - l_1 \cdot l_2 = 0$,
+    \item $l_2 \cdot m_3 + l_3 \cdot m_4 - l_1 \cdot l_3 = 0$,
+    \item $m_1 \cdot m_4 + m_2 \cdot m_6 = 0$,
+    \item $m_2 \cdot m_5 + m_1 \cdot m_3 = 0$,
+    \item $m_3 \cdot m_4 + 2 \cdot m_4 \cdot m_6 + m_2 \cdot m_5 = 0$,
+    \item $m_3 \cdot m_3 + m_4 \cdot m_5 + m_1 \cdot m_5 + m_3 \cdot m_6 = 0$,
+    \item $m_3 \cdot m_6 - 2 \cdot m_4 \cdot m_5 - 2 \cdot m_6 \cdot m_6 - m_2 \cdot m_7 = 0$,
+    \item $m_4 \cdot m_7 - 2 \cdot m_5 \cdot m_6 - m_3 \cdot m_5 - m_1 \cdot m_7 - m_3 \cdot m_8 = 0$,
+    \item $l_1 \cdot m_5 + l_2 \cdot m_6 - l_1 \cdot l_3 = 0$,
+    \item $l_2 \cdot m_5 + l_3 \cdot m_6 - l_2 \cdot l_3 = 0$,
+    \item $m_2 \cdot m_5 - m_1 \cdot m_6 - m_2 \cdot m_8 - 2 \cdot m_3 \cdot m_4 - m_4 \cdot m_6= 0$,
+    \item $m_3 \cdot m_6 - m_2 \cdot m_7 - 2 \cdot m_3 \cdot m_3 - 2 \cdot m_4 \cdot m_5 = 0$,
+    \item $m_3 \cdot m_6 + m_4 \cdot m_8 + m_6 \cdot m_6 + m_4 \cdot m_5 = 0$,
+    \item $m_4 \cdot m_7 + 2 \cdot m_3 \cdot m_5 + m_5 \cdot m_6 = 0$,
+    \item $m_4 \cdot m_7 + m_6 \cdot m_8 = 0$,
+    \item $m_3 \cdot m_7 + m_5 \cdot m_8 = 0$,
+    \item $l_1 \cdot m_7 + l_2 \cdot m_8 - l_2 \cdot l_3 = 0$,
+    \item $l_2 \cdot m_7 + l_3 \cdot m_8 - l_3 \cdot l_3 = 0$,
+    \item $m_2 \cdot m_7 - 2 \cdot m_4 \cdot m_8 - 3 \cdot m_3 \cdot m_6 = 0$,
+    \item $m_1 \cdot m_7 + m_3 \cdot m_8 - 3 \cdot m_3 \cdot m_5 - 3 \cdot m_4 \cdot m_7 = 0$,
+    \item $m_4 \cdot m_7 - 2 \cdot m_6 \cdot m_8 - 3 \cdot m_5 \cdot m_6 = 0$,
+    \item $m_3 \cdot m_7 + m_5 \cdot m_8 - 3 \cdot m_5 \cdot m_5 - 3 \cdot m_6 \cdot m_7 = 0$,
+    \item $m_6 \cdot m_7 + m_8 \cdot m_8 = 0$,
+    \item $m_5 \cdot m_7 + m_7 \cdot m_8 = 0$.
+\end{enumerate}
+
+Sellel võrrandisüsteemil on neli mittetriviaalset lahendit:
+\renewcommand\arraystretch{1.3}
+\begin{align*}
+    \begin{pmatrix}
+        % m_1 \\ m_2 \\ l_1 \\ l_2 \\ l_3 \vphantom{-\frac{c_1^2}{c_2}} \\ l_4
+        m_1 \\ m_2\vphantom{\frac{c_1^2}{c_2}} \\ m_3 \\ m_4 \\
+        m_5\vphantom{\frac{c_2^2}{c_1}} \\ m_6 \\
+        m_7\vphantom{\frac{c_2^3}{c_1^2}} \\
+        m_8\vphantom{\frac{c_2^2}{c_1}} \\ l_1 \\ l_2 \\ l_3
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        -c_1 \\ \frac{c_1^2}{c_2} \\ -c_2 \\ c_1 \\ -\frac{c_2^2}{c_1} \\
+        c_2 \\ -\frac{c_2^3}{c_1^2} \\ \frac{c_2^2}{c_1} \\ 0 \\ 0 \\ 0
+    \end{pmatrix},
+    %
+    \quad
+    %
+    \begin{pmatrix}
+        m_1 \\ m_2 \\ m_3 \\ m_4 \\ m_5 \\ m_6 \\ m_7 \\ m_8 \\ l_1 \\ l_2 \\ l_3
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ c \\ 0 \\ 0 \\ 0 \\ 0
+    \end{pmatrix},
+    %
+    \quad
+    %
+    \begin{pmatrix}
+        m_1 \\ m_2 \\ m_3 \\ m_4 \\ m_5 \\ m_6 \\ m_7 \\ m_8 \\ l_1 \\ l_2 \\ l_3
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        0 \\ c \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
+    \end{pmatrix},
+    %
+    \quad
+    %
+    \begin{pmatrix}
+        m_1 \\ m_2 \\ m_3 \\ m_4 \\ m_5 \\ m_6 \\ m_7 \\ m_8 \\ l_1 \\ l_2 \\ l_3
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ c \\ 0
+    \end{pmatrix},
+\end{align*}
+\renewcommand\arraystretch{1}
+kus $c, c_1, c_2 \in \K$ on suvalised parameetrid.
+Võttes arvesse samasusi \eqref{samasused:1-2} saame kommutatsiooniseosed:
+\begin{itemize}
+    \item $\begin{cases}
+            \left[ f_1, f_1, f_1 \right] = -c_1 \cdot f_1 + \frac{c_1^2}{c_2} \cdot f_2, \\[0.2cm]
+            \left[ f_1, f_1, f_2 \right] = -c_2 \cdot f_1 + c_1 \cdot f_2, \\[0.2cm]
+            \left[ f_1, f_2, f_2 \right] = -\frac{c_2^2}{c_1} \cdot f_1 + c_2 \cdot f_2, \\[0.3cm]
+            \left[ f_2, f_2, f_2 \right] = -\frac{c_2^3}{c_1^2} \cdot f_1 + \frac{c_2^2}{c_1} \cdot f_2, \\[0.2cm]
+        \end{cases}$,
+    \item $\left[ f_2, f_2, f_2 \right] = c \cdot f_1$,
+    \item $\left[ f_1, f_1, f_1 \right] = c \cdot f_2$,
+    \item $\left[ e_1, f_1, f_2 \right] = c \cdot e_1$.
+\end{itemize}

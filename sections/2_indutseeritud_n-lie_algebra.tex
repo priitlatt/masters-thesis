@@ -1,0 +1,105 @@
+%!TEX root = ../thesis.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Indutseeritud n-Lie algebra  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Indutseeritud \texorpdfstring{$n$}\ -Lie algebra}
+
+See peatükk tugineb artiklile \cite{AKMS:2014}
+
+Edasises eeldame, et kõik vektoruumid on üle vaadeldud üle
+$0$-karakteristikaga korpuse $\K$.
+
+\begin{dfn}[Lie algebra]\label{def:lie_algebra}
+    Vektorruumi $A$ nimetatakse \emph{Lie algebraks}, kui on
+    määratud bilineaarvorm
+    $\brac{\cdot}{\cdot} \colon A \times A \arr A$, mis
+    suvaliste $x, y, z \in A$ korral rahuldab tingimusi
+    \begin{itemize}
+        \item $\brac{x}{y} = -\brac{y}{x}$,
+        \item $\brac{x}{\brac{y}{z}} + 
+               \brac{z}{\brac{x}{y}} +
+               \brac{y}{\brac{z}{x}} = 0$.
+    \end{itemize}
+\end{dfn}
+
+Bilineaarvormi $\brac{\cdot}{\cdot}$ Lie algebra definistioonis
+nimetatakse selle Lie algebra suluks. Edaspidi tähistame konkreetsuse
+mõttes sageli Lie suluga $\brac{\cdot}{\cdot}$ varustatud vektorruumi
+$A$ paarina $(A, \brac{\cdot}{\cdot})$.
+
+\begin{dfn}[$n$-Lie algebra]
+    Vektorruumi $A$ nimetatakse \emph{$n$-Lie algebraks}, kui on
+    määratud $n$-lineaarne kaldsümmeetriline kujutus
+    $\nbrac{\cdot}{\cdot} \colon A^n \times A \arr A$, mis
+    suvaliste
+    \[ x_1, \dots, x_{n-1}, y_1, \dots, y_n \in A \]
+    korral rahuldab tingimust
+    \[
+        \left[ x_1, \dots, x_{n-1}, \nbrac{y_1}{y_n} \right] =
+        \sum_{i=1}^n \left[
+            y_1, \dots, \left[ x_1, \dots, x_{n-1}, y_i \right], \dots, y_n
+        \right].
+    \]
+\end{dfn}
+
+\begin{dfn}[Jälg]
+    Olgu $A$ vektorruum ning olgu $\phi \col A^n \arr A$. Me
+    ütleme, et lineaarkujutus $\tau \col A \arr \K$ on
+    \emph{$\phi$-jälg}, kui suvaliste $x_1, \dots, x_n \in A$ korral
+    $\tau \left( \phi \left( x_1, \dots, x_n \right) \right) = 0$.
+\end{dfn}
+
+Olgu $\phi \col A^n \arr A$ $n$-lineaarne ja
+$\tau \col A \arr \K$ lineaarne kujutus. Defineerime nende
+kujutuste abil uue $(n+1)$-lineaarse kujutuse
+$\phi_\tau \col A^{n+1} \arr A$ valemiga
+\begin{align}\label{eq:phi_tau}
+    \phi_\tau \left( x_1, \dots, x_{n+1} \right) =
+    \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i)
+        \phi(x_1, \dots, \hat{x_i}, \dots, x_{n+1}),
+\end{align}
+kus $\hat{x_i}$ tähistab kõrvalejäätavat elementi, see tähendab
+$\phi(x_1, \dots, \hat{x_i}, \dots, x_{n+1})$ arvutatakse elementidel
+$x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}$.
+
+Rikastame defineeritud kujutust ühe näitega. Võttes $n = 2$ saame
+valemi~\ref{eq:phi_tau} põhjal kirjutada
+\[
+    \phi_\tau (x_1, x_2, x_3) =
+        \tau(x_1) \phi(x_2, x_3) -
+        \tau(x_2) \phi(x_1, x_3) +
+        \tau(x_3) \phi(x_1, x_2).
+\]
+
+Edasises toome ära mõningad kujutuse $\phi_\tau$ tähtsamad omadused.
+
+\begin{lemma}
+    Olgu $A$ vektorruum ning $\phi \col A^n \arr A$ $n$-lineaarne kaldsümmeetriline kujutus
+    ja $\tau \col A \arr \K$ lineaarne. Siis kujutus
+    $\phi_\tau \col A^{n+1} \arr A$ on samuti kaldsümmeetriline. Lisaks,
+    kui $\tau$ on $\phi$-jälg, siis $\tau$ on ka $\phi_\tau$-jälg.
+\end{lemma}
+
+\begin{thm}\label{thm:n+1_lie_alg}
+    Olgu $(A, \phi)$ $n$-Lie algebra ning olgu $\tau$ lineaarkujutuse
+    $\phi$-jälg. Siis $(A, \phi_\tau)$ on $(n+1)$-Lie algebra.
+\end{thm}
+
+Teoreemis kirjeldatud viisil saadud $(n+1)$-Lie algebrat $(A, \phi_\tau)$
+nimetatakse $n$-Lie algebra $(A, \phi)$ poolt \emph{indutseeritud}
+$(n+1)$-Lie algebraks.
+
+Teoreemist~\ref{thm:n+1_lie_alg} saame teha olulise järlduse:
+
+\begin{jar}
+    Olgu $(A, \brac{\cdot}{\cdot})$ Lie algebra ning olgu antud
+    $\brac{\cdot}{\cdot}$ jälg $\tau \col A \arr \K$. Siis ternaarne sulg
+    $[ \cdot, \cdot, \cdot ] \col A^3 \arr A$, mis on defineeritud
+    valemiga
+    \[
+        [x, y, z] = \tau(x)[y, z] + \tau(y)[z, x] + \tau(z)[x, y],
+    \]
+    määrab $3$-Lie algebra struktuuri $A_\tau$ vektorruumil $A$.
+\end{jar}

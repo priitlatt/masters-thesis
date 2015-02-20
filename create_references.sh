@@ -14,5 +14,5 @@ rm $REFERENCES
 touch $REFERENCES
 
 export -f append_bib
-find $LITERATURE_DIR -name "*.bib" -exec bash -c 'append_bib "{}"' \;
+find -L $LITERATURE_DIR -name "*.bib*" -exec bash -c 'append_bib "{}"' \;
 

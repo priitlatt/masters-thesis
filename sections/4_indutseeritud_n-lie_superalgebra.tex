@@ -1,0 +1,105 @@
+%!TEX root = ../thesis.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% n-Lie superalgebra  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\texorpdfstring{$n$}\ -Lie superalgebra}
+
+See peatükk tugineb artiklile \cite{Abramov:2014}
+
+Järgnevas eeldame, et meil on antud supervektorruum
+ehk supervektorruum $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$
+ning $n$-lineaarne kujutus $\phi \col \G^n \arr \G$, mis rahuldab
+tingimusi
+\begin{itemize}
+    \item $| \phi(x_1, \dots, x_n) | = \sum_{i=1}^n |x_i|$,
+    \item $ \phi \left( x_1, \dots, x_i, x_{i+1}, \dots, x_n \right) =
+            -(-1)^{ |x_i| |x_{i+1}| } \phi \left(
+                x_1, \dots, x_{i+1}, x_i, \dots, x_n \right), $
+\end{itemize}
+kus $|x| \in \left\{ \overline{0}, \overline{1} \right\}$
+tähistab elemendi $x$ paartust. Samuti eeldame, et $S \col \G \arr \K$
+on lineaarne kujutus, mis rahuldab
+\begin{itemize}
+    \item $S \left( \phi \left( x_1, \dots, x_n \right) \right) = 0$,
+    \item $S(x) = 0$ iga $x \in \G_{\overline{1}}$.
+\end{itemize}
+
+Selge, et siin sisse toodud kujutused $\phi$ ja $S$ on eelnevas
+kirjeldatu analoogid supervektorruumis. Seejuures kujutust $S \col \G \arr \K$
+nimetatakse \emph{superjäljeks}.
+
+Kasutades kujutusi $\phi$ ja $S$ defineerime analoogiliselt
+vektorruumide situatsioonile, kuid nüüd juba supervektorruumi iseärasusi
+arvesse võttes, see tähendab paarsusi arvestades, uue kujutuse
+$\phi_S \col \G^{n+1} \arr G$ valemiga
+\[
+    \phi_S (x_1, \dots, x_{n+1}) =
+    \sum_{i=1}^{n+1} (-1)^{i-1}(-1)^{|x_i| \sum_{j=1}^{i-1} |x_j| }
+        S(x_i) \phi \left(
+            x_1, \dots, \hat{x_i}, \dots, x_{n+1}
+        \right).
+\]
+
+Saadud kujutuse tähtsamad omadused võtab kokku järgmine oluline lemma:
+
+\begin{lemma}
+    $(n+1)$-lineaarne kujutus $\phi_S \col \G^{n+1} \arr \G$
+    rahuldab tingimusi
+    \begin{enumerate}
+        \item $ | \phi_S \left(x_1, \dots, x_{n+1} \right) | =
+               \sum_{i=1}^{n+1} |x_i| $,
+        \item $ \phi_S \left(x_1, \dots, x_i, x_{i+1}, \dots, x_{n+1} \right) =
+               -(-1)^{|x_i| |x_{i+1}|} \phi_S \left(
+                    x_1, \dots, x_{i+1}, x_i, \dots, x_{n+1}
+                \right) $,
+        \item $S \left( \phi_S \left( x_1, \dots, x_{n+1} \right) \right)$.
+    \end{enumerate}
+\end{lemma}
+
+Üldistame nüüd definitsiooni~\ref{def:lie_algebra} supervektorruumi jaoks
+ning defineerime \emph{$n$-Lie superalgebra}.
+
+\begin{dfn}[$n$-Lie superalgebra]
+    Olgu $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$ 
+    supervektorruum. Me ütleme, et $\G$ on
+    \emph{$n$-Lie superalgebra}, kui $\G$ on varustatud
+    gradueeritud $n$-Lie suluga $\nbrac{\cdot}{\cdot} \col \G^n \arr \G$,
+    mis rahuldab tingimusi
+    \begin{enumerate}
+        \item $\left| \nbrac{x_1}{x_n} \right| = \sum_{i=1}^n |x_i| $,
+        \item $\left[ x_1, \dots, x_i, x_{i+1}, \dots, x_n \right] =
+            -(-1)^{|x_i| |x_{i+1}|} \left[
+                x_1, \dots, x_{i+1}, x_i, \dots, x_n
+            \right]$,
+        \item $\left[ y_1, \dots, y_{n-1}, \nbrac{x_1}{x_n} \right] = $ \\
+            $ = \sum_{i=1}^n (-1)^{\tau_x (i-1) \tau_y (n-1)}
+            \left[
+                x_1, \dots, x_{i-1},
+                \left[ y_1, \dots, y_{n-1}, x_i \right],
+                x_{i+1}, \dots, x_n
+            \right] $,
+    \end{enumerate}
+    kus $x = (x_1, \dots, x_n)$ ja $y = (y_1, \dots, y_{n-1})$ ning
+    $\tau_x (k) = \sum_{j=1}^{k-1} |x_i|$.
+\end{dfn}
+
+Võttes arvesse $n$-Lie superalgebra definitsiooni saame sõnastada 
+teoreemi \ref{thm:n+1_lie_alg} superanaloogi järgmiselt:
+
+\begin{thm}
+    Olgu $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$
+    $n$-Lie superalgebra suluga $\nbrac{\cdot}{\cdot} \col \G^n \arr \G$,
+    ning $V$ lõplikumõõtmeline vektorruum ja olgu
+    antud $\G$ esitus $\phi \col \G \arr \gl V$. Defineerides
+    $\nbrac{\cdot}{\cdot} \col \G^{n+1} \arr \G$ valemiga
+    \[
+        \nbrac{x_1}{x_{n+1}} = \sum_{i=1}{n+1}
+        (-1)^{i-1} (-1)^{|x_i| \tau_x (i-1)} S(\phi(x_i))
+        \left[ x_1, \dots, \hat{x_i}, \dots, x_{n+1} \right],
+    \]
+    on supervektorruum $\G$, varustatuna suluga
+    $\nbrac{\cdot}{\cdot} \col \G^{n+1} \arr \G$ $(n+1)$-Lie
+    superalgebra.
+\end{thm}

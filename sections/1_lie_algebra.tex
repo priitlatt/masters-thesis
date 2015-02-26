@@ -48,13 +48,13 @@ klassikalisse Lie teooriasse.
 \subsection{Maatriksrühmade näiteid}
 
 Meenutame, et \emph{lineaarkujutus}
-$f \col V_1 \to V_2$ vektorruumist $V_1$ vektorruumi $V_2$ säilitab
+$\phi \col V_1 \to V_2$ vektorruumist $V_1$ vektorruumi $V_2$ säilitab
 vektorite liitmise ja skalaariga korrutamise, see tähendab
-\[ f(x + y) = f(x) + f(y), \]
+\[ \phi(x + y) = \phi(x) + \phi(y), \]
 ning
-\[ f(\lambda x) = \lambda f(x), \]
+\[ \phi(\lambda x) = \lambda \phi(x), \]
 kus $x, y \in V_1$ ja $\lambda$ on skalaar. Kui vektorruumid $V_1$ ja $V_2$
-langevad kokku, siis ütleme me kujutuse $f$ kohta ka \emph{lineaarteisendus}.
+langevad kokku, siis ütleme me kujutuse $\phi$ kohta ka \emph{lineaarteisendus}.
 
 Algebrast on teada, et lineaarteisendusel eksisteerib pöördteisendus siis ja
 ainult siis, kui ta on nii üks-ühene kui ka pealeteisendus. Kõigi vektorruumi $V$
@@ -75,9 +75,9 @@ fikseerida mingi baasi. Sel juhul
 saame kõik lineaarteisendused esitada maatriksitena ning nõnda võime
 edaspidi lineaarteisenduste rühmade asemel rääkida \emph{maatriksrühmadest}.
 Kui $\{e_1, e_2, \dots, e_n\}$ moodustab vektorruumi $V$ baasi ning
-$f \col V \to V$ on mingi lineaarteisendus, siis talle vastav maatriks
+$\phi \col V \to V$ on mingi lineaarteisendus, siis talle vastav maatriks
 selle baasi suhtes on $(a^i_j)$, mis on määratud valemiga
-\[ f(e_j) = \sum_{i=1}^{n} a^i_j e_i. \]
+\[ \phi(e_j) = \sum_{i=1}^{n} a^i_j e_i. \]
 
 Selge, et vaadeldes rühmi $\GL(V)$ ja $\SL(V)$ maatriksrühmadena
 on rühma tehteks juba tavaline maatriksite korrutamine. Ilmselt saab
@@ -99,3 +99,91 @@ $A^\dag = \overline{A}^T = -A$. Edasi on lihtne konstrueerida saadud alamrühmad
 \[ \SO(n, \C) = \Ort(n, \C) \cap \SL(n, \C), \]
 ja \emph{spetsiaalsete unitaarsete maatriksite rühmaks} on
 \[ \SU(n) = \U(n) \cap \SL(n, \C). \]
+
+\subsection{Bilineaarvorm}
+
+\begin{dfn}
+    Olgu $V$ vektorruum üle korpuse $K$. Kujutust $\psi \col V^2 \to K$
+    nimetatakse \emph{bilineaarvormiks}, kui iga $x, y, z \in V$
+    ja skalaaride $\lambda, \mu \in K$ korral
+    \begin{enumerate}[label=\roman*.]
+        \item $\psi(\lambda x + \mu y, z) = \lambda \psi(x, z) + \mu \psi(y, z)$,
+        \item $\psi(x, \lambda y + \mu z) = \lambda \psi(x, y) + \mu \psi(x, z)$.
+    \end{enumerate}
+\end{dfn}
+
+Kui vetorruumis $V$ on antud baas $\{e_1, e_2, \dots, e_n\}$, siis saab
+bilineaarvormi $\psi \col V^2 \to K$ esitada talle vastava maatriksi
+$B = (b_{ij})$ abil, kus $b_{ij} = \psi(e_i, e_j)$. Tõepoolest, kui
+meil on antud vektorid $x = \sum_i \lambda^i e_i$ ja $y = \sum_j \mu^j e_j$,
+siis kasutades $\psi$ lineaarsust mõlema muutuja järgi võime arvutada
+\[ \psi(x, y) = \sum_{i, j} b_{ij} \lambda^i \mu^j. \]
+
+Me ütleme, et bilineaarvorm $\psi \col V^2 \to K$ on \emph{sümmeetriline} kui
+iga $x, y \in V$ korral $\psi(x, y) = \psi(y, x)$. Selge, et sümmeetrilise
+bilineaarvormi maatriksi $B$ korral kehtib võrdus $B = B^T$. Vormi $\psi$
+nimetatakse \emph{kaldsümmeetriliseks} kui iga $x, y \in V$ korral kehtib
+võrdus $\psi(x, y) = - \psi(y, x)$. Lihtne on veenduda, et kaldsümmeetrilise
+bilineaarvormi korral rahuldab talle vastav maatriks $B$ seost
+$B^T = -B$.
+
+\begin{naide}
+    Skalaarkorrutis on bilineaarvorm.
+\end{naide}
+
+\begin{dfn}[Jälg]
+    Olgu $V$ vektorruum kus on fikseeritud mingi baas, olgu $\phi$
+    vektorruumi $V$ lineaarteisendus ning olgu $A = (a^i_j)$ on
+    lineaarteisenduse $\phi$ maatriks fikseeritud baasi suhtes.
+    Lineaarteisenduse $\phi$ \emph{jäljeks} nimetatakse kujutust
+    $\Tr_V \col \GL(V) \to K$, kus
+    \[ \Tr_V(A) = \sum_i a^i_j. \]
+\end{dfn}
+
+\begin{naide}
+    On hästi teada, et vektorruumi $V$ kõigi lineaarteisenduste hulk $\Lin V$
+    on ise ka vektorruum, kusjuures kui $\dim(V) = n$, siis
+    $\dim \left(\Lin V\right) = n^2$. Kasutades jälge $\Tr_V$ saame
+    defineerida bilineaarvormi vektorruumil
+    $\psi \col \Lin V \times \Lin V \to K$ järgmiselt:
+    \[ \psi(A, B) = \Tr_V(AB), \]
+    kus $A$ ja $B$ on maatriksid, mis vastavad vektorruumi $\Lin V$
+    teisendustele mingi baasi suhtes.
+\end{naide}
+
+Kasutades bilineaarvormi sümmeetrilisuse või kaldsümmeetrilisuse mõistet
+saame sisse tuua \emph{ortogonaalsuse}: me ütleme, et vektorid $x$ ja $y$
+on bilineaarvormi $\psi$ suhtes ortogonaalsed, kui $\psi(x, y) = 0$. Selge, et
+ortogonaalsuse tingimus ise on sümmeetriline, see tähendab kui $x$ on
+ortogonaalne vektoriga $y$, siis kehtib ka vastupidine, $y$ on ortogonaalne
+vektoriga $x$. Kui vektor $x \neq 0$ on iseenesega ortogonaalne, see tähendab
+$\psi(x, x) = 0$, siis nimetatakse vektorit $x$ \emph{isotroopseks}. Selge, et
+Eukleidilises geomeetrias selliseid vektoreid ei leidu, kuid üldisemas
+käsitluses kohtab neid juba üsna madalal tasemel, näiteks
+\emph{Minkowski ruumis}.
+
+Edasises vaatleme ortogonaaseid ja sümplektilisi rühmi ning selleks
+nõuame, et vaatluse all olevad bilineaarvormid oleksid mittesingulaarsed
+ehk regulaarsed, see tähendab kui $\psi(x, y) = 0$ iga $y \in V$ korral, siis
+järelikult $x = 0$. Osutub, et bilineaarvorm $\psi$ on regulaarne parajasti
+siis, kui temale vastav maatiks $B = (b^i_j)$ on pööratav, mis tähendab,
+et $\det B \neq 0$.
+
+\begin{dfn}
+    Me ütleme, et lineaarne operaator $\psi$ on \emph{ortogonaalne}
+    regulaarse sümmeetrilise bilineaarvormi $\psi$ suhtes, kui
+    \[ \psi(\phi(x), \phi(y)) = \psi(x, y) \]
+    kõikide $x$ ja $y$ korral vektorruumist $V$.
+\end{dfn}
+
+Kui $x$ on ortogonaalse lineaarse operaatori $\phi$ tuumast, siis
+kehtib $\phi(x) = 0$. Viimane aga tähendab, et iga $y \in V$ korral
+$\psi(x, y) = \psi(\phi(x), \phi(y)) = \psi(0, \phi(y)) = 0$. Kokkuvõttes,
+et $\psi$ on regulaarne, siis järelikult $x = 0$ ja $\phi$ on üks-ühene.
+Kui nüüd veel $V$ on lõplikumõõtmeline, siis peab $\phi$ olema pööratav.
+Seda arutelu silmas pidades võime öelda, et ortogonaalsed lineaarsed
+operaatorid moodustavad rühma, mida me nimetame \emph{ortogonaalsed rühmaks}
+bilineaarvormi $\psi$ suhtes.
+
+Et saada eelnevalt defineeritud ortogonaalset maatriksrühma peame appi võtma
+vektorruumi baasi...

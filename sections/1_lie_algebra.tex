@@ -8,18 +8,94 @@
 
 Matemaatika haru, mida me täna tunneme kui \emph{Lie teooriat} kerkis esile
 geomeetria ja lineaaralgebra uurimisest. Lie teooria üheks keskseks mõisteks
-on \emph{Lie algebra}, see on vektorruum, mis on varustatud
+on \emph{Lie algebra} - vektorruum, mis on varustatud
 mitteassotsiatiivse korrutamisega ehk nõndanimetatud \emph{Lie suluga}.
 Lie algebrad ja nende uurimine on tihedalt seotud teise Lie teooria keskse
-mõistega, milleks on \emph{Lie rühm}\cite{johan1989survey}. Viimased on
+mõistega, milleks on \emph{Lie rühm}. Viimased on
 struktuurid, mis on korraga nii algebralised rühmad kui ka topoloogilised
 muutkonnad, kusjuures rühma korrutamine ja selle pöördtehe on mõlemad
 pidevad. Osutub, et igale Lie rühmale saab vastavusse seada Lie algebra ja
-kehtib ka vastupidine pisut nõrgem tulemus. Nimelt suvalise lõplikumõõtmelise
+kehtib ka vastupidine, pisut nõrgem tulemus. Nimelt suvalise lõplikumõõtmelise
 reaalsele või komplekssele Lie algebra jaoks leidub temale üheselt
 vastav sidus Lie rühm.\cite{kirillov2008introduction} Just selle viimase,
 \emph{Lie kolmanda teoreemi} tõttu on võimalik Lie rühmasid vaadelda
 Lie algebrate kontekstis ja see teebki Lie algebrad äärmiselt oluliseks.
 
-Tähistagu kõikjal järgnevas $\K$ nullkarakteristikaga korpust ning $V$
-vektorruum üle korpuse $\K$.
+Tähistagu kõikjal järgnevas $K$ nullkarakteristikaga korpust ning $V$
+vektorruumi üle korpuse $K$. Ruumi kokkuhoiu ja mugavuse mõttes
+kasutame edaspidi vajaduse korral summade tähistamisel
+Einsteini summeerimiskokkulepet. See tähendab, kui meil on indeksid $i$ ja $j$,
+mis omavad väärtusi $1, \dots, n$, kus $n \in N$, siis jätame vahel
+summeerimisel summamärgi kirjutamata ning säilitame summeerimise tähistamiseks
+vaid indeksid. Einsteini summeeruvuskokkulepet arvestades kehtivad näiteks
+järgmised võrdused:
+\begin{align*}
+    x^{i} e_{i} &= \sum_{a=1}^{n} x^{i} e_{i} = 
+        x^{1} e_{1} + x^{2} e_{2} + \dots + x^{n} e_{n}, \\
+    \lambda{^i_j} x^{j} &= \sum_{j=1}^{n} 
+        \lambda{^i_j} x^{j} = \lambda{^i_1} x^{1} + 
+        \lambda{^i_2} x^{2} + 
+        \dots +\lambda{^i_n} x^{n},\\
+    \eta_{ij} u^{i} v^{j} &= \eta_{11} u^{1} v^{1} + 
+        \eta_{12} u^{1} v^{2} + \dots + \eta_{1n} u^{1} v^{n} + 
+        \eta_{21} u^{2} v^{1} + \dots + \eta_{nn} u^{n} v^{n},
+\end{align*}
+ja nii edasi.
+
+Järgnevas teeme raamatu \cite{johan1989survey} põhjal põgusa sissejuhatuse
+klassikalisse Lie teooriasse. 
+
+\subsection{Maatriksrühmade näiteid}
+
+Meenutame, et \emph{lineaarkujutus}
+$f \col V_1 \to V_2$ vektorruumist $V_1$ vektorruumi $V_2$ säilitab
+vektorite liitmise ja skalaariga korrutamise, see tähendab
+\[ f(x + y) = f(x) + f(y), \]
+ning
+\[ f(\lambda x) = \lambda f(x), \]
+kus $x, y \in V_1$ ja $\lambda$ on skalaar. Kui vektorruumid $V_1$ ja $V_2$
+langevad kokku, siis ütleme me kujutuse $f$ kohta ka \emph{lineaarteisendus}.
+
+Algebrast on teada, et lineaarteisendusel eksisteerib pöördteisendus siis ja
+ainult siis, kui ta on nii üks-ühene kui ka pealeteisendus. Kõigi vektorruumi $V$
+pööratavate lineaarteisenduste rühma nimetatakse vektorruumi $V$
+\emph{lineaarteisenduste rühmaks}\footnote{Inglise keeles
+\emph{general linear group}.} ja tähistatakse $\GL(V)$. Selge, et selle
+rühma korrutamiseks on tavaline lineaarteisenduste kompositsioon.
+
+Et lõplikumõõtmelise vektorruumi lineaarteisendus on pööratav parajasti siis
+kui tema determinant on nullist erinev, siis rühma $\GL(V)$ kuuluvad
+need ja ainult need lineaarteisendused, mille determinant pole null.
+Kui vaatleme vaid lineaarteisendusi, mille determinant on üks, saame olulise
+alamrühma $\SL(V)$, mida nimetatakse vektorruumi $V$
+\emph{spetsiaalsete lineaarteisenduste rühmaks}.
+
+Et igal vektorruumil leidub baas, siis võime vektorruumi $V$ jaoks
+fikseerida mingi baasi. Sel juhul
+saame kõik lineaarteisendused esitada maatriksitena ning nõnda võime
+edaspidi lineaarteisenduste rühmade asemel rääkida \emph{maatriksrühmadest}.
+Kui $\{e_1, e_2, \dots, e_n\}$ moodustab vektorruumi $V$ baasi ning
+$f \col V \to V$ on mingi lineaarteisendus, siis talle vastav maatriks
+selle baasi suhtes on $(a^i_j)$, mis on määratud valemiga
+\[ f(e_j) = \sum_{i=1}^{n} a^i_j e_i. \]
+
+Selge, et vaadeldes rühmi $\GL(V)$ ja $\SL(V)$ maatriksrühmadena
+on rühma tehteks juba tavaline maatriksite korrutamine. Ilmselt saab
+nimetatud maatriksrühmad defineerida suvalise korpuste jaoks, ja nii ka
+reaal- ning kompleksarvude korral. Sellest lähtuvalt kasutatakse sageli
+nullist erineva determinandiga $n \times n$ maatriksrühmade tähistuseks
+$\GL(n, \R)$ või $\GL(n, \C)$, ning neid rühmi nimetame vastavalt
+\emph{reaalsete lineaarteisenduste rühmaks} ja \emph{komplekssete
+lineaarteisenduste rühmaks}. Analoogiliselt on kasutusel tähistused
+$\SL(n, \R)$ ja $\SL(n, \C)$.
+
+Rühmal $\GL(n, \C)$ on palju tuntud alamrühmi. Klassikaliseks näiteks on
+$n \times n$ \emph{ortogonaalsete maatriksite rühm} $\Ort(n, \C)$, kuhu kuuluvad
+ortogonaalsed maatriksid, see tähendab sellised maatriksid $A$, mille korral
+$A^T = A^{-1}$. Teise näitena võib tuua unitaarsete maatriksite rühma $\U(n)$,
+mille elementideks on anti-Hermite'i maatriksid $A$, mis rahuldavad tingimust
+$A^\dag = \overline{A}^T = -A$. Edasi on lihtne konstrueerida saadud alamrühmade
+\emph{spetsiaalsed} variandid. \emph{Spetsiaalsete komplekssete ortogonaalmaatriksite rühm} on
+\[ \SO(n, \C) = \Ort(n, \C) \cap \SL(n, \C), \]
+ja \emph{spetsiaalsete unitaarsete maatriksite rühmaks} on
+\[ \SU(n) = \U(n) \cap \SL(n, \C). \]

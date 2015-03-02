@@ -14,18 +14,20 @@ Lie algebrad ja nende uurimine on tihedalt seotud teise Lie teooria keskse
 mõistega, milleks on \emph{Lie rühm}. Viimased on
 struktuurid, mis on korraga nii algebralised rühmad kui ka topoloogilised
 muutkonnad, kusjuures rühma korrutamine ja selle pöördtehe on mõlemad
-pidevad. Osutub, et igale Lie rühmale saab vastavusse seada Lie algebra ja
-kehtib ka vastupidine, pisut nõrgem tulemus. Nimelt suvalise lõplikumõõtmelise
+pidevad. Osutub, et igale Lie rühmale saab vastavusse seada Lie algebra, kuid
+üldjuhul kahjuks vastupidine väide ei kehti. Samas on võimalik näidata
+pisut nõrgem tulemus: suvalise lõplikumõõtmelise
 reaalsele või komplekssele Lie algebra jaoks leidub temale üheselt
 vastav sidus Lie rühm.\cite{kirillov2008introduction} Just selle viimase,
-\emph{Lie kolmanda teoreemi} tõttu on võimalik Lie rühmasid vaadelda
-Lie algebrate kontekstis ja see teebki Lie algebrad äärmiselt oluliseks.
+nõndanimetatud \emph{Lie kolmanda teoreemi} tõttu on võimalik
+Lie rühmasid vaadelda Lie algebrate kontekstis ja see teebki Lie algebrad
+äärmiselt oluliseks.
 
 Tähistagu kõikjal järgnevas $K$ nullkarakteristikaga korpust ning $V$
 vektorruumi üle korpuse $K$. Ruumi kokkuhoiu ja mugavuse mõttes
 kasutame edaspidi vajaduse korral summade tähistamisel
-Einsteini summeerimiskokkulepet. See tähendab, kui meil on indeksid $i$ ja $j$,
-mis omavad väärtusi $1, \dots, n$, kus $n \in N$, siis jätame vahel
+Einsteini summeerimiskokkulepet. Teisi sõnu, kui meil on indeksid $i$ ja $j$,
+mis omavad väärtusi $1, \dots, n$, kus $n \in \N$, siis jätame vahel
 summeerimisel summamärgi kirjutamata ning säilitame summeerimise tähistamiseks
 vaid indeksid. Einsteini summeeruvuskokkulepet arvestades kehtivad näiteks
 järgmised võrdused:
@@ -42,10 +44,9 @@ järgmised võrdused:
 \end{align*}
 ja nii edasi.
 
-Järgnevas teeme raamatu \cite{johan1989survey} põhjal põgusa sissejuhatuse
-klassikalisse Lie teooriasse. 
+Järgnevas teeme põgusa sissejuhatuse klassikalisse Lie teooriasse.
 
-\subsection{Maatriksrühmade näiteid}
+\subsection{Maatriksrühmad ja bilineaarvorm}
 
 Meenutame, et \emph{lineaarkujutus}
 $\phi \col V_1 \to V_2$ vektorruumist $V_1$ vektorruumi $V_2$ säilitab
@@ -54,12 +55,12 @@ vektorite liitmise ja skalaariga korrutamise, see tähendab
 ning
 \[ \phi(\lambda x) = \lambda \phi(x), \]
 kus $x, y \in V_1$ ja $\lambda$ on skalaar. Kui vektorruumid $V_1$ ja $V_2$
-langevad kokku, siis ütleme me kujutuse $\phi$ kohta ka \emph{lineaarteisendus}.
+langevad kokku, siis ütleme me kujutuse $\phi$ kohta \emph{lineaarteisendus}.
 
 Algebrast on teada, et lineaarteisendusel eksisteerib pöördteisendus siis ja
 ainult siis, kui ta on nii üks-ühene kui ka pealeteisendus. Kõigi vektorruumi $V$
 pööratavate lineaarteisenduste rühma nimetatakse vektorruumi $V$
-\emph{lineaarteisenduste rühmaks}\footnote{Inglise keeles
+\emph{pööratavate lineaarteisenduste rühmaks}\footnote{Inglise keeles
 \emph{general linear group}.} ja tähistatakse $\GL(V)$. Selge, et selle
 rühma korrutamiseks on tavaline lineaarteisenduste kompositsioon.
 
@@ -85,9 +86,9 @@ nimetatud maatriksrühmad defineerida suvalise korpuste jaoks, ja nii ka
 reaal- ning kompleksarvude korral. Sellest lähtuvalt kasutatakse sageli
 nullist erineva determinandiga $n \times n$ maatriksrühmade tähistuseks
 $\GL(n, \R)$ või $\GL(n, \C)$, ning neid rühmi nimetame vastavalt
-\emph{reaalsete lineaarteisenduste rühmaks} ja \emph{komplekssete
-lineaarteisenduste rühmaks}. Analoogiliselt on kasutusel tähistused
-$\SL(n, \R)$ ja $\SL(n, \C)$.
+\emph{reaalsete pööratavate lineaarteisenduste rühmaks} ja \emph{komplekssete
+pööratavate lineaarteisenduste rühmaks}. Analoogiliselt on kasutusel
+tähistused $\SL(n, \R)$ ja $\SL(n, \C)$.
 
 Rühmal $\GL(n, \C)$ on palju tuntud alamrühmi. Klassikaliseks näiteks on
 $n \times n$ \emph{ortogonaalsete maatriksite rühm} $\Ort(n, \C)$, kuhu kuuluvad
@@ -100,90 +101,178 @@ $A^\dag = \overline{A}^T = -A$. Edasi on lihtne konstrueerida saadud alamrühmad
 ja \emph{spetsiaalsete unitaarsete maatriksite rühmaks} on
 \[ \SU(n) = \U(n) \cap \SL(n, \C). \]
 
-\subsection{Bilineaarvorm}
-
 \begin{dfn}
-    Olgu $V$ vektorruum üle korpuse $K$. Kujutust $\psi \col V^2 \to K$
+    Olgu $V$ vektorruum üle korpuse $K$. Kujutust $\blinv \col V^2 \to K$
     nimetatakse \emph{bilineaarvormiks}, kui iga $x, y, z \in V$
     ja skalaaride $\lambda, \mu \in K$ korral
     \begin{enumerate}[label=\roman*.]
-        \item $\psi(\lambda x + \mu y, z) = \lambda \psi(x, z) + \mu \psi(y, z)$,
-        \item $\psi(x, \lambda y + \mu z) = \lambda \psi(x, y) + \mu \psi(x, z)$.
+        \item $(\lambda x + \mu y, z) = \lambda (x, z) + \mu (y, z)$,
+        \item $(x, \lambda y + \mu z) = \lambda (x, y) + \mu (x, z)$.
     \end{enumerate}
 \end{dfn}
 
 Kui vetorruumis $V$ on antud baas $\{e_1, e_2, \dots, e_n\}$, siis saab
-bilineaarvormi $\psi \col V^2 \to K$ esitada talle vastava maatriksi
-$B = (b_{ij})$ abil, kus $b_{ij} = \psi(e_i, e_j)$. Tõepoolest, kui
+bilineaarvormi $\blinv \col V^2 \to K$ esitada talle vastava maatriksi
+$B = (b_{ij})$ abil, kus $b_{ij} = (e_i, e_j)$. Tõepoolest, kui
 meil on antud vektorid $x = \sum_i \lambda^i e_i$ ja $y = \sum_j \mu^j e_j$,
-siis kasutades $\psi$ lineaarsust mõlema muutuja järgi võime arvutada
-\[ \psi(x, y) = \sum_{i, j} b_{ij} \lambda^i \mu^j. \]
+siis kasutades $\blinv$ lineaarsust mõlema muutuja järgi võime arvutada
+\[ (x, y) = \sum_{i, j} b_{ij} \lambda^i \mu^j. \]
 
-Me ütleme, et bilineaarvorm $\psi \col V^2 \to K$ on \emph{sümmeetriline} kui
-iga $x, y \in V$ korral $\psi(x, y) = \psi(y, x)$. Selge, et sümmeetrilise
-bilineaarvormi maatriksi $B$ korral kehtib võrdus $B = B^T$. Vormi $\psi$
+Me ütleme, et bilineaarvorm $\blinv \col V^2 \to K$ on \emph{sümmeetriline} kui
+iga $x, y \in V$ korral $(x, y) = (y, x)$. Selge, et sümmeetrilise
+bilineaarvormi maatriksi $B$ korral kehtib võrdus $B = B^T$. Vormi $\blinv$
 nimetatakse \emph{kaldsümmeetriliseks} kui iga $x, y \in V$ korral kehtib
-võrdus $\psi(x, y) = - \psi(y, x)$. Lihtne on veenduda, et kaldsümmeetrilise
+võrdus $(x, y) = - (y, x)$. Lihtne on veenduda, et kaldsümmeetrilise
 bilineaarvormi korral rahuldab talle vastav maatriks $B$ seost
 $B^T = -B$.
 
-\begin{naide}
-    Skalaarkorrutis on bilineaarvorm.
-\end{naide}
-
-\begin{dfn}[Jälg]
+\begin{dfn}
     Olgu $V$ vektorruum kus on fikseeritud mingi baas, olgu $\phi$
     vektorruumi $V$ lineaarteisendus ning olgu $A = (a^i_j)$ on
     lineaarteisenduse $\phi$ maatriks fikseeritud baasi suhtes.
     Lineaarteisenduse $\phi$ \emph{jäljeks} nimetatakse kujutust
     $\Tr_V \col \GL(V) \to K$, kus
-    \[ \Tr_V(A) = \sum_i a^i_j. \]
+    \[ \Tr_V(A) = \sum_i a^i_i. \]
 \end{dfn}
 
 \begin{naide}
     On hästi teada, et vektorruumi $V$ kõigi lineaarteisenduste hulk $\Lin V$
-    on ise ka vektorruum, kusjuures kui $\dim(V) = n$, siis
+    on ise ka vektorruum, kusjuures kui vektorruumi $V$ dimensioon
+    on $\dim(V) = n$, siis ruumi $\Lin V$ dimendsioon on
     $\dim \left(\Lin V\right) = n^2$. Kasutades jälge $\Tr_V$ saame
-    defineerida bilineaarvormi vektorruumil
-    $\psi \col \Lin V \times \Lin V \to K$ järgmiselt:
-    \[ \psi(A, B) = \Tr_V(AB), \]
+    defineerida bilineaarvormi
+    $\blinv \col \Lin V \times \Lin V \to K$ järgmiselt:
+    \[ (A, B) = \Tr_V(AB), \]
     kus $A$ ja $B$ on maatriksid, mis vastavad vektorruumi $\Lin V$
-    teisendustele mingi baasi suhtes.
+    teisendustele mingi baasi suhtes. Selge, et selliselt defineeritud
+    bilineaarvorm sümmeetriline.
 \end{naide}
 
 Kasutades bilineaarvormi sümmeetrilisuse või kaldsümmeetrilisuse mõistet
-saame sisse tuua \emph{ortogonaalsuse}: me ütleme, et vektorid $x$ ja $y$
-on bilineaarvormi $\psi$ suhtes ortogonaalsed, kui $\psi(x, y) = 0$. Selge, et
+saame sisse tuua \emph{ortogonaalsuse} mõiste. Me ütleme, et vektorid $x$ ja $y$
+on bilineaarvormi $\blinv$ suhtes ortogonaalsed, kui $(x, y) = 0$. Selge, et
 ortogonaalsuse tingimus ise on sümmeetriline, see tähendab kui $x$ on
 ortogonaalne vektoriga $y$, siis kehtib ka vastupidine, $y$ on ortogonaalne
 vektoriga $x$. Kui vektor $x \neq 0$ on iseenesega ortogonaalne, see tähendab
-$\psi(x, x) = 0$, siis nimetatakse vektorit $x$ \emph{isotroopseks}. Selge, et
-Eukleidilises geomeetrias selliseid vektoreid ei leidu, kuid üldisemas
-käsitluses kohtab neid juba üsna madalal tasemel, näiteks
-\emph{Minkowski ruumis}.
+$(x, x) = 0$, siis nimetatakse vektorit $x$ \emph{isotroopseks}. Selge, et
+Eukleidilises geomeetrias selliseid vektoreid ei leidu, kuid üldisemates
+situatsioonides esinevad nad küllaltki sageli, näiteks
+\emph{Minkowski aegruumis}.
 
 Edasises vaatleme ortogonaaseid ja sümplektilisi rühmi ning selleks
 nõuame, et vaatluse all olevad bilineaarvormid oleksid mittesingulaarsed
-ehk regulaarsed, see tähendab kui $\psi(x, y) = 0$ iga $y \in V$ korral, siis
-järelikult $x = 0$. Osutub, et bilineaarvorm $\psi$ on regulaarne parajasti
+ehk regulaarsed, see tähendab kui $(x, y) = 0$ iga $y \in V$ korral, siis
+järelikult $x = 0$. Osutub, et bilineaarvorm $\blinv$ on regulaarne parajasti
 siis, kui temale vastav maatiks $B = (b^i_j)$ on pööratav, mis tähendab,
 et $\det B \neq 0$.
 
 \begin{dfn}
-    Me ütleme, et lineaarne operaator $\psi$ on \emph{ortogonaalne}
-    regulaarse sümmeetrilise bilineaarvormi $\psi$ suhtes, kui
-    \[ \psi(\phi(x), \phi(y)) = \psi(x, y) \]
+    Me ütleme, et lineaarne operaator $\phi$ on \emph{ortogonaalne}
+    regulaarse sümmeetrilise bilineaarvormi $\blinv$ suhtes, kui
+    \[ (\phi(x), \phi(y)) = (x, y) \]
     kõikide $x$ ja $y$ korral vektorruumist $V$.
 \end{dfn}
 
 Kui $x$ on ortogonaalse lineaarse operaatori $\phi$ tuumast, siis
 kehtib $\phi(x) = 0$. Viimane aga tähendab, et iga $y \in V$ korral
-$\psi(x, y) = \psi(\phi(x), \phi(y)) = \psi(0, \phi(y)) = 0$. Kokkuvõttes,
-et $\psi$ on regulaarne, siis järelikult $x = 0$ ja $\phi$ on üks-ühene.
+$(x, y) = (\phi(x), \phi(y)) = (0, \phi(y)) = 0$. Kokkuvõttes,
+et $\blinv$ on regulaarne, siis järelikult $x = 0$ ja $\phi$ on üks-ühene.
 Kui nüüd veel $V$ on lõplikumõõtmeline, siis peab $\phi$ olema pööratav.
 Seda arutelu silmas pidades võime öelda, et ortogonaalsed lineaarsed
-operaatorid moodustavad rühma, mida me nimetame \emph{ortogonaalsed rühmaks}
-bilineaarvormi $\psi$ suhtes.
+operaatorid moodustavad rühma, mida me nimetame \emph{ortogonaalsete
+lineaarteisenduste rühmaks} bilineaarvormi $\blinv$ suhtes.
+Võttes tarvitusele vektorruumi $V$ baasi saame konstrueerida ka
+\emph{ortogonaalsete maatriksite rühma}, mida tähistatakse komplekssel juhul
+kui $\Ort(n, \C)$, kus $n \in \N$ märgib, et tegu on $n \times n$ maatriksitega.
 
-Et saada eelnevalt defineeritud ortogonaalset maatriksrühma peame appi võtma
-vektorruumi baasi...
+Sümplektiliste teisenduste tarvis tuleb vaadelda kaldsümmeetrilisi
+bilineaarvorme.
+
+\begin{dfn}
+    Me ütleme, et lineaarne operaator $\phi$ on \emph{sümplektiline}
+    regulaarse kaldsümmeetrilise bilineaarvormi $\blinv$ suhtes, kui
+    \[ (\phi(x), \phi(y)) = (x, y) \]
+    kõikide $x$ ja $y$ korral vektorruumist $V$.
+\end{dfn}
+
+Märgime, et sümplektilised lineaarteisendused leiduvad ainult sellistes
+vektorruumides, mille dimensioon on paarisarvuline, see tähendab
+$\dim V = 2n$, kus $n \in \N$. Sümplektilised teisendused moodustavad
+\emph{sümplektiliste rühma}, mida tähistatakse kompleksel juhul
+$\Sp(n, \C)$. Reaalsete sümplektiliste
+teisenduste rühma saame kui vaatleme ühisosa rühmaga $\GL(2n, \R)$:
+\[ \Sp(n, \R) = \Sp(n, \C) \cap \GL(2n, \R). \]
+
+
+\subsection{Eksponentsiaalkujutus}
+
+Kõikide seni käsitluse all olnud maatriksrühmade esindajad peavad
+vastavatesse rühmadesse kuulumiseks rahuldama mingeid algebralisi tingimusi.
+Need tingimused võib kirja panna maatriksite elementide kaudu, mille
+tulemusel saaame me mittelineaarseid võrrandeid, mis määravad rühma kuulumise.
+Osutub, et need tingimused on võimalik asendada mingi hulga ekvivalentsete
+lineaarsete võrranditega ja selline üleminek mittelineaarselt süsteemilt
+lineaarsele ongi võtmetähtsusega idee üleminekul Lie rühmadest Lie
+algebratele.\cite{johan1989survey}
+
+Klassikaliseks viisiks kuidas sellist üleminekut realiseeritakse on
+\emph{eksponentsiaalkujutuse} kasutuselevõtt. Nagu nimigi viitab, on
+tegu analüüsist tuttava kujutuse üldistusega. Et meil oli siiani tegemist
+vaid maatriksrühmadega, siis läheme siin ka edasi vaid eksponentsiaalkujutuse
+ühe tähtsa erijuhuga, \emph{maatrikseksponentsiaaliga}, kuid olgu öeldud,
+et järgnevad väited kehtivad tegelikult ka üldisemas seades,
+nagu võib näha raamatus \cite{kirillov2008introduction}.
+
+Olgu $A$ mingi $n \times n$ maatriks, $k \in \N$ ning olgu $I$
+ühikmaatriksit. Tähistame $A^0 = I$ ning
+$A^k = \underbrace{A \cdot A \cdot \ldots \cdot A}_{k\text{-korda}}$.
+
+\begin{dfn}
+    Olgu $X$ reaalne või kompleksne $n \times n$ maatriks. Maatriksi
+    $X$ \emph{eksponendiks}, mida tähistatakse $e^X$ või $\exp X$, nimetatakse
+    astmerida
+    \begin{align}\label{eq:mat-exp}
+        e^X = \sum_{k=0}^{\infty} \frac{X^k}{k!}.
+    \end{align}
+\end{dfn}
+
+Ilmselt tuleks definitsiooni korrektsuses veendumaks näidata, et suvalise
+maatriksi $X$ korral rida \eqref{eq:mat-exp} koondub. Selleks meenutame,
+et $n \times n$ maatriksi $X = (X_{ij})$ normi arvutatakse valemi
+\begin{align}\label{eq:mat-norm}
+    \| X \| = \left( \sum_{i,j=1}^n |X_{ij}|^2 \right)^{\frac{1}{2}}
+\end{align}
+järgi. Arvestades, et $\| XY \| \le \|X\| \|Y\|$, siis $\|X^k\| \le \|X\|^k$.
+Rakendades nüüd normi \eqref{eq:mat-norm} rea \eqref{eq:mat-exp} liikmetele
+saame
+\begin{align*}
+    \sum_{k=0}^\infty \left\lVert \frac{X^k}{k!} \right\rVert \le
+    \sum_{k=0}^\infty \frac{\|X\|^k}{k!} = e^{\|X\|} < \infty,
+\end{align*}
+mis tähendab, et rida \eqref{eq:mat-exp} koondub absoluutselt ja seega
+ta ka koondub. Märkamaks, et $e^X$ on pidev funktsioon märgime esiteks,
+et $X^k$ on argumendi $X$ suhtes pidev funktsioon ja seega on rea
+\eqref{eq:mat-exp} osasummad pidevad. Teisalt paneme tähele, et
+\eqref{eq:mat-exp} koondub ühtlaselt hulkadel, mis on kujul
+$\{ \|X\| \le R \}$, ja seega on rida kokkuvõttes pidev.
+
+Seega on maatrikseksponentsiaal korrektselt defineeritud ning ka pidev.
+Järgmises lauses on toodud rida eksponentsiaalkujutuse põhilisi omadusi,
+mille võrdlemisi lihtsad tõestused võib huvi korral võib leida näiteks
+teosest \cite{hall2003lie}.
+
+\begin{lau}
+    Olgu $X$ ja $Y$ suvalised $n \times n$ maatriksid. Siis kehtivad järgmised
+    väited:
+    \begin{enumerate}
+        \item $e^0 = I$,
+        \item $e^X$ on pööratav ning kehtib
+            $\left(e^X\right)^{-1} = e^{X^{-1}}$,
+        \item $e^{(\lambda + \mu)X} = e^{\lambda X} e^{\mu X}$ suvaliste
+            $\lambda, \mu \in \C$ korral,
+        \item $e^X e^{-X} = I$,
+        \item kui $XY = YX$, siis $e^{X+Y} = e^X e^Y = e^Y e^X$,
+        \item kui $C$ on pööratav, siis $e^{CXC^{-1}} = C e^X C^{-1}$,
+        \item $\det e^X = e^{\Tr_V X}$.
+    \end{enumerate}
+\end{lau}

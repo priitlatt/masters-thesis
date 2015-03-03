@@ -46,7 +46,7 @@ ja nii edasi.
 
 Järgnevas teeme põgusa sissejuhatuse klassikalisse Lie teooriasse.
 
-\subsection{Maatriksrühmad ja bilineaarvorm}
+\subsection{Maatriksrühmad ja bilineaarvorm}\label{subsec:mat-ryhmad-ja-bilinvorm}
 
 Meenutame, et \emph{lineaarkujutus}
 $\phi \col V_1 \to V_2$ vektorruumist $V_1$ vektorruumi $V_2$ säilitab
@@ -134,6 +134,9 @@ $B^T = -B$.
     $\Tr_V \col \GL(V) \to K$, kus
     \[ \Tr_V(A) = \sum_i a^i_i. \]
 \end{dfn}
+
+Juhul kui maatriksi $A$ korral $\Tr_V A = 0$, siis ütleme, et
+maatriks $A$ on \emph{jäljeta}.
 
 \begin{naide}
     On hästi teada, et vektorruumi $V$ kõigi lineaarteisenduste hulk $\Lin V$
@@ -261,18 +264,91 @@ Järgmises lauses on toodud rida eksponentsiaalkujutuse põhilisi omadusi,
 mille võrdlemisi lihtsad tõestused võib huvi korral võib leida näiteks
 teosest \cite{hall2003lie}.
 
-\begin{lau}
+\begin{lau}\label{lau:mat-exp-om}
     Olgu $X$ ja $Y$ suvalised $n \times n$ maatriksid. Siis kehtivad järgmised
     väited:
-    \begin{enumerate}
-        \item $e^0 = I$,
-        \item $e^X$ on pööratav ning kehtib
+    \begin{enumerate}[label=\arabic*)]
+        \item\label{om:mat-exp-1} $e^0 = I$,
+        \item\label{om:mat-exp-2} $\left(e^X\right)^T = e^{X^T}$,
+        \item\label{om:mat-exp-3} $e^X$ on pööratav ning kehtib
             $\left(e^X\right)^{-1} = e^{X^{-1}}$,
-        \item $e^{(\lambda + \mu)X} = e^{\lambda X} e^{\mu X}$ suvaliste
+        \item\label{om:mat-exp-4} $e^{(\lambda + \mu)X} = e^{\lambda X} e^{\mu X}$ suvaliste
             $\lambda, \mu \in \C$ korral,
-        \item $e^X e^{-X} = I$,
-        \item kui $XY = YX$, siis $e^{X+Y} = e^X e^Y = e^Y e^X$,
-        \item kui $C$ on pööratav, siis $e^{CXC^{-1}} = C e^X C^{-1}$,
-        \item $\det e^X = e^{\Tr_V X}$.
+        \item\label{om:mat-exp-5} kui $XY = YX$, siis $e^{X+Y} = e^X e^Y = e^Y e^X$,
+        \item\label{om:mat-exp-6}  kui $C$ on pööratav, siis $e^{CXC^{-1}} = C e^X C^{-1}$,
+        \item\label{om:mat-exp-7} $\det e^X = e^{\Tr_V X}$.
     \end{enumerate}
 \end{lau}
+
+Ostutub, et rühma $\GL(n, \C)$ ühikelemendi mingis ümbruses on võimalik
+suvaline maatriks esitada kujul $e^A$, kus $A$ on mingi $n \times n$
+maatriks. Rühma $\GL(n, \R)$ korral on maatriks $A$ reaalne. Oluline on
+tähele panna, et vaadeldes rühma $\GL(n, \R)$, ei ole eksponentfunktsiooni
+kujutis terve rühm. Selles veenumiseks piisab võtta $n = 1$ ning näha, et
+$\exp \left(\GL(1, \R)\right) = \R^+$, ehk kujutiseks on reaaltelje positiivne
+osa, samas kui $\GL(1, \R) = \R \setminus {0}$ ehk reaaltelg ilma nullpunktita.
+
+Niisiis eksponentkujutust kasutades on oht kaotada rühma globaalne struktuur,
+samas kui lokaalne struktuur säilib.
+
+Et maatriksi $A$ korral kuuluks maatriks $e^A$ mõnda puntis
+\ref{subsec:mat-ryhmad-ja-bilinvorm}. \nameref{subsec:mat-ryhmad-ja-bilinvorm} nimetatud rühma tuleb maatriksile
+$A$ seada mingid lineaarsed kitsendused. Näiteks spetsiaalse lineaarse rühma
+$\SL(n)$ korral võime mittelineaarse tingimuse $e^A$ determinandi kohta
+asendada lineaarse tingimusega maatriksi $A$ jälje kohta kasutades lause
+\ref{lau:mat-exp-om} punkti \ref{om:mat-exp-7}. Nii on näiteks
+$\det e^A = 1$ parajasti siis, kui $\Tr_V A = 0$.
+
+Kokkuvõttes nägime, et eksponentsiaalkujutuse abil on võimalik asendada
+klassikalised maatriksrühmad maatrikshulkadega, millele on seatud
+teatud lineaarsed kitsendused. Selge, et need hulgad on kinnised
+lineaarkombinatsioonide suhtes ja nii võib neid vaadelda kui vektorruume.
+Tavalise maatriksite korrutamise osas kahjuks kinnisus säilida ei
+pruugi. Samas kui meil on $n \times n$ maatriksid $A$ ja $B$, mis on vastavalt
+kas kaldsümmeetrilised, rahuldavad anti-Hermite'i tingimust või neil
+puudub jälg, siis maatriksil $C = AB - BA$ on samuti selline omadus.
+Niisiis saadud maatrikshulgad ei moodusta ainuüksi vektorruumi,
+vaid on kinnised ka teatud binaarse tehte suhtes.
+
+\subsection{Lie algebra definitsioon}
+
+Enne kui Lie algebra definitsiooni anname tuletame meelde, et \emph{algebraks}
+üle korpuse $K$ nimetatakse vektorruumi $V$ üle korpuse $K$, millel on
+defineeritud bilineaarne korrutamine $V \times V \to V$. Kui algebra
+tehe rahuldab assotsiatiivsuse tingimust, siis nimetatakse seda algebrat
+assotriatiivsekt ning vastasel korral mitteassotsiatiivseks. Nii on näiteks
+vektorruumi $V$ lineaarteisenduste vektorruum $\Lin V$ assotsiatiivne algebra,
+mille tehteks on teisenduste kompositsioon: $f \circ g$. Samas võime
+vektorruumi $\Lin V$ varustada ka teistsuguse korrutamisega ning saada uue
+algebralise struktuuri, kui võtame tehteks näiteks $f \circ g - g \circ f$.
+Üldiselt selline korrutamine aga enam kommutatiivne ei ole.
+
+\begin{dfn}
+    Algebrat $\g$ üle korpuse $K$ nimetatakse \emph{Lie algebraks}, kui
+    tema korrutamine $[\cdot, \cdot] \col V \times V \to V$ rahuldab
+    kõikide $x, y, z \in \g$ tingimusi
+    \begin{gather}
+        [x, x] = 0,\label{id:bracket-antisymm} \\
+        \brac{x}{\brac{y}{z}} + \brac{y}{\brac{z}{x}} +
+            \brac{z}{\brac{x}{y}} = 0.\label{id:jacobi}
+    \end{gather}
+\end{dfn}
+
+Me ütleme definitsioonis toodud korrutise $[x, y]$ kohta elementide $x$ ja
+$y$ \emph{Lie sulg}, definitsioonis toodud samasust \eqref{id:jacobi}
+nimetatakse \emph{Jacobi samasuseks}. Piltlikult öeldes mõõdab Lie
+sulg algebra elementide mittekommuteeruvust ja seda asjaolu kirjeldavat
+võrdust \eqref{id:bracket-antisymm} võime kirja panna ka kujul
+\begin{equation}\label{eq:bracket-antisymm}
+    [x, y] = -[y, x].
+\end{equation}
+Tõepoolest, \eqref{id:bracket-antisymm} järgi kehtib $[x+y, x+y] = 0$,
+millest saame bilineaarsuse abil $[x, x] + [x, y] + [y, x] + [y, y] = 0$,
+ehk kehtibki $[x, y] = -[y, x]$.
+
+Rakendades võrdust \eqref{eq:bracket-antisymm} saame Jacobi samasuse
+kirjutada kui
+\begin{equation}
+    \brac{x}{\brac{y}{z}} = \brac{\brac{x}{y}}{z} +
+            \brac{y}{\brac{x}{z}}.
+\end{equation}

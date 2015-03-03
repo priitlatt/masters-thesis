@@ -120,5 +120,5 @@ sympy-plots-for-*.tex/
 
 
 # literature
-literature/*.pdf
-literature/*/*.pdf
+literature
+

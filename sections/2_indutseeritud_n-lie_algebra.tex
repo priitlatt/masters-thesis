@@ -8,31 +8,10 @@
 
 See peatükk tugineb artiklile \cite{AKMS:2014}
 
-Edasises eeldame, et kõik vektoruumid on üle vaadeldud üle
-$0$-karakteristikaga korpuse $\K$.
-
-\begin{dfn}[Lie algebra]\label{def:lie_algebra}
-    Vektorruumi $A$ nimetatakse \emph{Lie algebraks}, kui on
-    määratud bilineaarvorm
-    $\brac{\cdot}{\cdot} \colon A \times A \arr A$, mis
-    suvaliste $x, y, z \in A$ korral rahuldab tingimusi
-    \begin{itemize}
-        \item $\brac{x}{y} = -\brac{y}{x}$,
-        \item $\brac{x}{\brac{y}{z}} + 
-               \brac{z}{\brac{x}{y}} +
-               \brac{y}{\brac{z}{x}} = 0$.
-    \end{itemize}
-\end{dfn}
-
-Bilineaarvormi $\brac{\cdot}{\cdot}$ Lie algebra definistioonis
-nimetatakse selle Lie algebra suluks. Edaspidi tähistame konkreetsuse
-mõttes sageli Lie suluga $\brac{\cdot}{\cdot}$ varustatud vektorruumi
-$A$ paarina $(A, \brac{\cdot}{\cdot})$.
-
 \begin{dfn}[$n$-Lie algebra]
     Vektorruumi $A$ nimetatakse \emph{$n$-Lie algebraks}, kui on
     määratud $n$-lineaarne kaldsümmeetriline kujutus
-    $\nbrac{\cdot}{\cdot} \colon A^n \times A \arr A$, mis
+    $\nbrac{\cdot}{\cdot} \colon A^n \times A \to A$, mis
     suvaliste
     \[ x_1, \dots, x_{n-1}, y_1, \dots, y_n \in A \]
     korral rahuldab tingimust
@@ -45,16 +24,16 @@ $A$ paarina $(A, \brac{\cdot}{\cdot})$.
 \end{dfn}
 
 \begin{dfn}[Jälg]
-    Olgu $A$ vektorruum ning olgu $\phi \col A^n \arr A$. Me
-    ütleme, et lineaarkujutus $\tau \col A \arr \K$ on
+    Olgu $A$ vektorruum ning olgu $\phi \col A^n \to A$. Me
+    ütleme, et lineaarkujutus $\tau \col A \to \K$ on
     \emph{$\phi$-jälg}, kui suvaliste $x_1, \dots, x_n \in A$ korral
     $\tau \left( \phi \left( x_1, \dots, x_n \right) \right) = 0$.
 \end{dfn}
 
-Olgu $\phi \col A^n \arr A$ $n$-lineaarne ja
-$\tau \col A \arr \K$ lineaarne kujutus. Defineerime nende
+Olgu $\phi \col A^n \to A$ $n$-lineaarne ja
+$\tau \col A \to \K$ lineaarne kujutus. Defineerime nende
 kujutuste abil uue $(n+1)$-lineaarse kujutuse
-$\phi_\tau \col A^{n+1} \arr A$ valemiga
+$\phi_\tau \col A^{n+1} \to A$ valemiga
 \begin{align}\label{eq:phi_tau}
     \phi_\tau \left( x_1, \dots, x_{n+1} \right) =
     \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i)
@@ -76,9 +55,9 @@ valemi~\ref{eq:phi_tau} põhjal kirjutada
 Edasises toome ära mõningad kujutuse $\phi_\tau$ tähtsamad omadused.
 
 \begin{lemma}
-    Olgu $A$ vektorruum ning $\phi \col A^n \arr A$ $n$-lineaarne kaldsümmeetriline kujutus
-    ja $\tau \col A \arr \K$ lineaarne. Siis kujutus
-    $\phi_\tau \col A^{n+1} \arr A$ on samuti kaldsümmeetriline. Lisaks,
+    Olgu $A$ vektorruum ning $\phi \col A^n \to A$ $n$-lineaarne kaldsümmeetriline kujutus
+    ja $\tau \col A \to \K$ lineaarne. Siis kujutus
+    $\phi_\tau \col A^{n+1} \to A$ on samuti kaldsümmeetriline. Lisaks,
     kui $\tau$ on $\phi$-jälg, siis $\tau$ on ka $\phi_\tau$-jälg.
 \end{lemma}
 
@@ -95,8 +74,8 @@ Teoreemist~\ref{thm:n+1_lie_alg} saame teha olulise järlduse:
 
 \begin{jar}
     Olgu $(A, \brac{\cdot}{\cdot})$ Lie algebra ning olgu antud
-    $\brac{\cdot}{\cdot}$ jälg $\tau \col A \arr \K$. Siis ternaarne sulg
-    $[ \cdot, \cdot, \cdot ] \col A^3 \arr A$, mis on defineeritud
+    $\brac{\cdot}{\cdot}$ jälg $\tau \col A \to \K$. Siis ternaarne sulg
+    $[ \cdot, \cdot, \cdot ] \col A^3 \to A$, mis on defineeritud
     valemiga
     \[
         [x, y, z] = \tau(x)[y, z] + \tau(y)[z, x] + \tau(z)[x, y],

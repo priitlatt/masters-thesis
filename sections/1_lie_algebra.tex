@@ -23,7 +23,7 @@ nõndanimetatud \emph{Lie kolmanda teoreemi} tõttu on võimalik
 Lie rühmasid vaadelda Lie algebrate kontekstis ja see teebki Lie algebrad
 äärmiselt oluliseks.
 
-Tähistagu kõikjal järgnevas $K$ nullkarakteristikaga korpust ning $V$
+Tähistagu kõikjal järgnevas $K$ nullkarakteristikaga korpust ning $\V$
 vektorruumi üle korpuse $K$. Ruumi kokkuhoiu ja mugavuse mõttes
 kasutame edaspidi vajaduse korral summade tähistamisel
 Einsteini summeerimiskokkulepet. Teisi sõnu, kui meil on indeksid $i$ ja $j$,
@@ -49,38 +49,38 @@ Järgnevas teeme põgusa sissejuhatuse klassikalisse Lie teooriasse.
 \subsection{Maatriksrühmad ja bilineaarvorm}\label{subsec:mat-ryhmad-ja-bilinvorm}
 
 Meenutame, et \emph{lineaarkujutus}
-$\phi \col V_1 \to V_2$ vektorruumist $V_1$ vektorruumi $V_2$ säilitab
+$\phi \col \V_1 \to \V_2$ vektorruumist $\V_1$ vektorruumi $\V_2$ säilitab
 vektorite liitmise ja skalaariga korrutamise, see tähendab
 \[ \phi(x + y) = \phi(x) + \phi(y), \]
 ning
 \[ \phi(\lambda x) = \lambda \phi(x), \]
-kus $x, y \in V_1$ ja $\lambda$ on skalaar. Kui vektorruumid $V_1$ ja $V_2$
+kus $x, y \in \V_1$ ja $\lambda$ on skalaar. Kui vektorruumid $\V_1$ ja $\V_2$
 langevad kokku, siis ütleme me kujutuse $\phi$ kohta \emph{lineaarteisendus}.
 
 Algebrast on teada, et lineaarteisendusel eksisteerib pöördteisendus siis ja
-ainult siis, kui ta on nii üks-ühene kui ka pealeteisendus. Kõigi vektorruumi $V$
-pööratavate lineaarteisenduste rühma nimetatakse vektorruumi $V$
+ainult siis, kui ta on nii üks-ühene kui ka pealeteisendus. Kõigi vektorruumi $\V$
+pööratavate lineaarteisenduste rühma nimetatakse vektorruumi $\V$
 \emph{pööratavate lineaarteisenduste rühmaks}\footnote{Inglise keeles
-\emph{general linear group}.} ja tähistatakse $\GL(V)$. Selge, et selle
+\emph{general linear group}.} ja tähistatakse $\GL(\V)$. Selge, et selle
 rühma korrutamiseks on tavaline lineaarteisenduste kompositsioon.
 
 Et lõplikumõõtmelise vektorruumi lineaarteisendus on pööratav parajasti siis
-kui tema determinant on nullist erinev, siis rühma $\GL(V)$ kuuluvad
+kui tema determinant on nullist erinev, siis rühma $\GL(\V)$ kuuluvad
 need ja ainult need lineaarteisendused, mille determinant pole null.
 Kui vaatleme vaid lineaarteisendusi, mille determinant on üks, saame olulise
-alamrühma $\SL(V)$, mida nimetatakse vektorruumi $V$
+alamrühma $\SL(\V)$, mida nimetatakse vektorruumi $\V$
 \emph{spetsiaalsete lineaarteisenduste rühmaks}.
 
-Et igal vektorruumil leidub baas, siis võime vektorruumi $V$ jaoks
+Et igal vektorruumil leidub baas, siis võime vektorruumi $\V$ jaoks
 fikseerida mingi baasi. Sel juhul
 saame kõik lineaarteisendused esitada maatriksitena ning nõnda võime
 edaspidi lineaarteisenduste rühmade asemel rääkida \emph{maatriksrühmadest}.
-Kui $\{e_1, e_2, \dots, e_n\}$ moodustab vektorruumi $V$ baasi ning
-$\phi \col V \to V$ on mingi lineaarteisendus, siis talle vastav maatriks
+Kui $\{e_1, e_2, \dots, e_n\}$ moodustab vektorruumi $\V$ baasi ning
+$\phi \col \V \to \V$ on mingi lineaarteisendus, siis talle vastav maatriks
 selle baasi suhtes on $(a^i_j)$, mis on määratud valemiga
 \[ \phi(e_j) = \sum_{i=1}^{n} a^i_j e_i. \]
 
-Selge, et vaadeldes rühmi $\GL(V)$ ja $\SL(V)$ maatriksrühmadena
+Selge, et vaadeldes rühmi $\GL(\V)$ ja $\SL(\V)$ maatriksrühmadena
 on rühma tehteks juba tavaline maatriksite korrutamine. Ilmselt saab
 nimetatud maatriksrühmad defineerida suvalise korpuste jaoks, ja nii ka
 reaal- ning kompleksarvude korral. Sellest lähtuvalt kasutatakse sageli
@@ -102,8 +102,9 @@ ja \emph{spetsiaalsete unitaarsete maatriksite rühmaks} on
 \[ \SU(n) = \U(n) \cap \SL(n, \C). \]
 
 \begin{dfn}
-    Olgu $V$ vektorruum üle korpuse $K$. Kujutust $\blinv \col V^2 \to K$
-    nimetatakse \emph{bilineaarvormiks}, kui iga $x, y, z \in V$
+    Olgu $\V$ vektorruum üle korpuse $K$. Kujutust
+    $\blinv \col \V \times \V \to K$
+    nimetatakse \emph{bilineaarvormiks}, kui iga $x, y, z \in \V$
     ja skalaaride $\lambda, \mu \in K$ korral
     \begin{enumerate}[label=\roman*.]
         \item $(\lambda x + \mu y, z) = \lambda (x, z) + \mu (y, z)$,
@@ -111,42 +112,43 @@ ja \emph{spetsiaalsete unitaarsete maatriksite rühmaks} on
     \end{enumerate}
 \end{dfn}
 
-Kui vetorruumis $V$ on antud baas $\{e_1, e_2, \dots, e_n\}$, siis saab
-bilineaarvormi $\blinv \col V^2 \to K$ esitada talle vastava maatriksi
+Kui vetorruumis $\V$ on antud baas $\{e_1, e_2, \dots, e_n\}$, siis saab
+bilineaarvormi $\blinv \col \V \times \V \to K$ esitada talle vastava maatriksi
 $B = (b_{ij})$ abil, kus $b_{ij} = (e_i, e_j)$. Tõepoolest, kui
 meil on antud vektorid $x = \sum_i \lambda^i e_i$ ja $y = \sum_j \mu^j e_j$,
 siis kasutades $\blinv$ lineaarsust mõlema muutuja järgi võime arvutada
 \[ (x, y) = \sum_{i, j} b_{ij} \lambda^i \mu^j. \]
 
-Me ütleme, et bilineaarvorm $\blinv \col V^2 \to K$ on \emph{sümmeetriline} kui
-iga $x, y \in V$ korral $(x, y) = (y, x)$. Selge, et sümmeetrilise
+Me ütleme, et bilineaarvorm $\blinv \col \V \times \V \to K$ on
+\emph{sümmeetriline} kui
+iga $x, y \in \V$ korral $(x, y) = (y, x)$. Selge, et sümmeetrilise
 bilineaarvormi maatriksi $B$ korral kehtib võrdus $B = B^T$. Vormi $\blinv$
-nimetatakse \emph{kaldsümmeetriliseks} kui iga $x, y \in V$ korral kehtib
+nimetatakse \emph{kaldsümmeetriliseks} kui iga $x, y \in \V$ korral kehtib
 võrdus $(x, y) = - (y, x)$. Lihtne on veenduda, et kaldsümmeetrilise
 bilineaarvormi korral rahuldab talle vastav maatriks $B$ seost
 $B^T = -B$.
 
 \begin{dfn}
-    Olgu $V$ vektorruum kus on fikseeritud mingi baas, olgu $\phi$
-    vektorruumi $V$ lineaarteisendus ning olgu $A = (a^i_j)$ on
+    Olgu $\V$ vektorruum kus on fikseeritud mingi baas, olgu $\phi$
+    vektorruumi $\V$ lineaarteisendus ning olgu $A = (a^i_j)$ on
     lineaarteisenduse $\phi$ maatriks fikseeritud baasi suhtes.
     Lineaarteisenduse $\phi$ \emph{jäljeks} nimetatakse kujutust
-    $\Tr_V \col \GL(V) \to K$, kus
-    \[ \Tr_V(A) = \sum_i a^i_i. \]
+    $\Tr_\V \col \GL(\V) \to K$, kus
+    \[ \Tr_\V(A) = \sum_i a^i_i. \]
 \end{dfn}
 
-Juhul kui maatriksi $A$ korral $\Tr_V A = 0$, siis ütleme, et
+Juhul kui maatriksi $A$ korral $\Tr_\V A = 0$, siis ütleme, et
 maatriks $A$ on \emph{jäljeta}.
 
 \begin{naide}
-    On hästi teada, et vektorruumi $V$ kõigi lineaarteisenduste hulk $\Lin V$
-    on ise ka vektorruum, kusjuures kui vektorruumi $V$ dimensioon
-    on $\dim(V) = n$, siis ruumi $\Lin V$ dimendsioon on
-    $\dim \left(\Lin V\right) = n^2$. Kasutades jälge $\Tr_V$ saame
+    On hästi teada, et vektorruumi $\V$ kõigi lineaarteisenduste hulk $\Lin \V$
+    on ise ka vektorruum, kusjuures kui vektorruumi $\V$ dimensioon
+    on $\dim(\V) = n$, siis ruumi $\Lin \V$ dimendsioon on
+    $\dim \left(\Lin \V\right) = n^2$. Kasutades jälge $\Tr_\V$ saame
     defineerida bilineaarvormi
-    $\blinv \col \Lin V \times \Lin V \to K$ järgmiselt:
-    \[ (A, B) = \Tr_V(AB), \]
-    kus $A$ ja $B$ on maatriksid, mis vastavad vektorruumi $\Lin V$
+    $\blinv \col \Lin \V \times \Lin \V \to K$ järgmiselt:
+    \[ (A, B) = \Tr_\V(AB), \]
+    kus $A$ ja $B$ on maatriksid, mis vastavad vektorruumi $\Lin \V$
     teisendustele mingi baasi suhtes. Selge, et selliselt defineeritud
     bilineaarvorm sümmeetriline.
 \end{naide}
@@ -164,7 +166,7 @@ situatsioonides esinevad nad küllaltki sageli, näiteks
 
 Edasises vaatleme ortogonaaseid ja sümplektilisi rühmi ning selleks
 nõuame, et vaatluse all olevad bilineaarvormid oleksid mittesingulaarsed
-ehk regulaarsed, see tähendab kui $(x, y) = 0$ iga $y \in V$ korral, siis
+ehk regulaarsed, see tähendab kui $(x, y) = 0$ iga $y \in \V$ korral, siis
 järelikult $x = 0$. Osutub, et bilineaarvorm $\blinv$ on regulaarne parajasti
 siis, kui temale vastav maatiks $B = (b^i_j)$ on pööratav, mis tähendab,
 et $\det B \neq 0$.
@@ -173,18 +175,18 @@ et $\det B \neq 0$.
     Me ütleme, et lineaarne operaator $\phi$ on \emph{ortogonaalne}
     regulaarse sümmeetrilise bilineaarvormi $\blinv$ suhtes, kui
     \[ (\phi(x), \phi(y)) = (x, y) \]
-    kõikide $x$ ja $y$ korral vektorruumist $V$.
+    kõikide $x$ ja $y$ korral vektorruumist $\V$.
 \end{dfn}
 
 Kui $x$ on ortogonaalse lineaarse operaatori $\phi$ tuumast, siis
-kehtib $\phi(x) = 0$. Viimane aga tähendab, et iga $y \in V$ korral
+kehtib $\phi(x) = 0$. Viimane aga tähendab, et iga $y \in \V$ korral
 $(x, y) = (\phi(x), \phi(y)) = (0, \phi(y)) = 0$. Kokkuvõttes,
 et $\blinv$ on regulaarne, siis järelikult $x = 0$ ja $\phi$ on üks-ühene.
-Kui nüüd veel $V$ on lõplikumõõtmeline, siis peab $\phi$ olema pööratav.
+Kui nüüd veel $\V$ on lõplikumõõtmeline, siis peab $\phi$ olema pööratav.
 Seda arutelu silmas pidades võime öelda, et ortogonaalsed lineaarsed
 operaatorid moodustavad rühma, mida me nimetame \emph{ortogonaalsete
 lineaarteisenduste rühmaks} bilineaarvormi $\blinv$ suhtes.
-Võttes tarvitusele vektorruumi $V$ baasi saame konstrueerida ka
+Võttes tarvitusele vektorruumi $\V$ baasi saame konstrueerida ka
 \emph{ortogonaalsete maatriksite rühma}, mida tähistatakse komplekssel juhul
 kui $\Ort(n, \C)$, kus $n \in \N$ märgib, et tegu on $n \times n$ maatriksitega.
 
@@ -195,12 +197,12 @@ bilineaarvorme.
     Me ütleme, et lineaarne operaator $\phi$ on \emph{sümplektiline}
     regulaarse kaldsümmeetrilise bilineaarvormi $\blinv$ suhtes, kui
     \[ (\phi(x), \phi(y)) = (x, y) \]
-    kõikide $x$ ja $y$ korral vektorruumist $V$.
+    kõikide $x$ ja $y$ korral vektorruumist $\V$.
 \end{dfn}
 
 Märgime, et sümplektilised lineaarteisendused leiduvad ainult sellistes
 vektorruumides, mille dimensioon on paarisarvuline, see tähendab
-$\dim V = 2n$, kus $n \in \N$. Sümplektilised teisendused moodustavad
+$\dim \V = 2n$, kus $n \in \N$. Sümplektilised teisendused moodustavad
 \emph{sümplektiliste rühma}, mida tähistatakse kompleksel juhul
 $\Sp(n, \C)$. Reaalsete sümplektiliste
 teisenduste rühma saame kui vaatleme ühisosa rühmaga $\GL(2n, \R)$:
@@ -276,7 +278,7 @@ teosest \cite{hall2003lie}.
             $\lambda, \mu \in \C$ korral,
         \item\label{om:mat-exp-5} kui $XY = YX$, siis $e^{X+Y} = e^X e^Y = e^Y e^X$,
         \item\label{om:mat-exp-6}  kui $C$ on pööratav, siis $e^{CXC^{-1}} = C e^X C^{-1}$,
-        \item\label{om:mat-exp-7} $\det e^X = e^{\Tr_V X}$.
+        \item\label{om:mat-exp-7} $\det e^X = e^{\Tr_\V X}$.
     \end{enumerate}
 \end{lau}
 
@@ -286,7 +288,8 @@ maatriks. Rühma $\GL(n, \R)$ korral on maatriks $A$ reaalne. Oluline on
 tähele panna, et vaadeldes rühma $\GL(n, \R)$, ei ole eksponentfunktsiooni
 kujutis terve rühm. Selles veenumiseks piisab võtta $n = 1$ ning näha, et
 $\exp \left(\GL(1, \R)\right) = \R^+$, ehk kujutiseks on reaaltelje positiivne
-osa, samas kui $\GL(1, \R) = \R \setminus {0}$ ehk reaaltelg ilma nullpunktita.
+osa, samas kui $\GL(1, \R) = \R \setminus \{0\}$ ehk reaaltelg ilma
+nullpunktita.
 
 Niisiis eksponentkujutust kasutades on oht kaotada rühma globaalne struktuur,
 samas kui lokaalne struktuur säilib.
@@ -297,7 +300,7 @@ $A$ seada mingid lineaarsed kitsendused. Näiteks spetsiaalse lineaarse rühma
 $\SL(n)$ korral võime mittelineaarse tingimuse $e^A$ determinandi kohta
 asendada lineaarse tingimusega maatriksi $A$ jälje kohta kasutades lause
 \ref{lau:mat-exp-om} punkti \ref{om:mat-exp-7}. Nii on näiteks
-$\det e^A = 1$ parajasti siis, kui $\Tr_V A = 0$.
+$\det e^A = 1$ parajasti siis, kui $\Tr_\V A = 0$.
 
 Kokkuvõttes nägime, et eksponentsiaalkujutuse abil on võimalik asendada
 klassikalised maatriksrühmad maatrikshulkadega, millele on seatud
@@ -313,19 +316,19 @@ vaid on kinnised ka teatud binaarse tehte suhtes.
 \subsection{Lie algebra definitsioon}
 
 Enne kui Lie algebra definitsiooni anname tuletame meelde, et \emph{algebraks}
-üle korpuse $K$ nimetatakse vektorruumi $V$ üle korpuse $K$, millel on
-defineeritud bilineaarne korrutamine $V \times V \to V$. Kui algebra
+üle korpuse $K$ nimetatakse vektorruumi $\V$ üle korpuse $K$, millel on
+defineeritud bilineaarne korrutamine $\V \times \V \to \V$. Kui algebra
 tehe rahuldab assotsiatiivsuse tingimust, siis nimetatakse seda algebrat
-assotriatiivsekt ning vastasel korral mitteassotsiatiivseks. Nii on näiteks
-vektorruumi $V$ lineaarteisenduste vektorruum $\Lin V$ assotsiatiivne algebra,
+assotsiatiivsekt ning vastasel korral mitteassotsiatiivseks. Nii on näiteks
+vektorruumi $\V$ lineaarteisenduste vektorruum $\Lin \V$ assotsiatiivne algebra,
 mille tehteks on teisenduste kompositsioon: $f \circ g$. Samas võime
-vektorruumi $\Lin V$ varustada ka teistsuguse korrutamisega ning saada uue
+vektorruumi $\Lin \V$ varustada ka teistsuguse korrutamisega ning saada uue
 algebralise struktuuri, kui võtame tehteks näiteks $f \circ g - g \circ f$.
 Üldiselt selline korrutamine aga enam kommutatiivne ei ole.
 
-\begin{dfn}
+\begin{dfn}[Lie algebra]\label{def:lie-algebra}
     Algebrat $\g$ üle korpuse $K$ nimetatakse \emph{Lie algebraks}, kui
-    tema korrutamine $[\cdot, \cdot] \col V \times V \to V$ rahuldab
+    tema korrutamine $[\cdot, \cdot] \col \V \times \V \to \V$ rahuldab
     kõikide $x, y, z \in \g$ tingimusi
     \begin{gather}
         [x, x] = 0,\label{id:bracket-antisymm} \\
@@ -335,10 +338,11 @@ algebralise struktuuri, kui võtame tehteks näiteks $f \circ g - g \circ f$.
 \end{dfn}
 
 Me ütleme definitsioonis toodud korrutise $[x, y]$ kohta elementide $x$ ja
-$y$ \emph{Lie sulg}, definitsioonis toodud samasust \eqref{id:jacobi}
-nimetatakse \emph{Jacobi samasuseks}. Piltlikult öeldes mõõdab Lie
-sulg algebra elementide mittekommuteeruvust ja seda asjaolu kirjeldavat
-võrdust \eqref{id:bracket-antisymm} võime kirja panna ka kujul
+$y$ \emph{Lie sulg}, ning bilineaarvormi $[\cdot, \cdot]$ kohta öeldakse ka
+\emph{kommutaator}. Definitsioonis toodud samasust \eqref{id:jacobi}
+nimetatakse \emph{Jacobi samasuseks}. Piltlikult öeldes mõõdab kommutaator
+algebra elementide mittekommuteeruvust ja seda asjaolu kirjeldavat võrdust
+\eqref{id:bracket-antisymm} võime kirjutada ka kujul
 \begin{equation}\label{eq:bracket-antisymm}
     [x, y] = -[y, x].
 \end{equation}
@@ -349,6 +353,276 @@ ehk kehtibki $[x, y] = -[y, x]$.
 Rakendades võrdust \eqref{eq:bracket-antisymm} saame Jacobi samasuse
 kirjutada kui
 \begin{equation}
-    \brac{x}{\brac{y}{z}} = \brac{\brac{x}{y}}{z} +
-            \brac{y}{\brac{x}{z}}.
+    \brac{x}{\brac{y}{z}} = \brac{\brac{x}{y}}{z} + \brac{y}{\brac{x}{z}}.
 \end{equation}
+
+\begin{naide}\label{naide:lie-algebra-konstrueerimine}
+    Olgu $\A$ algebra, millel on assotriatiivne korrutustehe
+    $\star \col \A \times \A \to \A$. Defineerides kommutaatori valemiga
+    \begin{align}\label{eq:naide-lie-sulg}
+        [x, y] = x \star y - y \star x,\quad x, y \in \A,
+    \end{align}
+    saame algebrast $\A$ moodustada Lie algebra $\A_L$. Valemist
+    \eqref{eq:naide-lie-sulg} järeldub vahetult, et Lie algebra
+    definitsiooni nõue \eqref{id:bracket-antisymm} kehtib. Jacobi samasuse
+    kehvivuseks märgime, et
+    \begin{align*}
+        &\left[x, \left[y, z\right]\right] + 
+            \left[y, \left[z, x\right]\right] + 
+            \left[z, \left[x, y\right]\right] = \\
+        =& \left[x, y \star z - z \star y \right] + 
+            \left[y, z \star x - x \star z \right] + 
+            \left[z, x \star y - y \star x \right] = \\
+        =& \left[x, y \star z\right] - \left[x, z \star y\right] + 
+            \left[y, z \star x\right] - \left[x, x \star z\right] + 
+            \left[z, x \star y\right] - \left[z, y \star x\right] = \\
+        =&\ x \star y \star z - y \star z \star x - x \star z \star y +
+            z \star y \star x + y \star z \star x - z \star x \star y\, - \\
+         &\ y \star x \star z + x \star z \star y + z \star x \star y -
+            x \star y \star z - z \star y \star x + y \star x \star z = 0,
+    \end{align*}
+    kus $x, y, z \in \A$.
+\end{naide}
+
+Niisiis suvalisest assotsiatiivsest algebrast on võimalik konstrueerida
+Lie algebra. Arvestades, et maatriksite ja lineaarteisenduste korrutamine
+rahuldavad assotsiatiivsuse tingimust, on näites
+\ref{naide:lie-algebra-konstrueerimine} esitatud eeskirja abil
+võimalik kõiki punktis \ref{subsec:mat-ryhmad-ja-bilinvorm} toodud
+rühmi võimalik vaadelda kui Lie algebraid. Märgime, et Lie algebrate
+tähistamiseks kasutatakse tavaliselt väikeseid gooti tähti, seega näiteks
+pööratavate lineaarteisenduste rühmale $\GL(n)$ vastavaks Lie algebraks on
+$\mathfrak{gl(n)}$.
+
+\subsection{Lie algebra struktuurikonstandid}
+
+Eeldame, et järgnevas on meil antud lõplikumõõtmeline Lie algebra $\g$,
+üle korpuse $K$, mille vektorruumil on fikseerutd baas
+$\{ e_1, e_2, \dots, e_n \}$. Siinjuures tuletame meelde, et Lie algebra
+aluseks oleva vektorruumi baasi elemente nimetatakse sageli selle
+Lie algebra \emph{generaatoriteks}. Et Lie sulg
+$[\cdot, \cdot]$ on bilineaarne vorm, siis tema väärtused Lie algebral
+$\g$ on täielikult määratud, kui me teame millega võrduvad
+$[e_\alpha, e_\beta]$, kus $\alpha, \beta \in \{1, 2, \dots, n\}$.
+Tõepoolest, suvalise vektori võime esitada baasivektorite
+$e_1, e_2, \dots, e_n$ lineaarkombinatsioonina ja kõikide vektorite
+$x, y \in \g$ korral leiduvad $a^\alpha, b^\beta \in K$ nii, et
+$x = a^\alpha e_\alpha$ ja $y = b^\beta e_\beta$, kus
+$\alpha, \beta = 1, 2, \dots, n$. Niisiis saame $[x, y]$ välja arvutada
+järgmiselt:
+\begin{align*}
+    [x, y] = [a^\alpha e_\alpha, b^\beta e_\beta] = 
+    a^\alpha b^\beta [e_\alpha, e_\beta].
+\end{align*}
+Iga $\alpha, \beta \in \{1, 2, \dots, n\}$ korral võime omakorda ka
+vektori $[e_\alpha, e_\beta]$ avaldata lineaarkombinatsioonina
+baasivektoritest kujul
+\begin{align*}
+    [e_\alpha, e_\beta] = K_{\alpha \beta}^{\lambda} e_\lambda,
+\end{align*}
+ja seega jääb meile $[x, y]$ arvutamiseks lõpuks võrdus
+\begin{align*}
+    [x, y] = a^\alpha b^\beta K_{\alpha \beta}^{\lambda} e_\lambda.
+\end{align*}
+
+\begin{dfn}
+    Olgu $\g$ lõplikumõõtmeline Lie algebra ning $\{ e_1, e_2, \dots, e_n \}$
+    selle Lie algebra vektorruumi baas. Tähistades
+    $[e_\alpha, e_\beta] = K_{\alpha \beta}^{\lambda} e_\lambda$, kus
+    $\alpha, \beta \in \{1, 2, \dots, n\}$, siis arve
+    $K_{\alpha \beta}^{\lambda}$ nimetatakse Lie algebra $\g$
+    \emph{struktuurikonstantideks}.
+\end{dfn}
+
+Kasutades kommutaatori $[\cdot, \cdot]$ kaldsümmeetrilisust saame
+struktuurikonstantide kohta valemi
+\begin{align}\label{om:str-konst-kald-symm}
+    K_{\alpha \beta}^{\lambda} = -K_{\beta \alpha}^{\lambda}.
+\end{align}
+Jacobi samasuse abil saame veel teisegi tingimuse, mida struktuurikonstandid
+rahuldama peavad.
+\begin{align*}
+    \left[e_\alpha, \left[ e_\beta, e_\gamma \right] \right] +
+    \left[e_\beta, \left[ e_\gamma, e_\alpha \right] \right] +
+    \left[e_\gamma, \left[ e_\alpha, e_\beta \right] \right] = 0, \\
+    %
+    \left[e_\alpha, K_{\beta \gamma}^{\lambda} e_\lambda \right] +
+    \left[e_\beta, K_{\gamma \alpha}^{\lambda} e_\lambda \right] +
+    \left[e_\gamma, K_{\alpha \beta}^{\lambda} e_\lambda \right] = 0, \\
+    %
+    K_{\beta \gamma}^{\lambda} \left[e_\alpha, e_\lambda \right] +
+    K_{\gamma \alpha}^{\lambda} \left[e_\beta, e_\lambda \right] +
+    K_{\alpha \beta}^{\lambda} \left[e_\gamma, e_\lambda \right] = 0, \\
+    %
+    K_{\beta \gamma}^{\lambda} K_{\alpha \lambda}^{\mu} e_{\mu} +
+    K_{\gamma \alpha}^{\lambda} K_{\beta \lambda}^{\mu} e_{\mu} +
+    K_{\alpha \beta}^{\lambda} K_{\gamma \lambda}^{\mu} e_{\mu} = 0, \\
+    %
+    K_{\beta \gamma}^{\lambda} K_{\alpha \lambda}^{\mu} +
+    K_{\gamma \alpha}^{\lambda} K_{\beta \lambda}^{\mu} +
+    K_{\alpha \beta}^{\lambda} K_{\gamma \lambda}^{\mu} = 0.
+\end{align*}
+
+\begin{naide}
+    Vaatleme eespool näiteks toodud spetsiaalsete unitaarsete maatriksite
+    rühma $\SU(n)$ erijuhul $n = 2$. Rühmale $\SU(2)$ vastab Lie algebra
+    $\su(2)$, mille
+    element $x \in \su(2)$ rahuldab tingimusi
+    \begin{align}
+        \Tr x = 0,\label{eq:su2-ting1} \\
+        x^\dag + x = 0.\label{eq:su2-ting2}
+    \end{align}
+
+    Tingimuste \eqref{eq:su2-ting1} ja \eqref{eq:su2-ting2} põhjal
+    on võimalik näidata, et Lie algebra $\su(2)$ generaatoriteks
+    on maatriksid
+    \begin{align*}
+        \rho_1 = \begin{pmatrix}
+            0 & i \\
+            i & 0
+        \end{pmatrix},
+        \quad
+        \rho_2 = \begin{pmatrix}
+            0 & 1 \\
+            -1 & 0
+        \end{pmatrix},
+        \quad
+        \rho_3 = \begin{pmatrix}
+            i & 0 \\
+            0 & -i
+        \end{pmatrix},
+    \end{align*}
+    nagu võib näha bakalaureusetöös \cite{latt2013}.
+
+    Arvutame Lie algebra $\su(2)$ generaatoritel Lie sulu väärtused
+    ja leiame seeläbi struktuurikonstandid. Ilmselt kõik suvalise
+    $\alpha \in \{1, 2, 3\}$ korral $[\rho_\alpha, \rho_\alpha] = 0$.
+    Arvestades veel omadust \eqref{om:str-konst-kald-symm} on meile
+    huvi pakkuvad kommutaatorid on vaid kujul
+    $[\rho_\alpha, \rho_\beta]$, kus $\alpha < \beta$.
+    \begin{align*}
+        [\rho_1, \rho_2] &= \rho_1 \rho_2 - \rho_2 \rho_1 =
+            \begin{pmatrix}
+                -2i &  0 \\
+                  0 & 2i
+            \end{pmatrix} = -2 \rho_3, \\[0.1cm]
+        [\rho_1, \rho_3] &= \rho_1 \rho_3 - \rho_3 \rho_1 =
+            \begin{pmatrix}
+                 0 & 2 \\
+                -2 & 0
+            \end{pmatrix} = 2 \rho_2, \\[0.1cm]
+        [\rho_2, \rho_3] &= \rho_2 \rho_3 - \rho_3 \rho_2 =
+            \begin{pmatrix}
+                  0 & -2i \\
+                -2i & 0
+            \end{pmatrix} = -2 \rho_1.
+    \end{align*}
+
+    Seega antud baasi suhtes on nullist erinevad struktuurikonstandid
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $K_{12}^{3} = -2$,
+            \item $K_{21}^{3} = 2$,
+            %
+            \item $K_{13}^{2} = 2$,
+            \item $K_{31}^{2} = -2$,
+            %
+            \item $K_{23}^{1} = -2$,
+            \item $K_{32}^{1} = 2$.
+        \end{enumerate}
+    \end{multicols}
+
+    Valides näiteks
+    \begin{align*}
+        x = \begin{pmatrix}
+              3i & 7+i \\
+            -7+i & -3i
+        \end{pmatrix}
+        \quad\quad \text{ja} \quad\quad
+        y = \begin{pmatrix}
+            i & 5 + 2i \\
+            -5+2i &     -i
+        \end{pmatrix},
+    \end{align*}
+    siis $x, y  \in \su(2)$, ja saame arvutada Lie sulu $[x, y]$.
+    Nüüd ühelt poolt vahetu arvutuse tulemusena
+    \begin{align*}
+        [x, y] &= xy - yx =
+            \begin{pmatrix}
+                -40+9i &  -5+8i \\
+                  5+8i & -40-9i
+            \end{pmatrix} - 
+            \begin{pmatrix}
+                -40-9i &   5-8i \\
+                 -5-8i & -40+9i
+            \end{pmatrix} = \\[0.1cm]
+            &= \begin{pmatrix}
+                   18i & -10+16i \\
+                10+16i &    -18i
+            \end{pmatrix},
+    \end{align*}
+    kuid teisalt $x = \rho_1 + 7\rho_2 + 3\rho_3$ ja
+    $y = 2\rho_1 + 5\rho_2 + \rho_3$, ning saame kasutada
+    struktuurikonstante:
+    \begin{align*}
+        [x, y] &= [\rho_1 + 7\rho_2 + 3\rho_3,
+                  2\rho_1 + 5\rho_2 + \rho_3] = \\
+        &= 2[\rho_1, \rho_1] + 5[\rho_1, \rho_2] + [\rho_1, \rho_3] +
+            14[\rho_2, \rho_1] + 35[\rho_2, \rho_2] +
+            7[\rho_2, \rho_3] + \\
+        &\phantom{=}\, \ 6[\rho_3, \rho_1] + 15[\rho_3, \rho_2] +
+            3[\rho_3, \rho_3] = \\
+        &= 5[\rho_1, \rho_2] + [\rho_1, \rho_3] - 14[\rho_1, \rho_2] +
+            7[\rho_2, \rho_3] - 6[\rho_1, \rho_3] -
+            15[\rho_2, \rho_3] = \\
+        &= -9[\rho_1, \rho_2] -5[\rho_1, \rho_3] -
+            8[\rho_2, \rho_3] = \\
+        &= -9 K_{12}^{\lambda} \rho_\lambda
+           -5 K_{13}^{\lambda} \rho_\lambda
+           -8 K_{23}^{\lambda} \rho_\lambda = \\
+        &= -9 K_{12}^{3} \rho_3
+           -5 K_{13}^{2} \rho_2
+           -8 K_{23}^{1} \rho_1 = \\
+        &= -9 \cdot (-2) \rho_3
+           -5 \cdot 2 \rho_2
+           -8 \cdot (-2) \rho_1 = \\
+        &= 16 \rho_1 - 10 \rho_2 + 18 \rho_3 = \\[0.1cm]
+        &= \begin{pmatrix}
+               18i & -10+16i \\
+            10+16i &    -18i
+        \end{pmatrix}.
+    \end{align*}
+
+    Ootuspäraselt annavad mõlemad variandid sama tulemuse, kuid teise
+    variandi puhul ei soorita me kordagi selle algebra korrutustehet.
+\end{naide}
+
+Ilmselt sõltuvad Lie algebra struktuurikonstandid algebra vektorruumi
+baasist. Olgu $\{ e_1, e_2, \dots, e_n \}$ ja
+$\{ \hat{e}_1, \hat{e}_2, \dots, \hat{e}_n \}$ Lie algebra $\g$
+vektorruumi kaks erinevad baasi, ning olgu nad omavahel järgmises
+seoses:
+\begin{align}\label{eq:str-konst-baasi-yleminek-1}
+    \hat{e}_\alpha = a_\alpha^\lambda e_\lambda.
+\end{align}
+
+Siis
+\begin{align}\label{eq:str-konst-baasi-yleminek-2}
+    \hat{K}_{\alpha \beta}^{\xi} \hat{e}_\xi = 
+    [\hat{e}_\alpha, \hat{e}_\beta] =
+    [a_\alpha^\mu e_\mu, a_\beta^\nu e_\nu] =
+    a_\alpha^\mu a_\beta^\nu [e_\mu, e_\nu] =
+    a_\alpha^\mu a_\beta^\nu K_{\mu \nu}^{\lambda} e_\lambda.
+\end{align}
+Kui võrduste ahela \eqref{eq:str-konst-baasi-yleminek-2} kõige
+vasakpoolsemas osas kasutada samasust
+\eqref{eq:str-konst-baasi-yleminek-1}, siis kehtib
+\begin{align*}
+    \hat{K}_{\alpha \beta}^{\xi} a_\xi^\lambda e_\lambda =
+    a_\alpha^\mu a_\beta^\nu K_{\mu \nu}^{\lambda} e_\lambda,
+\end{align*}
+millest kokkuvõttes saame valemi
+\begin{align*}
+    a_\xi^\lambda \hat{K}_{\alpha \beta}^{\xi} =
+    a_\alpha^\mu a_\beta^\nu K_{\mu \nu}^{\lambda}.
+\end{align*}

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-REFERENCES=references.bib
 LITERATURE_DIR=literature
 
 append_bib () {
@@ -9,10 +8,7 @@ append_bib () {
 	echo >> references.bib
 }
 
-touch $REFERENCES
-rm $REFERENCES
-touch $REFERENCES
+echo > references.bib
 
 export -f append_bib
 find -L $LITERATURE_DIR -name "*.bib*" -exec bash -c 'append_bib "{}"' \;
-

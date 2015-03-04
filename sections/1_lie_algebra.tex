@@ -51,9 +51,13 @@ Järgnevas teeme põgusa sissejuhatuse klassikalisse Lie teooriasse.
 Meenutame, et \emph{lineaarkujutus}
 $\phi \col \V_1 \to \V_2$ vektorruumist $\V_1$ vektorruumi $\V_2$ säilitab
 vektorite liitmise ja skalaariga korrutamise, see tähendab
-\[ \phi(x + y) = \phi(x) + \phi(y), \]
+\begin{align}
+    \phi(x + y) = \phi(x) + \phi(y),
+\end{align}
 ning
-\[ \phi(\lambda x) = \lambda \phi(x), \]
+\begin{align}
+    \phi(\lambda x) = \lambda \phi(x),
+\end{align}
 kus $x, y \in \V_1$ ja $\lambda$ on skalaar. Kui vektorruumid $\V_1$ ja $\V_2$
 langevad kokku, siis ütleme me kujutuse $\phi$ kohta \emph{lineaarteisendus}.
 
@@ -78,7 +82,9 @@ edaspidi lineaarteisenduste rühmade asemel rääkida \emph{maatriksrühmadest}.
 Kui $\{e_1, e_2, \dots, e_n\}$ moodustab vektorruumi $\V$ baasi ning
 $\phi \col \V \to \V$ on mingi lineaarteisendus, siis talle vastav maatriks
 selle baasi suhtes on $(a^i_j)$, mis on määratud valemiga
-\[ \phi(e_j) = \sum_{i=1}^{n} a^i_j e_i. \]
+\begin{align}
+    \phi(e_j) = \sum_{i=1}^{n} a^i_j e_i.
+\end{align}
 
 Selge, et vaadeldes rühmi $\GL(\V)$ ja $\SL(\V)$ maatriksrühmadena
 on rühma tehteks juba tavaline maatriksite korrutamine. Ilmselt saab
@@ -97,9 +103,13 @@ $A^T = A^{-1}$. Teise näitena võib tuua unitaarsete maatriksite rühma $\U(n)$
 mille elementideks on anti-Hermite'i maatriksid $A$, mis rahuldavad tingimust
 $A^\dag = \overline{A}^T = -A$. Edasi on lihtne konstrueerida saadud alamrühmade
 \emph{spetsiaalsed} variandid. \emph{Spetsiaalsete komplekssete ortogonaalmaatriksite rühm} on
-\[ \SO(n, \C) = \Ort(n, \C) \cap \SL(n, \C), \]
+\begin{align}
+    \SO(n, \C) = \Ort(n, \C) \cap \SL(n, \C),
+\end{align}
 ja \emph{spetsiaalsete unitaarsete maatriksite rühmaks} on
-\[ \SU(n) = \U(n) \cap \SL(n, \C). \]
+\begin{align}
+    \SU(n) = \U(n) \cap \SL(n, \C).
+\end{align}
 
 \begin{dfn}
     Olgu $\V$ vektorruum üle korpuse $K$. Kujutust
@@ -117,7 +127,9 @@ bilineaarvormi $\blinv \col \V \times \V \to K$ esitada talle vastava maatriksi
 $B = (b_{ij})$ abil, kus $b_{ij} = (e_i, e_j)$. Tõepoolest, kui
 meil on antud vektorid $x = \sum_i \lambda^i e_i$ ja $y = \sum_j \mu^j e_j$,
 siis kasutades $\blinv$ lineaarsust mõlema muutuja järgi võime arvutada
-\[ (x, y) = \sum_{i, j} b_{ij} \lambda^i \mu^j. \]
+\begin{align}
+    (x, y) = \sum_{i, j} b_{ij} \lambda^i \mu^j.
+\end{align}
 
 Me ütleme, et bilineaarvorm $\blinv \col \V \times \V \to K$ on
 \emph{sümmeetriline} kui
@@ -134,7 +146,9 @@ $B^T = -B$.
     lineaarteisenduse $\phi$ maatriks fikseeritud baasi suhtes.
     Lineaarteisenduse $\phi$ \emph{jäljeks} nimetatakse kujutust
     $\Tr_\V \col \GL(\V) \to K$, kus
-    \[ \Tr_\V(A) = \sum_i a^i_i. \]
+    \begin{align}
+        \Tr_\V(A) = \sum_i a^i_i.
+    \end{align}
 \end{dfn}
 
 Juhul kui maatriksi $A$ korral $\Tr_\V A = 0$, siis ütleme, et
@@ -147,7 +161,9 @@ maatriks $A$ on \emph{jäljeta}.
     $\dim \left(\Lin \V\right) = n^2$. Kasutades jälge $\Tr_\V$ saame
     defineerida bilineaarvormi
     $\blinv \col \Lin \V \times \Lin \V \to K$ järgmiselt:
-    \[ (A, B) = \Tr_\V(AB), \]
+    \begin{align}
+        (A, B) = \Tr_\V(AB),
+    \end{align}
     kus $A$ ja $B$ on maatriksid, mis vastavad vektorruumi $\Lin \V$
     teisendustele mingi baasi suhtes. Selge, et selliselt defineeritud
     bilineaarvorm sümmeetriline.
@@ -174,7 +190,9 @@ et $\det B \neq 0$.
 \begin{dfn}
     Me ütleme, et lineaarne operaator $\phi$ on \emph{ortogonaalne}
     regulaarse sümmeetrilise bilineaarvormi $\blinv$ suhtes, kui
-    \[ (\phi(x), \phi(y)) = (x, y) \]
+    \begin{align}
+        (\phi(x), \phi(y)) = (x, y)
+    \end{align}
     kõikide $x$ ja $y$ korral vektorruumist $\V$.
 \end{dfn}
 
@@ -196,7 +214,9 @@ bilineaarvorme.
 \begin{dfn}
     Me ütleme, et lineaarne operaator $\phi$ on \emph{sümplektiline}
     regulaarse kaldsümmeetrilise bilineaarvormi $\blinv$ suhtes, kui
-    \[ (\phi(x), \phi(y)) = (x, y) \]
+    \begin{align}
+        (\phi(x), \phi(y)) = (x, y)
+    \end{align}
     kõikide $x$ ja $y$ korral vektorruumist $\V$.
 \end{dfn}
 
@@ -206,8 +226,9 @@ $\dim \V = 2n$, kus $n \in \N$. Sümplektilised teisendused moodustavad
 \emph{sümplektiliste rühma}, mida tähistatakse kompleksel juhul
 $\Sp(n, \C)$. Reaalsete sümplektiliste
 teisenduste rühma saame kui vaatleme ühisosa rühmaga $\GL(2n, \R)$:
-\[ \Sp(n, \R) = \Sp(n, \C) \cap \GL(2n, \R). \]
-
+\begin{align}
+    \Sp(n, \R) = \Sp(n, \C) \cap \GL(2n, \R).
+\end{align}
 
 \subsection{Eksponentsiaalkujutus}
 
@@ -250,10 +271,10 @@ et $n \times n$ maatriksi $X = (X_{ij})$ normi arvutatakse valemi
 järgi. Arvestades, et $\| XY \| \le \|X\| \|Y\|$, siis $\|X^k\| \le \|X\|^k$.
 Rakendades nüüd normi \eqref{eq:mat-norm} rea \eqref{eq:mat-exp} liikmetele
 saame
-\begin{align*}
+\begin{align}
     \sum_{k=0}^\infty \left\lVert \frac{X^k}{k!} \right\rVert \le
     \sum_{k=0}^\infty \frac{\|X\|^k}{k!} = e^{\|X\|} < \infty,
-\end{align*}
+\end{align}
 mis tähendab, et rida \eqref{eq:mat-exp} koondub absoluutselt ja seega
 ta ka koondub. Märkamaks, et $e^X$ on pidev funktsioon märgime esiteks,
 et $X^k$ on argumendi $X$ suhtes pidev funktsioon ja seega on rea
@@ -410,20 +431,20 @@ $x, y \in \g$ korral leiduvad $a^\alpha, b^\beta \in K$ nii, et
 $x = a^\alpha e_\alpha$ ja $y = b^\beta e_\beta$, kus
 $\alpha, \beta = 1, 2, \dots, n$. Niisiis saame $[x, y]$ välja arvutada
 järgmiselt:
-\begin{align*}
+\begin{align}
     [x, y] = [a^\alpha e_\alpha, b^\beta e_\beta] = 
     a^\alpha b^\beta [e_\alpha, e_\beta].
-\end{align*}
+\end{align}
 Iga $\alpha, \beta \in \{1, 2, \dots, n\}$ korral võime omakorda ka
 vektori $[e_\alpha, e_\beta]$ avaldata lineaarkombinatsioonina
 baasivektoritest kujul
-\begin{align*}
+\begin{align}
     [e_\alpha, e_\beta] = K_{\alpha \beta}^{\lambda} e_\lambda,
-\end{align*}
+\end{align}
 ja seega jääb meile $[x, y]$ arvutamiseks lõpuks võrdus
-\begin{align*}
+\begin{align}
     [x, y] = a^\alpha b^\beta K_{\alpha \beta}^{\lambda} e_\lambda.
-\end{align*}
+\end{align}
 
 \begin{dfn}
     Olgu $\g$ lõplikumõõtmeline Lie algebra ning $\{ e_1, e_2, \dots, e_n \}$
@@ -441,7 +462,7 @@ struktuurikonstantide kohta valemi
 \end{align}
 Jacobi samasuse abil saame veel teisegi tingimuse, mida struktuurikonstandid
 rahuldama peavad.
-\begin{align*}
+\begin{align}
     \left[e_\alpha, \left[ e_\beta, e_\gamma \right] \right] +
     \left[e_\beta, \left[ e_\gamma, e_\alpha \right] \right] +
     \left[e_\gamma, \left[ e_\alpha, e_\beta \right] \right] = 0, \\
@@ -461,7 +482,7 @@ rahuldama peavad.
     K_{\beta \gamma}^{\lambda} K_{\alpha \lambda}^{\mu} +
     K_{\gamma \alpha}^{\lambda} K_{\beta \lambda}^{\mu} +
     K_{\alpha \beta}^{\lambda} K_{\gamma \lambda}^{\mu} = 0.
-\end{align*}
+\end{align}
 
 \begin{naide}
     Vaatleme eespool näiteks toodud spetsiaalsete unitaarsete maatriksite
@@ -476,7 +497,7 @@ rahuldama peavad.
     Tingimuste \eqref{eq:su2-ting1} ja \eqref{eq:su2-ting2} põhjal
     on võimalik näidata, et Lie algebra $\su(2)$ generaatoriteks
     on maatriksid
-    \begin{align*}
+    \begin{align}
         \rho_1 = \begin{pmatrix}
             0 & i \\
             i & 0
@@ -491,7 +512,7 @@ rahuldama peavad.
             i & 0 \\
             0 & -i
         \end{pmatrix},
-    \end{align*}
+    \end{align}
     nagu võib näha bakalaureusetöös \cite{latt2013}.
 
     Arvutame Lie algebra $\su(2)$ generaatoritel Lie sulu väärtused
@@ -500,25 +521,27 @@ rahuldama peavad.
     Arvestades veel omadust \eqref{om:str-konst-kald-symm} on meile
     huvi pakkuvad kommutaatorid on vaid kujul
     $[\rho_\alpha, \rho_\beta]$, kus $\alpha < \beta$.
-    \begin{align*}
+    \begin{align}
         [\rho_1, \rho_2] &= \rho_1 \rho_2 - \rho_2 \rho_1 =
             \begin{pmatrix}
                 -2i &  0 \\
                   0 & 2i
-            \end{pmatrix} = -2 \rho_3, \\[0.1cm]
+            \end{pmatrix} = -2 \rho_3, \label{eq:str-konst-naide-brac-1}\\[0.1cm]
         [\rho_1, \rho_3] &= \rho_1 \rho_3 - \rho_3 \rho_1 =
             \begin{pmatrix}
                  0 & 2 \\
                 -2 & 0
-            \end{pmatrix} = 2 \rho_2, \\[0.1cm]
+            \end{pmatrix} = 2 \rho_2, \label{eq:str-konst-naide-brac-2}\\[0.1cm]
         [\rho_2, \rho_3] &= \rho_2 \rho_3 - \rho_3 \rho_2 =
             \begin{pmatrix}
                   0 & -2i \\
                 -2i & 0
-            \end{pmatrix} = -2 \rho_1.
-    \end{align*}
+            \end{pmatrix} = -2 \rho_1. \label{eq:str-konst-naide-brac-3}
+    \end{align}
 
-    Seega antud baasi suhtes on nullist erinevad struktuurikonstandid
+    Seega võrduste \eqref{eq:str-konst-naide-brac-1},
+    \eqref{eq:str-konst-naide-brac-2} ja \eqref{eq:str-konst-naide-brac-3}
+    põhjal on antud baasi suhtes nullist erinevad struktuurikonstandid
     \begin{multicols}{3}
         \begin{enumerate}
             \item $K_{12}^{3} = -2$,
@@ -533,18 +556,16 @@ rahuldama peavad.
     \end{multicols}
 
     Valides näiteks
-    \begin{align*}
-        x = \begin{pmatrix}
+        $x = \begin{pmatrix}
               3i & 7+i \\
             -7+i & -3i
-        \end{pmatrix}
-        \quad\quad \text{ja} \quad\quad
-        y = \begin{pmatrix}
+        \end{pmatrix}$
+        ja
+        $y = \begin{pmatrix}
             i & 5 + 2i \\
             -5+2i &     -i
-        \end{pmatrix},
-    \end{align*}
-    siis $x, y  \in \su(2)$, ja saame arvutada Lie sulu $[x, y]$.
+        \end{pmatrix}$,
+    siis ilmselt $x, y  \in \su(2)$, ja saame arvutada Lie sulu $[x, y]$.
     Nüüd ühelt poolt vahetu arvutuse tulemusena
     \begin{align*}
         [x, y] &= xy - yx =
@@ -617,12 +638,12 @@ Siis
 Kui võrduste ahela \eqref{eq:str-konst-baasi-yleminek-2} kõige
 vasakpoolsemas osas kasutada samasust
 \eqref{eq:str-konst-baasi-yleminek-1}, siis kehtib
-\begin{align*}
+\begin{align}
     \hat{K}_{\alpha \beta}^{\xi} a_\xi^\lambda e_\lambda =
     a_\alpha^\mu a_\beta^\nu K_{\mu \nu}^{\lambda} e_\lambda,
-\end{align*}
+\end{align}
 millest kokkuvõttes saame valemi
-\begin{align*}
+\begin{align}
     a_\xi^\lambda \hat{K}_{\alpha \beta}^{\xi} =
     a_\alpha^\mu a_\beta^\nu K_{\mu \nu}^{\lambda}.
-\end{align*}
+\end{align}

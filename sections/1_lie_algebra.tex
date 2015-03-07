@@ -359,10 +359,21 @@ algebralise struktuuri, kui võtame tehteks näiteks $f \circ g - g \circ f$.
     \end{gather}
 \end{dfn}
 
+
 Me ütleme definitsioonis toodud korrutise $[x, y]$ kohta elementide $x$ ja
 $y$ \emph{Lie sulg}, ning bilineaarvormi $[\cdot, \cdot]$ kohta öeldakse ka
 \emph{kommutaator}. Definitsioonis toodud samasust \eqref{id:jacobi}
-nimetatakse \emph{Jacobi samasuseks}. Piltlikult öeldes mõõdab kommutaator
+nimetatakse \emph{Jacobi samasuseks}. Sageli on otstarbekas tähistada Lie
+algebrat $\g$ paarina $(\g, [\cdot, \cdot])$.
+
+\begin{markus}
+    Paljudes käsitlustes antakse Lie algebrale veidi üldisem definitsioon,
+    kui algebrat $\g$ ei vaaldeda mitte vektorruumina üle korpuse,
+    vaid moodulina üle ringi, nagu seda on tehtud näiteks viites
+    \cite{bourbaki1989lie}.
+\end{markus}
+
+Piltlikult öeldes mõõdab kommutaator
 algebra elementide mittekommuteeruvust ja seda asjaolu kirjeldavat võrdust
 \eqref{id:bracket-antisymm} võime kirjutada ka kujul
 \begin{equation}\label{eq:bracket-antisymm}
@@ -416,7 +427,7 @@ tähistamiseks kasutatakse tavaliselt väikeseid gooti tähti, seega näiteks
 pööratavate lineaarteisenduste rühmale $\GL(n)$ vastavaks Lie algebraks on
 $\mathfrak{gl(n)}$.
 
-\subsection{Lie algebra struktuurikonstandid}
+\subsection{Struktuurikonstandid}
 
 Eeldame, et järgnevas on meil antud lõplikumõõtmeline Lie algebra $\g$,
 üle korpuse $K$, mille vektorruumil on fikseerutd baas
@@ -648,3 +659,88 @@ millest kokkuvõttes saame valemi
     a_\xi^\lambda \hat{K}_{\alpha \beta}^{\xi} =
     a_\alpha^\mu a_\beta^\nu K_{\mu \nu}^{\lambda}.
 \end{align*}
+
+\subsection{Esitused}
+
+Olgu $(\g_1, [\cdot, \cdot]_{\g_1})$ ja $(\g_2, [\cdot, \cdot]_{\g_2})$ Lie
+algebrad. Lineaarkujutust $\varphi \col \g_1 \to \g_2$ nimetatakse
+Lie algebrate \emph{homomorfismiks}, kui ta säilitab kommutaatori, see
+tähendab iga $x, y \in \g_1$ korral kehtib võrdus
+\begin{align*}
+    \varphi([x, y]_{\g_1}) = [\varphi(x), \varphi(y)]_{\g_2}.
+\end{align*}
+Homomorfismi $\varphi$ nimetatakse Lie algebrate \emph{isomorfismiks},
+kui $\varphi$ on ka üks-ühene ning pealekujutus. Klassikalisel viisil on
+defineeritud ka Lie algebrate \emph{endomorfismi} ning \emph{automorfismi}
+mõisted.
+
+Homomorfismi mõiste viib meid väga tähtsa osani Lie algebrate teoorias,
+milleks on \emph{esitused}.
+
+\begin{dfn}
+    Olgu $\g$ Lie algebra ja $\V$ vektorruum. Siis nimetatakse homomorfismi
+    $\varphi \col \g \to \gl(\V)$ Lie algebra $\g$ \emph{esituseks}
+    vektorruumile $\V$.
+\end{dfn}
+
+Esiteks paneme tähele, et selline definitsioon omab mõtet, kuna
+eelneva arutelu põhjal on selge, et $\gl(\V)$ on tõepoolest Lie algebra.
+Niisiis on $\g$ esitus vektorruumil $\V$ lineaarne kujutus $\varphi$
+Lie algebrast $\g$ vektorruumi $\V$ endomorfismide ringi nii, et
+\begin{align*}
+    \varphi([x, y])(v) = \left( \varphi(x)\varphi(y) \right) (v) -
+                         \left( \varphi(y)\varphi(x) \right) (v),
+\end{align*}
+kõikide $x, y \in \g$ ja $v \in \V$ korral. Me ütleme, et esitus $\varphi$
+on \emph{täpne}, kui $\varphi(x) = 0$ siis ja ainult siis, kui $x = 0$. Teisi
+sõnu on esitus täpne parajasti siis, kui ta on üks-ühene.
+
+\begin{naide}\label{naide:adjoint-repr}
+    Olgu $\g$ Lie algebra. Vaatleme lineaarset kujutust
+    \begin{align*}
+        \ad \col \g \ni x \mapsto \ad_x \in \gl(\g),
+    \end{align*}
+    mis on $y \in \g$ korral on defineeritud eeskirjaga
+    \begin{align}\label{def:ad}
+        \ad_x(y) = [x, y].
+    \end{align}
+    Kujutus $\ad \col \g \to \gl(\g)$ on Lie algebra $\g$ esitus. Seda esitust
+    nimetatakse $\g$ \emph{adjungeeritud esituseks}. Märkamaks, et $\ad$ on
+    tõepoolest esitus märgime kõigepealt, et arvestades eeskirja
+    \eqref{def:ad} ning kommutaatori lineaarsust, on kujutuse $\ad$
+    lineaarsus ilmne. Veendumaks, et kujutus $\ad \col \g \to \gl(\g)$ on
+    esitus tuleb kontrollida, et iga $x, y, z \in \g$ korral kehtiks võrdus
+    $\left[ \ad_x, \ad_y \right](z) = \ad_{[x, y]}(z)$, mille saame Jaboci
+    samasusest \eqref{id:jacobi}.
+    \begin{align*}
+        0 &= \brac{x}{\brac{y}{z}} + \brac{y}{\brac{z}{x}} +
+             \brac{z}{\brac{x}{y}} = \\
+          &= \brac{x}{\brac{y}{z}} + \brac{y}{-\brac{x}{z}} -
+             \brac{\brac{x}{y}}{z} = \\
+          &= \brac{x}{\brac{y}{z}} - \brac{y}{\brac{x}{z}} -
+             \brac{\brac{x}{y}}{z}
+    \end{align*}
+    ehk $\brac{x}{\brac{y}{z}} - \brac{y}{\brac{x}{z}} = \brac{\brac{x}{y}}{z}$.
+    Nüüd, et Lie algebras $\gl(\g)$ arvutatakse kommutaatori
+    väärtusi eeskirja
+    $[\ad_x, \ad_y] = \ad_x \circ \ad_y - \ad_y \circ \ad_x$ järgi, siis
+    \begin{align*}
+        [\ad_x, \ad_y](z) = \brac{x}{\brac{y}{z}} - \brac{y}{\brac{x}{z}} =
+        \brac{\brac{x}{y}}{z} = \ad_{\brac{x}{y}}(z).
+    \end{align*}
+\end{naide}
+
+Esituste teooria üheks väga oluliseks tulemuseks on nõndanimetatud
+\emph{Ado teoreem}, mis väidab, et iga lõplikumõõtmeline Lie algebra $\g$
+on Lie alebra $\gl(\V)$ alamalgebra, kus $\V$ on mingi lõplikumõõtmeline
+vektorruum. Niisiis, Lie algebrat $\g$ on tegelikult võimalik vaadelda kui
+maatriksalgebrat.\cite{hall2003lie}
+
+\begin{thm}[Ado, 1935]
+    Iga lõplikumõõtmeline Lie algebra üle nullkarakteristikaga korpuse omab
+    täpset lõplikumõõtmelist esitust.
+\end{thm}
+
+Tegelikult kehtib ka Ado teoreemi oluliselt tugevam variant,
+kus on kaotatud eeldus korpuse nullkarakteristika
+kohta.\cite{hochschild1966}

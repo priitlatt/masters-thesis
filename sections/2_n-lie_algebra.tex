@@ -1,0 +1,173 @@
+%!TEX root = ../thesis.tex
+
+%%%%%%%%%%%%%%%%%%%%
+%% n-Lie algebra  %%
+%%%%%%%%%%%%%%%%%%%%
+
+\section{\texorpdfstring{$n$}\ -Lie algebra}
+
+Selles peatüki eesmärgiks on klassikalise Lie algebra
+üldistame, mille käigus toome sisse $n$-Lie algebra mõiste.
+Edasi tutvustame artiklis \cite{AMS:2011} näidatud eeskirja,
+mille abil on võimalik Lie algebrast konstrueerida
+ternaarne Lie algebra ning jätkame seda teooriaarendust
+tuginedes artiklile \cite{AKMS:2014}, kus kirjeldatakse
+kuidas $n$-Lie algebrast indutseerida $(n+1)$-Lie algebra, ja
+tõestame sellega seonduvad põhilised tulemused.
+
+\subsection{\texorpdfstring{$n$}\ -Lie algebra definitsioon}
+
+Lie algebra definitsioonis on kesksel kohal kaldsümmeetriline
+bilineaarne korrutustehe, mis rahuldab Jacobi samasust.
+Üheks viisiks Lie algebra mõistet üldistada, ongi just nimelt
+tema korrutamise üldistamine. Seda tehes on loomulik nõuda, et
+ka üldistatud korrutamistehe rahuldaks kaldsümmeetrilisuse
+tingimust ning Jacobi samasust, või vähemalt selle mingit
+analoogi, mis annaks klassikalisel juhul täpselt
+Jacobi samasuse.
+
+Filippov\footnote{Aleksei Fedorovich Filippov (1923 -- 2006),
+vene matemaatik} näitas aastal 1985 artikis \cite{filippov1985}
+$n$-Lie algebrate klassi, kus bilineaarne korrutamine on
+asendatud $n$-lineaarse kaldsümmeetrilise operatsiooniga,
+mis rahuldab teatud samasust.\cite{kasymov1987}
+Tänaseks on just see, Nambu mehaanikast välja kasvanud
+üldistus osutunud üheks põhiliseks Lie algebrate edasiseks
+uurimissuunaks.
+
+\begin{dfn}[$n$-Lie algebra]
+    Vektorruumi $\A$ nimetatakse \emph{$n$-Lie algebraks}, kui
+    on määratud $n$-lineaarne kaldsümmeetriline kujutus
+    $\nbrac{\cdot}{\cdot} \colon \A^n \to \A$, mis
+    suvaliste
+    \[ x_1, \dots, x_{n-1}, y_1, \dots, y_n \in \A \]
+    korral rahuldab tingimust
+    \begin{align}\label{id:filippov}
+        \left[ x_1, \dots, x_{n-1}, \nbrac{y_1}{y_n} \right] =
+        \sum_{i=1}^n \left[
+            y_1, \dots, \left[ x_1, \dots, x_{n-1}, y_i \right], \dots, y_n
+        \right].
+    \end{align}
+\end{dfn}
+
+Võrdust \eqref{id:filippov} $n$-Lie algebra definitsiooniks
+nimetatakse üldistatud Jacobi samasuseks või ka
+\emph{Filippovi samasuseks}. Vahetu kontrolli põhjal
+on selge, et valides $n = 2$, saame Filippovi samasusest
+\eqref{id:filippov} Jacobi samasuse \eqref{id:jacobi}.
+$n$-aarse Lie sulu kaldsümmeetrilisus tähendab, et
+suvaliste $x_1, x_2, \dots, x_n \in \A$ korral
+\begin{align*}
+    [x_1, \dots, x_i, x_{i+1}, \dots, x_n] =
+    -[x_1, \dots, x_{i+1}, x_i, \dots, x_n].
+\end{align*}
+
+Toome siinkohal $n$-Lie algebra kohta näite, mille
+Filippov esitas oma artiklis \cite{filippov1985} vahetult
+pärast oma definitsiooni.
+
+\begin{naide}
+    Olgu $E$ reaalne $(n+1)$-mõõtmeline Eukleidiline ruum,
+    ning tähistame elementide $x_1, x_2, \dots, x_n \in E$
+    vektorkorrutise $[x_1, x_2, \dots, x_n]$. Meenutame, 
+    et vektorkorrutis on kaldsümmeetriline ning iga teguri
+    suhtes lineaarne. Lisaks, kui meil on ruumi $E$ mingi
+    baas $\{e_1, e_2, \dots, e_{n+1}\}$, siis avaldub see
+    vektorrkorrutis järgmise kui determinant
+    \begin{align}\label{eq:n-vec-mult}
+        [x_1, x_2, \dots, x_n] = \left|\begin{matrix}
+          x_{11}    & x_{12}    & \dots  & x_{1n}    & e_1    \\
+          x_{21}    & x_{22}    & \dots  & x_{2n}    & e_2    \\
+          \vdots    & \vdots    & \ddots & \vdots    & \vdots \\
+          x_{n+1,1} & x_{n+1,2} & \dots  & x_{n+1,n} & e_{n+1}
+        \end{matrix}\right|,
+    \end{align}
+    kus $(x_{1i}, x_{2i}, \dots, x_{n+1,i})$ on vektorite
+    $x_i$, $i = 1, 2, \dots, n$, koordinaadid.
+
+    Kui me varustame ruumi $E$ nüüd $n$-aarse vektorkorrutisega
+    \eqref{eq:n-vec-mult}, siis saame $(n+1)$-mõõtmelise
+    reaalse kaldsümmeetrilise algebra, mida tähistame
+    $\A_{n+1}$. Tänu determinandi multilineaarsusele on
+    vektorkorrutis täielikult määratud baasivektorite
+    korrutustabeliga. Võrdusest \eqref{eq:n-vec-mult} saame
+    me baasivektoriteke järgmise korrutustabeli:
+    \begin{align}\label{eq:vec-mult-table}
+        [e_1, \dots, e_{i-1}, \hat{e_i}, e_{i+1}, \dots, e_{n+1}]
+        = (-1)^{n+1+i} e_i,
+    \end{align}
+    kus $i = 1, 2, \dots, n+1$, ja $\hat{e_i}$ tähistab
+    vektori $e_i$ arvutusest välja jätmist. Ülejäänud
+    baasivektorite korrutised on kas nullid või kättesaadavad
+    võrdusest \eqref{eq:vec-mult-table} ja
+    kaldsümmeetrilisusest.
+
+    Selle põhjal ei ole keeruline veenuda, et algebra
+    $(\A_{n+1}, [\cdot, \dots, \cdot])$ on $n$-Lie algebra.
+\end{naide}
+
+\subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie algebra}
+
+See alapeatükk tugineb artiklile \cite{AKMS:2014}.
+
+\begin{dfn}[Jälg]
+    Olgu $A$ vektorruum ning olgu $\phi \col A^n \to A$. Me
+    ütleme, et lineaarkujutus $\tau \col A \to \K$ on
+    \emph{$\phi$-jälg}, kui suvaliste $x_1, \dots, x_n \in A$
+    korral $\tau \left(
+        \phi \left( x_1, \dots, x_n \right)
+    \right) = 0$.
+\end{dfn}
+
+Olgu $\phi \col A^n \to A$ $n$-lineaarne ja
+$\tau \col A \to \K$ lineaarne kujutus. Defineerime nende
+kujutuste abil uue $(n+1)$-lineaarse kujutuse
+$\phi_\tau \col A^{n+1} \to A$ valemiga
+\begin{align}\label{eq:phi_tau}
+    \phi_\tau \left( x_1, \dots, x_{n+1} \right) =
+    \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i)
+        \phi(x_1, \dots, \hat{x_i}, \dots, x_{n+1}),
+\end{align}
+kus $\hat{x_i}$ tähistab kõrvalejäätavat elementi, see tähendab
+$\phi(x_1, \dots, \hat{x_i}, \dots, x_{n+1})$ arvutatakse elementidel
+$x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}$.
+
+Rikastame defineeritud kujutust ühe näitega. Võttes $n = 2$ saame
+valemi~\ref{eq:phi_tau} põhjal kirjutada
+\[
+    \phi_\tau (x_1, x_2, x_3) =
+        \tau(x_1) \phi(x_2, x_3) -
+        \tau(x_2) \phi(x_1, x_3) +
+        \tau(x_3) \phi(x_1, x_2).
+\]
+
+Edasises toome ära mõningad kujutuse $\phi_\tau$ tähtsamad omadused.
+
+\begin{lemma}
+    Olgu $A$ vektorruum ning $\phi \col A^n \to A$ $n$-lineaarne kaldsümmeetriline kujutus
+    ja $\tau \col A \to \K$ lineaarne. Siis kujutus
+    $\phi_\tau \col A^{n+1} \to A$ on samuti kaldsümmeetriline. Lisaks,
+    kui $\tau$ on $\phi$-jälg, siis $\tau$ on ka $\phi_\tau$-jälg.
+\end{lemma}
+
+\begin{thm}\label{thm:n+1_lie_alg}
+    Olgu $(A, \phi)$ $n$-Lie algebra ning olgu $\tau$ lineaarkujutuse
+    $\phi$-jälg. Siis $(A, \phi_\tau)$ on $(n+1)$-Lie algebra.
+\end{thm}
+
+Teoreemis kirjeldatud viisil saadud $(n+1)$-Lie algebrat $(A, \phi_\tau)$
+nimetatakse $n$-Lie algebra $(A, \phi)$ poolt \emph{indutseeritud}
+$(n+1)$-Lie algebraks.
+
+Teoreemist~\ref{thm:n+1_lie_alg} saame teha olulise järlduse:
+
+\begin{jar}
+    Olgu $(A, \brac{\cdot}{\cdot})$ Lie algebra ning olgu antud
+    $\brac{\cdot}{\cdot}$ jälg $\tau \col A \to \K$. Siis ternaarne sulg
+    $[ \cdot, \cdot, \cdot ] \col A^3 \to A$, mis on defineeritud
+    valemiga
+    \[
+        [x, y, z] = \tau(x)[y, z] + \tau(y)[z, x] + \tau(z)[x, y],
+    \]
+    määrab $3$-Lie algebra struktuuri $A_\tau$ vektorruumil $A$.
+\end{jar}

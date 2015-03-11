@@ -111,29 +111,42 @@ pärast oma definitsiooni.
 See alapeatükk tugineb artiklile \cite{AKMS:2014}.
 
 \begin{dfn}[Jälg]
-    Olgu $A$ vektorruum ning olgu $\phi \col A^n \to A$. Me
-    ütleme, et lineaarkujutus $\tau \col A \to \K$ on
-    \emph{$\phi$-jälg}, kui suvaliste $x_1, \dots, x_n \in A$
-    korral $\tau \left(
-        \phi \left( x_1, \dots, x_n \right)
-    \right) = 0$.
+    Olgu $\A$ vektorruum ning olgu $\phi \col \A^n \to \A$. Me
+    ütleme, et lineaarkujutus $\tau \col \A \to K$ on
+    \emph{$\phi$ jälg}, kui suvaliste $x_1, \dots, x_n \in \A$
+    korral
+    \begin{align*}
+        \tau \left(
+            \phi \left( x_1, \dots, x_n \right)
+        \right) = 0.
+    \end{align*}
 \end{dfn}
 
-Olgu $\phi \col A^n \to A$ $n$-lineaarne ja
-$\tau \col A \to \K$ lineaarne kujutus. Defineerime nende
+Olgu $\phi \col \A^n \to \A$ $n$-lineaarne ja
+$\tau \col \A \to K$ lineaarne kujutus. Toome mugavuse
+ja selguse mõttes sisse uue kujutuse $\phi_i \col \A^n \to \A$,
+$i = 1, \dots, n+1$, mis on defineeritud kui
+\begin{align*}
+    \phi_i\left(x_1, \dots, x_i, \dots, x_{n+1}\right) &=
+    \phi \left(x_1, \dots, \hat{x_i}, \dots, x_{n+1}\right) = \\
+    &= \phi \left(x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}\right),
+\end{align*}
+kus $\hat{x_i}$ tähistab kõrvalejäätavat elementi, see tähendab
+$\phi_i(x_1, \dots, x_{n+1})$ arvutatakse elementidel
+$x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}$.
+
+Defineerime nende
 kujutuste abil uue $(n+1)$-lineaarse kujutuse
-$\phi_\tau \col A^{n+1} \to A$ valemiga
+$\phi_\tau \col \A^{n+1} \to \A$ valemiga
 \begin{align}\label{eq:phi_tau}
     \phi_\tau \left( x_1, \dots, x_{n+1} \right) =
     \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i)
-        \phi(x_1, \dots, \hat{x_i}, \dots, x_{n+1}),
+        \phi_i(x_1, \dots, x_{n+1}),
 \end{align}
-kus $\hat{x_i}$ tähistab kõrvalejäätavat elementi, see tähendab
-$\phi(x_1, \dots, \hat{x_i}, \dots, x_{n+1})$ arvutatakse elementidel
-$x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}$.
 
-Rikastame defineeritud kujutust ühe näitega. Võttes $n = 2$ saame
-valemi~\ref{eq:phi_tau} põhjal kirjutada
+
+Seega võttes näiteks $n = 2$ saame valemi \eqref{eq:phi_tau}
+põhjal kirjutada
 \[
     \phi_\tau (x_1, x_2, x_3) =
         \tau(x_1) \phi(x_2, x_3) -
@@ -141,19 +154,164 @@ valemi~\ref{eq:phi_tau} põhjal kirjutada
         \tau(x_3) \phi(x_1, x_2).
 \]
 
-Edasises toome ära mõningad kujutuse $\phi_\tau$ tähtsamad omadused.
+Osutub, et selliselt defineeritud kujutusel $\phi_\tau$ on
+mitmed head omadused.
 
 \begin{lemma}
-    Olgu $A$ vektorruum ning $\phi \col A^n \to A$ $n$-lineaarne kaldsümmeetriline kujutus
-    ja $\tau \col A \to \K$ lineaarne. Siis kujutus
-    $\phi_\tau \col A^{n+1} \to A$ on samuti kaldsümmeetriline. Lisaks,
-    kui $\tau$ on $\phi$-jälg, siis $\tau$ on ka $\phi_\tau$-jälg.
+    Olgu $\A$ vektorruum ning $\phi \col \A^n \to \A$ $n$-lineaarne
+    kaldsümmeetriline kujutus ja $\tau \col \A \to K$ lineaarne.
+    Siis kujutus $\phi_\tau \col A^{n+1} \to A$ on samuti
+    kaldsümmeetriline. Lisaks, kui $\tau$ on $\phi$ jälg, siis
+    $\tau$ on ka $\phi_\tau$ jälg.
 \end{lemma}
 
+\begin{proof}
+    Eeldame, et $\A$ on vektorruum, $\phi \col \A^n \to \A$ on
+    $n$-lineaarne ning kaldsümmeetriline ja $\tau \col \A \to K$
+    on lineaarne.
+
+    Veendumaks, et $\phi_\tau$ on $(n+1)$-lineaarne ning
+    kaldsümmeetriline olgu $j \in \{1, 2, \dots, n+1\}$,
+    $x_1, x_2, \dots, x_{n+1}, x_j^1, x_j^2 \in \A$ ja
+    $\lambda$ ning $\mu$ skalaarid. Arvestades nii
+    $\phi$ kui ka $\tau$ lineaarsust märgime $\phi_\tau$
+    lineaarsuseks, et
+    \begin{align*}
+        &\phi_\tau(
+            x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
+        ) = \\
+        &= \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i) \phi_i(
+             x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
+           ) = \\
+        &= \sum_{\substack{i=1 \\ i \ne j}}^{n+1} (-1)^{i-1}
+           \tau(x_i) \phi_i(
+             x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
+           ) + \\
+        &\quad\ (-1)^{j-1} \tau(\lambda x_j^1 + \mu x_j^2)
+           \phi_j(
+             x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
+           ) = \\
+        &= \sum_{\substack{i=1 \\ i \ne j}}^{n+1}
+           \lambda (-1)^{i-1} \tau(x_i) \phi_i(
+             x_1, \dots, x_j^1, \dots, x_{n+1}
+           ) + \\
+        &\quad\ \sum_{\substack{i=1 \\ i \ne j}}^{n+1} \mu
+           (-1)^{i-1} \tau(x_i)
+           \phi_i( x_1, \dots, x_j^2, \dots, x_{n+1} ) + \\
+        &\quad\ \lambda (-1)^{j-1} \tau(x_j^1) \phi_j(
+             x_1, \dots, x_j^1, \dots, x_{n+1}) + \\
+        &\quad\ \mu (-1)^{j-1} \tau(x_j^2) \phi_j(
+             x_1, \dots, x_j^2, \dots, x_{n+1}) = \\
+        &= \lambda \phi_\tau(x_1, \dots, x_j^1, \dots, x_{n+1}) +
+           \mu \phi_\tau(x_1, \dots, x_j^2, \dots, x_{n+1}).
+    \end{align*}
+
+    Kaldsümmeetrilisus avaldub samuti vahetu arvutuse tulemusena:
+    \begin{align*}
+        &\phi_\tau(
+          x_1, \dots, x_{j-1}, x_j, \dots, x_{n+1}
+        ) = \\
+        &= \sum_{\substack{i=1\\i \ne j-1, i \ne j}}^{n+1}
+          (-1)^{i-1} \tau(x_i) \phi_i(
+              x_1, \dots, x_{j-1}, x_j, \dots, x_{n+1}
+          ) + \\
+        &\quad\ (-1)^{j-1-1} \tau(x_{j-1}) \phi(
+              x_1, \dots, x_{j-2}, x_j, x_{j+1}, \dots, x_{n+1}
+          ) + \\
+        &\quad\ (-1)^{j-1} \tau(x_j) \phi(
+              x_1, \dots, x_{j-2}, x_{j-1}, x_{j+1}, \dots, x_{n+1}
+          ) = \\
+        &= -\sum_{\substack{i=1\\i \ne j-1, i \ne j}}^{n+1}
+          (-1)^{i-1} \tau(x_i) \phi_i(
+              x_1, \dots, x_j, x_{j-1}, \dots, x_{n+1}
+          ) - \\
+        &\quad\ (-1)^{j-1} \tau(x_{j-1}) \phi(
+              x_1, \dots, x_{j-2}, x_j, x_{j+1}, \dots, x_{n+1}
+          ) - \\
+        &\quad\ (-1)^{j-1-1} \tau(x_j) \phi(
+              x_1, \dots, x_{j-2}, x_{j-1}, x_{j+1}, \dots, x_{n+1}
+          ) = \\
+        &= - \phi_\tau(
+              x_1, \dots, x_j, x_{j-1}, \dots, x_{n+1}
+            )
+    \end{align*}
+
+    Tõestuse lõpetuseks eeldame, et $\tau$ on $\phi$ jälg ja
+    näitame, et sel juhul on $\tau$ ka $\phi_\tau$ jälg.
+
+    Et $\tau$ on $\phi$ jälg, siis iga $x_1, x_2, \dots, x_n \in \A$
+    korral $\tau(\phi(x_1, x_2, \dots, x_n)) = 0$ ja seega
+    \begin{align*}
+        &\tau(\phi_\tau(x_1, x_2, \dots, x_{n+1})) = 
+        \sum_{i=1}^{n+1} \tau \left(
+            (-1)^{i-1} \tau(x_i) \phi_i(x_1, \dots, x_{n+1})
+        \right) = \\
+        &= \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i) \tau \left(
+            \phi(x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1})
+        \right) = \sum_{i=1}^{n+1} 0 = 0.
+    \end{align*}
+\end{proof}
+
+Kasutades eelmist lemmat saame tõestada järgmise tähtsa teoreemi.
+
 \begin{thm}\label{thm:n+1_lie_alg}
-    Olgu $(A, \phi)$ $n$-Lie algebra ning olgu $\tau$ lineaarkujutuse
-    $\phi$-jälg. Siis $(A, \phi_\tau)$ on $(n+1)$-Lie algebra.
+    Olgu $(\A, \phi)$ $n$-Lie algebra ning olgu $\tau$ lineaarkujutuse
+    $\phi$ jälg. Siis $(\A, \phi_\tau)$ on $(n+1)$-Lie algebra.
 \end{thm}
+
+\begin{proof}
+    Eeldame, et paar $(\A, \phi)$ omab $n$-Lie algebra struktuuri,
+    see tähendab $\phi \col \A^n \to \A$ on kõikide argumentide
+    järgi lineaarne, kaldsümmeetriline ja rahuldab Filippovi
+    samasust, ning olgu kujutuse $\phi$ jälg $\tau \col \A \to K$.
+
+    Lemma põhjal on siis $\phi_\tau$ oma argumentide järgi lineaarne
+    ning kaldsümmeetriline. Seega peame teoreemi tõestamiseks
+    näitama, et $\phi_\tau$ rahuldab Filippovi samasust
+    \begin{align}\label{eq:n+1_filippov}
+        \begin{split}
+            &\phi_\tau(x_1, \dots, x_n,
+                \phi_\tau(y_1, \dots, y_{n+1})
+            ) = \\
+            &= \sum_{i=1}^{n+1} \phi_\tau(
+                y_1, \dots, y_{i-1},
+                \phi_\tau(x_1, \dots, x_n, y_i),
+                y_{i+1}, \dots, y_{n+1}
+            )
+        \end{split}
+    \end{align}
+
+    Olgu selleks $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_{n+1}
+    \in \A$. Siis ühelt poolt
+    \begin{align*}
+        &\phi_\tau(x_1, \dots, x_n,
+            \phi_\tau(y_1, \dots, y_{n+1})
+        ) = \\
+        &= \phi_\tau\left(
+             x_1, \dots, x_n,
+             \sum_{i=1}^{n+1} (-1)^{i-1} \tau(y_i)
+             \phi_i(y_1, \dots, y_{n+1})
+           \right) = \\
+        &= \sum_{i=1}^{n+1} (-1)^{i-1} \tau(y_i) \phi_\tau\left(
+             x_1, \dots, x_n, \phi_i(y_1, \dots, y_{n+1})
+           \right) = \\
+        &= \sum_{i=1}^{n+1} (-1)^{i-1} \tau(y_i)
+           \sum_{j=1}^{n} (-1)^{j-1} \tau(x_j) \phi_j(
+             x_1, \dots, x_n, \phi_i(y_1, \dots, y_{n+1})) + \\
+        &\quad\, \sum_{i=1}^{n+1} (-1)^{i-1} \tau(y_i) (-1)^{n+1-1}
+           \underbrace{
+             \tau\left( \phi_i(y_1, \dots, y_{n+1}) \right)
+           }_{0} \phi(x_1, \dots, x_n) = \\
+        &= \sum_{i=1}^{n+1} \sum_{j=1}^{n} (-1)^{i-1} (-1)^{j-1}
+           \tau(y_i) \tau(x_j) \phi_j \left(
+             x_1, \dots, x_n, \phi_i(y_1, \dots, y_{n+1})
+           \right) = \\
+        &= \sum_{i=1}^{n+1} \sum_{j=1}^{n} (-1)^{i+j}
+           \tau(y_i) \tau(x_j) \phi_j \left(
+             x_1, \dots, x_n, \phi_i(y_1, \dots, y_{n+1})
+           \right).
+    \end{align*}
+\end{proof}
 
 Teoreemis kirjeldatud viisil saadud $(n+1)$-Lie algebrat $(A, \phi_\tau)$
 nimetatakse $n$-Lie algebra $(A, \phi)$ poolt \emph{indutseeritud}

@@ -27,7 +27,7 @@ analoogi, mis annaks klassikalisel juhul täpselt
 Jacobi samasuse.
 
 Filippov\footnote{Aleksei Fedorovich Filippov (1923 -- 2006),
-vene matemaatik} näitas aastal 1985 artikis \cite{filippov1985}
+vene matemaatik} tutvustas aastal 1985 artikis \cite{filippov1985}
 $n$-Lie algebrate klassi, kus bilineaarne korrutamine on
 asendatud $n$-lineaarse kaldsümmeetrilise operatsiooniga,
 mis rahuldab teatud samasust.\cite{kasymov1987}
@@ -54,7 +54,7 @@ Võrdust \eqref{id:filippov} $n$-Lie algebra definitsiooniks
 nimetatakse üldistatud Jacobi samasuseks või ka
 \emph{Filippovi samasuseks}. Vahetu kontrolli põhjal
 on selge, et valides $n = 2$, saame Filippovi samasusest
-\eqref{id:filippov} Jacobi samasuse \eqref{id:jacobi}.
+\eqref{id:filippov} Jacobi samasuse \eqref{id:jacobi}. Seejuures
 $n$-aarse Lie sulu kaldsümmeetrilisus tähendab, et
 suvaliste $x_1, x_2, \dots, x_n \in \A$ korral
 \begin{align*}
@@ -63,7 +63,7 @@ suvaliste $x_1, x_2, \dots, x_n \in \A$ korral
 \end{align*}
 
 Toome siinkohal $n$-Lie algebra kohta näite, mille
-Filippov esitas oma artiklis \cite{filippov1985} vahetult
+Filippov esitas artiklis \cite{filippov1985} vahetult
 pärast oma definitsiooni.
 
 \begin{naide}
@@ -73,7 +73,7 @@ pärast oma definitsiooni.
     et vektorkorrutis on kaldsümmeetriline ning iga teguri
     suhtes lineaarne. Lisaks, kui meil on ruumi $E$ mingi
     baas $\{e_1, e_2, \dots, e_{n+1}\}$, siis avaldub see
-    vektorrkorrutis järgmise kui determinant
+    vektorrkorrutis determinandina
     \begin{align}\label{eq:n-vec-mult}
         [x_1, x_2, \dots, x_n] = \left|\begin{matrix}
           x_{11}    & x_{12}    & \dots  & x_{1n}    & e_1    \\
@@ -91,7 +91,7 @@ pärast oma definitsiooni.
     $\A_{n+1}$. Tänu determinandi multilineaarsusele on
     vektorkorrutis täielikult määratud baasivektorite
     korrutustabeliga. Võrdusest \eqref{eq:n-vec-mult} saame
-    me baasivektoriteke järgmise korrutustabeli:
+    me baasivektoritele järgmise korrutustabeli:
     \begin{align}\label{eq:vec-mult-table}
         [e_1, \dots, e_{i-1}, \hat{e_i}, e_{i+1}, \dots, e_{n+1}]
         = (-1)^{n+1+i} e_i,
@@ -102,9 +102,37 @@ pärast oma definitsiooni.
     võrdusest \eqref{eq:vec-mult-table} ja
     kaldsümmeetrilisusest.
 
-    Selle põhjal ei ole keeruline veenuda, et algebra
-    $(\A_{n+1}, [\cdot, \dots, \cdot])$ on $n$-Lie algebra.
+    Selle põhjal saab näidata, et algebra
+    $(\A_{n+1}, [\cdot, \dots, \cdot])$ on $n$-Lie
+    algebra.\cite{filippov1985}
 \end{naide}
+
+Punktis \ref{subsec:algebralised-struktuurid} toodud konstruktsioonid
+on võmalik esitada ka üldisemal juhul.
+
+\begin{dfn}
+    Me ütleme, et $\B$ on $n$-Lie algebra $(\A, [\cdot, \dots, \cdot])$
+    alamalgebra, kui $\B \subset \A$ on alamruum, ning suvaliste
+    $x_1, x_2, \dots, x_n \in \B$ korral $[x_1, x_2, \dots, x_n] \in \B$.
+\end{dfn}
+
+\begin{dfn}
+    Olgu $(\A, [\cdot, \dots, \cdot])$ $n$-Lie algebra ning olgu
+    $I \subset \A$ alamruum. Me ütleme, et $I$ on $\A$ \emph{ideaal}, kui
+    iga $i \in I$ ja $x_1, x_2, \dots, x_{n-1} \in \A$ korral
+    \begin{align*}
+        [i, x_1, x_2, \dots, x_{n-1}] \in I.
+    \end{align*}
+\end{dfn}
+
+Analoogilisel viisil defineeritakse ka \emph{$n$-Lie faktoralgebra}.
+Kui meil on antud $n$-Lie algebra $(\A, [\cdot, \dots, \cdot])$ ja tema
+ideaal $I$, siis faktoralgebra $\A/I$ kõrvalklassideks on
+$\overline{x} = x + I$, $x \in \A$, ja kommutaatoriks on
+\begin{align*}
+    [x_1 + I, x_2 + I, \dots, x_n + I]_{\A/I} = [x_1, x_2, \dots, x_n] + I,\quad
+    x_1, x_2, \dots, x_n \in \A.
+\end{align*}
 
 \subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie algebra}
 

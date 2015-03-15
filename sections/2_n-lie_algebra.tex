@@ -136,7 +136,11 @@ $\overline{x} = x + I$, $x \in \A$, ja kommutaatoriks on
 
 \subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie algebra}
 
-See alapeatükk tugineb artiklile \cite{AKMS:2014}.
+Artiklis \cite{AKMS:2014} on uuritud põhjalikult konstruktsiooni, mille
+abil on võimalik etteantud $n$-Lie algebrast teatud tingimustel indutseerida
+$(n+1)$-Lie algebra. Toome järgnevas ära selle konstruktsiooniga seotud
+põhilised tulemused ning tõestame teoreemi, millele autorid atriklis põhjendust
+ei ole andnud.
 
 \begin{dfn}[Jälg]
     Olgu $\A$ vektorruum ning olgu $\phi \col \A^n \to \A$. Me
@@ -357,3 +361,46 @@ Teoreemist~\ref{thm:n+1_lie_alg} saame teha olulise järlduse:
     \]
     määrab $3$-Lie algebra struktuuri $A_\tau$ vektorruumil $A$.
 \end{jar}
+
+\begin{lau}
+    Olgu $(\A, [\cdot, \dots, \cdot])$ $n$-Lie algebra ning olgu
+    $\B \subset \A$ alamalgebra. Kui $\tau$ on $[\cdot, \dots, \cdot]$ jälg,
+    siis $\B$ on ka $(\A, [\cdot, \dots, \cdot]_\tau)$ alamalgebra.
+\end{lau}
+
+\begin{proof}
+    Olgu $\B$ $n$-Lie algebra $(\A, [\cdot, \dots, \cdot])$ alamalgebra,
+    $x_1, x_2, \dots, x_{n+1} \in \B$ ning olgu $\tau$ sulu $[\cdot, \dots, \cdot]$
+    jälg. Siis
+    \begin{align*}
+        [x_1, x_2, \dots, x_{n+1}]_\tau =  \sum_{i=1}^{n+1} (-1)^i \tau(x_i)
+        [x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}],
+    \end{align*}
+    mis on $\B$ elementide lineaarkombinatsioon, kuna iga $i = 1, 2, \dots, n+1$
+    korral $[x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}] \in \B$.
+\end{proof}
+
+\begin{lau}
+    Olgu $(\A, [\cdot, \dots, \cdot])$ ideaal $I$. Siis $I$ on
+    $(\A, [\cdot, \dots, \cdot]_\tau)$ ideaal parajasti siis, kui
+    $[\A, \A, \dots, \A] \subseteq I$ või $I \subseteq \ker \tau$.
+\end{lau}
+
+\begin{proof}
+    Olgu $i \in I$ ja $x_1, x_2, \dots, x_n \in \A$ suvalised. Siis
+    \begin{align*}
+        [x_1, x_2, \dots, x_n, i]_\tau =  &\sum_{i=1}^{n} (-1)^i \tau(x_i)
+        [x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_n, i] + \\
+        &(-1)^{n+1} \tau(i) [x_1, x_2, \dots, x_n].
+    \end{align*}
+    Et $I$ on $(\A, [\cdot, \dots, \cdot])$ ideaal, siis ilmselt
+    \begin{align*}
+        \sum_{i=1}^{n} (-1)^i \tau(x_i)
+        [x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_n, i] \in I.
+    \end{align*}
+    Niisiis, tingimus $[x_1, x_2, \dots, x_n, i]_\tau \in I$ on
+    samaväärne tingimusega
+    \[ (-1)^{n+1} \tau(i) [x_1, x_2, \dots, x_n] \in I. \]
+    Viimase võime aga lahti kirjutada kujul
+    $\tau(i) = 0$ või $[x_1, x_2, \dots, x_n] \in I$.
+\end{proof}

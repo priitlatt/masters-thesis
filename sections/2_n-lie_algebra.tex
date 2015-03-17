@@ -453,9 +453,16 @@ Hamiltoni liikumisvõrrandite poolt
 \end{align*}
 Sellist funktsiooni $H$ nimetatakse \emph{Hamiltoniaaniks}.
 
-Lihtsaima Poissoni muutkonna näitena võime vaadelda $M = \R^{2n}$, $n \in \N$,
-kus koordinaadid on antud kujul $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_n$,
-ning Poissoni sulg on defineeritud kui
+Lihtsaima Poissoni muutkonna näitena võime vaadelda $M = \R^2$ koordinaatidega
+$x$ ja $y$, ning Poissoni suluga
+\begin{align*}
+    \{f_1, f_2\} = \frac{\partial f_1}{\partial x} \frac{\partial f_2}{\partial y} -
+        \frac{\partial f_1}{\partial y} \frac{\partial f_2}{\partial x} =
+        \frac{\partial(f_1, f_2)}{\partial(x, y)},
+\end{align*}
+või üldisemalt $M = \R^{2n}$, $n \in \N$, koordinaatidega
+$x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_n$, kus struktuur on
+antud suluga
 \begin{align}\label{eq:R^n-poisson-sulg}
     \{f_1, f_2\} = \sum_{i=1}^{n} \left(
         \frac{\partial f_1}{\partial x_i} \frac{\partial f_2}{\partial y_i} -
@@ -484,20 +491,6 @@ märgime, et
             f_2 \frac{\partial f_1}{\partial y_i} +
         \right) \frac{\partial f_3}{\partial x_i}
     \right] = \\
-    &= \sum_{i=1}^{n} \left[
-        f_1 \left(
-            \frac{\partial f_2}{\partial x_i}
-            \frac{\partial f_3}{\partial y_i} -
-            \frac{\partial f_2}{\partial y_i}
-            \frac{\partial f_3}{\partial x_i}
-        \right) +
-        f_2 \left(
-            \frac{\partial f_1}{\partial x_i}
-            \frac{\partial f_3}{\partial y_i} -
-            \frac{\partial f_1}{\partial y_i}
-            \frac{\partial f_3}{\partial x_i}
-        \right)
-    \right] = \\
     &= f_1 \sum_{i=1}^{n} \left(
             \frac{\partial f_2}{\partial x_i}
             \frac{\partial f_3}{\partial y_i} -
@@ -513,8 +506,15 @@ märgime, et
     &= f_1 \{f_2, f_3\} + f_2 \{f_1, f_3\}.
 \end{align*}
 
-Jacobi samasuseks kontrollimiseks arvutame $\{f_1, \{f_2, f_3\}\}$,
-$\{f_2, \{f_3, f_1\}\}$ ning $\{f_3, \{f_1, f_2\}\}$.
+Veendumaks, et kehtib ka Jacobi samasus, piisab vahetult arvutada
+\begin{align*}
+    \{f_1, \{f_2, f_3\}\}, \quad
+    \{f_2, \{f_3, f_1\}\}, \quad
+    \{f_3, \{f_1, f_2\}\}.
+\end{align*}
+Arvestades, et funktsioonide korrutamine
+on defineeritud punktihaaval, võime saadud tulemusi liites ning kombineerides näha, et tulemuseks
+on tõepoolest null.
 
 \begin{align}\begin{split}
     \{f_1, \{f_2, f_3\}\} = &\sum_{i=1}^{n} \left\{

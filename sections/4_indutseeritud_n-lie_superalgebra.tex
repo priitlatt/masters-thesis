@@ -6,6 +6,69 @@
 
 \section{\texorpdfstring{$n$}\ -Lie superalgebra}
 
+Järgnevas toome sisse \emph{supermatemaatika} põhimõsted ning defineerime
+nende abil \emph{Lie superalgebra}. Edasi ühendame Lie superalgebra
+konstruktsiooni Filippovi $n$-Lie algebraga, ning konstrueerime
+\emph{$n$-Lie superalgebra}.
+
+\subsection{Lie superalgebra}
+
+Eelmises peatükis nägime, kuidas Filippov leidis viisi Lie algebra
+üldistamiseks kasutades binaarse operatsiooni asemel $n$-aarset
+operatsiooni, kuid jättes aluseks oleva algebra samaks. Teine viis
+Lie algebra mõistet üldistada on vaadelda algebra asemel \emph{superalgebrat}.
+Tuletame selleks kõigepealt meelde mõned baasdefinitsioonid.
+
+\begin{dfn}
+    Vektorruumi $\V$ nimetatakse \emph{$\Z_2$-gradueeritud vektorruumiks}
+    ehk \emph{supervektorruumiks}, kui ta on esitatav vektorruumide
+    otsesummana $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$.
+    Vektorruumi $\V_{\overline{0}}$ elemente nimetatakse seejuures
+    \emph{paarisvektoriteks} ja $\V_{\overline{1}}$ elemente
+    \emph{paarituteks} vektoriteks.
+\end{dfn}
+
+Kui supervektorruumi element $x \in \V$ korral
+$x \in \V_{\overline{0}}$ või $x \in \V_{\overline{1}}$, siis ütleme, et
+vektor $x$ on \emph{homogeenne}. Homogeensete vektorite korral on
+otstarbekas vaadelda kujutust $|\cdot| \col \V \to \Z_2$, mis on defineeritud
+võrdusega
+\begin{align*}
+    |x| = \begin{cases}
+        \overline{0}, &\text{kui}\ x \in \V_{\overline{0}}, \\
+        \overline{1}, &\text{kui}\ x \in \V_{\overline{1}}.
+    \end{cases}
+\end{align*}
+Homogeense elemendi $x$ korral nimetame suurust $|x| \in \Z_2$ tema
+paarsuseks. Märgime, et kasutades edaspidises kirjutist $|x|$ eeldame
+vaikimisi, et element $x \in \V$ on homogeenne.
+
+Supervektorruumi $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
+\emph{alamruumiks} nimetatakse supervektorruumi
+$\W = \W_{\overline{0}} \oplus \W_{\overline{1}} \subseteq \V$, kui
+vastavate otseliidetavate gradueeringud ühtivad, see tähendab
+$\W_i \subset \V_i$, kus $i \in \Z_2$.
+
+\begin{dfn}
+    Olgu supervektorruumil $\A$ antud bilineaarne algebraline tehe
+    $\phi \col \A \times \A \to \A$. Supervektorruumi $\A$ nimetatakse
+    \emph{superalgebraks}, kui tehe $\phi$ rahuldab suvaliste homogeensete
+    vektorite $x, y \in \A$ korral tingimust
+    \begin{align}\label{def:superalgebra-parity}
+        \left|\phi(x, y)\right| = |x| + |y|.
+    \end{align}
+\end{dfn}
+
+Paneme tähele, et superalgebra definitsioonis nõutav kujutus
+$\phi \col \A \times \A \to \A$ nõuab taustal, et supervektorruum
+$\A$ oleks tegelikult algebra. Supervektorruumi ühikelement ja
+assotsiatiivsus defineeritakse tavapärasel viisil.
+
+% TODO näide naide:lie-algebra-konstrueerimine
+
+
+\subsection{\texorpdfstring{$n$}\ -Lie superalgebra}
+
 See peatükk tugineb artiklile \cite{Abramov:2014}
 
 Järgnevas eeldame, et meil on antud supervektorruum

@@ -36,11 +36,11 @@ Tänaseks on just see, Nambu mehaanikast välja kasvanud
 uurimissuunaks.
 
 \begin{dfn}[$n$-Lie algebra]
-    Vektorruumi $\A$ nimetatakse \emph{$n$-Lie algebraks}, kui
+    Vektorruumi $\g$ nimetatakse \emph{$n$-Lie algebraks}, kui
     on määratud $n$-lineaarne kaldsümmeetriline kujutus
-    $\nbrac{\cdot}{\cdot} \colon \A^n \to \A$, mis
+    $\nbrac{\cdot}{\cdot} \colon \g^n \to \g$, mis
     suvaliste
-    \[ x_1, \dots, x_{n-1}, y_1, \dots, y_n \in \A \]
+    \[ x_1, \dots, x_{n-1}, y_1, \dots, y_n \in \g \]
     korral rahuldab tingimust
     \begin{align}\label{id:filippov}
         \left[ x_1, \dots, x_{n-1}, \nbrac{y_1}{y_n} \right] =
@@ -56,7 +56,7 @@ nimetatakse üldistatud Jacobi samasuseks või ka
 on selge, et valides $n = 2$, saame Filippovi samasusest
 \eqref{id:filippov} Jacobi samasuse \eqref{id:jacobi}. Seejuures
 $n$-aarse Lie sulu kaldsümmeetrilisus tähendab, et
-suvaliste $x_1, x_2, \dots, x_n \in \A$ korral
+suvaliste $x_1, x_2, \dots, x_n \in \g$ korral
 \begin{align}\label{def:n-lie-brac-antisymm}
     [x_1, \dots, x_i, x_{i+1}, \dots, x_n] =
     -[x_1, \dots, x_{i+1}, x_i, \dots, x_n].
@@ -111,27 +111,29 @@ Punktis \ref{subsec:algebralised-struktuurid} toodud konstruktsioonid
 on võmalik esitada ka üldisemal juhul.
 
 \begin{dfn}
-    Me ütleme, et $\B$ on $n$-Lie algebra $(\A, [\cdot, \dots, \cdot])$
-    alamalgebra, kui $\B \subset \A$ on alamruum, ning suvaliste
-    $x_1, x_2, \dots, x_n \in \B$ korral $[x_1, x_2, \dots, x_n] \in \B$.
+    Me ütleme, et $\h$ on $n$-Lie algebra $(\g, [\cdot, \dots, \cdot])$
+    alamalgebra, kui $\h \subset \g$ on alamruum, ning suvaliste
+    $x_1, x_2, \dots, x_n \in \h$ korral $[x_1, x_2, \dots, x_n] \in \h$.
 \end{dfn}
 
 \begin{dfn}
-    Olgu $(\A, [\cdot, \dots, \cdot])$ $n$-Lie algebra ning olgu
-    $I \subset \A$ alamruum. Me ütleme, et $I$ on $\A$ \emph{ideaal}, kui
-    iga $i \in I$ ja $x_1, x_2, \dots, x_{n-1} \in \A$ korral
+    Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie algebra ning olgu
+    $\h \subset \g$ alamruum. Me ütleme, et $\h$ on $\g$ \emph{ideaal}, kui
+    iga $h \in \h$ ja $x_1, x_2, \dots, x_{n-1} \in \g$ korral
     \begin{align*}
-        [i, x_1, x_2, \dots, x_{n-1}] \in I.
+        [h, x_1, x_2, \dots, x_{n-1}] \in \h.
     \end{align*}
 \end{dfn}
 
-Analoogilisel viisil defineeritakse ka \emph{$n$-Lie faktoralgebra}.
-Kui meil on antud $n$-Lie algebra $(\A, [\cdot, \dots, \cdot])$ ja tema
-ideaal $I$, siis faktoralgebra $\A/I$ kõrvalklassideks on
-$\overline{x} = x + I$, $x \in \A$, ja kommutaatoriks on
+Analoogiliselt klassikalisele juhule defineeritakse ka
+\emph{$n$-Lie faktoralgebra}.
+Kui meil on antud $n$-Lie algebra $(\g, [\cdot, \dots, \cdot])$ ja tema
+ideaal $\h$, siis faktoralgebra $\g/\h$ kõrvalklassideks on
+$\overline{x} = x + \h$, $x \in \g$, ja kommutaatoriks on
 \begin{align*}
-    [x_1 + I, x_2 + I, \dots, x_n + I]_{\A/I} = [x_1, x_2, \dots, x_n] + I,\quad
-    x_1, x_2, \dots, x_n \in \A.
+    [x_1 + \h, x_2 + \h, \dots, x_n + \h]_{\g/\h} =
+    [x_1, x_2, \dots, x_n] + \h,\quad
+    x_1, x_2, \dots, x_n \in \g.
 \end{align*}
 
 \subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie algebra}
@@ -196,98 +198,101 @@ mitmed head omadused, nagu võib lugeda artiklitest \cite{AKMS:2014,AMS:2011}.
     $\tau$ on ka $\phi_\tau$ jälg.
 \end{lemma}
 
-% \begin{proof}
-%     Eeldame, et $\A$ on vektorruum, $\phi \col \A^n \to \A$ on
-%     $n$-lineaarne ning kaldsümmeetriline ja $\tau \col \A \to K$
-%     on lineaarne.
+\begin{proof}
+    Eeldame, et $\A$ on vektorruum, $\phi \col \A^n \to \A$ on
+    $n$-lineaarne ning kaldsümmeetriline ja $\tau \col \A \to K$
+    on lineaarne.
 
-%     Veendumaks, et $\phi_\tau$ on $(n+1)$-lineaarne ning
-%     kaldsümmeetriline olgu $j \in \{1, 2, \dots, n+1\}$,
-%     $x_1, x_2, \dots, x_{n+1}, x_j^1, x_j^2 \in \A$ ja
-%     $\lambda$ ning $\mu$ skalaarid. Arvestades nii
-%     $\phi$ kui ka $\tau$ lineaarsust märgime $\phi_\tau$
-%     lineaarsuseks, et
-%     \begin{align*}
-%         &\phi_\tau(
-%             x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
-%         ) = \\
-%         &= \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i) \phi_i(
-%              x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
-%            ) = \\
-%         &= \sum_{\substack{i=1 \\ i \ne j}}^{n+1} (-1)^{i-1}
-%            \tau(x_i) \phi_i(
-%              x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
-%            ) + \\
-%         &\quad\ (-1)^{j-1} \tau(\lambda x_j^1 + \mu x_j^2)
-%            \phi_j(
-%              x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
-%            ) = \\
-%         &= \sum_{\substack{i=1 \\ i \ne j}}^{n+1}
-%            \lambda (-1)^{i-1} \tau(x_i) \phi_i(
-%              x_1, \dots, x_j^1, \dots, x_{n+1}
-%            ) + \\
-%         &\quad\ \sum_{\substack{i=1 \\ i \ne j}}^{n+1} \mu
-%            (-1)^{i-1} \tau(x_i)
-%            \phi_i( x_1, \dots, x_j^2, \dots, x_{n+1} ) + \\
-%         &\quad\ \lambda (-1)^{j-1} \tau(x_j^1) \phi_j(
-%              x_1, \dots, x_j^1, \dots, x_{n+1}) + \\
-%         &\quad\ \mu (-1)^{j-1} \tau(x_j^2) \phi_j(
-%              x_1, \dots, x_j^2, \dots, x_{n+1}) = \\
-%         &= \lambda \phi_\tau(x_1, \dots, x_j^1, \dots, x_{n+1}) +
-%            \mu \phi_\tau(x_1, \dots, x_j^2, \dots, x_{n+1}).
-%     \end{align*}
+    Veendumaks, et $\phi_\tau$ on $(n+1)$-lineaarne ning
+    kaldsümmeetriline olgu $j \in \{1, 2, \dots, n+1\}$,
+    $x_1, x_2, \dots, x_{n+1}, x_j^1, x_j^2 \in \A$ ja
+    $\lambda$ ning $\mu$ skalaarid. Arvestades nii
+    $\phi$ kui ka $\tau$ lineaarsust märgime $\phi_\tau$
+    lineaarsuseks, et
+    \begin{align*}
+        &\phi_\tau(
+            x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
+        ) = \\
+        &= \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i) \phi_i(
+             x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
+           ) = \\
+        &= \sum_{\substack{i=1 \\ i \ne j}}^{n+1} (-1)^{i-1}
+           \tau(x_i) \phi_i(
+             x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
+           ) + \\
+        &\quad\ (-1)^{j-1} \tau(\lambda x_j^1 + \mu x_j^2)
+           \phi_j(
+             x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
+           ) = \\
+        &= \sum_{\substack{i=1 \\ i \ne j}}^{n+1}
+           \lambda (-1)^{i-1} \tau(x_i) \phi_i(
+             x_1, \dots, x_j^1, \dots, x_{n+1}
+           ) + \\
+        &\quad\ \sum_{\substack{i=1 \\ i \ne j}}^{n+1} \mu
+           (-1)^{i-1} \tau(x_i)
+           \phi_i( x_1, \dots, x_j^2, \dots, x_{n+1} ) + \\
+        &\quad\ \lambda (-1)^{j-1} \tau(x_j^1) \phi_j(
+             x_1, \dots, x_j^1, \dots, x_{n+1}) + \\
+        &\quad\ \mu (-1)^{j-1} \tau(x_j^2) \phi_j(
+             x_1, \dots, x_j^2, \dots, x_{n+1}) = \\
+        &= \lambda \phi_\tau(x_1, \dots, x_j^1, \dots, x_{n+1}) +
+           \mu \phi_\tau(x_1, \dots, x_j^2, \dots, x_{n+1}).
+    \end{align*}
 
-%     Kaldsümmeetrilisus avaldub samuti vahetu arvutuse tulemusena:
-%     \begin{align*}
-%         &\phi_\tau(
-%           x_1, \dots, x_{j-1}, x_j, \dots, x_{n+1}
-%         ) = \\
-%         &= \sum_{\substack{i=1\\i \ne j-1, i \ne j}}^{n+1}
-%           (-1)^{i-1} \tau(x_i) \phi_i(
-%               x_1, \dots, x_{j-1}, x_j, \dots, x_{n+1}
-%           ) + \\
-%         &\quad\ (-1)^{j-1-1} \tau(x_{j-1}) \phi(
-%               x_1, \dots, x_{j-2}, x_j, x_{j+1}, \dots, x_{n+1}
-%           ) + \\
-%         &\quad\ (-1)^{j-1} \tau(x_j) \phi(
-%               x_1, \dots, x_{j-2}, x_{j-1}, x_{j+1}, \dots, x_{n+1}
-%           ) = \\
-%         &= -\sum_{\substack{i=1\\i \ne j-1, i \ne j}}^{n+1}
-%           (-1)^{i-1} \tau(x_i) \phi_i(
-%               x_1, \dots, x_j, x_{j-1}, \dots, x_{n+1}
-%           ) - \\
-%         &\quad\ (-1)^{j-1} \tau(x_{j-1}) \phi(
-%               x_1, \dots, x_{j-2}, x_j, x_{j+1}, \dots, x_{n+1}
-%           ) - \\
-%         &\quad\ (-1)^{j-1-1} \tau(x_j) \phi(
-%               x_1, \dots, x_{j-2}, x_{j-1}, x_{j+1}, \dots, x_{n+1}
-%           ) = \\
-%         &= - \phi_\tau(
-%               x_1, \dots, x_j, x_{j-1}, \dots, x_{n+1}
-%             )
-%     \end{align*}
+    Kaldsümmeetrilisus avaldub samuti vahetu arvutuse tulemusena:
+    \begin{align*}
+        &\phi_\tau(
+          x_1, \dots, x_{j-1}, x_j, \dots, x_{n+1}
+        ) = \\
+        &= \sum_{\substack{i=1\\i \ne j-1, i \ne j}}^{n+1}
+          (-1)^{i-1} \tau(x_i) \phi_i(
+              x_1, \dots, x_{j-1}, x_j, \dots, x_{n+1}
+          ) + \\
+        &\quad\ (-1)^{j-1-1} \tau(x_{j-1}) \phi(
+              x_1, \dots, x_{j-2}, x_j, x_{j+1}, \dots, x_{n+1}
+          ) + \\
+        &\quad\ (-1)^{j-1} \tau(x_j) \phi(
+              x_1, \dots, x_{j-2}, x_{j-1}, x_{j+1}, \dots, x_{n+1}
+          ) = \\
+        &= -\sum_{\substack{i=1\\i \ne j-1, i \ne j}}^{n+1}
+          (-1)^{i-1} \tau(x_i) \phi_i(
+              x_1, \dots, x_j, x_{j-1}, \dots, x_{n+1}
+          ) - \\
+        &\quad\ (-1)^{j-1} \tau(x_{j-1}) \phi(
+              x_1, \dots, x_{j-2}, x_j, x_{j+1}, \dots, x_{n+1}
+          ) - \\
+        &\quad\ (-1)^{j-1-1} \tau(x_j) \phi(
+              x_1, \dots, x_{j-2}, x_{j-1}, x_{j+1}, \dots, x_{n+1}
+          ) = \\
+        &= - \phi_\tau(
+              x_1, \dots, x_j, x_{j-1}, \dots, x_{n+1}
+            )
+    \end{align*}
 
-%     Tõestuse lõpetuseks eeldame, et $\tau$ on $\phi$ jälg ja
-%     näitame, et sel juhul on $\tau$ ka $\phi_\tau$ jälg.
+    Tõestuse lõpetuseks eeldame, et $\tau$ on $\phi$ jälg ja
+    näitame, et sel juhul on $\tau$ ka $\phi_\tau$ jälg.
 
-%     Et $\tau$ on $\phi$ jälg, siis iga $x_1, x_2, \dots, x_n \in \A$
-%     korral $\tau(\phi(x_1, x_2, \dots, x_n)) = 0$ ja seega
-%     \begin{align*}
-%         &\tau(\phi_\tau(x_1, x_2, \dots, x_{n+1})) = 
-%         \sum_{i=1}^{n+1} \tau \left(
-%             (-1)^{i-1} \tau(x_i) \phi_i(x_1, \dots, x_{n+1})
-%         \right) = \\
-%         &= \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i) \tau \left(
-%             \phi(x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1})
-%         \right) = \sum_{i=1}^{n+1} 0 = 0.
-%     \end{align*}
-% \end{proof}
+    Et $\tau$ on $\phi$ jälg, siis iga $x_1, x_2, \dots, x_n \in \A$
+    korral $\tau(\phi(x_1, x_2, \dots, x_n)) = 0$ ja seega
+    \begin{align*}
+        &\tau(\phi_\tau(x_1, x_2, \dots, x_{n+1})) = \\
+        &= \sum_{i=1}^{n+1} \tau \left(
+            (-1)^{i-1} \tau(x_i) \phi_i(x_1, \dots, x_{n+1})
+        \right) = \\
+        &= \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i) \tau \left(
+            \phi(x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1})
+        \right) = \\
+        &= \sum_{i=1}^{n+1} 0 = 0,
+    \end{align*}
+    nagu tarvis. Sellega on lemma tõestatud.
+\end{proof}
 
-Kasutades eelmist lemmat on võimalik tõestada järgmine tähtis teoreem.
+Kasutades lemmat on võimalik tõestada järgmine teoreem \cite{AKMS:2014}.
 
 \begin{thm}\label{thm:n+1_lie_alg}
-    Olgu $(\A, \phi)$ $n$-Lie algebra ning olgu $\tau$ lineaarkujutuse
-    $\phi$ jälg. Siis $(\A, \phi_\tau)$ on $(n+1)$-Lie algebra.
+    Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie algebra ning olgu $\tau$
+    lineaarkujutuse $[\cdot, \dots, \cdot]$ jälg. Siis
+    $(\g, [\cdot, \dots, \cdot]_\tau)$ on $(n+1)$-Lie algebra.
 \end{thm}
 
 % \begin{proof}
@@ -344,64 +349,66 @@ Kasutades eelmist lemmat on võimalik tõestada järgmine tähtis teoreem.
 %     \end{align*}
 % \end{proof}
 
-Teoreemis kirjeldatud viisil saadud $(n+1)$-Lie algebrat $(A, \phi_\tau)$
-nimetatakse $n$-Lie algebra $(A, \phi)$ poolt \emph{indutseeritud}
+Teoreemis kirjeldatud viisil saadud $(n+1)$-Lie algebrat
+$(\g, [\cdot, \dots, \cdot]_\tau)$ nimetatakse $n$-Lie algebra
+$(\g, [\cdot, \dots, \cdot])$ poolt \emph{indutseeritud}
 $(n+1)$-Lie algebraks.
 
 Teoreemist~\ref{thm:n+1_lie_alg} saame teha olulise järlduse:
 
 \begin{jar}
-    Olgu $(A, \brac{\cdot}{\cdot})$ Lie algebra ning olgu antud
-    $\brac{\cdot}{\cdot}$ jälg $\tau \col A \to \K$. Siis ternaarne sulg
-    $[ \cdot, \cdot, \cdot ] \col A^3 \to A$, mis on defineeritud
+    Olgu $(\g, \brac{\cdot}{\cdot})$ Lie algebra ning olgu antud
+    $\brac{\cdot}{\cdot}$ jälg $\tau \col \g \to K$. Siis ternaarne sulg
+    $[ \cdot, \cdot, \cdot ] \col \g^3 \to \g$, mis on defineeritud
     valemiga
     \[
         [x, y, z] = \tau(x)[y, z] + \tau(y)[z, x] + \tau(z)[x, y],
     \]
-    määrab $3$-Lie algebra struktuuri $A_\tau$ vektorruumil $A$.
+    määrab $3$-Lie algebra struktuuri $\g_\tau$ vektorruumil $\g$.
 \end{jar}
 
 \begin{lau}
-    Olgu $(\A, [\cdot, \dots, \cdot])$ $n$-Lie algebra ning olgu
-    $\B \subset \A$ alamalgebra. Kui $\tau$ on $[\cdot, \dots, \cdot]$ jälg,
-    siis $\B$ on ka $(\A, [\cdot, \dots, \cdot]_\tau)$ alamalgebra.
+    Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie algebra ning olgu
+    $\h \subset \g$ alamalgebra. Kui $\tau$ on $[\cdot, \dots, \cdot]$ jälg,
+    siis $\h$ on ka $(\g, [\cdot, \dots, \cdot]_\tau)$ alamalgebra.
 \end{lau}
 
 \begin{proof}
-    Olgu $\B$ $n$-Lie algebra $(\A, [\cdot, \dots, \cdot])$ alamalgebra,
-    $x_1, x_2, \dots, x_{n+1} \in \B$ ning olgu $\tau$ sulu $[\cdot, \dots, \cdot]$
-    jälg. Siis
+    Olgu $\h$ $n$-Lie algebra $(\g, [\cdot, \dots, \cdot])$ alamalgebra,
+    $x_1, x_2, \dots, x_{n+1} \in \h$ ning olgu $\tau$ sulu
+    $[\cdot, \dots, \cdot]$ jälg. Siis
     \begin{align*}
         [x_1, x_2, \dots, x_{n+1}]_\tau =  \sum_{i=1}^{n+1} (-1)^i \tau(x_i)
         [x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}],
     \end{align*}
-    mis on $\B$ elementide lineaarkombinatsioon, kuna iga $i = 1, 2, \dots, n+1$
-    korral $[x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}] \in \B$.
+    mis on $\h$ elementide lineaarkombinatsioon, kuna iga
+    $i = 1, 2, \dots, n+1$ korral
+    $[x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}] \in \h$.
 \end{proof}
 
 \begin{lau}
-    Olgu $(\A, [\cdot, \dots, \cdot])$ ideaal $I$. Siis $I$ on
-    $(\A, [\cdot, \dots, \cdot]_\tau)$ ideaal parajasti siis, kui
-    $[\A, \A, \dots, \A] \subseteq I$ või $I \subseteq \ker \tau$.
+    Olgu $(\g, [\cdot, \dots, \cdot])$ ideaal $\h$. Siis $\h$ on
+    $(\g, [\cdot, \dots, \cdot]_\tau)$ ideaal parajasti siis, kui
+    $[\g, \g, \dots, \g] \subseteq \h$ või $\h \subseteq \ker \tau$.
 \end{lau}
 
 \begin{proof}
-    Olgu $i \in I$ ja $x_1, x_2, \dots, x_n \in \A$ suvalised. Siis
+    Olgu $h \in \h$ ja $x_1, x_2, \dots, x_n \in \g$ suvalised. Siis
     \begin{align*}
-        [x_1, x_2, \dots, x_n, i]_\tau =  &\sum_{i=1}^{n} (-1)^i \tau(x_i)
-        [x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_n, i] + \\
-        &(-1)^{n+1} \tau(i) [x_1, x_2, \dots, x_n].
+        [x_1, x_2, \dots, x_n, h]_\tau =  &\sum_{i=1}^{n} (-1)^i \tau(x_i)
+        [x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_n, h] + \\
+        &(-1)^{n+1} \tau(h) [x_1, x_2, \dots, x_n].
     \end{align*}
-    Et $I$ on $(\A, [\cdot, \dots, \cdot])$ ideaal, siis ilmselt
+    Et $\h$ on $(\g, [\cdot, \dots, \cdot])$ ideaal, siis ilmselt
     \begin{align*}
         \sum_{i=1}^{n} (-1)^i \tau(x_i)
-        [x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_n, i] \in I.
+        [x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_n, h] \in \h.
     \end{align*}
-    Niisiis, tingimus $[x_1, x_2, \dots, x_n, i]_\tau \in I$ on
+    Niisiis, tingimus $[x_1, x_2, \dots, x_n, h]_\tau \in \h$ on
     samaväärne tingimusega
-    \[ (-1)^{n+1} \tau(i) [x_1, x_2, \dots, x_n] \in I. \]
+    \[ (-1)^{n+1} \tau(h) [x_1, x_2, \dots, x_n] \in \h. \]
     Viimase võime aga lahti kirjutada kujul
-    $\tau(i) = 0$ või $[x_1, x_2, \dots, x_n] \in I$.
+    $\tau(h) = 0$ või $[x_1, x_2, \dots, x_n] \in \h$.
 \end{proof}
 
 \subsection{Nambu mehaanika. Nambu-Poissoni sulg}

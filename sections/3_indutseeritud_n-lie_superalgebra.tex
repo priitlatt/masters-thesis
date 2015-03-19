@@ -64,13 +64,90 @@ $\phi \col \A \times \A \to \A$ nõuab taustal, et supervektorruum
 $\A$ oleks tegelikult algebra. Supervektorruumi ühikelement ja
 assotsiatiivsus defineeritakse tavapärasel viisil.
 
-% TODO näide naide:lie-algebra-konstrueerimine
+Sellega on meil olemas piisvad vahendid, et defineerida
+\emph{Lie superalgebra}.
+
+\begin{dfn}
+    Olgu $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$ superalgebra,
+    millel on määratud bilineaarne kujutus
+    $[\cdot, \cdot] \col \g \times \g \to \g$, mis on suvaliste
+    homogeensete elementide $x, y, z \in \g$ korral
+    \begin{enumerate}
+        \item kaldsümmeetriline gradueeritud mõttes:
+            \begin{align}\label{def:super-antisymm}
+                [x, y] = -(-1)^{|x||y|}[y, x],
+            \end{align}
+        \item rahuldab gradueeritud Jacobi samasust
+            \begin{align}\label{id:super-jacobi-id}
+                [x, [y, z]] = [[x, y], z] + (-1)^{|x||y|}[y, [x, z]].
+            \end{align}
+    \end{enumerate}
+\end{dfn}
+
+Supermatemaatikas on standardseks võtteks elementide $x$ ja $y$ järjekorra
+vahetamisel seda operatsiooni balanseerida korrutades tulemus läbi suurusega
+$(-1)^{|x||y|}$, see tähendab võetakse arvesse elementide gradueeringuid.
+Seega on definitsiooni tingimus \eqref{def:super-antisymm} põhjendatud.
+Gradueeritud Jacobi samasuse \eqref{id:super-jacobi-id} selline kuju võib
+esmapilgul tunduda mõnevõrra kohatu, kuid tuletades meelde, et me võime
+klassikalise Jacobi samasuse kirja panna ka kujul \eqref{id:jacobi-modified},
+siis on selge, et selline üldistus omab mõtet. Enamgi veel, kui $x$ ja $y$ on
+paarisvektorid, siis saamegi täpselt samasuse \eqref{id:jacobi-modified}.
+
+Meenutame, et näites \ref{naide:lie-algebra-konstrueerimine} andsime eeskirja,
+kuidas suvalisest assotsiatiivsest algebrast on võimalik konstrueerida
+Lie algebra. Osutub, et analoogiline situatsioon kehtib ka Lie superalgebrate
+korral.
+
+\begin{naide}
+    Olgu $\A = \A_{\overline{0}} \oplus \A_{\overline{1}}$ assotsiatiivne
+    superalgebra, kus elementide $x, y \in \A$ korrutise on tähistatud $xy$.
+    Me saame anda supervektorruumile $\A$ Lie superalgebra struktuuri,
+    kui defineerime homogeensete elementide jaoks sulu võrdusega
+    \begin{align}\label{naide:assot-super-lie-alg}
+        [x, y] = xy - (-1)^{|x||y|} yx, \quad x, y \in \A,
+    \end{align}
+    ning mittehomogeensete elementide jaoks rakendame $\phi$ bilineaarsust.
+
+    Sel juhul
+    \begin{align*}
+        [x, y] &= xy - (-1)^{|x||y|} yx = \\
+        &= -(-1)^{|x||y|} \left[
+            -(-1)^{|x||y|}xy + yx
+        \right] = \\
+        &= -(-1)^{|x||y|} [y, x],
+    \end{align*}
+    ehk nõue \eqref{def:super-antisymm} on täidetud.
+
+    Gradueeritud Jacobi samasuse jaoks rakendame kaks korda valemit
+    \eqref{naide:assot-super-lie-alg} ning arvutame võrduses
+    \eqref{id:super-jacobi-id} olevad liikmed, kusjuures assotsiatiivsust
+    arvesse võttes jätame korrutistes sulud kirjutamata.
+    \begin{flalign*}
+        &-[x, [y, z]] = -xyz + (-1)^{|x||y| + |x||z|} yzx + 
+        (-1)^{|y||z|} xzy - (-1)^{|x||y| + |x||z| + |y||z|} zyx, \\[0.25cm]
+        %
+        &[[x, y], z] = xyz - (-1)^{|x||z| + |y||z|} zxy -
+        (-1)^{|x||y|} yxz + (-1)^{|x||y| + |x||z| + |y||z|} zyx, \\[0.25cm]
+        %
+        &(-1)^{|x||y|}[y, [x, z]] = (-1)^{|x||y|} yxz -
+            (-1)^{|x||y| + |x||y| + |y||z|} xzy - \\
+        &\phantom{(-1)^{|x||y|}[y, [x, z]] = }\ 
+            (-1)^{|x||y| + |x||z|} yzx +
+            (-1)^{|x||y| + |x||y| + |x||z| + |y||z|} zxy.
+    \end{flalign*}
+    Arvestades, et $(-1)^{2k + l} = (-1)^{l}$ mistahes
+    $k, l \in \N \cup \{0\}$ korral, siis saame tulemusi liites kokku
+    täpselt nulli, ehk sulg \eqref{naide:assot-super-lie-alg} rahuldab
+    gradueeritud Jacobi samasust. Kokkuvõttes oleme saanud eeskirja, mille
+    abil on suvaline assotsiatiivne superalgebra võimalik varustada
+    Lie superalgebra struktuuriga.
+\end{naide}
 
 
 \subsection{\texorpdfstring{$n$}\ -Lie superalgebra}
 
-See peatükk tugineb artiklile \cite{Abramov:2014}
-
+Kombineerime nüüd 
 Järgnevas eeldame, et meil on antud supervektorruum
 ehk supervektorruum $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$
 ning $n$-lineaarne kujutus $\phi \col \G^n \to \G$, mis rahuldab
@@ -166,3 +243,7 @@ teoreemi \ref{thm:n+1_lie_alg} superanaloogi järgmiselt:
     $\nbrac{\cdot}{\cdot} \col \G^{n+1} \to \G$ $(n+1)$-Lie
     superalgebra.
 \end{thm}
+
+\subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie superalgebra}
+
+See peatükk tugineb artiklile \cite{Abramov:2014} \dots

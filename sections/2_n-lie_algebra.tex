@@ -57,10 +57,10 @@ on selge, et valides $n = 2$, saame Filippovi samasusest
 \eqref{id:filippov} Jacobi samasuse \eqref{id:jacobi}. Seejuures
 $n$-aarse Lie sulu kaldsümmeetrilisus tähendab, et
 suvaliste $x_1, x_2, \dots, x_n \in \A$ korral
-\begin{align*}
+\begin{align}\label{def:n-lie-brac-antisymm}
     [x_1, \dots, x_i, x_{i+1}, \dots, x_n] =
     -[x_1, \dots, x_{i+1}, x_i, \dots, x_n].
-\end{align*}
+\end{align}
 
 Toome siinkohal $n$-Lie algebra kohta näite, mille
 Filippov esitas artiklis \cite{filippov1985} vahetult
@@ -407,7 +407,8 @@ Teoreemist~\ref{thm:n+1_lie_alg} saame teha olulise järlduse:
 \subsection{Nambu mehaanika. Nambu-Poissoni sulg}
 
 Filippovile olid $n$-Lie algebra konstrueerimisel peamiseks
-inspiratsiooniks Jaapani füüsiku Yoichiro Nambu tööd Hamiltoni mehaanika
+inspiratsiooniks Jaapani füüsiku ja Nobeli preemia laureaadi
+Yoichiro Nambu tööd Hamiltoni mehaanika
 üldistuste vallas, mida täna tuntakse kui Nambu mehaanikat. Osutub, et
 seal esinev \emph{Nambu-Poissoni} sulg on $n$-Lie algebra sulu erijuht,
 mida on põhjalikult uurinud Takhtajan.\cite{takhtajan1994}
@@ -417,20 +418,20 @@ näite $n$-Lie algebrast.
 Alustame klassikalisest situatsioonist ehk tavalisest Hamiltoni mehaanikast.
 
 \begin{dfn}
-    \emph{Poissoni muutkonnaks} nimetatakse siledat muutkonda $M$ koos oma
-    funktsioonide ringiga $A = C^\infty(M)$, kui leidub kujutus
-    $\{\cdot, \cdot\} \col A \times A \to A$, ning on täidetud järgmised
-    tingimused.
+    \emph{Poissoni muutkonnaks} nimetatakse siledat muutkonda $M$ koos
+    funktsioonide algebraga $A = C^\infty(M)$, kui on antud binaarne kujutus
+    kujutus $\{\cdot, \cdot\} \col A \otimes A \to A$, mis rahuldab
+    järgmisi tingimusi:
     \begin{enumerate}
-      \item Kaldsümmeetrilisus, iga $f_1, f_2 \in A$ korral
+      \item kaldsümmeetrilisus, iga $f_1, f_2 \in A$ korral
           \begin{align}\label{eq:poisson-antisymm}
-              \{f_1, f_2\} = -\{f_2, f_1\}.
+              \{f_1, f_2\} = -\{f_2, f_1\},
           \end{align}
-      \item Kehtib Leibnizi tingimust, ehk iga $f_1, f_2, f_3 \in A$ korral
+      \item kehtib Leibnizi tingimus, ehk iga $f_1, f_2, f_3 \in A$ korral
           \begin{align}
-              \{f_1 f_2, f_3\} = f_1 \{f_2, f_3\} + f_2 \{f_1, f_3\}.
+              \{f_1 f_2, f_3\} = f_1 \{f_2, f_3\} + f_2 \{f_1, f_3\},
           \end{align}
-      \item Jacobi samasus, kui $f_1, f_2, f_3 \in A$, siis
+      \item kehtib Jacobi samasus, kui $f_1, f_2, f_3 \in A$, siis
           \begin{align}\label{eq:poisson-jacobi-id}
               \{f_1, \{f_2, f_3\}\} + \{f_2, \{f_3, f_1\}\} +
               \{f_3, \{f_1, f_2\}\} = 0.
@@ -439,22 +440,24 @@ Alustame klassikalisest situatsioonist ehk tavalisest Hamiltoni mehaanikast.
 \end{dfn}
 
 Poissoni muutkonna definitsioonis esinevat kujutust $\{\cdot, \cdot\}$
-nimetatakse \emph{Poissoni suluks}, ja funktsioonide ringi $A$ nimetatakse
-\emph{vaadeldavate algebraks}.
+nimetatakse \emph{Poissoni suluks}, ja funktsioonide algebrat $A$ nimetatakse
+\emph{vaadeldavate algebraks}. Kuna definitsioonis on nõutud tingimused
+\eqref{eq:poisson-antisymm} ja \eqref{eq:poisson-jacobi-id}, siis on selge,
+et Poissoni muutkonnal on olemas Lie algebra struktuur.
+Selgub, et Poissoni sulg mängib klassikalises mehaanikas olulist rolli.
+Nimelt, klassikalises mehaanikas on teada, et dünaamilise süsteemi arengut
+kirjeldab Poissoni sulg, mille abil on võimalik formuleerida Hamiltoni
+liikumisvõrrandid
+\begin{align}\label{eq:hamilton-equation}
+    \frac{\mathrm{d} f}{\mathrm{d} t} = \{H, f\}, \quad f \in A,
+\end{align}
+kus $H \in A$ on fikseeritud operaator, mis vastab süsteemi koguenergiale,
+ja mida nimetatakse \emph{Hamiltoniaaniks}. Saadud konstruktsioon
+kirjeldab süsteemi muutumist ajas, ehk selle süsteemi dünaamikat, ja on
+seega olulisel kohal paljude kvantteooriate kirjeldustes.
 
-Et definitsioonis on nõutud tingimused \eqref{eq:poisson-antisymm} ja
-\eqref{eq:poisson-jacobi-id}, siis on selge, et Poissoni muutkonnal on
-olemas Lie algebra struktuur. Selgub, et Poissoni sulg mängib klassikalises
-mehaanikas olulist rolli. Nimelt, ruumi \emph{faasiruumi} $M$ dünaamika
-on määratud erilise funktsiooni $H \in A$ poolt, mis on määratud
-Hamiltoni liikumisvõrrandite poolt
-\begin{align*}
-    \frac{\mathrm{d} f}{\mathrm{d} t} = \{H, f\}, \quad f \in A.
-\end{align*}
-Sellist funktsiooni $H$ nimetatakse \emph{Hamiltoniaaniks}.
-
-Lihtsaima Poissoni muutkonna näitena võime vaadelda $M = \R^2$ koordinaatidega
-$x$ ja $y$, ning Poissoni suluga
+Lihtsaima Poissoni muutkonna näitena võime vaadelda $M = \R^2$
+koordinaatidega $x$ ja $y$, ning Poissoni suluga
 \begin{align*}
     \{f_1, f_2\} = \frac{\partial f_1}{\partial x} \frac{\partial f_2}{\partial y} -
         \frac{\partial f_1}{\partial y} \frac{\partial f_2}{\partial x} =
@@ -512,236 +515,473 @@ Veendumaks, et kehtib ka Jacobi samasus, piisab vahetult arvutada
     \{f_2, \{f_3, f_1\}\}, \quad
     \{f_3, \{f_1, f_2\}\}.
 \end{align*}
-Arvestades, et funktsioonide korrutamine
-on defineeritud punktihaaval, võime saadud tulemusi liites ning kombineerides näha, et tulemuseks
-on tõepoolest null.
+Arvestades, et funktsioonide korrutamine on defineeritud punktiviisi ning
+korrutise diferentseerimise eeskirja võime saadud tulemusi liites näha, et
+nende summa on tõepoolest null, ehk tingimus \eqref{eq:poisson-jacobi-id}
+on täidetud.
 
-\begin{align}\begin{split}
-    \{f_1, \{f_2, f_3\}\} = &\sum_{i=1}^{n} \left\{
-        f_1,
-        \frac{\partial f_2}{\partial x_i}
-        \frac{\partial f_3}{\partial y_i} -
-        \frac{\partial f_2}{\partial y_i}
-        \frac{\partial f_3}{\partial x_i}
-    \right\} = \\
-    = &\sum_{i=1}^{n} \left\{
-        f_1,
-        \frac{\partial f_2}{\partial x_i}
-        \frac{\partial f_3}{\partial y_i}
-    \right\} - \sum_{i=1}^{n} \left\{
-        f_1,
-        \frac{\partial f_2}{\partial y_i}
-        \frac{\partial f_3}{\partial x_i}
-    \right\} = \\
-    = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left[
-        \frac{\partial f_1}{\partial x_j}
-        \frac{\partial}{\partial y_j} \left(
-            \frac{\partial f_2}{\partial x_i}
-            \frac{\partial f_3}{\partial y_i}
-        \right) -
-        \frac{\partial f_1}{\partial y_j}
-        \frac{\partial}{\partial x_j} \left(
-            \frac{\partial f_2}{\partial x_i}
-            \frac{\partial f_3}{\partial y_i}
-        \right)
-    \right] - \\
-    - &\sum_{i=1}^{n} \sum_{j=1}^{n} \left[
-        \frac{\partial f_1}{\partial x_j}
-        \frac{\partial}{\partial y_j} \left(
-            \frac{\partial f_2}{\partial y_i}
-            \frac{\partial f_3}{\partial x_i}
-        \right) -
-        \frac{\partial f_1}{\partial y_j}
-        \frac{\partial}{\partial x_j} \left(
-            \frac{\partial f_2}{\partial y_i}
-            \frac{\partial f_3}{\partial x_i}
-        \right)
-    \right] = \\
-    = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left[
-        \frac{\partial f_1}{\partial x_j}\left(
-            \frac{\partial f_2}{\partial x_i}
-            \frac{\partial^2 f_3}{\partial y_j \partial y_i} +
-            \frac{\partial f_3}{\partial y_i}
-            \frac{\partial^2 f_2}{\partial y_j \partial x_i}
-        \right) - \right.\\
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n} [}\ \ 
-            \frac{\partial f_1}{\partial y_j}\left(
-            \frac{\partial f_2}{\partial x_i}
-            \frac{\partial^2 f_3}{\partial x_j \partial y_i} +
-            \frac{\partial f_3}{\partial y_i}
-            \frac{\partial^2 f_2}{\partial x_j \partial y_i}
-        \right) - \\
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n} [}\ \ 
-            \frac{\partial f_1}{\partial x_j}\left(
-            \frac{\partial f_2}{\partial y_i}
-            \frac{\partial^2 f_3}{\partial y_j \partial x_i} +
-            \frac{\partial f_3}{\partial x_i}
-            \frac{\partial^2 f_2}{\partial y_j \partial y_i}
-        \right) + \\
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n} [}\ \left.
-            \frac{\partial f_1}{\partial y_j}\left(
-            \frac{\partial f_2}{\partial y_i}
-            \frac{\partial^2 f_3}{\partial y_j \partial x_i} +
-            \frac{\partial f_3}{\partial x_i}
-            \frac{\partial^2 f_2}{\partial y_j \partial y_i}
-        \right)
-    \right] = \\
-    = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
-        \frac{\partial f_1}{\partial x_j}
-        \frac{\partial f_2}{\partial x_i}
-        \frac{\partial^2 f_3}{\partial y_j \partial y_i} +
-        %
-        \frac{\partial f_1}{\partial x_j}
-        \frac{\partial f_3}{\partial y_i}
-        \frac{\partial^2 f_2}{\partial y_j \partial x_i} - \right.\\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-        \frac{\partial f_1}{\partial y_j}
-        \frac{\partial f_2}{\partial x_i}
-        \frac{\partial^2 f_3}{\partial x_j \partial y_i} - 
-        %
-        \frac{\partial f_1}{\partial y_j}
-        \frac{\partial f_3}{\partial y_i}
-        \frac{\partial^2 f_2}{\partial x_j \partial y_i} - \\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-        \frac{\partial f_1}{\partial x_j}
-        \frac{\partial f_2}{\partial y_i}
-        \frac{\partial^2 f_3}{\partial y_j \partial x_i} -
-        %
-        \frac{\partial f_1}{\partial x_j}
-        \frac{\partial f_3}{\partial x_i}
-        \frac{\partial^2 f_2}{\partial y_j \partial y_i} + \\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
-        \frac{\partial f_1}{\partial y_j}
-        \frac{\partial f_2}{\partial y_i}
-        \frac{\partial^2 f_3}{\partial x_j \partial x_i} +
-        %
-        \frac{\partial f_1}{\partial y_j}
-        \frac{\partial f_3}{\partial x_i}
-        \frac{\partial^2 f_2}{\partial x_j \partial x_i}
-    \right).
-\end{split}\end{align}
+% \begin{align}\begin{split}
+%     \{f_1, \{f_2, f_3\}\} = &\sum_{i=1}^{n} \left\{
+%         f_1,
+%         \frac{\partial f_2}{\partial x_i}
+%         \frac{\partial f_3}{\partial y_i} -
+%         \frac{\partial f_2}{\partial y_i}
+%         \frac{\partial f_3}{\partial x_i}
+%     \right\} = \\
+%     = &\sum_{i=1}^{n} \left\{
+%         f_1,
+%         \frac{\partial f_2}{\partial x_i}
+%         \frac{\partial f_3}{\partial y_i}
+%     \right\} - \sum_{i=1}^{n} \left\{
+%         f_1,
+%         \frac{\partial f_2}{\partial y_i}
+%         \frac{\partial f_3}{\partial x_i}
+%     \right\} = \\
+%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left[
+%         \frac{\partial f_1}{\partial x_j}
+%         \frac{\partial}{\partial y_j} \left(
+%             \frac{\partial f_2}{\partial x_i}
+%             \frac{\partial f_3}{\partial y_i}
+%         \right) -
+%         \frac{\partial f_1}{\partial y_j}
+%         \frac{\partial}{\partial x_j} \left(
+%             \frac{\partial f_2}{\partial x_i}
+%             \frac{\partial f_3}{\partial y_i}
+%         \right)
+%     \right] - \\
+%     - &\sum_{i=1}^{n} \sum_{j=1}^{n} \left[
+%         \frac{\partial f_1}{\partial x_j}
+%         \frac{\partial}{\partial y_j} \left(
+%             \frac{\partial f_2}{\partial y_i}
+%             \frac{\partial f_3}{\partial x_i}
+%         \right) -
+%         \frac{\partial f_1}{\partial y_j}
+%         \frac{\partial}{\partial x_j} \left(
+%             \frac{\partial f_2}{\partial y_i}
+%             \frac{\partial f_3}{\partial x_i}
+%         \right)
+%     \right] = \\
+%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left[
+%         \frac{\partial f_1}{\partial x_j}\left(
+%             \frac{\partial f_2}{\partial x_i}
+%             \frac{\partial^2 f_3}{\partial y_j \partial y_i} +
+%             \frac{\partial f_3}{\partial y_i}
+%             \frac{\partial^2 f_2}{\partial y_j \partial x_i}
+%         \right) - \right.\\
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n} [}\ \ 
+%             \frac{\partial f_1}{\partial y_j}\left(
+%             \frac{\partial f_2}{\partial x_i}
+%             \frac{\partial^2 f_3}{\partial x_j \partial y_i} +
+%             \frac{\partial f_3}{\partial y_i}
+%             \frac{\partial^2 f_2}{\partial x_j \partial y_i}
+%         \right) - \\
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n} [}\ \ 
+%             \frac{\partial f_1}{\partial x_j}\left(
+%             \frac{\partial f_2}{\partial y_i}
+%             \frac{\partial^2 f_3}{\partial y_j \partial x_i} +
+%             \frac{\partial f_3}{\partial x_i}
+%             \frac{\partial^2 f_2}{\partial y_j \partial y_i}
+%         \right) + \\
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n} [}\ \left.
+%             \frac{\partial f_1}{\partial y_j}\left(
+%             \frac{\partial f_2}{\partial y_i}
+%             \frac{\partial^2 f_3}{\partial y_j \partial x_i} +
+%             \frac{\partial f_3}{\partial x_i}
+%             \frac{\partial^2 f_2}{\partial y_j \partial y_i}
+%         \right)
+%     \right] = \\
+%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
+%         \frac{\partial f_1}{\partial x_j}
+%         \frac{\partial f_2}{\partial x_i}
+%         \frac{\partial^2 f_3}{\partial y_j \partial y_i} +
+%         %
+%         \frac{\partial f_1}{\partial x_j}
+%         \frac{\partial f_3}{\partial y_i}
+%         \frac{\partial^2 f_2}{\partial y_j \partial x_i} - \right.\\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
+%         \frac{\partial f_1}{\partial y_j}
+%         \frac{\partial f_2}{\partial x_i}
+%         \frac{\partial^2 f_3}{\partial x_j \partial y_i} - 
+%         %
+%         \frac{\partial f_1}{\partial y_j}
+%         \frac{\partial f_3}{\partial y_i}
+%         \frac{\partial^2 f_2}{\partial x_j \partial y_i} - \\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
+%         \frac{\partial f_1}{\partial x_j}
+%         \frac{\partial f_2}{\partial y_i}
+%         \frac{\partial^2 f_3}{\partial y_j \partial x_i} -
+%         %
+%         \frac{\partial f_1}{\partial x_j}
+%         \frac{\partial f_3}{\partial x_i}
+%         \frac{\partial^2 f_2}{\partial y_j \partial y_i} + \\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
+%         \frac{\partial f_1}{\partial y_j}
+%         \frac{\partial f_2}{\partial y_i}
+%         \frac{\partial^2 f_3}{\partial x_j \partial x_i} +
+%         %
+%         \frac{\partial f_1}{\partial y_j}
+%         \frac{\partial f_3}{\partial x_i}
+%         \frac{\partial^2 f_2}{\partial x_j \partial x_i}
+%     \right).
+% \end{split}\end{align}
 
-\newpage
+% \newpage
 
-\begin{align}\begin{split}
-    \{f_1, \{f_2, f_3\}\}
-    = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
-        \frac{\partial f_1}{\partial x_j}
-        \frac{\partial f_2}{\partial x_i}
-        \frac{\partial^2 f_3}{\partial y_j \partial y_i} +
-        %
-        \frac{\partial f_1}{\partial x_j}
-        \frac{\partial f_3}{\partial y_i}
-        \frac{\partial^2 f_2}{\partial y_j \partial x_i} - \right.\\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-        \frac{\partial f_1}{\partial y_j}
-        \frac{\partial f_2}{\partial x_i}
-        \frac{\partial^2 f_3}{\partial x_j \partial y_i} - 
-        %
-        \frac{\partial f_1}{\partial y_j}
-        \frac{\partial f_3}{\partial y_i}
-        \frac{\partial^2 f_2}{\partial x_j \partial y_i} - \\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-        \frac{\partial f_1}{\partial x_j}
-        \frac{\partial f_2}{\partial y_i}
-        \frac{\partial^2 f_3}{\partial y_j \partial x_i} -
-        %
-        \frac{\partial f_1}{\partial x_j}
-        \frac{\partial f_3}{\partial x_i}
-        \frac{\partial^2 f_2}{\partial y_j \partial y_i} + \\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
-        \frac{\partial f_1}{\partial y_j}
-        \frac{\partial f_2}{\partial y_i}
-        \frac{\partial^2 f_3}{\partial x_j \partial x_i} +
-        %
-        \frac{\partial f_1}{\partial y_j}
-        \frac{\partial f_3}{\partial x_i}
-        \frac{\partial^2 f_2}{\partial x_j \partial x_i}
+% \begin{align}\begin{split}
+%     \{f_1, \{f_2, f_3\}\}
+%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
+%         \frac{\partial f_1}{\partial x_j}
+%         \frac{\partial f_2}{\partial x_i}
+%         \frac{\partial^2 f_3}{\partial y_j \partial y_i} +
+%         %
+%         \frac{\partial f_1}{\partial x_j}
+%         \frac{\partial f_3}{\partial y_i}
+%         \frac{\partial^2 f_2}{\partial y_j \partial x_i} - \right.\\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
+%         \frac{\partial f_1}{\partial y_j}
+%         \frac{\partial f_2}{\partial x_i}
+%         \frac{\partial^2 f_3}{\partial x_j \partial y_i} - 
+%         %
+%         \frac{\partial f_1}{\partial y_j}
+%         \frac{\partial f_3}{\partial y_i}
+%         \frac{\partial^2 f_2}{\partial x_j \partial y_i} - \\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
+%         \frac{\partial f_1}{\partial x_j}
+%         \frac{\partial f_2}{\partial y_i}
+%         \frac{\partial^2 f_3}{\partial y_j \partial x_i} -
+%         %
+%         \frac{\partial f_1}{\partial x_j}
+%         \frac{\partial f_3}{\partial x_i}
+%         \frac{\partial^2 f_2}{\partial y_j \partial y_i} + \\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
+%         \frac{\partial f_1}{\partial y_j}
+%         \frac{\partial f_2}{\partial y_i}
+%         \frac{\partial^2 f_3}{\partial x_j \partial x_i} +
+%         %
+%         \frac{\partial f_1}{\partial y_j}
+%         \frac{\partial f_3}{\partial x_i}
+%         \frac{\partial^2 f_2}{\partial x_j \partial x_i}
+%     \right),
+% \end{split}\end{align}
+
+% \begin{align}\begin{split}
+%     \{f_2, \{f_3, f_1\}\}
+%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
+%         \frac{\partial f_2}{\partial x_j}
+%         \frac{\partial f_3}{\partial x_i}
+%         \frac{\partial^2 f_1}{\partial y_j \partial y_i} +
+%         %
+%         \frac{\partial f_2}{\partial x_j}
+%         \frac{\partial f_1}{\partial y_i}
+%         \frac{\partial^2 f_3}{\partial y_j \partial x_i} - \right.\\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
+%         \frac{\partial f_2}{\partial y_j}
+%         \frac{\partial f_3}{\partial x_i}
+%         \frac{\partial^2 f_1}{\partial x_j \partial y_i} - 
+%         %
+%         \frac{\partial f_2}{\partial y_j}
+%         \frac{\partial f_1}{\partial y_i}
+%         \frac{\partial^2 f_3}{\partial x_j \partial y_i} - \\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
+%         \frac{\partial f_2}{\partial x_j}
+%         \frac{\partial f_3}{\partial y_i}
+%         \frac{\partial^2 f_1}{\partial y_j \partial x_i} -
+%         %
+%         \frac{\partial f_2}{\partial x_j}
+%         \frac{\partial f_1}{\partial x_i}
+%         \frac{\partial^2 f_3}{\partial y_j \partial y_i} + \\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
+%         \frac{\partial f_2}{\partial y_j}
+%         \frac{\partial f_3}{\partial y_i}
+%         \frac{\partial^2 f_1}{\partial x_j \partial x_i} +
+%         %
+%         \frac{\partial f_2}{\partial y_j}
+%         \frac{\partial f_1}{\partial x_i}
+%         \frac{\partial^2 f_3}{\partial x_j \partial x_i}
+%     \right),
+% \end{split}\end{align}
+
+% \begin{align}\begin{split}
+%     \{f_3, \{f_1, f_2\}\}
+%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
+%         \frac{\partial f_3}{\partial x_j}
+%         \frac{\partial f_1}{\partial x_i}
+%         \frac{\partial^2 f_2}{\partial y_j \partial y_i} +
+%         %
+%         \frac{\partial f_3}{\partial x_j}
+%         \frac{\partial f_2}{\partial y_i}
+%         \frac{\partial^2 f_1}{\partial y_j \partial x_i} - \right.\\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
+%         \frac{\partial f_3}{\partial y_j}
+%         \frac{\partial f_1}{\partial x_i}
+%         \frac{\partial^2 f_2}{\partial x_j \partial y_i} - 
+%         %
+%         \frac{\partial f_3}{\partial y_j}
+%         \frac{\partial f_2}{\partial y_i}
+%         \frac{\partial^2 f_1}{\partial x_j \partial y_i} - \\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
+%         \frac{\partial f_3}{\partial x_j}
+%         \frac{\partial f_1}{\partial y_i}
+%         \frac{\partial^2 f_2}{\partial y_j \partial x_i} -
+%         %
+%         \frac{\partial f_3}{\partial x_j}
+%         \frac{\partial f_2}{\partial x_i}
+%         \frac{\partial^2 f_1}{\partial y_j \partial y_i} + \\
+%         %
+%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
+%         \frac{\partial f_3}{\partial y_j}
+%         \frac{\partial f_1}{\partial y_i}
+%         \frac{\partial^2 f_2}{\partial x_j \partial x_i} +
+%         %
+%         \frac{\partial f_3}{\partial y_j}
+%         \frac{\partial f_2}{\partial x_i}
+%         \frac{\partial^2 f_1}{\partial x_j \partial x_i}
+%     \right).
+% \end{split}\end{align}
+
+Muutkonna $M$ Poissoni struktuuri on valemi \eqref{eq:R^n-poisson-sulg}
+asemel võimalik kirjeldada ka kaasaegse diferentsiaalgeomeetria
+aparatuuri abil. Selleks oletame, et muutkonnal $M$ on antud kaldsümmeetriline vorm $\eta \col D(M) \otimes D(M) \to C^\infty(M)$,
+kus sümboliga $D(M)$ on tähistatud muutkonna $M$ vektorväljade vektorruum.
+Poissoni sulu võib siis defineerida valemiga
+\begin{align}\label{eq:poisson-brac-nabla}
+    \{ f_1, f_2 \} = \eta(\nabla f_1, \nabla f_2),
+\end{align}
+kus $f_1, f_2 \in C^\infty(M)$ ja vektorväli $\nabla f$ on
+funktsiooni $f$ gradient. Kui $x_1, x_2, \dots, x_n$ on muutkonna
+lokaalsed koordinaadid, siis vektorväljad
+\[
+    \frac{\partial}{\partial x_1},
+    \frac{\partial}{\partial x_2},
+    \dots,
+    \frac{\partial}{\partial x_n}
+\]
+moodustavad vektorväljade mooduli
+baasi, ning vorm $\eta$ tekitab kaldsümmeetrilise kaks korda kovariantse
+tensori
+\[
+    \eta_{ij} = \eta\left(
+        \frac{\partial}{\partial x_i}, \frac{\partial}{\partial x_j}
     \right),
-\end{split}\end{align}
+\]
+mida nimetatakse \emph{Poissoni tensoriks}.
 
-\begin{align}\begin{split}
-    \{f_2, \{f_3, f_1\}\}
-    = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
-        \frac{\partial f_2}{\partial x_j}
-        \frac{\partial f_3}{\partial x_i}
-        \frac{\partial^2 f_1}{\partial y_j \partial y_i} +
-        %
-        \frac{\partial f_2}{\partial x_j}
-        \frac{\partial f_1}{\partial y_i}
-        \frac{\partial^2 f_3}{\partial y_j \partial x_i} - \right.\\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-        \frac{\partial f_2}{\partial y_j}
-        \frac{\partial f_3}{\partial x_i}
-        \frac{\partial^2 f_1}{\partial x_j \partial y_i} - 
-        %
-        \frac{\partial f_2}{\partial y_j}
-        \frac{\partial f_1}{\partial y_i}
-        \frac{\partial^2 f_3}{\partial x_j \partial y_i} - \\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-        \frac{\partial f_2}{\partial x_j}
-        \frac{\partial f_3}{\partial y_i}
-        \frac{\partial^2 f_1}{\partial y_j \partial x_i} -
-        %
-        \frac{\partial f_2}{\partial x_j}
+Seega saame arvutada
+\begin{align*}
+    \{f_1, f_2\} &= \eta(\nabla f_1, \nabla f_2)
+    = \eta\left(
+        \sum_{i=1}^{n}
+            \frac{\partial f_1}{\partial x_i}
+            \frac{\partial}{\partial x_i},
+        \sum_{j=1}^{n}
+            \frac{\partial f_2}{\partial x_j}
+            \frac{\partial}{\partial x_j}
+    \right) = \\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{n}
         \frac{\partial f_1}{\partial x_i}
-        \frac{\partial^2 f_3}{\partial y_j \partial y_i} + \\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
-        \frac{\partial f_2}{\partial y_j}
-        \frac{\partial f_3}{\partial y_i}
-        \frac{\partial^2 f_1}{\partial x_j \partial x_i} +
-        %
-        \frac{\partial f_2}{\partial y_j}
+        \frac{\partial f_2}{\partial x_j}
+        \eta\left(
+            \frac{\partial}{\partial x_i},
+            \frac{\partial}{\partial x_j}
+        \right)
+    = \sum_{i=1}^{n} \sum_{j=1}^{n} \eta_{ij}
         \frac{\partial f_1}{\partial x_i}
-        \frac{\partial^2 f_3}{\partial x_j \partial x_i}
+        \frac{\partial f_2}{\partial x_j} = \\
+    &= \sum_{i < j} \eta_{ij}
+        \frac{\partial f_1}{\partial x_i}
+        \frac{\partial f_2}{\partial x_j} +
+    \sum_{i > j} \eta_{ij}
+        \frac{\partial f_1}{\partial x_i}
+        \frac{\partial f_2}{\partial x_j} +
+    \sum_{i = 1}^{n} \eta_{ii}
+        \frac{\partial f_1}{\partial x_i}
+        \frac{\partial f_2}{\partial x_i} = \\
+    &= \sum_{i < j} \eta_{ij}
+        \frac{\partial f_1}{\partial x_i}
+        \frac{\partial f_2}{\partial x_j} +
+    \sum_{j > i} \eta_{ji}
+        \frac{\partial f_1}{\partial x_j}
+        \frac{\partial f_2}{\partial x_i} = \\
+    &= \sum_{i < j} \eta_{ij}
+        \frac{\partial f_1}{\partial x_i}
+        \frac{\partial f_2}{\partial x_j} -
+    \sum_{i < j} \eta_{ij}
+        \frac{\partial f_1}{\partial x_j}
+        \frac{\partial f_2}{\partial x_i} = \\
+    &= \sum_{i < j} \eta_{ij} \left(
+        \frac{\partial f_1}{\partial x_i}
+        \frac{\partial f_2}{\partial x_j} -
+        \frac{\partial f_1}{\partial x_j}
+        \frac{\partial f_2}{\partial x_i}
+    \right) = \\
+    &= \frac{1}{2} \left[
+        \sum_{i < j}
+            \eta_{ij} \left(
+                \frac{\partial f_1}{\partial x_i}
+                \frac{\partial f_2}{\partial x_j} -
+                \frac{\partial f_1}{\partial x_j}
+                \frac{\partial f_2}{\partial x_i}
+            \right)
+        + \sum_{j < i}
+            \eta_{ji} \left(
+                \frac{\partial f_1}{\partial x_j}
+                \frac{\partial f_2}{\partial x_i} -
+                \frac{\partial f_1}{\partial x_i}
+                \frac{\partial f_2}{\partial x_j}
+            \right)
+    \right] = \\
+    &= \frac{1}{2} \left[
+        \sum_{i < j}
+            \eta_{ij} \left(
+                \frac{\partial f_1}{\partial x_i}
+                \frac{\partial f_2}{\partial x_j} -
+                \frac{\partial f_1}{\partial x_j}
+                \frac{\partial f_2}{\partial x_i}
+            \right)
+        - \sum_{j < i}
+            \eta_{ij} \left(
+                \frac{\partial f_1}{\partial x_j}
+                \frac{\partial f_2}{\partial x_i} -
+                \frac{\partial f_1}{\partial x_i}
+                \frac{\partial f_2}{\partial x_j}
+            \right)
+    \right] = \\
+    &= \frac{1}{2} \left[
+        \sum_{i < j}
+            \eta_{ij} \left(
+                \frac{\partial f_1}{\partial x_i}
+                \frac{\partial f_2}{\partial x_j} -
+                \frac{\partial f_1}{\partial x_j}
+                \frac{\partial f_2}{\partial x_i}
+            \right)
+        + \sum_{j < i}
+            \eta_{ij} \left(
+                \frac{\partial f_1}{\partial x_i}
+                \frac{\partial f_2}{\partial x_j} -
+                \frac{\partial f_1}{\partial x_j}
+                \frac{\partial f_2}{\partial x_i}
+            \right)
+    \right] = \\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{n} \eta_{ij} \frac{1}{2}
+        \left(
+            \frac{\partial f_1}{\partial x_i}
+            \frac{\partial f_2}{\partial x_j} -
+            \frac{\partial f_1}{\partial x_j}
+            \frac{\partial f_2}{\partial x_i}
+        \right).
+\end{align*}
+
+Tuues sisse väliskorrutise
+\[
+    \frac{\partial}{\partial x_i} \wedge
+    \frac{\partial}{\partial x_j} (f_1, f_2) =
+    \frac{1}{2} \left(
+        \frac{\partial f_1}{\partial x_i}
+        \frac{\partial f_2}{\partial x_j} -
+        \frac{\partial f_1}{\partial x_j}
+        \frac{\partial f_2}{\partial x_i}
     \right),
-\end{split}\end{align}
+\]
+siis võime Poissoni sulu \eqref{eq:poisson-brac-nabla} panna kirja kujul
+\[
+    \{f_1, f_2\} = \sum_{i=1}^{n} \sum_{j=1}^{n} \eta_{ij}
+    \frac{\partial}{\partial x_i} \wedge
+    \frac{\partial}{\partial x_j} (f_1, f_2).
+\]
 
-\begin{align}\begin{split}
-    \{f_3, \{f_1, f_2\}\}
-    = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
-        \frac{\partial f_3}{\partial x_j}
-        \frac{\partial f_1}{\partial x_i}
-        \frac{\partial^2 f_2}{\partial y_j \partial y_i} +
-        %
-        \frac{\partial f_3}{\partial x_j}
-        \frac{\partial f_2}{\partial y_i}
-        \frac{\partial^2 f_1}{\partial y_j \partial x_i} - \right.\\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-        \frac{\partial f_3}{\partial y_j}
-        \frac{\partial f_1}{\partial x_i}
-        \frac{\partial^2 f_2}{\partial x_j \partial y_i} - 
-        %
-        \frac{\partial f_3}{\partial y_j}
-        \frac{\partial f_2}{\partial y_i}
-        \frac{\partial^2 f_1}{\partial x_j \partial y_i} - \\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-        \frac{\partial f_3}{\partial x_j}
-        \frac{\partial f_1}{\partial y_i}
-        \frac{\partial^2 f_2}{\partial y_j \partial x_i} -
-        %
-        \frac{\partial f_3}{\partial x_j}
-        \frac{\partial f_2}{\partial x_i}
-        \frac{\partial^2 f_1}{\partial y_j \partial y_i} + \\
-        %
-        &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
-        \frac{\partial f_3}{\partial y_j}
-        \frac{\partial f_1}{\partial y_i}
-        \frac{\partial^2 f_2}{\partial x_j \partial x_i} +
-        %
-        \frac{\partial f_3}{\partial y_j}
-        \frac{\partial f_2}{\partial x_i}
-        \frac{\partial^2 f_1}{\partial x_j \partial x_i}
-    \right).
-\end{split}\end{align}
+Nambu asendas oma käsitluses binaarse Poissoni sulu ternaarse või koguni
+$n$-aarse operatsiooniga muutkonna $M$ vaadeldavate algebral $A$.
+Dünaamilise süsteemi kirjeldamiseks ehk Hamiltoni liikumisvõrrandi
+\eqref{eq:hamilton-equation} formuleerimise jaoks on
+sellisel juhul tarvis ühe Hamiltoniaani asemel vaadata vastavalt kas kahte
+või $n-1$ Hamiltoniaani $H_1, H_2, \dots, H_{n-1}$.
+Sellisel juhul näitavad need Hamiltoniaanid süsteemi
+dünaamikat määravate sõltumatute parameetrite maksimaalset arvu.
+
+\begin{dfn}
+    Muutkonda $M$ nimetatakse $n$-järku \emph{Nambu-Poissoni muutkonnaks},
+    kui on määratud kujutus
+    $\{\cdot, \dots, \cdot\} \col A^{\otimes^n} \to A$, mis on
+    \begin{enumerate}
+        \item kaldsümmeetriline, see tähendab iga $f_1, f_2, \dots, f_n \in A$
+            korral
+            \begin{align}\label{def:nambu-brac-antisymm}
+                \{f_1, \dots, f_n\} = (-1)^{\varepsilon(\sigma)}
+                \{f_{\sigma(1)}, \dots, f_{\sigma(n)}\},
+            \end{align}
+        \item rahuldab Leibnizi tingimust, ehk iga
+            $f_1, f_2, \dots, f_{n+1} \in A$ korral
+            \begin{align}
+                \{f_1 f_2, f_3, \dots, f_n\} =
+                f_1 \{f_2, f_3, \dots, f_n\} +
+                f_2 \{f_1, f_3, \dots, f_n\},
+            \end{align}
+        \item iga $f_1, f_2, \dots, f_{n-1}, g_1, g_2, \dots, g_n,$ korral on
+        täidetud samasus
+            \begin{align}\label{def:nambu-manifold-fund-id}
+                \{f_1, \dots, f_{n-1}, \{g_1, \dots, g_n\}\} =
+                \sum_{i=1}^{n} \{
+                    g_1, \dots, \{f_1, \dots, f_{n-1}, g_i\}, \dots, g_n
+                \}.
+            \end{align}
+    \end{enumerate}
+\end{dfn}
+
+Definitsioonis nõutavat $n$-aarset operatsiooni nimetatakse seejuures
+\emph{Nambu suluks}, ja kaldsümmeetrilisuse tingimuses tähistab
+$\sigma$ indeksite $i = 1, 2, \dots, n$ permutatsiooni ning
+$\varepsilon(\sigma)$ selle permutatsiooni paarsust. Tegelikult on
+aga võrdusega \eqref{def:nambu-brac-antisymm} antud kaldsümmeetrilisus
+täpselt sama, mis $n$-Lie algebra definitsioonis nõutud kaldsümmeetrilisus
+\eqref{def:n-lie-brac-antisymm}, sest järjestikku kahe elemendi vahetamise
+tulemusel on võimalik saada mistahes permutatsioon. Teisalt Nambu
+muutkonna definitsioonis nõutud samasus \eqref{def:nambu-manifold-fund-id}
+ei ole mitte midagi muud, kui juba meile tuttav Filippovi samasus
+\eqref{id:filippov}. Seega kokkuvõttes tekib meil Nambu muutkonnal
+loomulikul viisil $n$-Lie algebra struktuur.
+
+Kokkuvõttes on Nambu-Poissoni muutkonnal dünaamiline süsteem määratud
+$n-1$ funktsiooniga $H_1, H_2, \dots, H_{n-1}$, mille abil on võimalik
+formuleerida \emph{Nambu-Hamiltoni liikumisvõrrandid}
+\begin{align*}
+    \frac{\mathrm{d} f}{\mathrm{d} t} = \{H_1, \dots, H_{n-1}, f\},
+    \quad f \in A.
+\end{align*}
+
+Sellise süsteemi saab analoogiliselt klassikalisele juhule kirjeldada
+kasutades diferentsiaalgeomeetria vahendeid, nagu on näha
+Takhtajani artiklis \cite{takhtajan1994}. Selleks defineerime Nambu
+sulu valemiga
+\begin{align*}
+    \{f_1, \dots, f_n\} = \eta\left( \nabla f_1, \dots, \nabla f_n \right),
+\end{align*}
+kus $\eta \col D(M)^{\oplus^n} \to C^\infty(M)$ on kaldsümmeetriline vorm ja
+$D(M)$ tähistab muutkonna $M$ vektorväljade vektorruumi. Kasutades
+muutkonnal $M$ lokaalseid koordinaate $\eta$ kaldsümmeetrilised
+$n$-korda kovariantsed \emph{Nambu tensorid} $\eta_{i_1 i_2 \dots i_n}$
+nii, et
+\begin{align*}
+    \eta = \sum_{i_1, \dots, i_n = 1}^{n} \eta_{i_1 i_2 \dots i_n}
+        \frac{\partial}{\partial x_{i_1}}
+        \wedge \dots \wedge
+        \frac{\partial}{\partial x_{i_n}},
+\end{align*}
+ja kokkuvõttes saab Nambu sulg kuju
+\begin{align*}
+    \{f_1, \dots, f_n\} =
+    \sum_{i_1, \dots, i_n = 1}^{n} \eta_{i_1 i_2 \dots i_n}
+        \frac{\partial}{\partial x_{i_1}}
+        \wedge \dots \wedge
+        \frac{\partial}{\partial x_{i_n}} (f_1, \dots, f_n).
+\end{align*}

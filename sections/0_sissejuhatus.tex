@@ -1,0 +1,44 @@
+%!TEX root = ../thesis.tex
+
+\section{Sissejuhatus}
+
+Matemaatika haru, mida me täna tunneme kui \emph{Lie teooriat} kerkis esile
+geomeetria ja lineaaralgebra uurimisest. Lie teooria üheks keskseks mõisteks
+on \emph{Lie algebra} - vektorruum, mis on varustatud
+mitteassotsiatiivse korrutamisega ehk nõndanimetatud \emph{Lie suluga}.
+Lie algebrad ja nende uurimine on tihedalt seotud teise Lie teooria keskse
+mõistega, milleks on \emph{Lie rühm}. Viimased on
+struktuurid, mis on korraga nii algebralised rühmad kui ka topoloogilised
+muutkonnad, kusjuures rühma korrutamine ja selle pöördtehe on mõlemad
+pidevad. Osutub, et igale Lie rühmale saab vastavusse seada Lie algebra, kuid
+üldjuhul kahjuks vastupidine väide ei kehti. Samas on võimalik näidata
+pisut nõrgem tulemus: suvalise lõplikumõõtmelise
+reaalsele või komplekssele Lie algebra jaoks leidub temale üheselt
+vastav sidus Lie rühm.\cite{kirillov2008introduction} Just selle viimase,
+nõndanimetatud \emph{Lie kolmanda teoreemi} tõttu on võimalik
+Lie rühmasid vaadelda Lie algebrate kontekstis ja see teebki Lie algebrad
+äärmiselt oluliseks.
+
+Tähistagu kõikjal järgnevas $K$ nullkarakteristikaga korpust ning $\V$
+vektorruumi üle korpuse $K$. Ruumi kokkuhoiu ja mugavuse mõttes
+kasutame edaspidi vajaduse korral summade tähistamisel
+Einsteini summeerimiskokkulepet. Teisi sõnu, kui meil on indeksid $i$ ja $j$,
+mis omavad väärtusi $1, \dots, n$, kus $n \in \N$, siis jätame vahel
+summeerimisel summamärgi kirjutamata ning säilitame summeerimise tähistamiseks
+vaid indeksid. Einsteini summeeruvuskokkulepet arvestades kehtivad näiteks
+järgmised võrdused:
+\begin{align*}
+    x^{i} e_{i} &= \sum_{a=1}^{n} x^{i} e_{i} = 
+        x^{1} e_{1} + x^{2} e_{2} + \dots + x^{n} e_{n}, \\
+    \lambda{^i_j} x^{j} &= \sum_{j=1}^{n} 
+        \lambda{^i_j} x^{j} = \lambda{^i_1} x^{1} + 
+        \lambda{^i_2} x^{2} + 
+        \dots +\lambda{^i_n} x^{n},\\
+    \eta_{ij} u^{i} v^{j} &= \eta_{11} u^{1} v^{1} + 
+        \eta_{12} u^{1} v^{2} + \dots + \eta_{1n} u^{1} v^{n} + 
+        \eta_{21} u^{2} v^{1} + \dots + \eta_{nn} u^{n} v^{n},
+\end{align*}
+ja nii edasi.
+
+Järgnevas anname minimaalse ülevaate klassikalisest Lie algebrate teooriast,
+mida on tarvis edasiste peatükkide mõistmiseks.

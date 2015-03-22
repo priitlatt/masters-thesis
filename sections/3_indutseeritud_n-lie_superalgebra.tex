@@ -85,14 +85,47 @@ Sellega on meil olemas piisvad vahendid, et defineerida
 \end{dfn}
 
 Supermatemaatikas on standardseks võtteks elementide $x$ ja $y$ järjekorra
-vahetamisel seda operatsiooni balanseerida korrutades tulemus läbi suurusega
-$(-1)^{|x||y|}$, see tähendab võetakse arvesse elementide gradueeringuid.
+vahetamisel seda operatsiooni balansseerida korrutades saadav tulemus
+läbi suurusega $(-1)^{|x||y|}$, see tähendab võetakse arvesse elementide
+gradueeringuid.
 Seega on definitsiooni tingimus \eqref{def:super-antisymm} põhjendatud.
 Gradueeritud Jacobi samasuse \eqref{id:super-jacobi-id} selline kuju võib
-esmapilgul tunduda mõnevõrra kohatu, kuid tuletades meelde, et me võime
+esmapilgul tunduda mõnevõrra üllatav, kuid tuletades meelde, et me võime
 klassikalise Jacobi samasuse kirja panna ka kujul \eqref{id:jacobi-modified},
 siis on selge, et selline üldistus omab mõtet. Enamgi veel, kui $x$ ja $y$ on
 paarisvektorid, siis saamegi täpselt samasuse \eqref{id:jacobi-modified}.
+
+\begin{lau}
+    Olgu $(\g = \g_{\overline{0}} \oplus \g_{\overline{1}}, [\cdot, \cdot])$
+    Lie superalgebra. Sel juhul,
+    \begin{enumerate}[label=\arabic*)]
+        \item kui $\g_{\overline{1}} = 0$, siis $\g$ on Lie algebra;
+        \item kui $\g_{\overline{0}} = 0$, siis $\g$ on Abeli Lie
+            superalgebra, see tähendab $[\g, \g] = 0$.
+    \end{enumerate}
+\end{lau}
+
+\begin{proof}
+    Olgu $(\g = \g_{\overline{0}} \oplus \g_{\overline{1}}, [\cdot, \cdot])$
+    Lie superalgebra.
+    \begin{enumerate}[label=\arabic*)]
+        \item Eeldame, et $\g_{\overline{1}} = 0$. Siis suvaliste
+            $x, y \in \g$ korral $|x| = |y| = \overline{0}$ ja
+            $|x||y| = \overline{0}$, ning tingimusest
+            \eqref{def:super-antisymm} saab tavaline kaldsümmeetrilisus,
+            ning nagu eelnevalt juba märgitud, on sel juhul gradueeritud
+            Jacobi samasus täpselt Jacobi samasus.
+        \item Olgu nüüd $\g_{\overline{0}} = 0$, see tähendab $\g$ koosneb
+            ainult paaritutest elementidest ehk iga $x, y \in \g$ korral
+            $|x| = |y| = \overline{1}$. Kuna sulg $[\cdot, \cdot]$
+            määrab $\g$ superalgebra struktuuri, siis kehtib
+            $\left| [x, y] \right| = |x| + |y|$, mis tähenab, et
+            kahe elemendi sulg on alati paariselement. Teisalt
+            $\g_{\overline{0}} = 0$, ja järelikult suvaliste $x, y \in \g$
+            korral $[x, y] = 0$, mis tähendabki, et $\g$ on Abeli
+            Lie superalgebra.
+    \end{enumerate}
+\end{proof}
 
 Meenutame, et näites \ref{naide:lie-algebra-konstrueerimine} andsime eeskirja,
 kuidas suvalisest assotsiatiivsest algebrast on võimalik konstrueerida
@@ -101,13 +134,14 @@ korral.
 
 \begin{naide}
     Olgu $\A = \A_{\overline{0}} \oplus \A_{\overline{1}}$ assotsiatiivne
-    superalgebra, kus elementide $x, y \in \A$ korrutise on tähistatud $xy$.
+    superalgebra, kus elementide $x, y \in \A$ korrutis on tähistatud $xy$.
     Me saame anda supervektorruumile $\A$ Lie superalgebra struktuuri,
     kui defineerime homogeensete elementide jaoks sulu võrdusega
     \begin{align}\label{naide:assot-super-lie-alg}
         [x, y] = xy - (-1)^{|x||y|} yx, \quad x, y \in \A,
     \end{align}
-    ning mittehomogeensete elementide jaoks rakendame $\phi$ bilineaarsust.
+    ning mittehomogeensete elementide jaoks rakendame korrutamise
+    bilineaarsust.
 
     Sel juhul
     \begin{align*}
@@ -147,16 +181,81 @@ korral.
 
 \subsection{\texorpdfstring{$n$}\ -Lie superalgebra}
 
-Järgnevas eeldame, et meil on antud supervektorruum
-ehk supervektorruum $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$
-ning $n$-lineaarne kujutus $\phi \col \G^n \to \G$, mis rahuldab
+Kombineerime nüüd Filippovi $n$-Lie algebra ning eelnevas alapeatükis
+tutvustatud Lie superalgebra üheks \emph{$n$-Lie superalgebraks}. Selleks
+eeldame, et meil on antud supervektorruum 
+$\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
+ning $n$-lineaarne kujutus $\phi \col \V^n \to \V$, mis rahuldab
 tingimusi
-\begin{itemize}
-    \item $| \phi(x_1, \dots, x_n) | = \sum_{i=1}^n |x_i|$,
-    \item $ \phi \left( x_1, \dots, x_i, x_{i+1}, \dots, x_n \right) =
-            -(-1)^{ |x_i| |x_{i+1}| } \phi \left(
-                x_1, \dots, x_{i+1}, x_i, \dots, x_n \right), $
-\end{itemize}
+\begin{gather}
+    |\phi(x_1, \dots, x_n)| = \sum_{i=1}^n |x_i|, \\
+    \phi \left( x_1, \dots, x_i, x_{i+1}, \dots, x_n \right) =
+        -(-1)^{ |x_i| |x_{i+1}| } \phi \left(
+            x_1, \dots, x_{i+1}, x_i, \dots, x_n
+        \right).
+\end{gather}
+
+Üldistame nüüd definitsiooni~\ref{def:lie-algebra} supervektorruumi jaoks
+ning defineerime \emph{$n$-Lie superalgebra}.
+
+\begin{dfn}[$n$-Lie superalgebra]
+    Olgu $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$ 
+    supervektorruum. Me ütleme, et $\G$ on
+    \emph{$n$-Lie superalgebra}, kui $\G$ on varustatud
+    gradueeritud $n$-Lie suluga $\nbrac{\cdot}{\cdot} \col \G^n \to \G$,
+    mis rahuldab tingimusi
+    \begin{enumerate}
+        \item $\left| \nbrac{x_1}{x_n} \right| = \sum_{i=1}^n |x_i| $,
+        \item $\left[ x_1, \dots, x_i, x_{i+1}, \dots, x_n \right] =
+            -(-1)^{|x_i| |x_{i+1}|} \left[
+                x_1, \dots, x_{i+1}, x_i, \dots, x_n
+            \right]$,
+        \item $\left[ y_1, \dots, y_{n-1}, \nbrac{x_1}{x_n} \right] = $ \\
+            $ = \sum_{i=1}^n (-1)^{\tau_x (i-1) \tau_y (n-1)}
+            \left[
+                x_1, \dots, x_{i-1},
+                \left[ y_1, \dots, y_{n-1}, x_i \right],
+                x_{i+1}, \dots, x_n
+            \right] $,
+    \end{enumerate}
+    kus $x = (x_1, \dots, x_n)$ ja $y = (y_1, \dots, y_{n-1})$ ning
+    $\tau_x (k) = \sum_{j=1}^{k-1} |x_i|$.
+\end{dfn}
+
+Võttes arvesse $n$-Lie superalgebra definitsiooni saame sõnastada 
+teoreemi \ref{thm:n+1_lie_alg} superanaloogi järgmiselt:
+
+\begin{thm}
+    Olgu $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$
+    $n$-Lie superalgebra suluga $\nbrac{\cdot}{\cdot} \col \G^n \to \G$,
+    ning $V$ lõplikumõõtmeline vektorruum ja olgu
+    antud $\G$ esitus $\phi \col \G \to \gl V$. Defineerides
+    $\nbrac{\cdot}{\cdot} \col \G^{n+1} \to \G$ valemiga
+    \[
+        \nbrac{x_1}{x_{n+1}} = \sum_{i=1}{n+1}
+        (-1)^{i-1} (-1)^{|x_i| \tau_x (i-1)} S(\phi(x_i))
+        \left[ x_1, \dots, \hat{x_i}, \dots, x_{n+1} \right],
+    \]
+    on supervektorruum $\G$, varustatuna suluga
+    $\nbrac{\cdot}{\cdot} \col \G^{n+1} \to \G$ $(n+1)$-Lie
+    superalgebra.
+\end{thm}
+
+\subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie superalgebra}
+
+Kombineerime nüüd Filippovi $n$-Lie algebra ning eelnevas alapeatükis
+tutvustatud Lie superalgebra üheks \emph{$n$-Lie superalgebraks}. Selleks
+eeldame, et meil on antud supervektorruum 
+$\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
+ning $n$-lineaarne kujutus $\phi \col \V^n \to \V$, mis rahuldab
+tingimusi
+\begin{gather}
+    |\phi(x_1, \dots, x_n)| = \sum_{i=1}^n |x_i|, \\
+    \phi \left( x_1, \dots, x_i, x_{i+1}, \dots, x_n \right) =
+        -(-1)^{ |x_i| |x_{i+1}| } \phi \left(
+            x_1, \dots, x_{i+1}, x_i, \dots, x_n
+        \right),
+\end{gather}
 kus $|x| \in \left\{ \overline{0}, \overline{1} \right\}$
 tähistab elemendi $x$ paartust. Samuti eeldame, et $S \col \G \to \K$
 on lineaarne kujutus, mis rahuldab
@@ -242,7 +341,5 @@ teoreemi \ref{thm:n+1_lie_alg} superanaloogi järgmiselt:
     $\nbrac{\cdot}{\cdot} \col \G^{n+1} \to \G$ $(n+1)$-Lie
     superalgebra.
 \end{thm}
-
-\subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie superalgebra}
 
 See peatükk tugineb artiklile \cite{Abramov:2014} \dots

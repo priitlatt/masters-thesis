@@ -117,16 +117,17 @@ Juhul kui maatriksi $A$ korral $\Tr_\V A = 0$, siis ütleme, et
 maatriks $A$ on \emph{jäljeta}.
 
 \begin{naide}
-    On hästi teada, et vektorruumi $\V$ kõigi lineaarteisenduste hulk $\Lin \V$
+    On hästi teada, et vektorruumi $\V$ kõigi lineaarteisenduste ehk
+    endomorfismide hulk $\End \V$
     on ise ka vektorruum, kusjuures kui vektorruumi $\V$ dimensioon
-    on $\dim(\V) = n$, siis ruumi $\Lin \V$ dimendsioon on
-    $\dim \left(\Lin \V\right) = n^2$. Kasutades jälge $\Tr_\V$ saame
+    on $\dim(\V) = n$, siis ruumi $\End \V$ dimendsioon on
+    $\dim \left(\End \V\right) = n^2$. Kasutades jälge $\Tr_\V$ saame
     defineerida bilineaarvormi
-    $\blinv \col \Lin \V \times \Lin \V \to K$ järgmiselt:
+    $\blinv \col \End \V \times \End \V \to K$ järgmiselt:
     \begin{align*}
         (A, B) = \Tr_\V(AB),
     \end{align*}
-    kus $A$ ja $B$ on maatriksid, mis vastavad vektorruumi $\Lin \V$
+    kus $A$ ja $B$ on maatriksid, mis vastavad vektorruumi $\End \V$
     teisendustele mingi baasi suhtes. Selge, et selliselt defineeritud
     bilineaarvorm sümmeetriline.
 \end{naide}
@@ -303,9 +304,9 @@ Enne kui Lie algebra definitsiooni anname tuletame meelde, et \emph{algebraks}
 defineeritud bilineaarne korrutamine $\V \times \V \to \V$. Kui algebra
 tehe rahuldab assotsiatiivsuse tingimust, siis nimetatakse seda algebrat
 assotsiatiivseks, ning vastasel korral mitteassotsiatiivseks. Nii on näiteks
-vektorruumi $\V$ lineaarteisenduste vektorruum $\Lin \V$ assotsiatiivne algebra,
+vektorruumi $\V$ lineaarteisenduste vektorruum $\End \V$ assotsiatiivne algebra,
 mille tehteks on teisenduste kompositsioon: $f \circ g$. Samas võime
-vektorruumi $\Lin \V$ varustada ka teistsuguse korrutamisega ning saada uue
+vektorruumi $\End \V$ varustada ka teistsuguse korrutamisega ning saada uue
 algebralise struktuuri, kui võtame tehteks näiteks $f \circ g - g \circ f$.
 Üldiselt selline korrutamine aga enam kommutatiivne ei ole.
 

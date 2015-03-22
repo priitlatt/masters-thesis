@@ -95,6 +95,21 @@ klassikalise Jacobi samasuse kirja panna ka kujul \eqref{id:jacobi-modified},
 siis on selge, et selline üldistus omab mõtet. Enamgi veel, kui $x$ ja $y$ on
 paarisvektorid, siis saamegi täpselt samasuse \eqref{id:jacobi-modified}.
 
+\begin{markus}
+    Prefiks "`\emph{super}"' kõikide mõistete ees pärineb teoreetilise füüsika
+    harust, mida nimetatakse supersümmeetriaks. Meie vaadeldavad
+    "`super"'-struktuurid loovad algebralised vahendid, milles on
+    võimalik supersümmeetrilisi füüsikalisi teooriaid formuleerida.
+    Täpsemalt on superruumis võimalik ühes konstruktsioonis siduda oma
+    iseloomult täiesti erinevad fermionid ja bosonid, see on aine- ja
+    väljaosakesed.
+
+    Nii avaldub ka Lie superalgebrate tähtsus ja rakendus teoreetilises
+    füüsikas, kus neid kasutatakse supersümmeetriate matemaatilises
+    kirjelduses. Tavaliselt vaadeldakse neis teooriates superalgebra
+    paarisosa kui bosoneid, ja paaritule osale seatakse vastavusse fermionid.
+\end{markus}
+
 \begin{lau}
     Olgu $(\g = \g_{\overline{0}} \oplus \g_{\overline{1}}, [\cdot, \cdot])$
     Lie superalgebra. Sel juhul,
@@ -178,6 +193,54 @@ korral.
     Lie superalgebra struktuuriga.
 \end{naide}
 
+Loomulikult räägitakse ka Lie superalgebrate puhul homomorfismidest. Need
+defineeritakse klassikalisel viisil, see tähendab kui
+$\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$ ja
+$\h = \h_{\overline{0}} \oplus \h_{\overline{1}}$
+on Lie superalgebrad, siis $f \col \g \to \h$ nimetatakse
+Lie superalgebrate homomorfismiks, kui
+$f([x, y]_\g) = [f(x), f(y)]_\h$
+suvaliste $x, y \in \g$ korral. Homomorfismi $f \col \g \to \h$
+gradueering $|f| \in \Z_2$ määratakse seejuures seosest
+\begin{align*}
+    f(\g_i) \subseteq \h_{i + |f|}, \quad i \in \Z_2.
+\end{align*}
+Niisiis, $f$ on paaris, kui $f(\g_i) \subseteq \h_i$, ja $f$ on paaritu,
+kui $f(\g_i) \subseteq \h_{i+\overline{1}}$. Samamoodi võib kujutuse
+gradueeringust rääkida ka supervektorruumi või superalgebra korral.
+Homomorfismi, mille lähte- ja sihtalgebra ühtivad nimetame endomorfismiks
+ja supervektorruumi $\V$ kõigi endomorfismide hulka tähistame $\End \V$.
+
+\begin{lemma}
+    Olgu $\V$ supervektorruum ja $f, g \in \End \V$. Kui $|f| = |g|$,
+    siis $f \circ g$ on paaris, ning vastasel korral paaritu.
+\end{lemma}
+
+\begin{proof}
+    Olgu $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$ supervektorruum,
+    $f, g \in \End \V$ ja $i \in \Z_2$. Siis
+    \begin{align*}
+        (f \circ g)(\V_i) = f(g(\V_i)) \subseteq
+        f(\V_{i + |g|}) \subseteq \V_{i + |g| + |f|}.
+    \end{align*}
+    Kui $|f| = |g|$, siis $i + |g| + |f| = i$ ehk $f \circ g$ on paaris.
+    Vastasel korral $i + |g| + |f| = i + \overline{1}$ ja seega
+    $f \circ g$ on paaritu.
+\end{proof}
+
+Lemma põhjal on selge, et supervektorruumis $\End \V$ kujutuste
+kompositsioon $\circ$ rahuldab tingimust \eqref{def:superalgebra-parity},
+ning seega on $\End \V$ superalgebra. Ühes eelmise näitega saame nüüd
+teha järgmise järelduse.
+
+\begin{jar}
+    Olgu $\V$ supervektorruum. Assotsiatiivne superalgebra $\End \V$, mis on
+    varustatud suluga
+    \begin{align*}
+        [f, g] = f \circ g - (-1)^{|f||g|} g \circ f, \quad f, g \in \End \V,
+    \end{align*}
+    on Lie superalgebra.
+\end{jar}
 
 \subsection{\texorpdfstring{$n$}\ -Lie superalgebra}
 

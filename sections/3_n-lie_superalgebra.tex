@@ -234,12 +234,12 @@ ning seega on $\End \V$ superalgebra. Ühes eelmise näitega saame nüüd
 teha järgmise järelduse.
 
 \begin{jar}
-    Olgu $\V$ supervektorruum. Assotsiatiivne superalgebra $\End \V$, mis on
-    varustatud suluga
+    Olgu $\V$ supervektorruum. Assotsiatiivne superalgebra
+    $\End \V$, mis on varustatud suluga
     \begin{align*}
         [f, g] = f \circ g - (-1)^{|f||g|} g \circ f, \quad f, g \in \End \V,
     \end{align*}
-    on Lie superalgebra.
+    on Lie superalgebra. \hfill \qed
 \end{jar}
 
 \subsection{\texorpdfstring{$n$}\ -Lie superalgebra}
@@ -583,7 +583,7 @@ ja arvutame $\phi_S$ sel viisil.
 
 Saadud kujutuse tähtsamad omadused võtab kokku järgmine lemma.
 
-\begin{lemma}
+\begin{lemma}\label{lemma:indutseeritud-sulu-omadused}
     Olgu $x_1, x_2, \dots, x_{n+1} \in \V$ homogeensed elemendid.
     Siis $(n+1)$-lineaarne kujutus $\phi_S \col \G^{n+1} \to \g$
     rahuldab järgmisi tingimusi:
@@ -754,7 +754,8 @@ kehtivad ka $n$-Lie superalgebrate korral.
             [x_1, \dots, \hat{x_i}, \dots, x_{n+1}] = \\
         &= 0,
     \end{align*}
-    sest iga $i = 1, 2, \dots, n+1$ korral
+    sest lemma \ref{lemma:indutseeritud-sulu-omadused} järgi
+    iga $i = 1, 2, \dots, n+1$ korral
     $S([x_i^1, x_i^2, \dots, x_i^{n+1}]_S) = 0$.
 \end{proof}
 
@@ -766,3 +767,91 @@ Lause tõestusest võime teha järelduse.
     vastav indutseeritud $(n+1)$-Lie superalgebra, siis
     $D^p(\g_S) = \{0\}$, kui $p \geq 2$. \hfill \qed
 \end{jar}
+
+\begin{lau}
+    Olgu $n$-Lie superalgebra $(\g, [\cdot, \dots, \cdot])$
+    kommutaatori jälg $S$ ja olgu $(\g_S, [\cdot, \dots, \cdot]_S)$
+    neile vastav indutseeritud $(n+1)$-Lie superalgebra.
+    Tähistagu $\left(C^p(\g)\right)_{p=0}^\infty$ algebra
+    $(\g, [\cdot, \dots, \cdot])$
+    keskset kahanevat jada, ning tähistagu
+    $\left(C^p(\g_S)\right)_{p=0}^\infty$ algebra 
+    $(\g, [\cdot, \dots, \cdot]_S)$
+    keskset kahanevat jada. Siis iga $p \in \N$ korral
+    \begin{align*}
+        C^p(\g_S) \subseteq C^p(\g).
+    \end{align*}
+    Enamgi veel, kui leidub $g \in \g$ nii, et iga
+    $x_1, x_2, \dots, x_n \in \g$ korral
+    $[g, x_1, \dots, x_n]_S = [x_1, \dots, x_n]$, siis
+    kõikide $p \in \N$ jaoks kehtib võrdus
+    \begin{align*}
+        C^p(\g_S) = C^p(\g).
+    \end{align*}
+\end{lau}
+
+\begin{proof}
+    Viime tõestuse läbi kasutades matemaatilist induktsiooni.
+    Baasjuht $p = 0$ on triviaalne, sest $C^0(\g) = \g$ ja
+    samuti $C^0(\g_S) = \g$.
+
+    Vaatleme juhtu $p = 1$. Siis iga
+    $x = [x_1, x_2, \dots, x_{n+1}]_S \in C^1(\g_S)$ korral
+    \[
+        x = \sum_{i=1}^{n+1} (-1)^{i-1}(-1)^{|x_i||\mathrm{x}|_{i-1}}
+            S(x_i) [x_1, \dots, \hat{x_i}, \dots, x_{n+1}],
+    \]
+    kus $x = (x_1, x_2, \dots, x_{n+1})$. See aga tähendab, et
+    $x$ on $C^1(\g)$ elementide lineaarkombinatsioon ja järelikult
+    $x \in C^1(\g)$.
+
+    Oletame nüüd, et leidub $g \in \g$ nii, et suvaliste
+    $y_1, y_2, \dots, y_n \in \g$ korral
+    \[
+        [g, y_1, \dots, y_n]_S = [y_1, \dots, y_n].
+    \]
+    Siis aga võib $x = [x_1, \dots, x_n] \in C^1(\g)$
+    esitada kujul $[g, x_1, \dots, x_n]_S$, mis tähendab, et
+    $x \in C^1(\g_S)$.
+
+    Oletame nüüd, et väide kehtib mingi $p \in \N$ korral ja
+    vaatleme elementi $x \in C^{p+1}(\g_S)$. Siis leiduvad
+    $x_1, x_2, \dots, x_n \in \g$ ja $g \in C^p(\g_S)$ nii, et
+    \begin{align*}
+        x &= [g, x_1, x_2, \dots, x_n]_S = \\
+        &= -(-1)^{|g||x_1|} [x_1, g, x_2, \dots, x_n]_S = \\
+        &= \dots = \\
+        &= (-1)^n (-1)^{|a||\mathrm{x}|_n}
+            [x_1, x_2, \dots, x_n, g]_S = \\
+        &= (-1)^{n + |a||\mathrm{x}|_n}
+            \sum_{i=1}^{n} (-1)^{i-1} (-1)^{|x_i||\mathrm{x}|_{i-1}}
+                S(x_i) [x_1, \dots, \hat{x_i}, \dots, x_n, a] + \\
+        &\quad\ (-1)^{n + |a||\mathrm{x}|_n}
+            (-1)^n (-1)^{|a||\mathrm{x}|_n} S(g) [x_1, \dots, x_n] = \\
+        &= (-1)^{n + |a||\mathrm{x}|_n} \sum_{i=1}^{n}
+            (-1)^{i-1} (-1)^{|x_i||\mathrm{x}|_{i-1}}
+            S(x_i) [x_1, \dots, \hat{x_i}, \dots, x_n, g],
+    \end{align*}
+    sest $S(g) = 0$, kuna $g \in C^p(\g_S)$ ja seega on ta esitatav
+    mingite elementide Lie suluna. Teisalt, et $g \in C^p(\g_S)$,
+    siis meie induktiivse eelduse põhjal $g \in C^p(\g)$, ja
+    seega $x \in C^{p+1}(\g)$.
+
+    Tõestuse lõpetuseks eeldame, et leidub $g \in \g$ nii, et
+    iga $y_1, y_2, \dots, y_n \in \g$ korral
+    \[
+        [g, y_1, \dots, y_n]_S = [y_1, \dots, y_n].
+    \]
+    Kui nüüd $x \in C^{p+1}(\g)$, siis
+    $x = [h, x_1, \dots, x_{n-1}]$, kus
+    $x_1, x_2, \dots, x_{n-1} \in \g$ ja $h \in C^p(\g)$.
+    Kokkuvõttes saame, et
+    \[
+        x = [h, x_1, \dots, x_{n-1}] =
+        [g, h, x_1, \dots, x_{n-1}]_S =
+        -(-1)^{|g||h|} [h, g, x_1, \dots, x_{n-1}]_S.
+    \]
+    Samas $h \in C^p(\g) = C^p(\g_S)$ ja seega
+    $[h, g, x_1, \dots, x_{n-1}]_S \in C^{p+1}(\g_S)$, millest
+    saame, et $x \in C^{p+1}(\g_S)$.
+\end{proof}

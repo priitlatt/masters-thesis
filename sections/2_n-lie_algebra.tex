@@ -110,13 +110,13 @@ pärast oma definitsiooni.
 Punktis \ref{subsec:algebralised-struktuurid} toodud konstruktsioonid
 on võmalik esitada ka üldisemal juhul.
 
-\begin{dfn}
+\begin{dfn}\label{def:n-lie-alamalgebra}
     Me ütleme, et $\h$ on $n$-Lie algebra $(\g, [\cdot, \dots, \cdot])$
     alamalgebra, kui $\h \subset \g$ on alamruum, ning suvaliste
     $x_1, x_2, \dots, x_n \in \h$ korral $[x_1, x_2, \dots, x_n] \in \h$.
 \end{dfn}
 
-\begin{dfn}
+\begin{dfn}\label{def:n-lie-algebra-ideaal}
     Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie algebra ning olgu
     $\h \subset \g$ alamruum. Me ütleme, et $\h$ on $\g$ \emph{ideaal}, kui
     iga $h \in \h$ ja $x_1, x_2, \dots, x_{n-1} \in \g$ korral
@@ -136,7 +136,7 @@ $\overline{x} = x + \h$, $x \in \g$, ja kommutaatoriks on
     x_1, x_2, \dots, x_n \in \g.
 \end{align*}
 
-\subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie algebra}
+\subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie algebra}\label{subsec:indutseeritud-n-lie-alg}
 
 Artiklis \cite{AKMS:2014} on uuritud põhjalikult konstruktsiooni, mille
 abil on võimalik etteantud $n$-Lie algebrast teatud tingimustel indutseerida
@@ -216,7 +216,7 @@ mitmed head omadused, nagu võib lugeda artiklitest \cite{AKMS:2014,AMS:2011}.
         &= \sum_{i=1}^{n+1} (-1)^{i-1} \tau(x_i) \phi_i(
              x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
            ) = \\
-        &= \sum_{\substack{i=1 \\ i \ne j}}^{n+1} (-1)^{i-1}
+        &= \sum_{\mathclap{i=1,\ i \ne j}}^{n+1} (-1)^{i-1}
            \tau(x_i) \phi_i(
              x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
            ) + \\
@@ -224,11 +224,11 @@ mitmed head omadused, nagu võib lugeda artiklitest \cite{AKMS:2014,AMS:2011}.
            \phi_j(
              x_1, \dots, \lambda x_j^1 + \mu x_j^2, \dots, x_{n+1}
            ) = \\
-        &= \sum_{\substack{i=1 \\ i \ne j}}^{n+1}
+        &= \sum_{\mathclap{i=1,\ i \ne j}}^{n+1}
            \lambda (-1)^{i-1} \tau(x_i) \phi_i(
              x_1, \dots, x_j^1, \dots, x_{n+1}
            ) + \\
-        &\quad\ \sum_{\substack{i=1 \\ i \ne j}}^{n+1} \mu
+        &\quad\ \sum_{\mathclap{i=1,\ i \ne j}}^{n+1} \mu
            (-1)^{i-1} \tau(x_i)
            \phi_i( x_1, \dots, x_j^2, \dots, x_{n+1} ) + \\
         &\quad\ \lambda (-1)^{j-1} \tau(x_j^1) \phi_j(
@@ -244,7 +244,7 @@ mitmed head omadused, nagu võib lugeda artiklitest \cite{AKMS:2014,AMS:2011}.
         &\phi_\tau(
           x_1, \dots, x_{j-1}, x_j, \dots, x_{n+1}
         ) = \\
-        &= \sum_{\substack{i=1\\i \ne j-1, i \ne j}}^{n+1}
+        &= \sum_{\substack{i=1\\i \ne j-1,\ i \ne j}}^{n+1}
           (-1)^{i-1} \tau(x_i) \phi_i(
               x_1, \dots, x_{j-1}, x_j, \dots, x_{n+1}
           ) + \\
@@ -254,7 +254,7 @@ mitmed head omadused, nagu võib lugeda artiklitest \cite{AKMS:2014,AMS:2011}.
         &\quad\ (-1)^{j-1} \tau(x_j) \phi(
               x_1, \dots, x_{j-2}, x_{j-1}, x_{j+1}, \dots, x_{n+1}
           ) = \\
-        &= -\sum_{\substack{i=1\\i \ne j-1, i \ne j}}^{n+1}
+        &= -\sum_{\substack{i=1\\i \ne j-1,\ i \ne j}}^{n+1}
           (-1)^{i-1} \tau(x_i) \phi_i(
               x_1, \dots, x_j, x_{j-1}, \dots, x_{n+1}
           ) - \\
@@ -367,7 +367,7 @@ Teoreemist~\ref{thm:n+1_lie_alg} saame teha olulise järlduse:
     määrab $3$-Lie algebra struktuuri $\g_\tau$ vektorruumil $\g$.
 \end{jar}
 
-\begin{lau}
+\begin{lau}\label{lause:indutseeritud-alamalgebra}
     Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie algebra ning olgu
     $\h \subset \g$ alamalgebra. Kui $\tau$ on $[\cdot, \dots, \cdot]$ jälg,
     siis $\h$ on ka $(\g, [\cdot, \dots, \cdot]_\tau)$ alamalgebra.
@@ -386,7 +386,7 @@ Teoreemist~\ref{thm:n+1_lie_alg} saame teha olulise järlduse:
     $[x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_{n+1}] \in \h$.
 \end{proof}
 
-\begin{lau}
+\begin{lau}\label{lause:indutseeritud-ideaal}
     Olgu $(\g, [\cdot, \dots, \cdot])$ ideaal $\h$. Siis $\h$ on
     $(\g, [\cdot, \dots, \cdot]_\tau)$ ideaal parajasti siis, kui
     $[\g, \g, \dots, \g] \subseteq \h$ või $\h \subseteq \ker \tau$.

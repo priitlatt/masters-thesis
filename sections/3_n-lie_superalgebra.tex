@@ -245,164 +245,524 @@ teha järgmise järelduse.
 \subsection{\texorpdfstring{$n$}\ -Lie superalgebra}
 
 Kombineerime nüüd Filippovi $n$-Lie algebra ning eelnevas alapeatükis
-tutvustatud Lie superalgebra üheks \emph{$n$-Lie superalgebraks}. Selleks
-eeldame, et meil on antud supervektorruum 
-$\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
-ning $n$-lineaarne kujutus $\phi \col \V^n \to \V$, mis rahuldab
-tingimusi
-\begin{gather}
-    |\phi(x_1, \dots, x_n)| = \sum_{i=1}^n |x_i|, \\
-    \phi \left( x_1, \dots, x_i, x_{i+1}, \dots, x_n \right) =
-        -(-1)^{ |x_i| |x_{i+1}| } \phi \left(
-            x_1, \dots, x_{i+1}, x_i, \dots, x_n
-        \right).
-\end{gather}
+tutvustatud Lie superalgebra üheks \emph{$n$-Lie superalgebraks}, nagu
+seda on tehtud artiklis \cite{Abramov:2014}.
 
-Üldistame nüüd definitsiooni~\ref{def:lie-algebra} supervektorruumi jaoks
-ning defineerime \emph{$n$-Lie superalgebra}.
-
-\begin{dfn}[$n$-Lie superalgebra]
-    Olgu $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$ 
-    supervektorruum. Me ütleme, et $\G$ on
-    \emph{$n$-Lie superalgebra}, kui $\G$ on varustatud
-    gradueeritud $n$-Lie suluga $\nbrac{\cdot}{\cdot} \col \G^n \to \G$,
-    mis rahuldab tingimusi
+\begin{dfn}[$n$-Lie superalgebra]\label{def:n-Lie-superalgebra}
+    Olgu $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$ 
+    supervektorruum. Me ütleme, et $\g$ on
+    \emph{$n$-Lie superalgebra}, kui $\g$ on varustatud
+    gradueeritud $n$-Lie suluga $\nbrac{\cdot}{\cdot} \col \g^n \to \g$,
+    mis rahuldab järgmisi tingimusi:
     \begin{enumerate}
-        \item $\left| \nbrac{x_1}{x_n} \right| = \sum_{i=1}^n |x_i| $,
-        \item $\left[ x_1, \dots, x_i, x_{i+1}, \dots, x_n \right] =
-            -(-1)^{|x_i| |x_{i+1}|} \left[
-                x_1, \dots, x_{i+1}, x_i, \dots, x_n
-            \right]$,
-        \item $\left[ y_1, \dots, y_{n-1}, \nbrac{x_1}{x_n} \right] = $ \\
-            $ = \sum_{i=1}^n (-1)^{\tau_x (i-1) \tau_y (n-1)}
-            \left[
-                x_1, \dots, x_{i-1},
-                \left[ y_1, \dots, y_{n-1}, x_i \right],
-                x_{i+1}, \dots, x_n
-            \right] $,
+        \item $n$-aarne sulg $\nbrac{\cdot}{\cdot}$ on $n$-lineaarne ja on
+            kooskõlas gradueeringutega, see tähendab suvaliste
+            homogeensete elementide $x_1, x_2, \dots, x_n \in \g$ korral
+            \begin{align}\label{def:n-lie-superalg-brac-grading}
+                \left| \nbrac{x_1}{x_n} \right| = \sum_{i=1}^n |x_i|,
+            \end{align}
+        \item $\nbrac{\cdot}{\cdot}$ on kaldsümmeetriline gradueeritud mõttes,
+            see tähendab iga $i \in \{1, 2, \dots, n-1\}$ ja suvaliste
+            homogeensete elementide $x_1, x_2, \dots, x_n \in \g$ korral
+            \begin{align}
+                \left[ x_1, \dots, x_i, x_{i+1}, \dots, x_n \right] =
+                -(-1)^{|x_i| |x_{i+1}|} \left[
+                    x_1, \dots, x_{i+1}, x_i, \dots, x_n
+                \right],
+            \end{align}
+        \item kõikide homogeensete elementide
+            $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_{n-1} \in \g$ korral
+            on täidetud gradueeritud Filippovi samasus
+            \begin{align}\begin{split}
+                &\left[ y_1, \dots, y_{n-1}, \nbrac{x_1}{x_n} \right] = \\
+                &= \sum_{i=1}^n (-1)^{|\mathbf{x}|_{i-1} |\mathbf{y}|_{n-1}}
+                \left[
+                    x_1, \dots, x_{i-1},
+                    \left[ y_1, \dots, y_{n-1}, x_i \right],
+                    x_{i+1}, \dots, x_n
+                \right],
+            \end{split}\end{align}
+            kus $\mathbf{x} = (x_1, \dots, x_n)$ ja
+            $\mathbf{y} = (y_1, \dots, y_{n-1})$ ning
+            $|\mathbf{x}|_i = \sum_{j=1}^{i} |x_i|$.
     \end{enumerate}
-    kus $x = (x_1, \dots, x_n)$ ja $y = (y_1, \dots, y_{n-1})$ ning
-    $\tau_x (k) = \sum_{j=1}^{k-1} |x_i|$.
 \end{dfn}
 
-Võttes arvesse $n$-Lie superalgebra definitsiooni saame sõnastada 
-teoreemi \ref{thm:n+1_lie_alg} superanaloogi järgmiselt:
+Paneme tähele, et võttes definitsioonis \ref{def:n-Lie-superalgebra}
+$n = 2$, saame Lie superalgebra, mis tähenab, et üldistus
+sellisel kujul omab mõtet.
 
-\begin{thm}
-    Olgu $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$
-    $n$-Lie superalgebra suluga $\nbrac{\cdot}{\cdot} \col \G^n \to \G$,
-    ning $V$ lõplikumõõtmeline vektorruum ja olgu
-    antud $\G$ esitus $\phi \col \G \to \gl V$. Defineerides
-    $\nbrac{\cdot}{\cdot} \col \G^{n+1} \to \G$ valemiga
+Nagu klassikalise Lie algebra, ja tegelikult ka $n$-Lie algebra
+ning Lie superalgebra korral, on meil võimalik vaadelda
+struktuurikonstante. Selle tarbeks peab loomulikult fikseerima
+$\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$ supervektorruumi
+baasi. Olgu selleks
+\begin{align}\label{n-lie-superalg-basis}
+    \B = \{ e_1, e_2, \dots, e_p, f_1, f_2, \dots, f_q \},
+\end{align}
+kusjuures $\g_{\overline{0}} = \spn \{e_1, e_2, \dots, e_p\}$
+ja $\g_{\overline{1}} = \spn \{f_1, f_2, \dots, f_q\}$.
+
+\begin{dfn}
+    Olgu $n$-Lie superalgebra $\g$ vektorruumi baas $\B$ võrdusest
+    \eqref{n-lie-superalg-basis}. Baasile $\B$ vastavateks
+    \emph{struktuurikonstantideks} nimetatakse arve
+    $K_{A_1 A_2 \dots A_n}^{B}$, mis on määratud võrranditega
+    \begin{align*}
+        [z_{A_1}, z_{A_2}, \dots, z_{A_n}] =
+        K_{A_1 A_2 \dots A_n}^{B} z_B,
+    \end{align*}
+    kus $z_{A_1}, z_{A_2}, \dots, z_{A_n}, z_B \in \B$.
+\end{dfn}
+
+Ilmselt on meil baasi $\B$ elementidel sulu $[\cdot, \dots, \cdot]$
+arvutamiseks kolm võimalust: kõik argumendid on paaris, kõik
+argumendid on paaritud, või on nii paaris- kui ka paarituid elemente.
+Kuid arvestades gradueeritud kaldsümmeetrilisust võime me
+argumendid alati sellisesse järjekorda viia, et väiksema indeksiga
+baasielement eelneb suurema indeksiga elemendile, ja
+paarisgradueeringuga vektorid eelnevad sulus paaritutele.
+Kokkuvõttes jäävad huvipakkuvate struktuurikonstantidena alles ainult:
+\begin{enumerate}[label=\arabic*)]
+    \item $[e_{\alpha_1}, e_{\alpha_2}, \dots, e_{\alpha_n}] =
+        K_{\alpha_1 \alpha_2 \dots \alpha_n}^{\lambda} e_{\lambda}$,
+    \item $[f_{i_1}, f_{i_2}, \dots, f_{i_n}] =
+        K_{i_1 i_2 \dots i_n}^{B} z_{B}$,
+    \item $[e_{\alpha_1}, e_{\alpha_2}, \dots, e_{\alpha_k},
+            f_{i_1}, f_{i_2}, \dots, f_{i_{n-k}}] =
+        K_{
+            \alpha_1 \alpha_2 \dots \alpha_k i_1 i_2 \dots i_{n-k}
+        }^{B} z_{B}$,
+\end{enumerate}
+kus $k < n$, $\alpha_1, \alpha_2, \dots, \alpha_n,
+i_1, i_2, \dots, i_n \in \{1, 2, \dots, n\}$ ja $k < l$ korral
+$\alpha_k < \alpha_l$ ning $i_k < i_l$.
+
+Struktuurikonstantide kasutamise, seda eelkõige just ternaarsete
+Lie superalgebra korral, juurde naaseme hiljem peatüki \textbf{???}
+juures.
+% TODO: viita siia kui klassifikatsiooni meetodi kirjeldusest
+% kirjutatud on..
+
+Märgime, et $n$-Lie superalgebra korral defineeritakse tema
+\emph{ideaal} ning \emph{alamalgebra} täpselt nagu $n$-Lie algebra
+korral (vt definitsioone \ref{def:n-lie-alamalgebra} ja
+\ref{def:n-lie-algebra-ideaal}).
+
+\begin{lemma}
+    Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie superalgebra ja
+    $\h_1, \h_2, \dots, \h_n \subseteq \g$ tema ideaalid. Siis
+    $\h = [\h_1, \h_2, \dots, \h_n]$ on samuti $\g$ ideaal.
+\end{lemma}
+
+\begin{proof}
+    Olgu $\h_1, \h_2, \dots, \h_n$ $n$-Lie superalgebra
+    $(\g, [\cdot, \dots, \cdot])$ ideaalid ning olgu
+    $x_1, x_2, \dots, x_{n-1} \in \g$. Tähistame
+    $\h = [\h_1, \h_2, \dots, \h_n]$ ja valime suvalise $h \in \h$.
+    Siis leiduvad $h_i \in \h_i$, $i = 1, 2, \dots, n$ nii, et
+    $h = [h_1, h_2, \dots, h_n]$ ja gradueeritud Filippovi samasuse
+    järgi saame arvutada
+    \begin{align*}
+        &[x_1, x_2, \dots, x_{n-1}, h] = \\
+        &=[x_1, x_2, \dots, x_{n-1}, [h_1, h_2, \dots, h_n]] = \\
+        &=\sum_{i = 1}^{n} (-1)^{|\mathrm{h}|_{i-1} |\mathrm{x}|_{n-1}}
+            [h_1, \dots, h_{i-1}, [x_1, \dots, x_{n-1}, h_i],
+            h_{i+1}, \dots, h_n],
+    \end{align*}
+    kus $\mathrm{h} = (h_1, h_2, \dots, h_n)$ ja
+    $\mathrm{x} = (x_1, x_2, \dots, x_{n-1})$.
+
+    Paneme tähele, et iga $i = 1, 2, \dots, n$ korral $h_i \in \h_i$.
+    Kuna $\h_i$ on ideaal siis järeldub sellest, et
+    $[x_1, \dots, x_{n-1}, h_i] \in \h_i$. Kokkuvõttes on seega
+    $[x_1, x_2, \dots, x_{n-1}, h]$ ruumi $\h$ elementide lineaarkombinatsioon ehk $[x_1, x_2, \dots, x_{n-1}, h] \in \h$.
+\end{proof}
+
+Arvestades lemmat saame defineerida järgmised mõisted.
+
+% TODO: vaata siin definitsioonis mõistete tõlked üle
+\begin{dfn}
+    Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie superalgebra ja $\h$
+    tema ideaal. Ideaali $\h$ poolt \emph{tuletatud reaks} nimetatakse
+    alamruumide jada $D^p(\h)$, $p \in \N$, kus
     \[
-        \nbrac{x_1}{x_{n+1}} = \sum_{i=1}{n+1}
-        (-1)^{i-1} (-1)^{|x_i| \tau_x (i-1)} S(\phi(x_i))
-        \left[ x_1, \dots, \hat{x_i}, \dots, x_{n+1} \right],
+        D^0(\h) = \h \quad \text{ja} \quad
+        D^{p+1}(\h) = [D^p(\h), \dots, D^p(\h)].
     \]
-    on supervektorruum $\G$, varustatuna suluga
-    $\nbrac{\cdot}{\cdot} \col \G^{n+1} \to \G$ $(n+1)$-Lie
-    superalgebra.
-\end{thm}
+    Ideaali $\h$ \emph{keskseks kahanevaks reaks} nimetatakse
+    alamruumide jada $C^p(\h)$, $p \in \N$, kus
+    \[
+        C^0(\h) = \h \quad \text{ja} \quad
+        C^{p+1}(\h) = [C^p(\h), \h, \dots, \h].
+    \]
+\end{dfn}
+
+\begin{dfn}
+    Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie superalgebra ja $\h$
+    tema ideaal. Me ütleme, et ideaal $\h$ on \emph{lahenduv}, kui
+    leidub $p \in \N$ nii, et $D^p(\h) = \{0\}$. Ideaali $\h$
+    nimetatakse \emph{nilpotentseks}, kui leidub $p \in \N$
+    nii, et $C^p(\h) = \{0\}$.
+\end{dfn}
+
+\begin{dfn}
+    Me ütleme, et $n$-Lie superalgebra $(\g, [\cdot, \dots, \cdot])$
+    on \emph{lihtne}, kui tal ei ole muid ideaale peale $\{0\}$
+    ja iseenda ning $D^1(\g) \neq \{0\}$.
+\end{dfn}
+
+\begin{lemma}
+    Olgu $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$
+    $n$-Lie superalgebra ja $g \in \g_{\overline{0}}$. Siis
+    mistahes $x_1, x_2, \dots, x_{n-2} \in \g$ korral on
+    Lie sulg arvutatuna elementide $g, g, x_1, x_2, \dots, x_{n-2}$
+    suvalisel järjestusel alati null.
+\end{lemma}
+
+\begin{proof}
+    Olgu $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$
+    $n$-Lie superalgebra ja $g \in \g_{\overline{0}}$ ning olgu
+    $x_1, x_2, \dots, x_{n-2} \in \g$ suvalised. Oletame, et me
+    tahame arvutada Lie sulgu elementide
+    \[ g, g, x_1, x_2, \dots, x_{n-2} \]
+    mingil ümberjärjestusel. Kujutuse $[\cdot, \dots, \cdot]$
+    kaldsümmeetrilisuse tõttu on meil lõpliku arvu elementide
+    järjekorra ümbervahetamisel võimalik jõuda olukorrani, kus
+    $g$ ja $g$ on argumentidena üksteise kõrval. Selle protsessi
+    tulemusena saame Lie sulu
+    \begin{align*}
+        (-1)^p [x_{i_1}, \dots, x_{i_k}, g, g,
+            x_{i_{k+1}}, \dots, x_{i_{n-2}}],
+    \end{align*}
+    kus $p \in \N$ tähistab sooritatud ümbervahetamiste arvu
+    ja indeksid $i_1, i_2, \dots, i_{n-2} \in \{1, 2, \dots, n-2\}$ on
+    paarikaupa erinevad. Seejuures rohkem kordajat $(-1)$ ei esine,
+    sest $g \in \g_{\overline{0}}$ ja seega $|g| = \overline{0}$.
+    Lõpetuseks võime veel omakorda $g$ ja $g$ positsioonid ära
+    vahetada, ning saame
+    \begin{align*}
+        &(-1)^p [x_{i_1}, \dots, x_{i_k}, g, g,
+            x_{i_{k+1}}, \dots, x_{i_{n-2}}] = \\
+        &= -(-1)^p (-1)^{|g||g|} [x_{i_1}, \dots, 
+            x_{i_k}, g, g, x_{i_{k+1}}, \dots, x_{i_{n-2}}] = \\
+        &= (-1)^{p+1} [x_{i_1}, \dots, 
+            x_{i_k}, g, g, x_{i_{k+1}}, \dots, x_{i_{n-2}}],
+    \end{align*}
+    ehk teisi sõnu
+    \[
+        [x_{i_1}, \dots, x_{i_k}, g, g, x_{i_{k+1}},
+        \dots, x_{i_{n-2}}] = 
+        -[x_{i_1}, \dots, x_{i_k}, g, g, x_{i_{k+1}},
+        \dots, x_{i_{n-2}}],
+    \]
+    mis saab võimalik olla vaid juhul, kui
+    \begin{align*}
+        [x_{i_1}, \dots, x_{i_k}, g, g, x_{i_{k+1}},
+        \dots, x_{i_{n-2}}] = 0.
+    \end{align*}
+    Siis on aga ka esialgne sulg null.
+\end{proof}
+
+\begin{lau}
+    Olgu $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$ varustatuna
+    sulug $[\cdot, \dots, \cdot] \col \g^n \to \g$ $n$-Lie
+    superalgebra ja olgu $g \in \g_{\overline{0}}$. Varustades
+    supervektorruumi $\g$ sulga
+    $[\cdot, \dots, \cdot]_g \col \g^{n-1} \to \g$, mis on
+    defineeritud valemiga
+    \[
+        [x_1, x_2, \dots, x_{n-1}]_g = [g, x_1, x_2, \dots, x_{n-1}],
+        \quad x_1, x_2, \dots, x_n \in \g,
+    \]
+    saame $(n-1)$-Lie superalgebra.
+\end{lau}
+
+\begin{proof}
+    Olgu lause eeldused täidetud ning olgu
+    $x_1, x_2, \dots, x_{n-1} \in \g$. Kuna
+    $g \in \g_{\overline{0}}$, siis $|g| = \overline{0}$, ja seega
+    \[
+        |[x_1, x_2, \dots, x_{n-1}]_g =
+        |[g, x_1, x_2, \dots, x_{n-1}]| =
+        \sum_{i=1}^{n-1} |x_i| + |g| =
+        \sum_{i=1}^{n-1} |x_i|.
+    \]
+    Kaldsümmeetrilisuseks märgime, et
+    \begin{align*}
+        &[x_1, \dots, x_i, x_{i+1}, \dots, x_{n-1}]_g = \\
+        &=[g, x_1, \dots, x_i, x_{i+1}, \dots, x_{n-1}] = \\
+        &=-(-1)^{|x_i||x_{i+1}|}
+            [g, x_1, \dots, x_{i+1}, x_i, \dots, x_{n-1}] = \\
+        &=-(-1)^{|x_i||x_{i+1}|}
+            [x_1, \dots, x_{i+1}, x_i, \dots, x_{n-1}]_g.
+    \end{align*}
+
+    Veendumaks, et kehtib ka gradueeritud Filippovi samasus
+    eeldame veel, et $y_1, y_2, \dots, y_{n-2} \in \g$ ja tähistame
+    $\mathrm{x} = (g, x_1, \dots, x_{n-1})$ ning
+    $\mathrm{y} = (g, y_1, \dots, y_{n-2})$. Siis
+    \begin{align*}
+        & [y_1, \dots, y_{n-2}, [x_1, \dots, x_{n-1}]_g]_g = \\
+        &= [g, y_1, \dots, y_{n-2}, [g, x_1, \dots, x_{n-1}]] = \\
+        &= \sum_{i=1}^{n-1} (-1)^{
+            |\mathrm{x}|_{i-1} |\mathrm{y}|_{n-1}
+        } [g, x_1, \dots, x_{i-1}, [g, y_1, \dots, y_{n-2}, x_i],
+            x_{i+1}, \dots, x_{n-1}] + \\
+        &\quad\ [[g, y_1, \dots, y_{n-2}, g], x_1, \dots, x_{n-1}] = \\
+        &= \sum_{i=1}^{n-1} (-1)^{
+            |\mathrm{x}|_{i-1} |\mathrm{y}|_{n-1}
+        } [x_1, \dots, x_{i-1}, [y_1, \dots, y_{n-2}, x_i]_g,
+            x_{i+1}, \dots, x_{n-1}]_g,
+    \end{align*}
+    sest lemma järgi $[g, y_1, \dots, y_{n-2}, g] = 0$.
+\end{proof}
 
 \subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie superalgebra}
 
-Kombineerime nüüd Filippovi $n$-Lie algebra ning eelnevas alapeatükis
-tutvustatud Lie superalgebra üheks \emph{$n$-Lie superalgebraks}. Selleks
-eeldame, et meil on antud supervektorruum 
-$\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
-ning $n$-lineaarne kujutus $\phi \col \V^n \to \V$, mis rahuldab
-tingimusi
+Tuginedes artiklile \cite{Abramov:2014} rakendame punktis \ref{subsec:indutseeritud-n-lie-alg} tutvustatud eeskirja $n$-Lie superalgebra
+abil $(n+1)$-Lie superalgebra konstrueerimiseks.
+
+\begin{dfn}
+    Olgu $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
+    supervektorruum ning olgu $\phi \col \V^n \to \V$.
+    Lineaarkujutust $S \col \V \to K$ nimetatakse $\phi$
+    \emph{superjäljeks}, kui
+    \begin{enumerate}[label=\arabic*)]
+        \item iga $x_1, x_2, \dots, x_n \in \V$ korral
+            $S\left(\phi(x_1, x_2, \dots, x_n)\right) = 0$,
+        \item $S(x) = 0$ iga $x \in \V_{\overline{1}}$.
+    \end{enumerate}
+\end{dfn}
+
+\begin{markus}
+    Superjälje definitsioonis antud teine tingimus on ajendatud
+    asjaolust, et blokkmaatriksi
+    \[
+        A = \begin{pmatrix}
+            A_{00} & A_{01} \\
+            A_{10} & A_{11}
+        \end{pmatrix}
+    \]
+    korral arvutatakse superjälg valemiga
+    $S(A) = \Tr(A_{00}) - \Tr(A_{11})$, kus $\Tr$ on tavaline
+    maatriksi jälg, ja $A_{00}, A_{11}$ moodustavad paarisosa
+    ning $A_{01}, A_{10}$ moodustavad paaritu
+    osa. Selge, et kui sellise maatriksi paarisosa on null, siis
+    on tegu paaritu maatriksiga, ning tema superjälg on null.
+\end{markus}
+
+Vaatleme $n$-lineaarset kujutus $\phi \col \V^n \to \V$, mis
+suvaliste homogeensete elementide $x_1, x_2, \dots, x_n \in \V$ korral
+rahuldab tingimusi
 \begin{gather}
-    |\phi(x_1, \dots, x_n)| = \sum_{i=1}^n |x_i|, \\
+    |\phi(x_1, \dots, x_n)| = \sum_{i=1}^n |x_i|,
+        \label{eq:phi-grading}\\
     \phi \left( x_1, \dots, x_i, x_{i+1}, \dots, x_n \right) =
         -(-1)^{ |x_i| |x_{i+1}| } \phi \left(
             x_1, \dots, x_{i+1}, x_i, \dots, x_n
-        \right),
+        \right), \label{eq:phi-graded-anticomm}
 \end{gather}
-kus $|x| \in \left\{ \overline{0}, \overline{1} \right\}$
-tähistab elemendi $x$ paartust. Samuti eeldame, et $S \col \G \to \K$
-on lineaarne kujutus, mis rahuldab
-\begin{itemize}
-    \item $S \left( \phi \left( x_1, \dots, x_n \right) \right) = 0$,
-    \item $S(x) = 0$ iga $x \in \G_{\overline{1}}$.
-\end{itemize}
-
-Selge, et siin sisse toodud kujutused $\phi$ ja $S$ on eelnevas
-kirjeldatu analoogid supervektorruumis. Seejuures kujutust $S \col \G \to \K$
-nimetatakse \emph{superjäljeks}.
-
-Kasutades kujutusi $\phi$ ja $S$ defineerime analoogiliselt
-vektorruumide situatsioonile, kuid nüüd juba supervektorruumi iseärasusi
-arvesse võttes, see tähendab paarsusi arvestades, uue kujutuse
-$\phi_S \col \G^{n+1} \to G$ valemiga
-\[
+see tähenab $\phi$ on kooskõlas gradueeringutega ning
+kaldsümmeetriline gradueeritud mõttes. Lisaks olgu meil antud
+kujutusele $\phi$ vastav superjälg $S \col \V \to K$.
+Kasutades kujutusi $\phi$ ja $S$ defineerime uue kujutuse
+$\phi_S \col \G^{n+1} \to G$, mis homogeensete elementide
+jaoks on määratud valemiga
+\begin{align}\label{def:phi-s}
     \phi_S (x_1, \dots, x_{n+1}) =
-    \sum_{i=1}^{n+1} (-1)^{i-1}(-1)^{|x_i| \sum_{j=1}^{i-1} |x_j| }
+    \sum_{i=1}^{n+1} (-1)^{i-1}(-1)^{|x_i| |\mathbf{x}|_{i-1} }
         S(x_i) \phi \left(
             x_1, \dots, \hat{x_i}, \dots, x_{n+1}
-        \right).
-\]
+        \right),
+\end{align}
+kus $|\mathbf{x}|_{i} = \sum_{j=1}^{i} |x_j|$.
+Mittehomogeensete elementide korral vaatleme eraldi tema paaris- ja
+paaritut osa, ning rakendame kujutuse \eqref{def:phi-s} lineaarsust
+ja arvutame $\phi_S$ sel viisil.
 
-Saadud kujutuse tähtsamad omadused võtab kokku järgmine oluline lemma:
+Saadud kujutuse tähtsamad omadused võtab kokku järgmine lemma.
 
 \begin{lemma}
-    $(n+1)$-lineaarne kujutus $\phi_S \col \G^{n+1} \to \G$
-    rahuldab tingimusi
-    \begin{enumerate}
-        \item $ | \phi_S \left(x_1, \dots, x_{n+1} \right) | =
-               \sum_{i=1}^{n+1} |x_i| $,
+    Olgu $x_1, x_2, \dots, x_{n+1} \in \V$ homogeensed elemendid.
+    Siis $(n+1)$-lineaarne kujutus $\phi_S \col \G^{n+1} \to \g$
+    rahuldab järgmisi tingimusi:
+    \begin{enumerate}[label=\arabic*)]
+        \item $ |\phi_S \left(x_1, \dots, x_{n+1} \right)| =
+                \sum_{i=1}^{n+1} |x_i|$,
         \item $ \phi_S \left(x_1, \dots, x_i, x_{i+1}, \dots, x_{n+1} \right) =
                -(-1)^{|x_i| |x_{i+1}|} \phi_S \left(
                     x_1, \dots, x_{i+1}, x_i, \dots, x_{n+1}
                 \right) $,
-        \item $S \left( \phi_S \left( x_1, \dots, x_{n+1} \right) \right)$.
+        \item $S \left( \phi_S \left( x_1, \dots, x_{n+1} \right) \right) = 0$.
     \end{enumerate}
 \end{lemma}
 
-Üldistame nüüd definitsiooni~\ref{def:lie-algebra} supervektorruumi jaoks
-ning defineerime \emph{$n$-Lie superalgebra}.
+\begin{proof}
+    Olgu $\V$ supervektorruum, rahuldagu $n$-lineaarne
+    kujutus $\phi \col \V^n \to \V$ tingimusi
+    \eqref{eq:phi-grading} ja \eqref{eq:phi-graded-anticomm}, ning
+    olgu $S \col \V \to K$ kujutuse $\phi$ superjälg. Kui
+    Lisaks olgu $x_1, x_2, \dots, x_{n+1} \in \V$ suvalised
+    homogeensed elemendid ja tähistame
+    $\mathrm{x} = (x_1, x_2, \dots, x_{n+1})$.
+    \begin{enumerate}[label=\arabic*)]
+        % TODO: add proof for the first statement
+        \item \dots
 
-\begin{dfn}[$n$-Lie superalgebra]
-    Olgu $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$ 
-    supervektorruum. Me ütleme, et $\G$ on
-    \emph{$n$-Lie superalgebra}, kui $\G$ on varustatud
-    gradueeritud $n$-Lie suluga $\nbrac{\cdot}{\cdot} \col \G^n \to \G$,
-    mis rahuldab tingimusi
-    \begin{enumerate}
-        \item $\left| \nbrac{x_1}{x_n} \right| = \sum_{i=1}^n |x_i| $,
-        \item $\left[ x_1, \dots, x_i, x_{i+1}, \dots, x_n \right] =
-            -(-1)^{|x_i| |x_{i+1}|} \left[
-                x_1, \dots, x_{i+1}, x_i, \dots, x_n
-            \right]$,
-        \item $\left[ y_1, \dots, y_{n-1}, \nbrac{x_1}{x_n} \right] = $ \\
-            $ = \sum_{i=1}^n (-1)^{\tau_x (i-1) \tau_y (n-1)}
-            \left[
-                x_1, \dots, x_{i-1},
-                \left[ y_1, \dots, y_{n-1}, x_i \right],
-                x_{i+1}, \dots, x_n
-            \right] $,
+        \item Rakendame valemit \eqref{def:phi-s} ja arvutame
+            \begin{align*}
+                &\phi_S(x_1, \dots, x_i, x_{i+1}, \dots, x_{n+1}) = \\
+                &= \sum_{j=1}^{n+1}
+                    (-1)^{j-1} (-1)^{|x_j||\mathrm{x}|_{j-1}}
+                    S(x_j) \phi_j(
+                        x_1, \dots, x_i, x_{i+1}, \dots, x_{n+1}
+                    ) = \\
+                &= \sum_{\mathclap{
+                        \substack{j=1\\j \ne i,\ j \ne i+1}}
+                    }^{n+1}
+                    (-1)^{j-1} (-1)^{|x_j||\mathrm{x}|_{j-1}}
+                    S(x_j) \phi_j(
+                        x_1, \dots, x_i, x_{i+1}, \dots, x_{n+1}
+                    ) + \\
+                &\quad\, +
+                    (-1)^{i-1} (-1)^{|x_i||\mathrm{x}|_{i-1}}
+                    S(x_i) \phi(
+                        x_1, \dots, \hat{x_i}, x_{i+1}, \dots, x_{n+1}
+                    ) + \\
+                &\quad\, +
+                    (-1)^{i} (-1)^{|x_{i+1}||\mathrm{x}|_{i}}
+                    S(x_{i+1}) \phi(
+                        x_1, \dots, x_i, \hat{x_{i+1}}, \dots, x_{n+1}
+                    ) = \\
+                &= -(-1)^{|x_i||x_{i+1}|} \sum_{\mathclap{
+                        \substack{j=1\\j \ne i,\ j \ne i+1}}
+                    }^{n+1}
+                    (-1)^{j-1} (-1)^{|x_j||\mathrm{x}|_{j-1}}
+                    S(x_j) \phi_j(
+                        x_1, \dots, x_{i+1}, x_i, \dots, x_{n+1}
+                    ) - \\
+                &\quad
+                    -1(-1)^i (-1)^{
+                        |x_i||\mathrm{x}|_{i-1} + |x_i||x_{i+1}|
+                    } (-1)^{|x_i||x_{i+1}|}
+                    S(x_i) \phi(
+                        x_1, \dots, x_{i+1}, \hat{x_i}, \dots, x_{n+1}
+                    ) - \\
+                &\quad
+                    -(-1)^{i-1} (-1)^{|x_{i+1}||\mathrm{x}|_{i-1}}
+                    (-1)^{|x_{i+1}||x_i|}
+                    S(x_{i+1}) \phi(
+                        x_1, \dots, \hat{x_{i+1}}, x_i, \dots, x_{n+1}
+                    ) = \\
+                &= -(-1)^{|x_i||x_{i+1}|} \phi_S(
+                    x_1, \dots, x_{i+1}, x_i, \dots, x_{n+1}
+                )
+            \end{align*}
+
+        \item Kuna $S$ on kujutuse $\phi$ superjälg, siis $S$ on
+            lineaarne ja $S(\phi(y_1, \dots, y_n)) = 0$ mistahes
+            elementide $y_1, y_2, \dots, y_n \in \V$ korral. Seega
+            \begin{align*}
+                & S\left(\phi_S(x_1, x_2, \dots, x_{n+1})\right) = \\
+                &= S\left( \sum_{i=1}^{n+1}
+                    (-1)^{i-1} (-1)^{|x_i||\mathrm{x}|_{i-1}}
+                    S(x_i) \phi(
+                        x_1, \dots, \hat{x_i}, \dots, x_{n+1}
+                    )
+                    \right) = \\
+                &= \sum_{i=1}^{n+1}
+                    (-1)^{i-1} (-1)^{|x_i||\mathrm{x}|_{i-1}}
+                    S(x_i) S(\phi(
+                        x_1, \dots, \hat{x_i}, \dots, x_{n+1}
+                    )) = \\
+                &= \sum_{i=1}^{n+1} 0 = 0,
+            \end{align*}
+            nagu tarvis. \qedhere
     \end{enumerate}
-    kus $x = (x_1, \dots, x_n)$ ja $y = (y_1, \dots, y_{n-1})$ ning
-    $\tau_x (k) = \sum_{j=1}^{k-1} |x_i|$.
-\end{dfn}
+\end{proof}
 
-Võttes arvesse $n$-Lie superalgebra definitsiooni saame sõnastada 
-teoreemi \ref{thm:n+1_lie_alg} superanaloogi järgmiselt:
+Artiklis \cite{Abramov:2014} on toodud teoreem, mis ütleb, kuidas
+$n$-Lie superalgebrast superjälje abil $(n+1)$-Lie superalgebra
+indutseerida saab.
 
 \begin{thm}
-    Olgu $\G = \G_{\overline{0}} \oplus \G_{\overline{1}}$
-    $n$-Lie superalgebra suluga $\nbrac{\cdot}{\cdot} \col \G^n \to \G$,
-    ning $V$ lõplikumõõtmeline vektorruum ja olgu
-    antud $\G$ esitus $\phi \col \G \to \gl V$. Defineerides
-    $\nbrac{\cdot}{\cdot} \col \G^{n+1} \to \G$ valemiga
-    \[
-        \nbrac{x_1}{x_{n+1}} = \sum_{i=1}{n+1}
-        (-1)^{i-1} (-1)^{|x_i| \tau_x (i-1)} S(\phi(x_i))
+    Olgu $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$
+    $n$-Lie superalgebra suluga
+    $\nbrac{\cdot}{\cdot} \col \g^n \to \g$ ning olgu
+    $S \col \g \to K$ sulu $[\cdot, \dots, \cdot]$ superjälg.
+    Defineerides $(n+1)$-lineaarse sulu
+    $[\cdot, \dots, \cdot]_S \col \g^{n+1} \to \g$ valemiga
+    \begin{align}\label{eq:indutseeritud-n-lie-superalgebra}
+        \nbrac{x_1}{x_{n+1}}_S = \sum_{i=1}^{n+1}
+        (-1)^{i-1} (-1)^{|x_i| |\mathrm{x}|_{i-1}} S(x_i)
         \left[ x_1, \dots, \hat{x_i}, \dots, x_{n+1} \right],
-    \]
-    on supervektorruum $\G$, varustatuna suluga
-    $\nbrac{\cdot}{\cdot} \col \G^{n+1} \to \G$ $(n+1)$-Lie
+    \end{align}
+    on supervektorruum $\g$, varustatuna suluga
+    \eqref{eq:indutseeritud-n-lie-superalgebra} $(n+1)$-Lie
     superalgebra.
 \end{thm}
 
-See peatükk tugineb artiklile \cite{Abramov:2014} \dots
+Selle teoreemi valguses on selge, et lausetega
+\ref{lause:indutseeritud-alamalgebra} ja
+\ref{lause:indutseeritud-ideaal} analoogilised tulemused
+kehtivad ka $n$-Lie superalgebrate korral.
+
+\begin{lau}
+    Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie superalgebra ning
+    olgu $\h \subset \g$ alamalgebra. Kui $S$ on
+    sulu $[\cdot, \dots, \cdot]$ superjälg,
+    siis $\h$ on ka $(\g, [\cdot, \dots, \cdot]_S)$ alamalgebra.
+    \hfill \qed
+\end{lau}
+
+\begin{lau}
+    Olgu $(\g, [\cdot, \dots, \cdot])$ ideaal $\h$ ja olgu
+    $S$ sulu $[\cdot, \dots, \cdot]$ superjälg. Siis $\h$ on
+    $(\g, [\cdot, \dots, \cdot]_S)$ ideaal parajasti siis, kui
+    $[\g, \g, \dots, \g] \subseteq \h$ või $\h \subseteq \ker S$.
+    \hfill \qed
+\end{lau}
+
+\begin{lau}
+    Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie superalgebra ja
+    $S$ sulu $[\cdot, \dots, \cdot]$ superjälg. Siis indutseeritud
+    $(n+1)$-Lie superalgebra $(\g_S, [\cdot, \dots, \cdot]_S)$
+    on lahenduv.
+\end{lau}
+
+\begin{proof}
+    Eeldame, et $(\g, [\cdot, \dots, \cdot])$ on $n$-Lie
+    superalgebra ja $S$ tema sulu $[\cdot, \dots, \cdot]$ superjälg.
+    Olgu
+    \[
+        x_1, x_2, \dots, x_{n+1} \in
+        [\g, \g, \dots, \g]_S = D^1(\g_S).
+    \]
+    Siis iga $i = 1, 2, \dots, n+1$ korral leiduvad
+    $x_i^1, x_i^2, \dots, x_i^{n+1} \in \g$ nii, et
+    \[
+        x_i = [x_i^1, x_i^2, \dots, x_i^{n+1}]_S.
+    \]
+    Sel juhul
+    \begin{align*}
+        &[x_1, x_2, \dots, x_{n+1}]_S = \\
+        &= \sum_{i=1}^{n+1} (-1)^{i-1} (-1)^{|x_i||x|_{i-1}}
+            S(x_i) [x_1, \dots, \hat{x_i}, \dots, x_{n+1}] = \\
+        &= \sum_{i=1}^{n+1} (-1)^{i-1} (-1)^{|x_i||x|_{i-1}}
+            S([x_i^1, x_i^2, \dots, x_i^{n+1}]_S)
+            [x_1, \dots, \hat{x_i}, \dots, x_{n+1}] = \\
+        &= 0,
+    \end{align*}
+    sest iga $i = 1, 2, \dots, n+1$ korral
+    $S([x_i^1, x_i^2, \dots, x_i^{n+1}]_S) = 0$.
+\end{proof}
+
+Lause tõestusest võime teha järelduse.
+
+\begin{jar}
+    Kui $S$ on $n$-Lie superalgebra $(\g, [\cdot, \dots, \cdot])$
+    Lie sulu superjälg ja $(\g_S, [\cdot, \dots, \cdot]_S)$ on
+    vastav indutseeritud $(n+1)$-Lie superalgebra, siis
+    $D^p(\g_S) = \{0\}$, kui $p \geq 2$. \hfill \qed
+\end{jar}

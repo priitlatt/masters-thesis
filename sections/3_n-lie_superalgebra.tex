@@ -211,7 +211,7 @@ gradueeringust rääkida ka supervektorruumi või superalgebra korral.
 Homomorfismi, mille lähte- ja sihtalgebra ühtivad nimetame endomorfismiks
 ja supervektorruumi $\V$ kõigi endomorfismide hulka tähistame $\End \V$.
 
-\begin{lemma}
+\begin{lemma}\label{lemma:kompositsiooni-paarsus}
     Olgu $\V$ supervektorruum ja $f, g \in \End \V$. Kui $|f| = |g|$,
     siis $f \circ g$ on paaris, ning vastasel korral paaritu.
 \end{lemma}
@@ -290,7 +290,53 @@ seda on tehtud artiklis \cite{Abramov:2014}.
 
 Paneme tähele, et võttes definitsioonis \ref{def:n-Lie-superalgebra}
 $n = 2$, saame Lie superalgebra, mis tähenab, et üldistus
-sellisel kujul omab mõtet.
+sellisel kujul omab mõtet. Enne edasist teooriaarendust vaatame
+lähemalt ühte $n$-Lie superalgebra näidet.
+
+\begin{naide}
+    Olgu $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
+    supervektorruum ning $\End \V$ tema endomorfismide
+    supervektorruum. Defineerime kujutuse
+    $[\cdot, \dots, \cdot] \col (\End \V)^n \to \End \V$ valemiga
+    \begin{align}\label{naide:end-v-kommutaator}
+        [\phi_1, \phi_2, \dots, \phi_n] =
+        \sum_\sigma (-1)^{|\sigma|+|\phi_\sigma|}
+            \phi_{i_1} \circ \phi_{i_2} \circ \dots \circ \phi_{i_n},
+    \end{align}
+    kus $\phi = (\phi_1, \phi_2, \dots, \phi_n)$ on ruumi
+    $\End \V$ endomorfismide ennik,
+    $\mathrm{\sigma} = (i_1, i_2, \dots, i_n)$ on arvude
+    $(1, 2, \dots, n)$ permutatsioon, ja $|\sigma|$
+    tähistab selle permutatsiooni paarsust. Seejuures
+    $|\phi_\sigma|$ arvutatakse valemiga
+    \begin{align}\label{eq:permutation-parity}
+        |\phi_\sigma| = \sum_{k=1}^{n} |\phi_{i_k}|
+            \left(
+                |\phi_{i_{k_1}}| + |\phi_{i_{k_2}}| + \dots +
+                |\phi_{i_{k_r}}|
+            \right),
+    \end{align}
+    kus $(i_{k_1}, i_{k_2}, \dots, i_{k_r})$ on arvud, mis
+    permutatsioonis $\sigma$ moodustavad arvuga $i_k$ inversiooni,
+    see tähendab iga $l = 1, 2, \dots, r$ korral $i_{k_l} > i_k$ ja
+    $i_{k_l}$ eelneb elemendile $i_k$ permutatsioonis $\sigma$.
+
+    Sel juhul on $\End \V$, varustatuna suluga
+    \eqref{naide:end-v-kommutaator} $n$-Lie superalgebra.Tõepoolest,
+    olgu $\phi_1, \phi_2, \dots, \phi_n \in \End \V$. Siis lemma
+    \ref{lemma:kompositsiooni-paarsus} järgi on
+    $| \phi_1, \phi_2, \dots, \phi_n | = \sum_{i=1}^{n} |\phi_i|$.
+    Seega on valemi \eqref{naide:end-v-kommutaator} paremal pool kõigi liidetavate sama ja seejuures võrdne arvuga
+    $\sum_{i=1}^{n} |\phi_i|$. Ilmselt on ka nende summa paarsus siis
+    täpselt selline, ehk kokkuvõttes
+    $ [\phi_1, \phi_2, \dots, \phi_n] = \sum_{i=1}^{n} |\phi_i| $,
+    nagu tarvis. Gradueeritud kaldsümmeetrilisuse kehtivuseks
+    märgime, et permutatsioonis kahe elemendi ära vahetamisel
+    permutatsiooni paarsus muutub, ning sellega on põhjendatud
+    "`$-$"'. Teguri $(-1)^{|\phi_i||\phi_{i+1}|}$ saame vahetult
+    valemi \eqref{eq:permutation-parity} struktuurist.
+\end{naide}
+
 
 Nagu klassikalise Lie algebra, ja tegelikult ka $n$-Lie algebra
 ning Lie superalgebra korral, on meil võimalik vaadelda

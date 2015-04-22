@@ -236,11 +236,58 @@ teha järgmise järelduse.
 \begin{jar}
     Olgu $\V$ supervektorruum. Assotsiatiivne superalgebra
     $\End \V$, mis on varustatud suluga
-    \begin{align*}
+    \begin{align}\label{eq:end_v_sulg}
         [f, g] = f \circ g - (-1)^{|f||g|} g \circ f, \quad f, g \in \End \V,
-    \end{align*}
+    \end{align}
     on Lie superalgebra. \hfill \qed
 \end{jar}
+
+\begin{lau}
+    Olgu $\V$ supervektorruum. Lie superalgebra $\End \V$ elementide
+    $f, g$ ja $h$ korral kehtivad võrdused
+    \begin{align}
+        \label{eq:end_v_komp_brac_1}
+        [f, g \circ h] =
+            [f, g] \circ h + (-1)^{|f||g|} g \circ [f, h], \\
+        \label{eq:end_v_komp_brac_2}
+        [f \circ g, h] =
+            f \circ [g, h]+ (-1)^{|g||h|} [f, h] \circ g.
+    \end{align}
+\end{lau}
+
+\begin{proof}
+    Olgu $f, g, h \in \End \V$. Vastavalt valemile \eqref{eq:end_v_sulg}
+    saame siis kirjutada
+    \begin{align*}
+        &[f, g \circ h] = f \circ g \circ h +
+            (-1)^{1+|g \circ h| |f|} g \circ h \circ f = \\
+        =& f \circ g \circ h -
+            (-1)^{|f||g| + |f||h|} g \circ h \circ f = \\
+        =& f \circ g \circ h - (-1)^{|f||g|} g \circ f \circ h +
+            (-1)^{|f||g|} g \circ f \circ h -
+            (-1)^{|f||g| + |f||h|} g \circ h \circ f = \\
+        =& \left[ f \circ g - (-1)^{|f||g|} g \circ f \right] \circ h +
+            g \circ \left[ (-1)^{|f||g|} f \circ h -
+            (-1)^{|f||g| + |f||h|} h \circ f \right] = \\
+        =& [f, g] \circ h + (-1)^{|f||g|} g \circ [f, h],
+    \end{align*}
+    ehk võrdus \eqref{eq:end_v_komp_brac_1} kehtib.
+
+    Veendumaks, et kehtib ka \eqref{eq:end_v_komp_brac_2} paneme
+    tähele, et
+    \begin{align*}
+        [f \circ g, h] &= -(-1)^{|f \circ g||h|} [h, f \circ g] = \\
+        &= -(-1)^{|f \circ g||h|} \left(
+            [h, f] \circ g + (-1)^{|f|h|} f \circ [h, g] \right) = \\
+        &= -(-1)^{|f \circ g||h|} [h, f] \circ g -
+            (-1)^{|f \circ g||h|+|f||h|} f \circ [h, g] = \\
+        &= (-1)^{|f||h|+|h||g|+|h||f|} [f, h] \circ g +
+            (-1)^{|f||h|+|g||h|+|f||h|+|h||g|} f \circ [g, h] = \\
+        &= (-1)^{|h||g|} [f, h] \circ g + f \circ [g, h] = \\
+        &= f \circ [g, h] + (-1)^{|g||h|} [f, h] \circ g,
+    \end{align*}
+    mida oligi tarvis.
+\end{proof}
 
 \subsection{\texorpdfstring{$n$}\ -Lie superalgebra}
 
@@ -293,7 +340,7 @@ $n = 2$, saame Lie superalgebra, mis tähenab, et üldistus
 sellisel kujul omab mõtet. Enne edasist teooriaarendust vaatame
 lähemalt ühte $n$-Lie superalgebra näidet.
 
-\begin{naide}
+\begin{thm}
     Olgu $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
     supervektorruum ning $\End \V$ tema endomorfismide
     supervektorruum. Defineerime kujutuse
@@ -322,10 +369,47 @@ lähemalt ühte $n$-Lie superalgebra näidet.
     $i_{k_l}$ eelneb elemendile $i_k$ permutatsioonis $\sigma$.
 
     Sel juhul on $\End \V$, varustatuna suluga
-    \eqref{naide:end-v-kommutaator} $n$-Lie superalgebra.Tõepoolest,
-    olgu $\phi_1, \phi_2, \dots, \phi_n \in \End \V$. Siis lemma
-    \ref{lemma:kompositsiooni-paarsus} järgi on
-    $| \phi_1, \phi_2, \dots, \phi_n | = \sum_{i=1}^{n} |\phi_i|$.
+    \eqref{naide:end-v-kommutaator} $n$-Lie superalgebra.
+\end{thm}
+
+Enne kui asume teoreemi tõestuse juurde näitame, et kehtib järgmine
+lemma.
+
+\begin{lemma}
+    Juhul $n = 3$ saab valemis \eqref{naide:end-v-kommutaator}
+    esitatud kommutaatori avaldada binaarsete kommutaatorite abil
+    järgmiselt:
+    \begin{align}
+        \begin{split}
+        [\phi_1, \phi_2, \phi_3] =\ &\phi_1 \circ [\phi_2, \phi_3] - \\
+            &(-1)^{|\phi_1||\phi_2|} \phi_2 \circ [\phi_1, \phi_3] + \\
+            &(-1)^{|\phi_1||\phi_3| + |\phi_2||\phi_3|}
+                \phi_3 \circ [\phi_1, \phi_2].
+        \end{split}
+    \end{align}
+\end{lemma}
+
+\begin{proof}
+    Olgu $\phi_1, \phi_2, \phi_3 \in \End \V$ ning kasutame samu
+    tähistusi nagu teoreemi sõnastuses. Väite tõestamiseks
+    piisab vahetust arvutamisest.
+
+    \begin{align*}
+        [\phi_1, \phi_2, \phi_3] =&\
+        (-1)^{|\phi_{123}|}     \phi_1 \circ \phi_2 \circ \phi_3 +
+        (-1)^{1 + |\phi_{132}|} \phi_1 \circ \phi_3 \circ \phi_2 + \\
+        &\ (-1)^{1 + |\phi_{213}|} \phi_2 \circ \phi_1 \circ \phi_3 +
+        (-1)^{|\phi_{231}|}     \phi_2 \circ \phi_3 \circ \phi_1 + \\
+        &\ (-1)^{|\phi_{312}|}     \phi_3 \circ \phi_1 \circ \phi_2 +
+        (-1)^{1 + |\phi_{321}|} \phi_3 \circ \phi_2 \circ \phi_1 = \\
+        = &
+    \end{align*}
+\end{proof}
+
+\textcolor{red}{
+    Tõepoolest, olgu $\phi_1, \phi_2, \dots, \phi_n \in \End \V$.
+    Siis lemma \ref{lemma:kompositsiooni-paarsus} järgi on
+    \[ | \phi_1, \phi_2, \dots, \phi_n | = \sum_{i=1}^{n} |\phi_i|. \]
     Seega on valemi \eqref{naide:end-v-kommutaator} paremal pool kõigi liidetavate sama ja seejuures võrdne arvuga
     $\sum_{i=1}^{n} |\phi_i|$. Ilmselt on ka nende summa paarsus siis
     täpselt selline, ehk kokkuvõttes
@@ -335,7 +419,7 @@ lähemalt ühte $n$-Lie superalgebra näidet.
     permutatsiooni paarsus muutub, ning sellega on põhjendatud
     "`$-$"'. Teguri $(-1)^{|\phi_i||\phi_{i+1}|}$ saame vahetult
     valemi \eqref{eq:permutation-parity} struktuurist.
-\end{naide}
+}
 
 
 Nagu klassikalise Lie algebra, ja tegelikult ka $n$-Lie algebra

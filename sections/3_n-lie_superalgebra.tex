@@ -259,24 +259,26 @@ teha järgmise järelduse.
     Olgu $f, g, h \in \End \V$. Vastavalt valemile \eqref{eq:end_v_sulg}
     saame siis kirjutada
     \begin{align*}
-        &[f, g \circ h] = f \circ g \circ h +
+        &[f, g \circ h] = \\
+        &= f \circ g \circ h +
             (-1)^{1+|g \circ h| |f|} g \circ h \circ f = \\
-        =& f \circ g \circ h -
+        &= f \circ g \circ h -
             (-1)^{|f||g| + |f||h|} g \circ h \circ f = \\
-        =& f \circ g \circ h - (-1)^{|f||g|} g \circ f \circ h +
+        &= f \circ g \circ h - (-1)^{|f||g|} g \circ f \circ h +
             (-1)^{|f||g|} g \circ f \circ h -
             (-1)^{|f||g| + |f||h|} g \circ h \circ f = \\
-        =& \left[ f \circ g - (-1)^{|f||g|} g \circ f \right] \circ h +
+        &= \left[ f \circ g - (-1)^{|f||g|} g \circ f \right] \circ h +
             g \circ \left[ (-1)^{|f||g|} f \circ h -
             (-1)^{|f||g| + |f||h|} h \circ f \right] = \\
-        =& [f, g] \circ h + (-1)^{|f||g|} g \circ [f, h],
+        &= [f, g] \circ h + (-1)^{|f||g|} g \circ [f, h],
     \end{align*}
     ehk võrdus \eqref{eq:end_v_komp_brac_1} kehtib.
 
     Veendumaks, et kehtib ka \eqref{eq:end_v_komp_brac_2} paneme
     tähele, et
     \begin{align*}
-        [f \circ g, h] &= -(-1)^{|f \circ g||h|} [h, f \circ g] = \\
+        &[f \circ g, h] = \\
+        &= -(-1)^{|f \circ g||h|} [h, f \circ g] = \\
         &= -(-1)^{|f \circ g||h|} \left(
             [h, f] \circ g + (-1)^{|f|h|} f \circ [h, g] \right) = \\
         &= -(-1)^{|f \circ g||h|} [h, f] \circ g -
@@ -348,7 +350,7 @@ lähemalt ühte $n$-Lie superalgebra näidet.
     \begin{align}\label{naide:end-v-kommutaator}
         [\phi_1, \phi_2, \dots, \phi_n] =
         \sum_\sigma (-1)^{|\sigma|+|\phi_\sigma|}
-            \phi_{i_1} \circ \phi_{i_2} \circ \dots \circ \phi_{i_n},
+            \phi_{i_1} \circ \phi_{i_2} \circ \ldots \circ \phi_{i_n},
     \end{align}
     kus $\phi = (\phi_1, \phi_2, \dots, \phi_n)$ on ruumi
     $\End \V$ endomorfismide ennik,
@@ -369,40 +371,108 @@ lähemalt ühte $n$-Lie superalgebra näidet.
     $i_{k_l}$ eelneb elemendile $i_k$ permutatsioonis $\sigma$.
 
     Sel juhul on $\End \V$, varustatuna suluga
-    \eqref{naide:end-v-kommutaator} $n$-Lie superalgebra.
+    \eqref{naide:end-v-kommutaator}, $n$-Lie superalgebra.
 \end{thm}
 
 Enne kui asume teoreemi tõestuse juurde näitame, et kehtib järgmine
 lemma.
 
 \begin{lemma}
-    Juhul $n = 3$ saab valemis \eqref{naide:end-v-kommutaator}
-    esitatud kommutaatori avaldada binaarsete kommutaatorite abil
-    järgmiselt:
-    \begin{align}
-        \begin{split}
-        [\phi_1, \phi_2, \phi_3] =\ &\phi_1 \circ [\phi_2, \phi_3] - \\
-            &(-1)^{|\phi_1||\phi_2|} \phi_2 \circ [\phi_1, \phi_3] + \\
-            &(-1)^{|\phi_1||\phi_3| + |\phi_2||\phi_3|}
-                \phi_3 \circ [\phi_1, \phi_2].
-        \end{split}
+    Valemis \eqref{naide:end-v-kommutaator} esitatud $n$-aarne
+    kommutaator on võimalik avaldada binaarsete $(n-1)$-aarsete
+    kommutaatorite abil järgmiselt:
+    \begin{align}\label{eq:n komm by n-1 komm}
+        [\phi_1, \phi_2, \dots, \phi_n] =
+        \sum_{k=1}^{n} (-1)^{k-1} (-1)^{
+            |\phi_k| \sum_{l < k} |\phi_l|
+        } \phi_k \circ [
+            \phi_1, \dots, \phi_{k-1}, \phi_{k+1}, \dots, \phi_n
+        ].
     \end{align}
 \end{lemma}
 
 \begin{proof}
-    Olgu $\phi_1, \phi_2, \phi_3 \in \End \V$ ning kasutame samu
-    tähistusi nagu teoreemi sõnastuses. Väite tõestamiseks
-    piisab vahetust arvutamisest.
+    Et üldise juhu tõestus paremini jälgitav oleks tõestame väite
+    esmalt juhul $n=3$. Olgu selleks
+    $\phi_1, \phi_2, \phi_3 \in \End \V$ ning kasutame samu
+    tähistusi nagu teoreemi sõnastuses. Vahetu arvutuse tulemusel
+    näeme, et ühelt poolt
 
-    \begin{align*}
-        [\phi_1, \phi_2, \phi_3] =&\
-        (-1)^{|\phi_{123}|}     \phi_1 \circ \phi_2 \circ \phi_3 +
+    \begin{align}\label{eq:lemma-tri-komm-with-bi-1}\begin{split}
+        &[\phi_1, \phi_2, \phi_3] = \\
+        &= (-1)^{|\phi_{123}|} \phi_1 \circ \phi_2 \circ \phi_3 +
         (-1)^{1 + |\phi_{132}|} \phi_1 \circ \phi_3 \circ \phi_2 + \\
-        &\ (-1)^{1 + |\phi_{213}|} \phi_2 \circ \phi_1 \circ \phi_3 +
-        (-1)^{|\phi_{231}|}     \phi_2 \circ \phi_3 \circ \phi_1 + \\
-        &\ (-1)^{|\phi_{312}|}     \phi_3 \circ \phi_1 \circ \phi_2 +
+        &\ \quad (-1)^{1 + |\phi_{213}|}
+            \phi_2 \circ \phi_1 \circ \phi_3 +
+        (-1)^{|\phi_{231}|} \phi_2 \circ \phi_3 \circ \phi_1 + \\
+        &\ \quad (-1)^{|\phi_{312}|} \phi_3 \circ \phi_1 \circ \phi_2 +
         (-1)^{1 + |\phi_{321}|} \phi_3 \circ \phi_2 \circ \phi_1 = \\
-        = &
+        %
+        &= \phi_1 \circ \phi_2 \circ \phi_3 + \\
+        &\ \quad (-1)^{1 + |\phi_2||\phi_3|}
+            \phi_1 \circ \phi_3 \circ \phi_2 + \\
+        &\ \quad (-1)^{1 + |\phi_1||\phi_2|}
+            \phi_2 \circ \phi_1 \circ \phi_3 + \\
+        &\ \quad (-1)^{|\phi_1||\phi_2|+|\phi_1||\phi_3|}
+            \phi_2 \circ \phi_3 \circ \phi_1 + \\
+        &\ \quad (-1)^{|\phi_1||\phi_3|+|\phi_2||\phi_3|}
+            \phi_3 \circ \phi_1 \circ \phi_2 + \\
+        &\ \quad (-1)^{
+                1 + |\phi_2||\phi_3|+|\phi_1||\phi_3|+|\phi_1||\phi_2|
+            } \phi_3 \circ \phi_2 \circ \phi_1,
+    \end{split}\end{align}
+    ning teisalt
+    \begin{align}\label{eq:lemma-tri-komm-with-bi-2}\begin{split}
+        &\phi_1 \circ [\phi_2, \phi_3] +
+            \phi_2 \circ [\phi_1, \phi_3] +
+            \phi_3 \circ [\phi_1, \phi_2] = \\
+        &= \phi_1 \circ \left( \phi_2 \circ \phi_3 -
+            (-1)^{|\phi_2||\phi_3|} \phi_3 \circ \phi_2 \right) + \\
+        &\ \quad \phi_2 \circ \left( \phi_1 \circ \phi_3 -
+            (-1)^{|\phi_1||\phi_3|} \phi_3 \circ \phi_1 \right) + \\
+        &\ \quad \phi_3 \circ \left( \phi_1 \circ \phi_2 -
+            (-1)^{|\phi_1||\phi_2|} \phi_2 \circ \phi_1 \right) = \\
+        &= \phi_1 \circ \phi_2 \circ \phi_3 + (-1)^{
+            1 + |\phi_2||\phi_3|} \phi_1 \circ \phi_3 \circ \phi_2 + \\
+        &\ \quad \phi_2 \circ \phi_1 \circ \phi_3 + (-1)^{
+            1+ |\phi_1||\phi_3|} \phi_2 \circ \phi_3 \circ \phi_1 + \\
+        &\ \quad \phi_3 \circ \phi_1 \circ \phi_2 + (-1)^{
+            1 + |\phi_1||\phi_2|} \phi_3 \circ \phi_2 \circ \phi_1.
+    \end{split}\end{align}
+    Nüüd piisab vaid paneme tähele, et korrutades võrduste ahela
+    \eqref{eq:lemma-tri-komm-with-bi-2} vasaku poole
+    viimased kaks liidetavat vastavalt suurustega
+    \begin{align*}
+        (-1)^{1+|\phi_1||\phi_2|}
+        \quad \text{ja} \quad
+        (-1)^{|\phi_1||\phi_3| + |\phi_2||\phi_3|},
+    \end{align*}
+    saame täpselt sama tulemuse nagu valemis
+    \eqref{eq:lemma-tri-komm-with-bi-1}, ehk kokkuvõttes kehtib võrdus
+    \begin{align*}
+        &[\phi_1, \phi_2, \phi_3] =
+        \phi_1 \circ [\phi_2, \phi_3] -
+        (-1)^{|\phi_1||\phi_2|} \phi_2 \circ [\phi_1, \phi_3] +
+        (-1)^{|\phi_1||\phi_3| + |\phi_2||\phi_3|}
+            \phi_3 \circ [\phi_1, \phi_2],
+    \end{align*}
+    mis on täpselt \eqref{eq:n komm by n-1 komm}, kui võtta $n = 3$.
+
+    Vaatame edasi üldist situatsiooni. Olgu $n > 2$ suvaline
+    naturaalarv ja olgu $\phi_1, \phi_2, \dots, \phi_n \in \End \V$.
+    Rakendades valemit \eqref{naide:end-v-kommutaator} saame kirjutada
+    \begin{align*}
+        &[\phi_1, \phi_2, \dots, \phi_n] = \\
+        &= \sum_\sigma (-1)^{|\sigma| + |\phi_\sigma|} \phi_{i_1} \circ
+            \phi_{i_2} \circ \ldots \circ \phi_{i_n} = \\
+        &= \sum_{k=1}^{n} (-1)^{k-1} (-1)^{|\phi_k| \sum_{l<k} |\phi_l|}
+            \phi_k \circ \sum_{\sigma'}
+            (-1)^{|\sigma'| + |\phi_{\sigma'}|}\phi_{i_1} \circ
+            \phi_{i_2} \circ \ldots \circ \phi_{i_{n-1}} = \\
+        &= \sum_{k=1}^{n} (-1)^{k-1} (-1)^{|\phi_k| \sum_{l<k} |\phi_l|}
+            \phi_k \circ [
+                \phi_1, \dots, \phi_{k-1}, \phi_{k+1}, \dots, \phi_n
+            ].
     \end{align*}
 \end{proof}
 

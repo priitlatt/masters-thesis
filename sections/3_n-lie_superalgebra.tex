@@ -383,8 +383,8 @@ lemma.
     kommutaatorite abil järgmiselt:
     \begin{align}\label{eq:n komm by n-1 komm}
         [\phi_1, \phi_2, \dots, \phi_n] =
-        \sum_{k=1}^{n} (-1)^{k-1} (-1)^{
-            |\phi_k| \sum_{l < k} |\phi_l|
+        \sum_{k=1}^{n} (-1)^{
+            (k-1) + |\phi_k| \sum_{l < k} |\phi_l|
         } \phi_k \circ [
             \phi_1, \dots, \phi_{k-1}, \phi_{k+1}, \dots, \phi_n
         ].
@@ -396,9 +396,8 @@ lemma.
     esmalt juhul $n=3$. Olgu selleks
     $\phi_1, \phi_2, \phi_3 \in \End \V$ ning kasutame samu
     tähistusi nagu teoreemi sõnastuses. Vahetu arvutuse tulemusel
-    näeme, et ühelt poolt
-
-    \begin{align}\label{eq:lemma-tri-komm-with-bi-1}\begin{split}
+    näeme, et
+    \begin{align*}
         &[\phi_1, \phi_2, \phi_3] = \\
         &= (-1)^{|\phi_{123}|} \phi_1 \circ \phi_2 \circ \phi_3 +
         (-1)^{1 + |\phi_{132}|} \phi_1 \circ \phi_3 \circ \phi_2 + \\
@@ -419,36 +418,27 @@ lemma.
             \phi_3 \circ \phi_1 \circ \phi_2 + \\
         &\ \quad (-1)^{
                 1 + |\phi_2||\phi_3|+|\phi_1||\phi_3|+|\phi_1||\phi_2|
-            } \phi_3 \circ \phi_2 \circ \phi_1,
-    \end{split}\end{align}
-    ning teisalt
-    \begin{align}\label{eq:lemma-tri-komm-with-bi-2}\begin{split}
-        &\phi_1 \circ [\phi_2, \phi_3] +
-            \phi_2 \circ [\phi_1, \phi_3] +
-            \phi_3 \circ [\phi_1, \phi_2] = \\
-        &= \phi_1 \circ \left( \phi_2 \circ \phi_3 -
-            (-1)^{|\phi_2||\phi_3|} \phi_3 \circ \phi_2 \right) + \\
-        &\ \quad \phi_2 \circ \left( \phi_1 \circ \phi_3 -
-            (-1)^{|\phi_1||\phi_3|} \phi_3 \circ \phi_1 \right) + \\
-        &\ \quad \phi_3 \circ \left( \phi_1 \circ \phi_2 -
-            (-1)^{|\phi_1||\phi_2|} \phi_2 \circ \phi_1 \right) = \\
-        &= \phi_1 \circ \phi_2 \circ \phi_3 + (-1)^{
-            1 + |\phi_2||\phi_3|} \phi_1 \circ \phi_3 \circ \phi_2 + \\
-        &\ \quad \phi_2 \circ \phi_1 \circ \phi_3 + (-1)^{
-            1+ |\phi_1||\phi_3|} \phi_2 \circ \phi_3 \circ \phi_1 + \\
-        &\ \quad \phi_3 \circ \phi_1 \circ \phi_2 + (-1)^{
-            1 + |\phi_1||\phi_2|} \phi_3 \circ \phi_2 \circ \phi_1.
-    \end{split}\end{align}
-    Nüüd piisab vaid paneme tähele, et korrutades võrduste ahela
-    \eqref{eq:lemma-tri-komm-with-bi-2} vasaku poole
-    viimased kaks liidetavat vastavalt suurustega
-    \begin{align*}
-        (-1)^{1+|\phi_1||\phi_2|}
-        \quad \text{ja} \quad
-        (-1)^{|\phi_1||\phi_3| + |\phi_2||\phi_3|},
+            } \phi_3 \circ \phi_2 \circ \phi_1, = \\
+        %
+        &= \phi_1 \circ \left(
+            \phi_2 \circ \phi_3 -
+            (-1)^{|\phi_2||\phi_3|} \phi_3 \circ \phi_2
+        \right) + \\
+        &\ \quad (-1)^{1 + |\phi_1||\phi_2|} \phi_2 \circ \left(
+            \phi_1 \circ \phi_3 -
+            (-1)^{|\phi_1||\phi_3|} \phi_3 \circ \phi_1
+        \right) + \\
+        &\ \quad (-1)^{|\phi_1||\phi_3|+|\phi_2||\phi_3|} \phi_3 \circ
+        \left(
+            \phi_1 \circ \phi_2 -
+            (-1)^{|\phi_1||\phi_2|} \phi_2 \circ \phi_1
+        \right) = \\
+        %
+        &= \phi_1 \circ [\phi_2, \phi_3] +
+            (-1)^{1 + |\phi_1||\phi_2|} \phi_2 \circ [\phi_1, \phi_3] + 
+            (-1)^{|\phi_1||\phi_3|+|\phi_2||\phi_3|} \phi_3 \circ [\phi_1, \phi_2].
     \end{align*}
-    saame täpselt sama tulemuse nagu valemis
-    \eqref{eq:lemma-tri-komm-with-bi-1}, ehk kokkuvõttes kehtib võrdus
+    Seega kehtib võrdus
     \begin{align*}
         &[\phi_1, \phi_2, \phi_3] =
         \phi_1 \circ [\phi_2, \phi_3] -
@@ -472,8 +462,9 @@ lemma.
         &= \sum_{k=1}^{n} (-1)^{k-1} (-1)^{|\phi_k| \sum_{l<k} |\phi_l|}
             \phi_k \circ [
                 \phi_1, \dots, \phi_{k-1}, \phi_{k+1}, \dots, \phi_n
-            ].
+            ],
     \end{align*}
+    nagu tarvis.
 \end{proof}
 
 \textcolor{red}{

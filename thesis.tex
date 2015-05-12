@@ -16,6 +16,7 @@
 \usepackage{hyperref}
 \usepackage{multicol}
 \usepackage{verbatim}
+\usepackage{lipsum}
 
 \usepackage{color}
 
@@ -23,8 +24,9 @@
 
 % \everymath{\displaystyle}
 
-\author{Priit Lätt}
-\title{3-Lie superalgebrad}
+\def\author{Priit Lätt}
+\def\title{$n$-Lie superalgebrad}
+\def\engtitle{$n$-Lie superalgebras}
 
 \numberwithin{equation}{section}
 
@@ -86,6 +88,12 @@
 
 \begin{document}
 
+\input{sections/tiitelleht.tex}
+
+\newpage
+\input{sections/abstract.tex}
+
+\newpage
 \tableofcontents{}
 
 \newpage
@@ -108,5 +116,6 @@
 \newpage
 \bibliographystyle{plain}
 \bibliography{references}
+\addcontentsline{toc}{section}{Viited}
 
 \end{document}

@@ -211,7 +211,7 @@ gradueeringust rääkida ka supervektorruumi või superalgebra korral.
 Homomorfismi, mille lähte- ja sihtalgebra ühtivad nimetame endomorfismiks
 ja supervektorruumi $\V$ kõigi endomorfismide hulka tähistame $\End \V$.
 
-\begin{lemma}\label{lemma:kompositsiooni-paarsus}
+\begin{lemma}
     Olgu $\V$ supervektorruum ja $f, g \in \End \V$. Kui $|f| = |g|$,
     siis $f \circ g$ on paaris, ning vastasel korral paaritu.
 \end{lemma}
@@ -228,21 +228,28 @@ ja supervektorruumi $\V$ kõigi endomorfismide hulka tähistame $\End \V$.
     $f \circ g$ on paaritu.
 \end{proof}
 
-Lemma põhjal on selge, et supervektorruumis $\End \V$ kujutuste
-kompositsioon $\circ$ rahuldab tingimust \eqref{def:superalgebra-parity},
-ning seega on $\End \V$ superalgebra. Ühes eelmise näitega saame nüüd
-teha järgmise järelduse.
+\begin{jar}\label{lemma:kompositsiooni-paarsus}
+    Olgu $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
+    supervektorruum, $f, g \in \End \V$ ja $i \in \Z_2$. Siis
+    \[ |f \circ g| = |f| + |g|. \]
+\end{jar}
 
-\begin{jar}
+Järelduse põhjal on selge, et supervektorruumis $\End \V$ kujutuste
+kompositsioon $\circ$ rahuldab tingimust
+\eqref{def:superalgebra-parity}, ning seega on $\End \V$
+superalgebra. Ühes eelmise näitega saame nüüd kirja panna järgmise
+teoreemi.
+
+\begin{thm}
     Olgu $\V$ supervektorruum. Assotsiatiivne superalgebra
     $\End \V$, mis on varustatud suluga
     \begin{align}\label{eq:end_v_sulg}
         [f, g] = f \circ g - (-1)^{|f||g|} g \circ f, \quad f, g \in \End \V,
     \end{align}
     on Lie superalgebra. \hfill \qed
-\end{jar}
+\end{thm}
 
-\begin{lau}
+\begin{lau}\label{lause:kompositsioon sulus}
     Olgu $\V$ supervektorruum. Lie superalgebra $\End \V$ elementide
     $f, g$ ja $h$ korral kehtivad võrdused
     \begin{align}
@@ -339,10 +346,62 @@ seda on tehtud artiklis \cite{Abramov:2014}.
 
 Paneme tähele, et võttes definitsioonis \ref{def:n-Lie-superalgebra}
 $n = 2$, saame Lie superalgebra, mis tähenab, et üldistus
-sellisel kujul omab mõtet. Enne edasist teooriaarendust vaatame
-lähemalt ühte $n$-Lie superalgebra näidet.
+sellisel kujul omab mõtet. Nagu klassikalise Lie algebra, ja tegelikult
+ka $n$-Lie algebra või Lie superalgebra korral, on meil võimalik vaadelda
+struktuurikonstante. Selle tarbeks peab loomulikult fikseerima
+supervektorruumi $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$
+baasi. Olgu selleks
+\begin{align}\label{n-lie-superalg-basis}
+    \B = \{ e_1, e_2, \dots, e_p, f_1, f_2, \dots, f_q \},
+\end{align}
+kusjuures $\g_{\overline{0}} = \spn \{e_1, e_2, \dots, e_p\}$
+ja $\g_{\overline{1}} = \spn \{f_1, f_2, \dots, f_q\}$.
 
-\begin{thm}
+\begin{dfn}
+    Olgu $n$-Lie superalgebra $\g$ vektorruumi baas $\B$ võrdusest
+    \eqref{n-lie-superalg-basis}. Baasile $\B$ vastavateks
+    \emph{struktuurikonstantideks} nimetatakse arve
+    $K_{A_1 A_2 \dots A_n}^{B}$, mis on määratud võrranditega
+    \begin{align*}
+        [z_{A_1}, z_{A_2}, \dots, z_{A_n}] =
+        K_{A_1 A_2 \dots A_n}^{B} z_B,
+    \end{align*}
+    kus $z_{A_1}, z_{A_2}, \dots, z_{A_n}, z_B \in \B$.
+\end{dfn}
+
+Ilmselt on meil baasi $\B$ elementidel sulu $[\cdot, \dots, \cdot]$
+arvutamiseks kolm võimalust: kõik argumendid on paaris, kõik
+argumendid on paaritud, või on nii paaris- kui ka paarituid elemente.
+Kuid arvestades gradueeritud kaldsümmeetrilisust võime me
+argumendid alati sellisesse järjekorda viia, et väiksema indeksiga
+baasielement eelneb suurema indeksiga elemendile, ja
+paarisgradueeringuga vektorid eelnevad sulus paaritutele.
+Kokkuvõttes jäävad huvipakkuvate struktuurikonstantidena alles ainult:
+\begin{enumerate}[label=\arabic*)]
+    \item $[e_{\alpha_1}, e_{\alpha_2}, \dots, e_{\alpha_n}] =
+        K_{\alpha_1 \alpha_2 \dots \alpha_n}^{\lambda} e_{\lambda}$,
+    \item $[f_{i_1}, f_{i_2}, \dots, f_{i_n}] =
+        K_{i_1 i_2 \dots i_n}^{B} z_{B}$,
+    \item $[e_{\alpha_1}, e_{\alpha_2}, \dots, e_{\alpha_k},
+            f_{i_1}, f_{i_2}, \dots, f_{i_{n-k}}] =
+        K_{
+            \alpha_1 \alpha_2 \dots \alpha_k i_1 i_2 \dots i_{n-k}
+        }^{B} z_{B}$,
+\end{enumerate}
+kus $k < n$, $\alpha_1, \alpha_2, \dots, \alpha_n,
+i_1, i_2, \dots, i_n \in \{1, 2, \dots, n\}$ ja $k < l$ korral
+$\alpha_k < \alpha_l$ ning $i_k < i_l$.
+
+Struktuurikonstantide kasutamise, seda eelkõige just ternaarsete
+Lie superalgebra korral, juurde naaseme hiljem peatüki \textbf{???}
+juures.
+% TODO: viita siia kui klassifikatsiooni meetodi kirjeldusest
+% kirjutatud on..
+
+Vaatame järgnevalt lähemalt ühte $n$-Lie superalgebra näidet.
+\cite{Abramov:2014}
+
+\begin{thm}\label{teoreem:endomorphism-lie-algebra}
     Olgu $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
     supervektorruum ning $\End \V$ tema endomorfismide
     supervektorruum. Defineerime kujutuse
@@ -374,12 +433,14 @@ lähemalt ühte $n$-Lie superalgebra näidet.
     \eqref{naide:end-v-kommutaator}, $n$-Lie superalgebra.
 \end{thm}
 
-Enne kui asume teoreemi tõestuse juurde näitame, et kehtib järgmine
-lemma.
+Teoreemi täielikul tõestusel me ei peatu, kuna see nõuab väga palju
+tehnilist arvutamist ning vahendeid kombinatoorikast. Küll aga vaatame
+me siinkohal teoreemi tõestuse ideed, milleks läheb meil esmalt tarvis
+järgnevat lemmat.
 
-\begin{lemma}
+\begin{lemma}\label{lemma:n-sulg to (n-1)-sulg}
     Valemis \eqref{naide:end-v-kommutaator} esitatud $n$-aarne
-    kommutaator on võimalik avaldada binaarsete $(n-1)$-aarsete
+    kommutaator on võimalik avaldada $(n-1)$-aarsete
     kommutaatorite abil järgmiselt:
     \begin{align}\label{eq:n komm by n-1 komm}
         [\phi_1, \phi_2, \dots, \phi_n] =
@@ -397,6 +458,7 @@ lemma.
     $\phi_1, \phi_2, \phi_3 \in \End \V$ ning kasutame samu
     tähistusi nagu teoreemi sõnastuses. Vahetu arvutuse tulemusel
     näeme, et
+
     \begin{align*}
         &[\phi_1, \phi_2, \phi_3] = \\
         &= (-1)^{|\phi_{123}|} \phi_1 \circ \phi_2 \circ \phi_3 +
@@ -446,7 +508,7 @@ lemma.
         (-1)^{|\phi_1||\phi_3| + |\phi_2||\phi_3|}
             \phi_3 \circ [\phi_1, \phi_2],
     \end{align*}
-    mis on täpselt \eqref{eq:n komm by n-1 komm}, kui võtta $n = 3$.
+    mis on täpselt \eqref{eq:n komm by n-1 komm}, kui $n = 3$.
 
     Vaatame edasi üldist situatsiooni. Olgu $n > 2$ suvaline
     naturaalarv ja olgu $\phi_1, \phi_2, \dots, \phi_n \in \End \V$.
@@ -467,73 +529,232 @@ lemma.
     nagu tarvis.
 \end{proof}
 
+Naaseme nüüd uuesti teoreemi \ref{teoreem:endomorphism-lie-algebra} juurde.
+Olgu selleks
+\[
+    \psi_1, \psi_2, \dots, \psi_{n-1},
+    \phi_1, \phi_2, \dots, \phi_n \in \End \V.
+\]
+Siis järleduse \ref{lemma:kompositsiooni-paarsus} järgi
+\[
+    | \phi_{i_1} \circ \phi_{i_2} \circ \dots \circ \phi_{i_n} | =
+    \sum_{i=1}^{n} |\phi_i|.
+\]
+Seega on valemi \eqref{naide:end-v-kommutaator} paremal pool kõigi
+liidetavate (kompositsioonide) paarsus sama ja seejuures võrdne arvuga
+$\sum_{i=1}^{n} |\phi_i|$. Ilmselt on ka nende summa paarsus siis
+täpselt selline, ehk kokkuvõttes
+$ [\phi_1, \phi_2, \dots, \phi_n] = \sum_{i=1}^{n} |\phi_i| $,
+nagu tarvis. Gradueeritud kaldsümmeetrilisuse kehtivuseks
+märgime, et permutatsioonis kahe elemendi äravahetamisel
+permutatsiooni paarsus muutub, ning sellega on põhjendatud
+"`$-$"'. Teguri $(-1)^{|\phi_i||\phi_{i+1}|}$ saame vahetult
+valemi \eqref{eq:permutation-parity} struktuurist.
+
+Nagu tavaliselt selliste tulemuste puhul ikka, lasub põhiline keerukus
+gradueeritud Filippovi samasuse kehtivuse näitamisel.
+Antud juhul on seda võimalik teha matemaatilise induktsiooni abil.
+Baasjuhu $n = 3$ puhul peab kommutaatori definitsiooni
+\eqref{naide:end-v-kommutaator} järgi kehtima võrdus
+\begin{align}\begin{split}\label{eq:tern endomorphism filippov}
+    [\psi_1, \psi_2, [\phi_1, \phi_2, \phi_3]] =\
+    %
+    &[[\psi_1, \psi_2, \phi_1], \phi_2, \phi_3] + \\
+    %
+    (-1)^{|\phi_1||\psi_1| + |\phi_1||\psi_2|}
+        &[\phi_1, [\psi_1, \psi_2, \phi_2], \phi_3] + \\
+    %
+    (-1)^{
+        |\phi_1||\psi_1| + |\phi_1||\psi_2| +
+        |\phi_2||\psi_1| + |\phi_2||\psi_2|
+    } &[\phi_1, \phi_2, [\psi_1, \psi_2, \phi_3]].
+\end{split}\end{align}
+Vaatame kõigepealt selle võrduse vasakut poolt. Rakendades sisemisele
+kommutaatorile lemmat \ref{lemma:n-sulg to (n-1)-sulg} saame kolme
+ternaarse sulu summa, kus üheski ei esine enam argumendina ternaarset sulgu:
+\begin{align*}
+    [\psi_1, \psi_2, [\phi_1, \phi_2, \phi_3]] =\
+    &[\psi_1, \psi_2, \phi_1 \circ [\phi_2, \phi_3]] + \\
+    (-1)^{1 + |\phi_1||\phi_2|}
+        &[\psi_1, \psi_2, \phi_2 \circ [\phi_1, \phi_3]] + \\
+    (-1)^{|\phi_1||\phi_3| + |\phi_2||\phi_3|}
+        &[\psi_1, \psi_2, \phi_3 \circ [\phi_1, \phi_2]].
+\end{align*}
+Rakendame nüüd liidetavatele uuesti lemmat \ref{lemma:n-sulg to (n-1)-sulg},
+ning saame
+\begin{align*}
+    [\psi_1, \psi_2, [\phi_1, \phi_2, \phi_3]] =\
+    %
+    &\psi_1 \circ [\psi_2, \phi_1 \circ [\phi_2, \phi_3]] + \\
+    (-1)^{ 1 + |\psi_1||\psi_2| }
+        &\psi_2 \circ [\psi_1, \phi_1 \circ [\phi_2, \phi_3]] + \\
+    (-1)^{
+        |\psi_1||\phi_1 \circ [\phi_2, \phi_3]| +
+        |\psi_2||\phi_1 \circ [\phi_2, \phi_3]|
+    } &\phi_1 \circ [\phi_2, \phi_3] \circ [\psi_1, \psi_2] + \\
+    %
+    (-1)^{1 + |\phi_1||\phi_2|}
+    &\psi_1 \circ [\psi_2, \phi_2 \circ [\phi_1, \phi_3]] + \\
+    (-1)^{1 + |\phi_1||\phi_2|}
+    (-1)^{ 1 + |\psi_1||\psi_2| }
+        &\psi_2 \circ [\psi_1, \phi_2 \circ [\phi_1, \phi_3]] + \\
+    (-1)^{1 + |\phi_1||\phi_2|} 
+    (-1)^{
+        |\psi_1||\phi_2 \circ [\phi_1, \phi_3]| +
+        |\psi_2||\phi_2 \circ [\phi_1, \phi_3]|
+    } &\phi_2 \circ [\phi_1, \phi_3] \circ [\psi_1, \psi_2] + \\
+    %
+    (-1)^{|\phi_1||\phi_3| + |\phi_2||\phi_3|} 
+    &\psi_1 \circ [\psi_2, \phi_3 \circ [\phi_1, \phi_2]] + \\
+    (-1)^{|\phi_1||\phi_3| + |\phi_2||\phi_3|} 
+    (-1)^{ 1 + |\psi_1||\psi_2| }
+        &\psi_2 \circ [\psi_1, \phi_3 \circ [\phi_1, \phi_2]] + \\
+    (-1)^{|\phi_1||\phi_3| + |\phi_2||\phi_3|} 
+    (-1)^{
+        |\psi_1||\phi_3 \circ [\phi_1, \phi_2]| +
+        |\psi_2||\phi_3 \circ [\phi_1, \phi_2]|
+    } &\phi_3 \circ [\phi_1, \phi_2] \circ [\psi_1, \psi_2].
+\end{align*}
+Viimaks saame sellistele liidetavatele, kus sulu argumendis esineb
+endomorfismide kompositsioon, rakendada lauset \ref{lause:kompositsioon sulus},
+mis annab meile
+\begin{align}\begin{split}\label{eq:tern endomorph filippov proof lfs}
+    [\psi_1, \psi_2, [\phi_1, \phi_2, \phi_3]] =\
+    %
+    & \psi_1 \circ [\psi_2, \phi_1] \circ [\phi_2, \phi_3] + \\
+    (-1)^{|\psi_2||\phi_1|}
+        & \psi_1 \circ \phi_1 \circ [\psi_2, [\phi_2, \phi_3]] + \\
+    (-1)^{ 1 + |\psi_1||\psi_2| }
+        & \psi_2 \circ [\psi_1, \phi_1] \circ [\phi_2, \phi_3] + \\
+    (-1)^{ 1 + |\psi_1||\psi_2| } (-1)^{|\psi_1||\phi_1|}
+        & \psi_2 \circ \phi_1 \circ [\psi_1, [\phi_2, \phi_3]] + \\
+    (-1)^{
+        |\psi_1||\phi_1 \circ [\phi_2, \phi_3]| +
+        |\psi_2||\phi_1 \circ [\phi_2, \phi_3]|
+    } &\phi_1 \circ [\phi_2, \phi_3] \circ [\psi_1, \psi_2] + \dots,
+\end{split}\end{align}
+kusjuures kokku saame sel viisil viisteist liidetavat.
+
+Rakendame nüüd eelnevalt kirjeldatud algoritmi ka võrrandi
+\eqref{eq:tern endomorphism filippov} paremale poolele. Seda tehes saame
+45 liidetavat, mis on analoogilisel kujul nagu võrduse
+\eqref{eq:tern endomorph filippov proof lfs} paremal poolel olevad liidetavad.
+Kommutaatori antisümmeetrilisust ja kompositsiooni assotsiatiivsust sobivalt
+kasutades saame need liidetavad viia kujule, kus tekivad sarnaste liidetavate
+grupid, millele on võimalik rakendada endomorfismide Lie superalgebra
+binaarse sulu gradueeritud Jacobi samasust, või viia liidetavad
+kujul $a \circ b \circ c$ ning $b \circ a \circ c$ üheks liikmeks
+$[a, b] \circ c$, seejuures märke arvestades. Rekursiivselt sama mustrit
+rakendades saame lõpuks nii võrrandi \eqref{eq:tern endomorphism filippov}
+vasakule kui ka paremale poolele samad elemendid, ning järelikult juhul
+$n = 3$ on $\End \V$, varustatuna suluga \eqref{naide:end-v-kommutaator},
+tõepoolest $3$-Lie superalgebra.
+
+Eeldades, et suvalise $k \in \N$, $k > 2$, korral iga $l < k$ määrab
+sulguga \eqref{naide:end-v-kommutaator} supervektorruumil $l$-Lie
+superalgebra struktuuri, saame tänu lemmale
+\ref{lemma:n-sulg to (n-1)-sulg}, et sama sulg annab supervektorruumile
+$\End \V$ ka $k$-Lie superalgebra struktuuri. Tõepoolest, analoogiliselt
+eelnevalt kirjeldatule saame $k$-sulu gradueeritud Filippovi samasuse
+lahti kirjutada ning seal kõigepealt liidetavate argumentidele ning
+seejärel ka liidetavatele endile rakendada lemmat
+\ref{lemma:n-sulg to (n-1)-sulg}. Nii saame juba $(k-1)$-sulud, millele
+kehtib gradueeritud Filippovi samasus. Kasutame seda teadmist ja
+grupeerime need liidetavad kokku. Edasi toimime rekursiivselt kuni
+vasak ja parem pool ühtivad.
+
+\begin{markus}
+    Tekib loomulik küsimus, kas oleks võimalik lauset
+    \ref{lause:kompositsioon sulus} tõestada ka üldisel juhul, see tähendab
+    $n$-Lie superalgebra korral, mille sulg on määratud valemiga
+    \eqref{naide:end-v-kommutaator}. Intuitiivselt peaks selline üldistus
+    väitma, et
+    \begin{align*}
+        &[\psi \circ \phi_1, \phi_2, \dots, \phi_n] = \\
+        &\psi \circ [\phi_1, \phi_2, \dots, \phi_n] +
+        (-1)^{|\phi_1| \left(
+            |\phi_2| + |\phi_3| + \dots |\phi_n|
+        \right)}
+        [\psi, \phi_2, \dots, \phi_n] \circ \phi_1.
+    \end{align*}
+    Paraku see nii ei ole. Meil piisab vaadata vaid
+    klassikalisi endomorfismide $3$-Lie algebraid, kus me kujutuste
+    paarsusi ei arvesta. Sel juhul võtab see valem kuju
+    \begin{align*}
+        [\psi \circ \phi_1, \phi_2, \phi_3] =
+        \psi \circ [\phi_1, \phi_2, \phi_3] +
+        [\psi, \phi_2, \phi_3] \circ \phi_1.
+    \end{align*}
+
+    Kirjutades viimases võrduse kommutaatorid definitsiooni järgi lahti saame,
+    et mistahes $x \in \V$ korral peaks kehtima võrdus
+    \begin{align*}
+        &\psi \left( \phi_1 \left( \phi_2 \left( \phi_3
+            \left( x \right) \right) \right) \right) -
+        \psi \left( \phi_1 \left( \phi_3 \left( \phi_2
+            \left( x \right) \right) \right) \right) -
+        \phi_2 \left( \psi \left( \phi_1 \left( \phi_3
+            \left( x \right) \right) \right) \right) + \\
+        &\phi_2 \left( \phi_3 \left( \psi \left( \phi_1
+            \left( x \right) \right) \right) \right) +
+        \phi_3 \left( \psi \left( \phi_1 \left( \phi_2
+            \left( x \right) \right) \right) \right) -
+        \phi_3 \left( \phi_2 \left( \psi \left( \phi_1
+            \left( x \right) \right) \right) \right) = \\
+        %
+        =\ &\psi \left( \phi_1 \left( \phi_2 \left(
+            \phi_3 \left( x \right) \right) \right) \right) -
+        \psi \left( \phi_1 \left( \phi_3 \left(
+            \phi_2 \left( x \right) \right) \right) \right) -
+        \psi \left( \phi_2 \left( \phi_1 \left(
+            \phi_3 \left( x \right) \right) \right) \right) + \\
+        &\psi \left( \phi_2 \left( \phi_3 \left(
+            \phi_1 \left( x \right) \right) \right) \right) +
+        \psi \left( \phi_3 \left( \phi_1 \left(
+            \phi_2 \left( x \right) \right) \right) \right) -
+        \psi \left( \phi_3 \left( \phi_2 \left(
+            \phi_1 \left( x \right) \right) \right) \right) + \\
+        %
+        &\psi \left( \phi_2 \left( \phi_3 \left(
+            \phi_1 \left( x \right) \right) \right) \right) -
+        \psi \left( \phi_3 \left( \phi_2 \left(
+            \phi_1 \left( x \right) \right) \right) \right) -
+        \phi_2 \left( \psi \left( \phi_3 \left(
+            \phi_1 \left( x \right) \right) \right) \right) + \\
+        &\phi_2 \left( \phi_3 \left( \psi \left(
+            \phi_1 \left( x \right) \right) \right) \right) +
+        \phi_3 \left( \psi \left( \phi_2 \left(
+            \phi_1 \left( x \right) \right) \right) \right) -
+        \phi_3 \left( \phi_2 \left( \psi \left(
+            \phi_1 \left( x \right) \right) \right) \right).
+    \end{align*}
+
+    Samas, võttes
+    \[
+        \psi(x) = x, \quad
+        \phi_1 (x) = 1, \quad
+        \phi_2 (x) = 2, \quad
+        \phi_3 (x) = 3,
+    \]
+    jääb eelnevas vasakule poolele
+    \[ \psi(1) - \psi(1) - 2 + 2 + 3 - 3 = 1 - 1 = 0, \]
+    ning paremale poolele
+    \begin{align*}
+        &\psi(1) - \psi(1) - \psi(2) + \psi(2) + \psi(3) - \psi(3) +
+            \psi(2) - \psi(3) - 2 + 2 + 3 - 3 = \\
+        =\ &\psi(2) - \psi(3) = 2 - 3 = -1.
+    \end{align*}
+    $0 \neq -1$, ja seega sellisel kujul üldistus ei kehti.
+\end{markus}
+
+
+\subsection{Tuletatud rda ja keskne kahanev rida}
+
 \textcolor{red}{
-    Tõepoolest, olgu $\phi_1, \phi_2, \dots, \phi_n \in \End \V$.
-    Siis lemma \ref{lemma:kompositsiooni-paarsus} järgi on
-    \[ | \phi_1, \phi_2, \dots, \phi_n | = \sum_{i=1}^{n} |\phi_i|. \]
-    Seega on valemi \eqref{naide:end-v-kommutaator} paremal pool kõigi liidetavate sama ja seejuures võrdne arvuga
-    $\sum_{i=1}^{n} |\phi_i|$. Ilmselt on ka nende summa paarsus siis
-    täpselt selline, ehk kokkuvõttes
-    $ [\phi_1, \phi_2, \dots, \phi_n] = \sum_{i=1}^{n} |\phi_i| $,
-    nagu tarvis. Gradueeritud kaldsümmeetrilisuse kehtivuseks
-    märgime, et permutatsioonis kahe elemendi ära vahetamisel
-    permutatsiooni paarsus muutub, ning sellega on põhjendatud
-    "`$-$"'. Teguri $(-1)^{|\phi_i||\phi_{i+1}|}$ saame vahetult
-    valemi \eqref{eq:permutation-parity} struktuurist.
+    TODO: korralik tõlge tuletatud rea (derived series) ja
+    kahaneva rea (central descending series) jaoks
 }
 
-
-Nagu klassikalise Lie algebra, ja tegelikult ka $n$-Lie algebra
-ning Lie superalgebra korral, on meil võimalik vaadelda
-struktuurikonstante. Selle tarbeks peab loomulikult fikseerima
-$\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$ supervektorruumi
-baasi. Olgu selleks
-\begin{align}\label{n-lie-superalg-basis}
-    \B = \{ e_1, e_2, \dots, e_p, f_1, f_2, \dots, f_q \},
-\end{align}
-kusjuures $\g_{\overline{0}} = \spn \{e_1, e_2, \dots, e_p\}$
-ja $\g_{\overline{1}} = \spn \{f_1, f_2, \dots, f_q\}$.
-
-\begin{dfn}
-    Olgu $n$-Lie superalgebra $\g$ vektorruumi baas $\B$ võrdusest
-    \eqref{n-lie-superalg-basis}. Baasile $\B$ vastavateks
-    \emph{struktuurikonstantideks} nimetatakse arve
-    $K_{A_1 A_2 \dots A_n}^{B}$, mis on määratud võrranditega
-    \begin{align*}
-        [z_{A_1}, z_{A_2}, \dots, z_{A_n}] =
-        K_{A_1 A_2 \dots A_n}^{B} z_B,
-    \end{align*}
-    kus $z_{A_1}, z_{A_2}, \dots, z_{A_n}, z_B \in \B$.
-\end{dfn}
-
-Ilmselt on meil baasi $\B$ elementidel sulu $[\cdot, \dots, \cdot]$
-arvutamiseks kolm võimalust: kõik argumendid on paaris, kõik
-argumendid on paaritud, või on nii paaris- kui ka paarituid elemente.
-Kuid arvestades gradueeritud kaldsümmeetrilisust võime me
-argumendid alati sellisesse järjekorda viia, et väiksema indeksiga
-baasielement eelneb suurema indeksiga elemendile, ja
-paarisgradueeringuga vektorid eelnevad sulus paaritutele.
-Kokkuvõttes jäävad huvipakkuvate struktuurikonstantidena alles ainult:
-\begin{enumerate}[label=\arabic*)]
-    \item $[e_{\alpha_1}, e_{\alpha_2}, \dots, e_{\alpha_n}] =
-        K_{\alpha_1 \alpha_2 \dots \alpha_n}^{\lambda} e_{\lambda}$,
-    \item $[f_{i_1}, f_{i_2}, \dots, f_{i_n}] =
-        K_{i_1 i_2 \dots i_n}^{B} z_{B}$,
-    \item $[e_{\alpha_1}, e_{\alpha_2}, \dots, e_{\alpha_k},
-            f_{i_1}, f_{i_2}, \dots, f_{i_{n-k}}] =
-        K_{
-            \alpha_1 \alpha_2 \dots \alpha_k i_1 i_2 \dots i_{n-k}
-        }^{B} z_{B}$,
-\end{enumerate}
-kus $k < n$, $\alpha_1, \alpha_2, \dots, \alpha_n,
-i_1, i_2, \dots, i_n \in \{1, 2, \dots, n\}$ ja $k < l$ korral
-$\alpha_k < \alpha_l$ ning $i_k < i_l$.
-
-Struktuurikonstantide kasutamise, seda eelkõige just ternaarsete
-Lie superalgebra korral, juurde naaseme hiljem peatüki \textbf{???}
-juures.
-% TODO: viita siia kui klassifikatsiooni meetodi kirjeldusest
-% kirjutatud on..
 
 Märgime, et $n$-Lie superalgebra korral defineeritakse tema
 \emph{ideaal} ning \emph{alamalgebra} täpselt nagu $n$-Lie algebra

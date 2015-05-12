@@ -7,6 +7,8 @@
 \section{Lie algebra}
 
 % TODO: kirjuta siia natuke peatüki sissejuhatuseks
+Järgnevas anname minimaalse ülevaate klassikalisest Lie algebrate
+teooriast, mida on tarvis edasiste peatükkide mõistmiseks.
 
 \subsection{Maatriksrühmad ja bilineaarvorm}\label{subsec:mat-ryhmad-ja-bilinvorm}
 
@@ -27,15 +29,14 @@ pööratavate lineaarteisenduste rühma nimetatakse vektorruumi $\V$
 \emph{pööratavate lineaarteisenduste rühmaks}\footnote{Inglise keeles
 \emph{general linear group}.} ja tähistatakse $\GL(\V)$. Selge, et selle
 rühma korrutamiseks on tavaline lineaarteisenduste kompositsioon.
-
-Et lõplikumõõtmelise vektorruumi lineaarteisendus on pööratav parajasti siis
-kui tema determinant on nullist erinev, siis rühma $\GL(\V)$ kuuluvad
+Lõplikumõõtmelise vektorruumi lineaarteisendus on pööratav parajasti siis
+kui tema determinant on nullist erinev. Seega kuuluvad rühma $\GL(\V)$
 need ja ainult need lineaarteisendused, mille determinant pole null.
 Kui vaatleme vaid lineaarteisendusi, mille determinant on üks, saame olulise
 alamrühma $\SL(\V)$, mida nimetatakse vektorruumi $\V$
 \emph{spetsiaalsete lineaarteisenduste rühmaks}.
 
-Et igal vektorruumil leidub baas, siis võime vektorruumi $\V$ jaoks
+Kuna igal vektorruumil leidub baas, siis võime vektorruumi $\V$ jaoks
 fikseerida mingi baasi. Sel juhul
 saame kõik lineaarteisendused esitada maatriksitena ning nõnda võime
 edaspidi lineaarteisenduste rühmade asemel rääkida \emph{maatriksrühmadest}.
@@ -61,8 +62,8 @@ $n \times n$ \emph{ortogonaalsete maatriksite rühm} $\Ort(n, \C)$, kuhu kuuluva
 ortogonaalsed maatriksid, see tähendab sellised maatriksid $A$, mille korral
 $A^T = A^{-1}$. Teise näitena võib tuua unitaarsete maatriksite rühma $\U(n)$,
 mille elementideks on anti-Hermite'i maatriksid $A$, mis rahuldavad tingimust
-$A^\dag = \overline{A}^T = -A$. Edasi on lihtne konstrueerida saadud alamrühmade
-\emph{spetsiaalsed} variandid. \emph{Spetsiaalsete komplekssete ortogonaalmaatriksite rühm} on
+$A^\dag = -A$, kus $A^\dag = \overline{A}^T$. Edasi on lihtne konstrueerida saadud alamrühmade
+\emph{spetsiaalsed} analoogid. \emph{Spetsiaalsete komplekssete ortogonaalmaatriksite rühm} on
 \begin{align*}
     \SO(n, \C) = \Ort(n, \C) \cap \SL(n, \C),
 \end{align*}
@@ -75,7 +76,7 @@ ja \emph{spetsiaalsete unitaarsete maatriksite rühmaks} on
     Olgu $\V$ vektorruum üle korpuse $K$. Kujutust
     $\blinv \col \V \times \V \to K$
     nimetatakse \emph{bilineaarvormiks}, kui iga $x, y, z \in \V$
-    ja skalaaride $\lambda, \mu \in K$ korral
+    ja suvaliste skalaaride $\lambda, \mu \in K$ korral
     \begin{enumerate}[label=\roman*.]
         \item $(\lambda x + \mu y, z) = \lambda (x, z) + \mu (y, z)$,
         \item $(x, \lambda y + \mu z) = \lambda (x, y) + \mu (x, z)$.
@@ -93,7 +94,7 @@ siis kasutades $\blinv$ lineaarsust mõlema muutuja järgi võime arvutada
 
 Me ütleme, et bilineaarvorm $\blinv \col \V \times \V \to K$ on
 \emph{sümmeetriline} kui
-iga $x, y \in \V$ korral $(x, y) = (y, x)$. Selge, et sümmeetrilise
+kõikide $x, y \in \V$ korral $(x, y) = (y, x)$. Selge, et sümmeetrilise
 bilineaarvormi maatriksi $B$ korral kehtib võrdus $B = B^T$. Vormi $\blinv$
 nimetatakse \emph{kaldsümmeetriliseks} kui iga $x, y \in \V$ korral kehtib
 võrdus $(x, y) = - (y, x)$. Lihtne on veenduda, et kaldsümmeetrilise
@@ -117,7 +118,7 @@ maatriks $A$ on \emph{jäljeta}.
 \begin{naide}
     On hästi teada, et vektorruumi $\V$ kõigi lineaarteisenduste ehk
     endomorfismide hulk $\End \V$
-    on ise ka vektorruum, kusjuures kui vektorruumi $\V$ dimensioon
+    on ka ise vektorruum, kusjuures kui vektorruumi $\V$ dimensioon
     on $\dim(\V) = n$, siis ruumi $\End \V$ dimendsioon on
     $\dim \left(\End \V\right) = n^2$. Kasutades jälge $\Tr_\V$ saame
     defineerida bilineaarvormi
@@ -138,7 +139,7 @@ ortogonaalne vektoriga $y$, siis kehtib ka vastupidine, $y$ on ortogonaalne
 vektoriga $x$. Kui vektor $x \neq 0$ on iseenesega ortogonaalne, see tähendab
 $(x, x) = 0$, siis nimetatakse vektorit $x$ \emph{isotroopseks}. Selge, et
 Eukleidilises geomeetrias selliseid vektoreid ei leidu, kuid üldisemates
-situatsioonides esinevad nad küllaltki sageli, näiteks
+situatsioonides esinevad nad küllaltki sageli, näiteks pseudoeukleidilises
 \emph{Minkowski aegruumis}.
 
 Edasises vaatleme ortogonaaseid ja sümplektilisi rühmi ning selleks
@@ -193,22 +194,23 @@ teisenduste rühma saame kui vaatleme ühisosa rühmaga $\GL(2n, \R)$:
 
 \subsection{Eksponentsiaalkujutus}
 
-Kõikide seni käsitluse all olnud maatriksrühmade esindajad peavad
+Kõikide seni vaadeldud maatriksrühmade esindajad peavad
 vastavatesse rühmadesse kuulumiseks rahuldama mingeid algebralisi tingimusi.
 Need tingimused võib kirja panna maatriksite elementide kaudu, mille
 tulemusel saaame me mittelineaarseid võrrandeid, mis määravad rühma kuulumise.
 Osutub, et need tingimused on võimalik asendada mingi hulga ekvivalentsete
 lineaarsete võrranditega ja selline üleminek mittelineaarselt süsteemilt
 lineaarsele ongi võtmetähtsusega idee üleminekul Lie rühmadest Lie
-algebratele.\cite{johan1989survey}
+algebratele \cite{johan1989survey}.
 
 Klassikaliseks viisiks kuidas sellist üleminekut realiseeritakse on
 \emph{eksponentsiaalkujutuse} kasutuselevõtt. Nagu nimigi viitab, on
-tegu analüüsist tuttava kujutuse üldistusega. Et meil oli siiani tegemist
-vaid maatriksrühmadega, siis läheme siin ka edasi vaid eksponentsiaalkujutuse
-ühe tähtsa erijuhuga, \emph{maatrikseksponentsiaaliga}, kuid olgu öeldud,
+tegu analüüsist tuttava kujutuse üldistusega. Kuivõrd meil oli
+siiani tegemist vaid maatriksrühmadega, siis läheme siin ka edasi
+vaid eksponentsiaalkujutuse
+ühe tähtsa erijuhu, \emph{maatrikseksponentsiaaliga}. Samas olgu öeldud,
 et järgnevad väited kehtivad tegelikult ka üldisemas seades,
-nagu võib näha raamatus \cite{kirillov2008introduction}.
+nagu võib näha monograafias \cite{kirillov2008introduction}.
 
 Olgu $A$ mingi $n \times n$ maatriks, $k \in \N$ ning olgu $I$
 ühikmaatriksit. Tähistame $A^0 = I$ ning
@@ -241,11 +243,11 @@ ta ka koondub. Märkamaks, et $e^X$ on pidev funktsioon märgime esiteks,
 et $X^k$ on argumendi $X$ suhtes pidev funktsioon ja seega on rea
 \eqref{eq:mat-exp} osasummad pidevad. Teisalt paneme tähele, et
 \eqref{eq:mat-exp} koondub ühtlaselt hulkadel, mis on kujul
-$\{ \|X\| \le R \}$, ja seega on rida kokkuvõttes pidev.
+$\{ X : \|X\| \le R \}$, ja seega on rida kokkuvõttes pidev.
 
-Seega on maatrikseksponentsiaal korrektselt defineeritud ning ka pidev.
+Niisiis on maatrikseksponentsiaal korrektselt defineeritud ning ka pidev.
 Järgmises lauses on toodud rida eksponentsiaalkujutuse põhilisi omadusi,
-mille võrdlemisi lihtsad tõestused võib huvi korral võib leida näiteks
+mille võrdlemisi lihtsad tõestused võib huvi korral leida näiteks
 raamatust \cite{hall2003lie}.
 
 \begin{lau}\label{lau:mat-exp-om}
@@ -255,7 +257,7 @@ raamatust \cite{hall2003lie}.
         \item\label{om:mat-exp-1} $e^0 = I$,
         \item\label{om:mat-exp-2} $\left(e^X\right)^T = e^{X^T}$,
         \item\label{om:mat-exp-3} $e^X$ on pööratav ning kehtib
-            $\left(e^X\right)^{-1} = e^{X^{-1}}$,
+            $\left(e^X\right)^{-1} = e^{-X}$,
         \item\label{om:mat-exp-4} $e^{(\lambda + \mu)X} = e^{\lambda X} e^{\mu X}$ suvaliste
             $\lambda, \mu \in \C$ korral,
         \item\label{om:mat-exp-5} kui $XY = YX$, siis $e^{X+Y} = e^X e^Y = e^Y e^X$,
@@ -276,8 +278,8 @@ nullpunktita.
 Niisiis eksponentkujutust kasutades on oht kaotada rühma globaalne struktuur,
 samas kui lokaalne struktuur säilib.
 
-Et maatriksi $A$ korral kuuluks maatriks $e^A$ mõnda puntis
-\ref{subsec:mat-ryhmad-ja-bilinvorm}. \nameref{subsec:mat-ryhmad-ja-bilinvorm} nimetatud rühma tuleb maatriksile
+Kui maatriksi $A$ korral soovime, et maatriks $e^A$ kuuluks mõnda puntis
+\ref{subsec:mat-ryhmad-ja-bilinvorm} \nameref{subsec:mat-ryhmad-ja-bilinvorm} nimetatud rühma, tuleb maatriksile
 $A$ seada mingid lineaarsed kitsendused. Näiteks spetsiaalse lineaarse rühma
 $\SL(n)$ korral võime mittelineaarse tingimuse $e^A$ determinandi kohta
 asendada lineaarse tingimusega maatriksi $A$ jälje kohta kasutades lause

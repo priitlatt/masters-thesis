@@ -23,14 +23,13 @@ bilineaarne korrutustehe, mis rahuldab Jacobi samasust.
 tema korrutamise üldistamine. Seda tehes on loomulik nõuda, et
 ka üldistatud korrutamistehe rahuldaks kaldsümmeetrilisuse
 tingimust ning Jacobi samasust, või vähemalt selle mingit
-analoogi, mis annaks klassikalisel juhul täpselt
-Jacobi samasuse.
+analoogi, mis annaks juhul $n=2$ täpselt Jacobi samasuse.
 
-Filippov\footnote{Aleksei Fedorovich Filippov (1923 -- 2006),
+Filippov\footnote{Aleksei Fedorovich Filippov (1923--2006),
 vene matemaatik} tutvustas aastal 1985 artikis \cite{filippov1985}
 $n$-Lie algebrate klassi, kus bilineaarne korrutamine on
 asendatud $n$-lineaarse kaldsümmeetrilise operatsiooniga,
-mis rahuldab teatud samasust.\cite{kasymov1987}
+mis rahuldab teatud samasust. \cite{kasymov1987}
 Tänaseks on just see, Nambu mehaanikast välja kasvanud
 üldistus osutunud üheks põhiliseks Lie algebrate edasiseks
 uurimissuunaks.
@@ -104,11 +103,11 @@ pärast oma definitsiooni.
 
     Selle põhjal saab näidata, et algebra
     $(\E_{n+1}, [\cdot, \dots, \cdot])$ on $n$-Lie
-    algebra.\cite{filippov1985}
+    algebra. \cite{filippov1985}
 \end{naide}
 
 Punktis \ref{subsec:algebralised-struktuurid} toodud konstruktsioonid
-on võmalik esitada ka üldisemal juhul.
+on loomulikul viisil võmalik esitada ka üldisemal juhul.
 
 \begin{dfn}\label{def:n-lie-alamalgebra}
     Me ütleme, et $\h$ on $n$-Lie algebra $(\g, [\cdot, \dots, \cdot])$
@@ -204,9 +203,13 @@ mitmed head omadused, nagu võib lugeda artiklitest \cite{AKMS:2014,AMS:2011}.
     on lineaarne.
 
     Veendumaks, et $\phi_\tau$ on $(n+1)$-lineaarne ning
-    kaldsümmeetriline olgu $j \in \{1, 2, \dots, n+1\}$,
-    $x_1, x_2, \dots, x_{n+1}, x_j^1, x_j^2 \in \A$ ja
-    $\lambda$ ning $\mu$ skalaarid. Arvestades nii
+    kaldsümmeetriline olgu
+    \[
+        j \in \{1, 2, \dots, n+1\},
+        \quad
+        x_1, x_2, \dots, x_{n+1}, x_j^1, x_j^2 \in \A
+    \]
+    ja $\lambda, \mu$ skalaarid. Arvestades nii
     $\phi$ kui ka $\tau$ lineaarsust märgime $\phi_\tau$
     lineaarsuseks, et
     \begin{align*}
@@ -284,70 +287,16 @@ mitmed head omadused, nagu võib lugeda artiklitest \cite{AKMS:2014,AMS:2011}.
         \right) = \\
         &= \sum_{i=1}^{n+1} 0 = 0,
     \end{align*}
-    nagu tarvis. Sellega on lemma tõestatud.
+    mida oligi tarvis.
 \end{proof}
 
-Kasutades lemmat on võimalik tõestada järgmine teoreem \cite{AKMS:2014}.
+Kasutades lemmat on võimalik tõestada järgmine teoreem. \cite{AKMS:2014}
 
 \begin{thm}\label{thm:n+1_lie_alg}
     Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie algebra ning olgu $\tau$
     lineaarkujutuse $[\cdot, \dots, \cdot]$ jälg. Siis
     $(\g, [\cdot, \dots, \cdot]_\tau)$ on $(n+1)$-Lie algebra.
 \end{thm}
-
-% \begin{proof}
-%     Eeldame, et paar $(\A, \phi)$ omab $n$-Lie algebra struktuuri,
-%     see tähendab $\phi \col \A^n \to \A$ on kõikide argumentide
-%     järgi lineaarne, kaldsümmeetriline ja rahuldab Filippovi
-%     samasust, ning olgu kujutuse $\phi$ jälg $\tau \col \A \to K$.
-
-%     Lemma põhjal on siis $\phi_\tau$ oma argumentide järgi lineaarne
-%     ning kaldsümmeetriline. Seega peame teoreemi tõestamiseks
-%     näitama, et $\phi_\tau$ rahuldab Filippovi samasust
-%     \begin{align}\label{eq:n+1_filippov}
-%         \begin{split}
-%             &\phi_\tau(x_1, \dots, x_n,
-%                 \phi_\tau(y_1, \dots, y_{n+1})
-%             ) = \\
-%             &= \sum_{i=1}^{n+1} \phi_\tau(
-%                 y_1, \dots, y_{i-1},
-%                 \phi_\tau(x_1, \dots, x_n, y_i),
-%                 y_{i+1}, \dots, y_{n+1}
-%             )
-%         \end{split}
-%     \end{align}
-
-%     Olgu selleks $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_{n+1}
-%     \in \A$. Siis ühelt poolt
-%     \begin{align*}
-%         &\phi_\tau(x_1, \dots, x_n,
-%             \phi_\tau(y_1, \dots, y_{n+1})
-%         ) = \\
-%         &= \phi_\tau\left(
-%              x_1, \dots, x_n,
-%              \sum_{i=1}^{n+1} (-1)^{i-1} \tau(y_i)
-%              \phi_i(y_1, \dots, y_{n+1})
-%            \right) = \\
-%         &= \sum_{i=1}^{n+1} (-1)^{i-1} \tau(y_i) \phi_\tau\left(
-%              x_1, \dots, x_n, \phi_i(y_1, \dots, y_{n+1})
-%            \right) = \\
-%         &= \sum_{i=1}^{n+1} (-1)^{i-1} \tau(y_i)
-%            \sum_{j=1}^{n} (-1)^{j-1} \tau(x_j) \phi_j(
-%              x_1, \dots, x_n, \phi_i(y_1, \dots, y_{n+1})) + \\
-%         &\quad\, \sum_{i=1}^{n+1} (-1)^{i-1} \tau(y_i) (-1)^{n+1-1}
-%            \underbrace{
-%              \tau\left( \phi_i(y_1, \dots, y_{n+1}) \right)
-%            }_{0} \phi(x_1, \dots, x_n) = \\
-%         &= \sum_{i=1}^{n+1} \sum_{j=1}^{n} (-1)^{i-1} (-1)^{j-1}
-%            \tau(y_i) \tau(x_j) \phi_j \left(
-%              x_1, \dots, x_n, \phi_i(y_1, \dots, y_{n+1})
-%            \right) = \\
-%         &= \sum_{i=1}^{n+1} \sum_{j=1}^{n} (-1)^{i+j}
-%            \tau(y_i) \tau(x_j) \phi_j \left(
-%              x_1, \dots, x_n, \phi_i(y_1, \dots, y_{n+1})
-%            \right).
-%     \end{align*}
-% \end{proof}
 
 Teoreemis kirjeldatud viisil saadud $(n+1)$-Lie algebrat
 $(\g, [\cdot, \dots, \cdot]_\tau)$ nimetatakse $n$-Lie algebra
@@ -419,17 +368,18 @@ inspiratsiooniks Jaapani füüsiku ja Nobeli preemia laureaadi
 Yoichiro Nambu tööd Hamiltoni mehaanika
 üldistuste vallas, mida täna tuntakse kui Nambu mehaanikat. Osutub, et
 seal esinev \emph{Nambu-Poissoni} sulg on $n$-Lie algebra sulu erijuht,
-mida on põhjalikult uurinud Takhtajan.\cite{takhtajan1994}
-Tuginedes Takhtajani artiklile toome Nambu mehaanika abil veel ühe
+mida on põhjalikult uurinud Takhtajan. Tuginedes Takhtajani artiklile
+\cite{takhtajan1994} toome Nambu mehaanika abil veel ühe
 näite $n$-Lie algebrast.
 
 Alustame klassikalisest situatsioonist ehk tavalisest Hamiltoni mehaanikast.
 
 \begin{dfn}
     \emph{Poissoni muutkonnaks} nimetatakse siledat muutkonda $M$ koos
-    funktsioonide algebraga $A = C^\infty(M)$, kui on antud binaarne kujutus
-    kujutus $\{\cdot, \cdot\} \col A \otimes A \to A$, mis rahuldab
-    järgmisi tingimusi:
+    funktsioonide algebraga $A = C^\infty(M)$, kui on antud binaarne
+    kujutus
+    \[ \{\cdot, \cdot\} \col A \otimes A \to A, \]
+    mis rahuldab järgmisi tingimusi:
     \begin{enumerate}
       \item kaldsümmeetrilisus, iga $f_1, f_2 \in A$ korral
           \begin{align}\label{eq:poisson-antisymm}
@@ -524,239 +474,9 @@ Veendumaks, et kehtib ka Jacobi samasus, piisab vahetult arvutada
     \{f_3, \{f_1, f_2\}\}.
 \end{align*}
 Arvestades, et funktsioonide korrutamine on defineeritud punktiviisi ning
-korrutise diferentseerimise eeskirja võime saadud tulemusi liites näha, et
-nende summa on tõepoolest null, ehk tingimus \eqref{eq:poisson-jacobi-id}
-on täidetud.
-
-% \begin{align}\begin{split}
-%     \{f_1, \{f_2, f_3\}\} = &\sum_{i=1}^{n} \left\{
-%         f_1,
-%         \frac{\partial f_2}{\partial x_i}
-%         \frac{\partial f_3}{\partial y_i} -
-%         \frac{\partial f_2}{\partial y_i}
-%         \frac{\partial f_3}{\partial x_i}
-%     \right\} = \\
-%     = &\sum_{i=1}^{n} \left\{
-%         f_1,
-%         \frac{\partial f_2}{\partial x_i}
-%         \frac{\partial f_3}{\partial y_i}
-%     \right\} - \sum_{i=1}^{n} \left\{
-%         f_1,
-%         \frac{\partial f_2}{\partial y_i}
-%         \frac{\partial f_3}{\partial x_i}
-%     \right\} = \\
-%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left[
-%         \frac{\partial f_1}{\partial x_j}
-%         \frac{\partial}{\partial y_j} \left(
-%             \frac{\partial f_2}{\partial x_i}
-%             \frac{\partial f_3}{\partial y_i}
-%         \right) -
-%         \frac{\partial f_1}{\partial y_j}
-%         \frac{\partial}{\partial x_j} \left(
-%             \frac{\partial f_2}{\partial x_i}
-%             \frac{\partial f_3}{\partial y_i}
-%         \right)
-%     \right] - \\
-%     - &\sum_{i=1}^{n} \sum_{j=1}^{n} \left[
-%         \frac{\partial f_1}{\partial x_j}
-%         \frac{\partial}{\partial y_j} \left(
-%             \frac{\partial f_2}{\partial y_i}
-%             \frac{\partial f_3}{\partial x_i}
-%         \right) -
-%         \frac{\partial f_1}{\partial y_j}
-%         \frac{\partial}{\partial x_j} \left(
-%             \frac{\partial f_2}{\partial y_i}
-%             \frac{\partial f_3}{\partial x_i}
-%         \right)
-%     \right] = \\
-%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left[
-%         \frac{\partial f_1}{\partial x_j}\left(
-%             \frac{\partial f_2}{\partial x_i}
-%             \frac{\partial^2 f_3}{\partial y_j \partial y_i} +
-%             \frac{\partial f_3}{\partial y_i}
-%             \frac{\partial^2 f_2}{\partial y_j \partial x_i}
-%         \right) - \right.\\
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n} [}\ \ 
-%             \frac{\partial f_1}{\partial y_j}\left(
-%             \frac{\partial f_2}{\partial x_i}
-%             \frac{\partial^2 f_3}{\partial x_j \partial y_i} +
-%             \frac{\partial f_3}{\partial y_i}
-%             \frac{\partial^2 f_2}{\partial x_j \partial y_i}
-%         \right) - \\
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n} [}\ \ 
-%             \frac{\partial f_1}{\partial x_j}\left(
-%             \frac{\partial f_2}{\partial y_i}
-%             \frac{\partial^2 f_3}{\partial y_j \partial x_i} +
-%             \frac{\partial f_3}{\partial x_i}
-%             \frac{\partial^2 f_2}{\partial y_j \partial y_i}
-%         \right) + \\
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n} [}\ \left.
-%             \frac{\partial f_1}{\partial y_j}\left(
-%             \frac{\partial f_2}{\partial y_i}
-%             \frac{\partial^2 f_3}{\partial y_j \partial x_i} +
-%             \frac{\partial f_3}{\partial x_i}
-%             \frac{\partial^2 f_2}{\partial y_j \partial y_i}
-%         \right)
-%     \right] = \\
-%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
-%         \frac{\partial f_1}{\partial x_j}
-%         \frac{\partial f_2}{\partial x_i}
-%         \frac{\partial^2 f_3}{\partial y_j \partial y_i} +
-%         %
-%         \frac{\partial f_1}{\partial x_j}
-%         \frac{\partial f_3}{\partial y_i}
-%         \frac{\partial^2 f_2}{\partial y_j \partial x_i} - \right.\\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-%         \frac{\partial f_1}{\partial y_j}
-%         \frac{\partial f_2}{\partial x_i}
-%         \frac{\partial^2 f_3}{\partial x_j \partial y_i} - 
-%         %
-%         \frac{\partial f_1}{\partial y_j}
-%         \frac{\partial f_3}{\partial y_i}
-%         \frac{\partial^2 f_2}{\partial x_j \partial y_i} - \\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-%         \frac{\partial f_1}{\partial x_j}
-%         \frac{\partial f_2}{\partial y_i}
-%         \frac{\partial^2 f_3}{\partial y_j \partial x_i} -
-%         %
-%         \frac{\partial f_1}{\partial x_j}
-%         \frac{\partial f_3}{\partial x_i}
-%         \frac{\partial^2 f_2}{\partial y_j \partial y_i} + \\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
-%         \frac{\partial f_1}{\partial y_j}
-%         \frac{\partial f_2}{\partial y_i}
-%         \frac{\partial^2 f_3}{\partial x_j \partial x_i} +
-%         %
-%         \frac{\partial f_1}{\partial y_j}
-%         \frac{\partial f_3}{\partial x_i}
-%         \frac{\partial^2 f_2}{\partial x_j \partial x_i}
-%     \right).
-% \end{split}\end{align}
-
-% \newpage
-
-% \begin{align}\begin{split}
-%     \{f_1, \{f_2, f_3\}\}
-%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
-%         \frac{\partial f_1}{\partial x_j}
-%         \frac{\partial f_2}{\partial x_i}
-%         \frac{\partial^2 f_3}{\partial y_j \partial y_i} +
-%         %
-%         \frac{\partial f_1}{\partial x_j}
-%         \frac{\partial f_3}{\partial y_i}
-%         \frac{\partial^2 f_2}{\partial y_j \partial x_i} - \right.\\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-%         \frac{\partial f_1}{\partial y_j}
-%         \frac{\partial f_2}{\partial x_i}
-%         \frac{\partial^2 f_3}{\partial x_j \partial y_i} - 
-%         %
-%         \frac{\partial f_1}{\partial y_j}
-%         \frac{\partial f_3}{\partial y_i}
-%         \frac{\partial^2 f_2}{\partial x_j \partial y_i} - \\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-%         \frac{\partial f_1}{\partial x_j}
-%         \frac{\partial f_2}{\partial y_i}
-%         \frac{\partial^2 f_3}{\partial y_j \partial x_i} -
-%         %
-%         \frac{\partial f_1}{\partial x_j}
-%         \frac{\partial f_3}{\partial x_i}
-%         \frac{\partial^2 f_2}{\partial y_j \partial y_i} + \\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
-%         \frac{\partial f_1}{\partial y_j}
-%         \frac{\partial f_2}{\partial y_i}
-%         \frac{\partial^2 f_3}{\partial x_j \partial x_i} +
-%         %
-%         \frac{\partial f_1}{\partial y_j}
-%         \frac{\partial f_3}{\partial x_i}
-%         \frac{\partial^2 f_2}{\partial x_j \partial x_i}
-%     \right),
-% \end{split}\end{align}
-
-% \begin{align}\begin{split}
-%     \{f_2, \{f_3, f_1\}\}
-%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
-%         \frac{\partial f_2}{\partial x_j}
-%         \frac{\partial f_3}{\partial x_i}
-%         \frac{\partial^2 f_1}{\partial y_j \partial y_i} +
-%         %
-%         \frac{\partial f_2}{\partial x_j}
-%         \frac{\partial f_1}{\partial y_i}
-%         \frac{\partial^2 f_3}{\partial y_j \partial x_i} - \right.\\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-%         \frac{\partial f_2}{\partial y_j}
-%         \frac{\partial f_3}{\partial x_i}
-%         \frac{\partial^2 f_1}{\partial x_j \partial y_i} - 
-%         %
-%         \frac{\partial f_2}{\partial y_j}
-%         \frac{\partial f_1}{\partial y_i}
-%         \frac{\partial^2 f_3}{\partial x_j \partial y_i} - \\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-%         \frac{\partial f_2}{\partial x_j}
-%         \frac{\partial f_3}{\partial y_i}
-%         \frac{\partial^2 f_1}{\partial y_j \partial x_i} -
-%         %
-%         \frac{\partial f_2}{\partial x_j}
-%         \frac{\partial f_1}{\partial x_i}
-%         \frac{\partial^2 f_3}{\partial y_j \partial y_i} + \\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
-%         \frac{\partial f_2}{\partial y_j}
-%         \frac{\partial f_3}{\partial y_i}
-%         \frac{\partial^2 f_1}{\partial x_j \partial x_i} +
-%         %
-%         \frac{\partial f_2}{\partial y_j}
-%         \frac{\partial f_1}{\partial x_i}
-%         \frac{\partial^2 f_3}{\partial x_j \partial x_i}
-%     \right),
-% \end{split}\end{align}
-
-% \begin{align}\begin{split}
-%     \{f_3, \{f_1, f_2\}\}
-%     = &\sum_{i=1}^{n} \sum_{j=1}^{n} \left(
-%         \frac{\partial f_3}{\partial x_j}
-%         \frac{\partial f_1}{\partial x_i}
-%         \frac{\partial^2 f_2}{\partial y_j \partial y_i} +
-%         %
-%         \frac{\partial f_3}{\partial x_j}
-%         \frac{\partial f_2}{\partial y_i}
-%         \frac{\partial^2 f_1}{\partial y_j \partial x_i} - \right.\\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-%         \frac{\partial f_3}{\partial y_j}
-%         \frac{\partial f_1}{\partial x_i}
-%         \frac{\partial^2 f_2}{\partial x_j \partial y_i} - 
-%         %
-%         \frac{\partial f_3}{\partial y_j}
-%         \frac{\partial f_2}{\partial y_i}
-%         \frac{\partial^2 f_1}{\partial x_j \partial y_i} - \\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \ 
-%         \frac{\partial f_3}{\partial x_j}
-%         \frac{\partial f_1}{\partial y_i}
-%         \frac{\partial^2 f_2}{\partial y_j \partial x_i} -
-%         %
-%         \frac{\partial f_3}{\partial x_j}
-%         \frac{\partial f_2}{\partial x_i}
-%         \frac{\partial^2 f_1}{\partial y_j \partial y_i} + \\
-%         %
-%         &\phantom{\sum_{i=1}^{n} \sum_{j=1}^{n}}\ \ \left.
-%         \frac{\partial f_3}{\partial y_j}
-%         \frac{\partial f_1}{\partial y_i}
-%         \frac{\partial^2 f_2}{\partial x_j \partial x_i} +
-%         %
-%         \frac{\partial f_3}{\partial y_j}
-%         \frac{\partial f_2}{\partial x_i}
-%         \frac{\partial^2 f_1}{\partial x_j \partial x_i}
-%     \right).
-% \end{split}\end{align}
+võttes arvesse korrutise diferentseerimise eeskirja, võime saadud tulemusi
+liites näha, et nende summa on tõepoolest null, ehk tingimus
+\eqref{eq:poisson-jacobi-id} on täidetud.
 
 Muutkonna $M$ Poissoni struktuuri on valemi \eqref{eq:R^n-poisson-sulg}
 asemel võimalik kirjeldada ka kaasaegse diferentsiaalgeomeetria
@@ -925,7 +645,7 @@ dünaamikat määravate sõltumatute parameetrite maksimaalset arvu.
         \item kaldsümmeetriline, see tähendab iga $f_1, f_2, \dots, f_n \in A$
             korral
             \begin{align}\label{def:nambu-brac-antisymm}
-                \{f_1, \dots, f_n\} = (-1)^{\varepsilon(\sigma)}
+                \{f_1, \dots, f_n\} = (-1)^{|\sigma|}
                 \{f_{\sigma(1)}, \dots, f_{\sigma(n)}\},
             \end{align}
         \item rahuldab Leibnizi tingimust, ehk iga
@@ -949,7 +669,7 @@ dünaamikat määravate sõltumatute parameetrite maksimaalset arvu.
 Definitsioonis nõutavat $n$-aarset operatsiooni nimetatakse seejuures
 \emph{Nambu suluks}, ja kaldsümmeetrilisuse tingimuses tähistab
 $\sigma$ indeksite $i = 1, 2, \dots, n$ permutatsiooni ning
-$\varepsilon(\sigma)$ selle permutatsiooni paarsust. Tegelikult on
+$|\sigma|$ selle permutatsiooni paarsust. Tegelikult on
 aga võrdusega \eqref{def:nambu-brac-antisymm} antud kaldsümmeetrilisus
 täpselt sama, mis $n$-Lie algebra definitsioonis nõutud kaldsümmeetrilisus
 \eqref{def:n-lie-brac-antisymm}, sest järjestikku kahe elemendi vahetamise
@@ -976,16 +696,16 @@ sulu valemiga
 \end{align*}
 kus $\eta \col D(M)^{\oplus^n} \to C^\infty(M)$ on kaldsümmeetriline vorm ja
 $D(M)$ tähistab muutkonna $M$ vektorväljade vektorruumi. Kasutades
-muutkonnal $M$ lokaalseid koordinaate $\eta$ kaldsümmeetrilised
-$n$-korda kovariantsed \emph{Nambu tensorid} $\eta_{i_1 i_2 \dots i_n}$
-nii, et
+muutkonnal $M$ lokaalseid koordinaate $(x_1, x_2, \dots, x_n)$, saame
+$\eta$ kirjutada kaldsümmeetriliste $n$-korda kovariantsete
+\emph{Nambu tensoritena} $\eta_{i_1 i_2 \dots i_n}$:
 \begin{align*}
     \eta = \sum_{i_1, \dots, i_n = 1}^{n} \eta_{i_1 i_2 \dots i_n}
         \frac{\partial}{\partial x_{i_1}}
         \wedge \dots \wedge
-        \frac{\partial}{\partial x_{i_n}},
+        \frac{\partial}{\partial x_{i_n}}.
 \end{align*}
-ja kokkuvõttes saab Nambu sulg kuju
+Kokkuvõttes saab siis Nambu sulg kuju
 \begin{align*}
     \{f_1, \dots, f_n\} =
     \sum_{i_1, \dots, i_n = 1}^{n} \eta_{i_1 i_2 \dots i_n}

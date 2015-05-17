@@ -299,7 +299,7 @@ vaid on kinnised ka teatud binaarse tehte suhtes.
 
 \subsection{Lie algebra definitsioon}
 
-Enne kui Lie algebra definitsiooni anname tuletame meelde, et \emph{algebraks}
+Enne kui anname Lie algebra definitsiooni tuletame meelde, et \emph{algebraks}
 üle korpuse $K$ nimetatakse vektorruumi $\V$ üle korpuse $K$, millel on
 defineeritud bilineaarne korrutamine $\V \times \V \to \V$. Kui algebra
 tehe rahuldab assotsiatiivsuse tingimust, siis nimetatakse seda algebrat
@@ -323,15 +323,15 @@ algebralise struktuuri, kui võtame tehteks näiteks $f \circ g - g \circ f$.
 
 
 Me ütleme definitsioonis toodud korrutise $[x, y]$ kohta elementide $x$ ja
-$y$ \emph{Lie sulg}, ning bilineaarvormi $[\cdot, \cdot]$ kohta öeldakse ka
+$y$ \emph{Lie sulg}, ning bilineaarvormi $[\cdot, \cdot]$ nimetatakse ka
 \emph{kommutaator}. Definitsioonis toodud samasust \eqref{id:jacobi}
 nimetatakse \emph{Jacobi samasuseks}. Sageli on otstarbekas tähistada Lie
 algebrat $\g$ paarina $(\g, [\cdot, \cdot])$.
 
 \begin{markus}
-    Paljudes käsitlustes antakse Lie algebrale veidi üldisem definitsioon,
+    Mõnes käsitlustes antakse Lie algebrale veidi üldisem definitsioon,
     kui algebrat $\g$ ei vaaldeda mitte vektorruumina üle korpuse,
-    vaid moodulina üle ringi, nagu seda on tehtud näiteks viites
+    vaid moodulina üle ringi, nagu seda on tehtud näiteks raamatus
     \cite{bourbaki1989lie}.
 \end{markus}
 
@@ -353,7 +353,7 @@ kommutatiivne Lie algebra.
 \end{dfn}
 
 Rakendades võrdust \eqref{eq:bracket-antisymm} saame Jacobi samasuse
-kirjutada kui
+kirjutada kujul
 \begin{align}\label{id:jacobi-modified}
     \brac{x}{\brac{y}{z}} = \brac{\brac{x}{y}}{z} + \brac{y}{\brac{x}{z}}.
 \end{align}
@@ -401,7 +401,7 @@ on antud kujul $[x, y] = xy - yx$. Rõhutame, et tegelikult on Lie algebra
 suvaline vektorruum, kus on anutd bilineaarne kaldsümmeetriline korrutamine,
 mis rahuldab Jacobi samasust. Enamgi veel, kirjutis $xy - yx$ ei oma üldises
 situatsioonis üldse mõtet, kuna vektorruumil $\g$ ei pruugi olla defineeritud
-korrutamise operatsiooni. Seda asjaolu sobib hästi ilmsetama järgminenäide.
+korrutamise operatsiooni. Seda asjaolu sobib hästi ilmestama järgmine näide.
 
 \begin{naide}
     Olgu $\g = \R^3$ ning defineerime Lie sulu kui vektorkorrutise
@@ -473,7 +473,7 @@ järgmiselt:
     a^\alpha b^\beta [e_\alpha, e_\beta].
 \end{align*}
 Iga $\alpha, \beta \in \{1, 2, \dots, n\}$ korral võime omakorda ka
-vektori $[e_\alpha, e_\beta]$ avaldata lineaarkombinatsioonina
+vektori $[e_\alpha, e_\beta]$ avaldada lineaarkombinatsioonina
 baasivektoritest kujul
 \begin{align*}
     [e_\alpha, e_\beta] = K_{\alpha \beta}^{\lambda} e_\lambda,
@@ -555,7 +555,7 @@ rahuldama peavad.
     nagu võib näha bakalaureusetöös \cite{latt2013}.
 
     Arvutame Lie algebra $\su(2)$ generaatoritel Lie sulu väärtused
-    ja leiame seeläbi struktuurikonstandid. Ilmselt kõik suvalise
+    ja leiame seeläbi struktuurikonstandid. Ilmselt suvalise
     $\alpha \in \{1, 2, 3\}$ korral $[\rho_\alpha, \rho_\alpha] = 0$.
     Arvestades veel omadust \eqref{om:str-konst-kald-symm} on meile
     huvi pakkuvad kommutaatorid on vaid kujul
@@ -660,8 +660,7 @@ rahuldama peavad.
 Ilmselt sõltuvad Lie algebra struktuurikonstandid algebra vektorruumi
 baasist. Olgu $\{ e_1, e_2, \dots, e_n \}$ ja
 $\{ \hat{e}_1, \hat{e}_2, \dots, \hat{e}_n \}$ Lie algebra $\g$
-vektorruumi kaks erinevad baasi, ning olgu nad omavahel järgmises
-seoses:
+vektorruumi kaks erinevad baasi, ning olgu nad omavahel seoses
 \begin{align}\label{eq:str-konst-baasi-yleminek-1}
     \hat{e}_\alpha = a_\alpha^\lambda e_\lambda.
 \end{align}
@@ -719,8 +718,8 @@ Lie algebrast $\g$ vektorruumi $\V$ endomorfismide ringi nii, et
                          \left( \varphi(y)\varphi(x) \right) (v),
 \end{align*}
 kõikide $x, y \in \g$ ja $v \in \V$ korral. Me ütleme, et esitus $\varphi$
-on \emph{täpne}, kui $\varphi(x) = 0$ siis ja ainult siis, kui $x = 0$. Teisi
-sõnu on esitus täpne parajasti siis, kui ta on üks-ühene.
+on \emph{täpne}, kui $\varphi(x) = 0$ siis ja ainult siis, kui $x = 0$. Ehk
+teisi sõnu, esitus täpne parajasti siis, kui ta on üks-ühene.
 
 \begin{naide}\label{naide:adjoint-repr}
     Olgu $\g$ Lie algebra. Vaatleme lineaarset kujutust
@@ -759,9 +758,9 @@ sõnu on esitus täpne parajasti siis, kui ta on üks-ühene.
 
 Esituste teooria üheks väga oluliseks tulemuseks on nõndanimetatud
 \emph{Ado teoreem}, mis väidab, et iga lõplikumõõtmeline Lie algebra $\g$
-on Lie alebra $\gl(\V)$ alamalgebra, kus $\V$ on mingi lõplikumõõtmeline
-vektorruum. Niisiis, Lie algebrat $\g$ on tegelikult võimalik vaadelda kui
-maatriksalgebrat.\cite{hall2003lie}
+korral leidub lõplikumõõtmeline vektorruum $\V$ nii, et $\g$ on
+on Lie alebra $\gl(\V)$ alamalgebra. Niisiis, Lie algebrat $\g$
+on tegelikult võimalik vaadelda kui maatriksalgebrat. \cite{hall2003lie}
 
 \begin{thm}[Ado, 1935]
     Iga lõplikumõõtmeline Lie algebra üle nullkarakteristikaga korpuse omab
@@ -770,14 +769,13 @@ maatriksalgebrat.\cite{hall2003lie}
 
 Tegelikult kehtib ka Ado teoreemi oluliselt tugevam variant,
 kus on kaotatud eeldus korpuse nullkarakteristika
-kohta.\cite{hochschild1966}
+kohta. \cite{hochschild1966}
 
 \subsection{Algebralised struktuurid}\label{subsec:algebralised-struktuurid}
 
-Et meie põgus ülevaade Lie algebratest oleks vähegi täielik tuleks vähemalt
+Et meie ülevaade Lie algebratest oleks vähegi täielik, tuleks vähemalt
 definitsiooni tasemel sisse tuua ka sellised standardsed mõisted algebraste
-struktuuride vallast nagu \emph{alamalgebra} ja \emph{ideaal}. Tõsi, seda
-juba Lie algebrate kontektsis.
+struktuuride vallast nagu \emph{alamalgebra} ja \emph{ideaal}.
 
 \begin{dfn}\label{def:lie-alamalgebra}
     Olgu $(\g, [\cdot, \cdot])$ Lie algebra ning olgu $\h \subset \g$ alamruum.
@@ -790,16 +788,16 @@ saame, et Lie algebral $\gl(n, \K)$ on mitmeid Lie alamalgebraid. Nendeks on
 näiteks spetsiaalsete lineaarsete teisenduste Lie algebra $\mathfrak{sl}(n, \K)$
 ja ortogonaalsete lineaarsete teisenduste Lie algebra $\mathfrak{o}(n, \K)$.
 
-Võrduse \eqref{eq:bracket-antisymm} järgi on selge, et Lie algebra
-$(\g, [\cdot, \cdot])$ korral ei ole mõtet vahet teha vasak- ja
-parempoolsetel ideaalidel, kuna kõik ideaalid on automaatselt kahepoolsed.
-
 \begin{dfn}
     Olgu $(\g, [\cdot, \cdot])$ Lie algebra ning olgu $\h$ vektorruumi $\g$
     alamvektorruum liitmise suhtes. Me ütleme, et $\h$ on Lie algebra
     $(\g, [\cdot, \cdot])$ \emph{ideaal}, kui iga $x \in \h$ ja $y \in \g$ korral
     $[x, y] \in \h$.
 \end{dfn}
+
+Võrduse \eqref{eq:bracket-antisymm} järgi on selge, et Lie algebrate
+korral ei ole mõtet vahet teha vasak- ja
+parempoolsetel ideaalidel, kuna kõik ideaalid on automaatselt kahepoolsed.
 
 Leidmaks näidet ideaalist piisab meil vaid ette kujutada mõnd Abeli
 Lie algebrat. Selge, et iga tema alamruum on ideaal. Teatavasti saab

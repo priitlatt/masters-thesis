@@ -29,7 +29,7 @@ Tuletame selleks kõigepealt meelde mõned baasdefinitsioonid.
 \end{dfn}
 
 Kui supervektorruumi element $x \in \V$ korral
-$x \in \V_{\overline{0}}$ või $x \in \V_{\overline{1}}$, siis ütleme, et
+$x \in \V_{\overline{0}} \cup \V_{\overline{1}}$, siis ütleme, et
 vektor $x$ on \emph{homogeenne}. Homogeensete vektorite korral on
 otstarbekas vaadelda kujutust $|\cdot| \col \V \to \Z_2$, mis on defineeritud
 võrdusega
@@ -39,7 +39,7 @@ võrdusega
         \overline{1}, &\text{kui}\ x \in \V_{\overline{1}}.
     \end{cases}
 \end{align*}
-Homogeense elemendi $x$ korral nimetame suurust $|x| \in \Z_2$ tema
+Homogeense elemendi $x$ korral nimetame arvu $|x| \in \Z_2$ tema
 paarsuseks. Märgime, et kasutades edaspidises kirjutist $|x|$ eeldame
 vaikimisi, et element $x \in \V$ on homogeenne.
 
@@ -47,7 +47,7 @@ Supervektorruumi $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
 \emph{alamruumiks} nimetatakse supervektorruumi
 $\W = \W_{\overline{0}} \oplus \W_{\overline{1}} \subseteq \V$, kui
 vastavate otseliidetavate gradueeringud ühtivad, see tähendab
-$\W_i \subset \V_i$, kus $i \in \Z_2$.
+$\W_i \subset \V_i$, $i \in \Z_2$.
 
 \begin{dfn}
     Olgu supervektorruumil $\A$ antud bilineaarne algebraline tehe
@@ -70,14 +70,15 @@ Sellega on meil olemas piisvad vahendid, et defineerida
 \begin{dfn}
     Olgu $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$ superalgebra,
     millel on määratud bilineaarne kujutus
-    $[\cdot, \cdot] \col \g \times \g \to \g$, mis on suvaliste
-    homogeensete elementide $x, y, z \in \g$ korral
+    $[\cdot, \cdot] \col \g \times \g \to \g$. Me ütleme, et $\g$
+    on \emph{Lie superalgebra}, kui mistahes homogeensete elementide
+    $x, y, z \in \g$ korral on $[\cdot, \cdot]$
     \begin{enumerate}
         \item kaldsümmeetriline gradueeritud mõttes:
             \begin{align}\label{def:super-antisymm}
                 [x, y] = -(-1)^{|x||y|}[y, x],
             \end{align}
-        \item rahuldab gradueeritud Jacobi samasust
+        \item rahuldab gradueeritud Jacobi samasust ehk
             \begin{align}\label{id:super-jacobi-id}
                 [x, [y, z]] = [[x, y], z] + (-1)^{|x||y|}[y, [x, z]].
             \end{align}
@@ -173,19 +174,21 @@ korral.
     \eqref{naide:assot-super-lie-alg} ning arvutame võrduses
     \eqref{id:super-jacobi-id} olevad liikmed, kusjuures assotsiatiivsust
     arvesse võttes jätame korrutistes sulud kirjutamata.
-    \begin{flalign*}
-        &-[x, [y, z]] = -xyz + (-1)^{|x||y| + |x||z|} yzx +
-        (-1)^{|y||z|} xzy - (-1)^{|x||y| + |x||z| + |y||z|} zyx, \\[0.25cm]
+    \begin{align*}
+        -[x, [y, z]] =& -xyz + (-1)^{|x||y| + |x||z|} yzx +
+            (-1)^{|y||z|} xzy - \\
+            &\ (-1)^{|x||y| + |x||z| + |y||z|} zyx, \\[0.25cm]
         %
-        &[[x, y], z] = xyz - (-1)^{|x||z| + |y||z|} zxy -
-        (-1)^{|x||y|} yxz + (-1)^{|x||y| + |x||z| + |y||z|} zyx, \\[0.25cm]
+        [[x, y], z] =&\ xyz - (-1)^{|x||z| + |y||z|} zxy -
+            (-1)^{|x||y|} yxz + \\
+            &\ (-1)^{|x||y| + |x||z| + |y||z|} zyx, \\[0.25cm]
         %
-        &(-1)^{|x||y|}[y, [x, z]] = (-1)^{|x||y|} yxz -
+        (-1)^{|x||y|}[y, [x, z]] =&\ (-1)^{|x||y|} yxz -
             (-1)^{|x||y| + |x||y| + |y||z|} xzy - \\
-        &\phantom{(-1)^{|x||y|}[y, [x, z]] = }\
-            (-1)^{|x||y| + |x||z|} yzx +
+            &\ (-1)^{|x||y| + |x||z|} yzx +
             (-1)^{|x||y| + |x||y| + |x||z| + |y||z|} zxy.
-    \end{flalign*}
+    \end{align*}
+
     Arvestades, et $(-1)^{2k + l} = (-1)^{l}$ mistahes
     $k, l \in \N \cup \{0\}$ korral, siis saame tulemusi liites kokku
     täpselt nulli, ehk sulg \eqref{naide:assot-super-lie-alg} rahuldab
@@ -199,7 +202,7 @@ defineeritakse klassikalisel viisil, see tähendab kui
 $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$ ja
 $\h = \h_{\overline{0}} \oplus \h_{\overline{1}}$
 on Lie superalgebrad, siis $f \col \g \to \h$ nimetatakse
-Lie superalgebrate homomorfismiks, kui
+Lie superalgebrate \emph{homomorfismiks}, kui
 $f([x, y]_\g) = [f(x), f(y)]_\h$
 suvaliste $x, y \in \g$ korral. Homomorfismi $f \col \g \to \h$
 gradueering $|f| \in \Z_2$ määratakse seejuures seosest
@@ -345,7 +348,7 @@ seda on tehtud artiklis \cite{Abramov:2014}.
     \end{enumerate}
 \end{dfn}
 
-Paneme tähele, et võttes definitsioonis \ref{def:n-Lie-superalgebra}
+Paneme tähele, et võttes eelnevas definitsioonis
 $n = 2$, saame Lie superalgebra, mis tähenab, et üldistus
 sellisel kujul omab mõtet. Nagu klassikalise Lie algebra, ja tegelikult
 ka $n$-Lie algebra või Lie superalgebra korral, on meil võimalik vaadelda
@@ -389,15 +392,17 @@ Kokkuvõttes jäävad huvipakkuvate struktuurikonstantidena alles ainult:
             \alpha_1 \alpha_2 \dots \alpha_k i_1 i_2 \dots i_{n-k}
         }^{B} z_{B}$,
 \end{enumerate}
-kus $k < n$, $\alpha_1, \alpha_2, \dots, \alpha_n,
-i_1, i_2, \dots, i_n \in \{1, 2, \dots, n\}$ ja $k < l$ korral
+kus $0 < k < n$, $\alpha_1, \alpha_2, \dots, \alpha_n,
+i_1, i_2, \dots, i_n \in \{1, 2, \dots, n\}$, ja $k < l$ korral
 $\alpha_k < \alpha_l$ ning $i_k < i_l$.
 
+\textcolor{red}{
+    TODO: viita siia kui klassifikatsiooni meetodi kirjeldusest
+    kirjutatud on...
+}
 Struktuurikonstantide kasutamise, seda eelkõige just ternaarsete
-Lie superalgebra korral, juurde naaseme hiljem peatüki \textbf{???}
-juures.
-% TODO: viita siia kui klassifikatsiooni meetodi kirjeldusest
-% kirjutatud on..
+Lie superalgebra korral, juurde naaseme hiljem peatüki
+\textcolor{red}{\textbf{???}} juures.
 
 Vaatame järgnevalt lähemalt ühte $n$-Lie superalgebra näidet.
 \cite{Abramov:2014}
@@ -436,8 +441,8 @@ Vaatame järgnevalt lähemalt ühte $n$-Lie superalgebra näidet.
 
 Teoreemi täielikul tõestusel me ei peatu, kuna see nõuab väga palju
 tehnilist arvutamist ning vahendeid kombinatoorikast. Küll aga vaatame
-me siinkohal teoreemi tõestuse ideed, milleks läheb meil esmalt tarvis
-järgnevat lemmat.
+me siinkohal teoreemi tõestuse ideed. Tõestame selle tarbeks kõigepealt
+järgneva lemma.
 
 \begin{lemma}\label{lemma:n-sulg to (n-1)-sulg}
     Valemis \eqref{naide:end-v-kommutaator} esitatud $n$-aarne
@@ -651,7 +656,7 @@ vasakule kui ka paremale poolele samad elemendid, ning järelikult juhul
 $n = 3$ on $\End \V$, varustatuna suluga \eqref{naide:end-v-kommutaator},
 tõepoolest $3$-Lie superalgebra.
 
-Eeldades, et suvalise $k \in \N$, $k > 2$, korral iga $l < k$ määrab
+Eeldades, et suvalise $k \in \N$, $k > 2$, korral iga $2 \leq l < k$ määrab
 sulguga \eqref{naide:end-v-kommutaator} supervektorruumil $l$-Lie
 superalgebra struktuuri, saame tänu lemmale
 \ref{lemma:n-sulg to (n-1)-sulg}, et sama sulg annab supervektorruumile
@@ -666,29 +671,33 @@ vasak ja parem pool ühtivad.
 
 \begin{markus}
     Tekib loomulik küsimus, kas oleks võimalik lauset
-    \ref{lause:kompositsioon sulus} tõestada ka üldisel juhul, see tähendab
-    $n$-Lie superalgebra korral, mille sulg on määratud valemiga
-    \eqref{naide:end-v-kommutaator}. Intuitiivselt peaks selline üldistus
-    väitma, et
-    \begin{align*}
-        &[\psi \circ \phi_1, \phi_2, \dots, \phi_n] = \\
-        &\psi \circ [\phi_1, \phi_2, \dots, \phi_n] +
-        (-1)^{|\phi_1| \left(
-            |\phi_2| + |\phi_3| + \dots |\phi_n|
-        \right)}
-        [\psi, \phi_2, \dots, \phi_n] \circ \phi_1.
-    \end{align*}
-    Paraku see nii ei ole. Meil piisab vaadata vaid
-    klassikalisi endomorfismide $3$-Lie algebraid, kus me kujutuste
-    paarsusi ei arvesta. Sel juhul võtab see valem kuju
+    \ref{lause:kompositsioon sulus} tõestada ka üldisel juhul,
+    see tähendab supervektorruumi endomorfismide
+    $n$-Lie superalgebra korral, kus sulg on määratud valemiga
+    \eqref{naide:end-v-kommutaator}. Intuitiivselt peaks kõnealune
+    üldistus väitma, et
+    \begin{align}\label{eq:komp in komm yldistus}
+        \begin{split}
+            &[\psi \circ \phi_1, \phi_2, \dots, \phi_n] = \\
+            &\psi \circ [\phi_1, \phi_2, \dots, \phi_n] +
+            (-1)^{|\phi_1| \left(
+                |\phi_2| + |\phi_3| + \dots |\phi_n|
+            \right)}
+            [\psi, \phi_2, \dots, \phi_n] \circ \phi_1.
+        \end{split}
+    \end{align}
+    Paraku see nii ei ole. Vaatame näiteks supervektoruumi
+    $\g = \R \oplus \{0\}$, mis on varustatud kommutaatoriga
+    \eqref{naide:end-v-kommutaator}, kus $n = 3$.
+    Sel juhul võtab valem \eqref{eq:komp in komm yldistus} kuju
     \begin{align*}
         [\psi \circ \phi_1, \phi_2, \phi_3] =
         \psi \circ [\phi_1, \phi_2, \phi_3] +
         [\psi, \phi_2, \phi_3] \circ \phi_1.
     \end{align*}
 
-    Kirjutades viimases võrduse kommutaatorid definitsiooni järgi lahti saame,
-    et mistahes $x \in \V$ korral peaks kehtima võrdus
+    Kirjutades viimases võrduse kommutaatorid definitsiooni järgi
+    lahti saame, et mistahes $x \in \R$ korral peaks kehtima võrdus
     \begin{align*}
         &\psi \left( \phi_1 \left( \phi_2 \left( \phi_3
             \left( x \right) \right) \right) \right) -
@@ -727,10 +736,12 @@ vasak ja parem pool ühtivad.
         \phi_3 \left( \psi \left( \phi_2 \left(
             \phi_1 \left( x \right) \right) \right) \right) -
         \phi_3 \left( \phi_2 \left( \psi \left(
-            \phi_1 \left( x \right) \right) \right) \right).
+            \phi_1 \left( x \right) \right) \right) \right),
     \end{align*}
+    sest meie valitud supervektorruumis $\g$ on kõik endomorfismid
+    paaris ja seega nende paarsusi sisuliselt arvestama ei pea.
 
-    Samas, võttes
+    Võttes nüüd
     \[
         \psi(x) = x, \quad
         \phi_1 (x) = 1, \quad
@@ -746,10 +757,16 @@ vasak ja parem pool ühtivad.
         =\ &\psi(2) - \psi(3) = 2 - 3 = -1.
     \end{align*}
     $0 \neq -1$, ja seega sellisel kujul üldistus ei kehti.
+    Enamgi veel, meie kontranäitest tuleb välja, et lauset
+    \ref{lause:kompositsioon sulus} ei olegi
+    võimalik isegi valemis \eqref{eq:komp in komm yldistus}
+    elementide paarsusi mõnel teisel viisil arvesse võttes
+    üldistada.
 \end{markus}
 
 
-\subsection{Tuletatud rda ja keskne kahanev rida}
+Toome edasises veel mõned olulised $n$-Lie superalgebrate kohta
+käivad definitsioonid ja tulemused.
 
 \textcolor{red}{
     TODO: korralik tõlge tuletatud rea (derived series) ja
@@ -879,14 +896,14 @@ Arvestades lemmat saame defineerida järgmised mõisted.
 
 \begin{lau}
     Olgu $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$ varustatuna
-    sulug $[\cdot, \dots, \cdot] \col \g^n \to \g$ $n$-Lie
+    suluga $[\cdot, \dots, \cdot] \col \g^n \to \g$ $n$-Lie
     superalgebra ja olgu $g \in \g_{\overline{0}}$. Varustades
     supervektorruumi $\g$ sulga
     $[\cdot, \dots, \cdot]_g \col \g^{n-1} \to \g$, mis on
     defineeritud valemiga
     \[
         [x_1, x_2, \dots, x_{n-1}]_g = [g, x_1, x_2, \dots, x_{n-1}],
-        \quad x_1, x_2, \dots, x_n \in \g,
+        \quad x_1, x_2, \dots, x_{n-1} \in \g,
     \]
     saame $(n-1)$-Lie superalgebra.
 \end{lau}
@@ -896,7 +913,7 @@ Arvestades lemmat saame defineerida järgmised mõisted.
     $x_1, x_2, \dots, x_{n-1} \in \g$. Kuna
     $g \in \g_{\overline{0}}$, siis $|g| = \overline{0}$, ja seega
     \[
-        |[x_1, x_2, \dots, x_{n-1}]_g =
+        |[x_1, x_2, \dots, x_{n-1}]_g| =
         |[g, x_1, x_2, \dots, x_{n-1}]| =
         \sum_{i=1}^{n-1} |x_i| + |g| =
         \sum_{i=1}^{n-1} |x_i|.
@@ -912,7 +929,7 @@ Arvestades lemmat saame defineerida järgmised mõisted.
     \end{align*}
 
     Veendumaks, et kehtib ka gradueeritud Filippovi samasus
-    eeldame veel, et $y_1, y_2, \dots, y_{n-2} \in \g$ ja tähistame
+    eeldame täiendavalt, et $y_1, y_2, \dots, y_{n-2} \in \g$ ja tähistame
     $\mathrm{x} = (g, x_1, \dots, x_{n-1})$ ning
     $\mathrm{y} = (g, y_1, \dots, y_{n-2})$. Siis
     \begin{align*}
@@ -933,7 +950,8 @@ Arvestades lemmat saame defineerida järgmised mõisted.
 
 \subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie superalgebra}
 
-Tuginedes artiklile \cite{Abramov:2014} rakendame punktis \ref{subsec:indutseeritud-n-lie-alg} tutvustatud eeskirja $n$-Lie superalgebra
+Tuginedes artiklile \cite{Abramov:2014} rakendame punktis
+\ref{subsec:indutseeritud-n-lie-alg} tutvustatud eeskirja $n$-Lie superalgebra
 abil $(n+1)$-Lie superalgebra konstrueerimiseks.
 
 \begin{dfn}
@@ -965,7 +983,7 @@ abil $(n+1)$-Lie superalgebra konstrueerimiseks.
     on tegu paaritu maatriksiga, ning tema superjälg on null.
 \end{markus}
 
-Vaatleme $n$-lineaarset kujutus $\phi \col \V^n \to \V$, mis
+Vaatleme $n$-lineaarset kujutust $\phi \col \V^n \to \V$, mis
 suvaliste homogeensete elementide $x_1, x_2, \dots, x_n \in \V$ korral
 rahuldab tingimusi
 \begin{gather}
@@ -1015,13 +1033,31 @@ Saadud kujutuse tähtsamad omadused võtab kokku järgmine lemma.
     Olgu $\V$ supervektorruum, rahuldagu $n$-lineaarne
     kujutus $\phi \col \V^n \to \V$ tingimusi
     \eqref{eq:phi-grading} ja \eqref{eq:phi-graded-anticomm}, ning
-    olgu $S \col \V \to K$ kujutuse $\phi$ superjälg. Kui
-    Lisaks olgu $x_1, x_2, \dots, x_{n+1} \in \V$ suvalised
-    homogeensed elemendid ja tähistame
-    $\mathrm{x} = (x_1, x_2, \dots, x_{n+1})$.
+    olgu $S \col \V \to K$ kujutuse $\phi$ superjälg. Lisaks olgu
+    $x_1, x_2, \dots, x_{n+1} \in \V$ suvalised homogeensed elemendid
+    ja tähistame $\mathrm{x} = (x_1, x_2, \dots, x_{n+1})$.
     \begin{enumerate}[label=\arabic*)]
-        % TODO: add proof for the first statement
-        \item \dots
+        \item \textcolor{red}{TODO: verifitseeri see siin
+            \begin{align*}
+                | \phi_S (x_1, \dots, x_{n+1}) | =&
+                \left |
+                    \sum_{i=1}^{n+1} (-1)^{i-1}(-1)^{
+                        |x_i| |\mathbf{x}|_{i-1}
+                    } S(x_i) \phi \left(
+                        x_1, \dots, \hat{x_i}, \dots, x_{n+1}
+                    \right)
+                \right| = \\
+                %
+                =& \sum_{i=1}^{n+1} \left|
+                    \phi \left( x_1, \dots, \hat{x_i}, \dots, x_{n+1} \right)
+                \right| = \\
+                %
+                =& \sum_{i=1}^{n+1} \sum_{\mathclap{
+                        \substack{j=1\\j \ne i}}
+                }^{n+1} |x_j| = n \cdot \sum_{i=1}^{n+1} |x_i| =
+                \sum_{i=1}^{n+1} |x_i| \quad ???
+            \end{align*}
+        }
 
         \item Rakendame valemit \eqref{def:phi-s} ja arvutame
             \begin{align*}
@@ -1038,12 +1074,12 @@ Saadud kujutuse tähtsamad omadused võtab kokku järgmine lemma.
                     S(x_j) \phi_j(
                         x_1, \dots, x_i, x_{i+1}, \dots, x_{n+1}
                     ) + \\
-                &\quad\, +
+                &\quad\, 
                     (-1)^{i-1} (-1)^{|x_i||\mathrm{x}|_{i-1}}
                     S(x_i) \phi(
                         x_1, \dots, \hat{x_i}, x_{i+1}, \dots, x_{n+1}
                     ) + \\
-                &\quad\, +
+                &\quad\, 
                     (-1)^{i} (-1)^{|x_{i+1}||\mathrm{x}|_{i}}
                     S(x_{i+1}) \phi(
                         x_1, \dots, x_i, \hat{x_{i+1}}, \dots, x_{n+1}
@@ -1056,14 +1092,14 @@ Saadud kujutuse tähtsamad omadused võtab kokku järgmine lemma.
                         x_1, \dots, x_{i+1}, x_i, \dots, x_{n+1}
                     ) - \\
                 &\quad
-                    -1(-1)^i (-1)^{
+                    (-1)^i (-1)^{
                         |x_i||\mathrm{x}|_{i-1} + |x_i||x_{i+1}|
                     } (-1)^{|x_i||x_{i+1}|}
                     S(x_i) \phi(
                         x_1, \dots, x_{i+1}, \hat{x_i}, \dots, x_{n+1}
                     ) - \\
                 &\quad
-                    -(-1)^{i-1} (-1)^{|x_{i+1}||\mathrm{x}|_{i-1}}
+                    (-1)^{i-1} (-1)^{|x_{i+1}||\mathrm{x}|_{i-1}}
                     (-1)^{|x_{i+1}||x_i|}
                     S(x_{i+1}) \phi(
                         x_1, \dots, \hat{x_{i+1}}, x_i, \dots, x_{n+1}
@@ -1175,16 +1211,18 @@ kehtivad ka $n$-Lie superalgebrate korral.
 Lause tõestusest võime teha järelduse.
 
 \begin{jar}
-    Kui $S$ on $n$-Lie superalgebra $(\g, [\cdot, \dots, \cdot])$
-    Lie sulu superjälg ja $(\g_S, [\cdot, \dots, \cdot]_S)$ on
+    Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie superalgebra. Kui $S$ on
+    kommutaatori $[\cdot, \dots, \cdot]$ superjälg ja
+    $(\g_S, [\cdot, \dots, \cdot]_S)$ on
     vastav indutseeritud $(n+1)$-Lie superalgebra, siis
     $D^p(\g_S) = \{0\}$, kui $p \geq 2$. \hfill \qed
 \end{jar}
 
+\textcolor{red}{TODO: tõlked}
 \begin{lau}
     Olgu $n$-Lie superalgebra $(\g, [\cdot, \dots, \cdot])$
-    kommutaatori jälg $S$ ja olgu $(\g_S, [\cdot, \dots, \cdot]_S)$
-    neile vastav indutseeritud $(n+1)$-Lie superalgebra.
+    kommutaatori jälg $S$, millele vastab industeeritud
+    $(n+1)$-Lie superalgebra $(\g_S, [\cdot, \dots, \cdot]_S)$.
     Tähistagu $\left(C^p(\g)\right)_{p=0}^\infty$ algebra
     $(\g, [\cdot, \dots, \cdot])$
     keskset kahanevat jada, ning tähistagu

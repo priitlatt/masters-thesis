@@ -25,7 +25,9 @@ $m|n$, saame baasi kirjutada kujul
 \]
 kus $e_\alpha$, $1 \leq \alpha \leq m$, on paaris baasivektorid ja
 $f_i$, $1 \leq i \leq n$, on paaritud baasivektorid, ning $z_A$,
-$1 \leq A \leq m+n$, võib olla kas paaris- või paarituvektor.
+$1 \leq A \leq m+n$, võib olla kas paaris- või paarituvektor, kusjuures
+$z_A = e_A$, kui $1 \leq A \leq m$, ning $z_A = f_{A-m}$, kui
+$m < A \leq m+n$.
 
 Edasi, kasutades teadmist, et $|[z_1, z_2, z_3]| = |z_1| + |z_2| + |z_3|$,
 avaldame kommutaatori $[\cdot, \cdot, \cdot]$ väärtused baasivektoritel
@@ -60,3 +62,145 @@ gradueeringute kooskõla ehk tingimuse \eqref{def:n-lie-superalg-brac-grading}
 ja samuti oleme juba tarvitusele võtnud kaldsümmeetrilisuse nõude ehk
 tingimuse \eqref{def:n-lie-superalg-brac-antikomm}. Järele jääb veel kasutada
 gradueeritud Filippovi samasus \eqref{id:graded-filippov}.
+
+Valime kõik nullist erinevad sulud
+\[ [z_A, z_B, z_C] = K_{ABC}^D \ne 0, \]
+$1 \leq A \leq B \leq C \leq m+n$, ja arvutame kommutaatori
+\[ \left[ z_E, z_F, [z_A, z_B, z_C] \right] \]
+välja kahel erineval viisil. Esmalt saame ära kasutada juba teadaolevat,
+ning võime kirjutada
+\[
+    \left[ z_E, z_F, [z_A, z_B, z_C] \right] = K_{ABC}^D [z_E, z_F, z_D].
+\]
+Seejärel teisendame sulu $[z_E, z_F, z_D]$ kujule
+$(-1)^{\circlearrowright_{DEF}} [z_{D'}, z_{E'}, z_{F'}]$, kus
+\[ \{D, E, F\} = \{D', E', F'\}, \]
+kuid $D' \leq E' \leq F'$, ja  $(-1)^{\circlearrowright_{DEF}}$ tähistab
+kaldsümmeetrilisust arvestades permutatsiooni tulemusel saadavat märki.
+Samas ka $[z_{D'}, z_{E'}, z_{F'}]$ on avaldatud struktuurikonstandide
+abil baasivektorite lineaarkombinatsioonina, ehk võime kirjutada
+\[
+    [z_{D'}, z_{E'}, z_{F'}] =
+    K_{D' E' F'}^H z_H.
+\]
+Seega ühelt poolt
+\[
+    \left[ z_E, z_F, [z_A, z_B, z_C] \right] =
+    (-1)^{\circlearrowright_{DEF}} K_{ABC}^D K_{D' E' F'}^H z_H.
+\]
+
+Teiselt poolt on meil kommutaatori $\left[ z_E, z_F, [z_A, z_B, z_C] \right]$
+arvutamiseks võimalik kasutada Filippovi samasust
+\begin{align*}
+    &\left[ z_E, z_F, [z_A, z_B, z_C] \right] = \\
+    = &\left[[z_E, z_F, z_A], z_B, z_C\right] + \\
+    (-1)^{|z_A|(|z_E|+|z_F|)}
+        &\left[z_A, [z_E, z_F, z_B], z_C \right] + \\
+    (-1)^{(|z_A|+|z_B|)(|z_E|+|z_F|)}
+        &\left[z_A, z_B, [z_E, z_F, z_C] \right]
+\end{align*}
+Igas saadud liidetavas saame nüüd rakendada eelnevalt kirjeldatud algoritmi.
+Toome selleks sisse tähistused
+\[
+    z_{AEF} := |z_A|(|z_E|+|z_F|)
+    \quad \text{ja} \quad
+    z_{ABEF} := (|z_A|+|z_B|)(|z_E|+|z_F|),
+\]
+ning järjestame kõigepealt sisemised kommutaatorid nii, et argumentvektorid
+oleks kasvavas järjekorras ja asendame siis selle kommutaatori temale vastava
+baasivektorite lineaarkombinatsiooniga. Edasi teeme täpselt sama allesjäänud
+kommutaatoritega. Sedasi toimides saame
+\begin{align*}
+    &\left[ z_E, z_F, [z_A, z_B, z_C] \right] = \\
+    %
+    = (-1)^{\circlearrowright_{AEF}}
+        &\left[ [z_{A'}, z_{E'}, z_{F'}], z_B, z_C \right] + \\
+    (-1)^{z_{AEF} + \circlearrowright_{BEF}}
+        &\left[ z_A, [z_{B'}, z_{E'}, z_{F'}], z_C \right] + \\
+    (-1)^{z_{ABEF} + \circlearrowright_{CEF}}
+        &\left[ z_A, z_B, [z_{C'}, z_{E'}, z_{F'}] \right] = \\
+    %
+    = (-1)^{\circlearrowright_{AEF}} K_{A' E' F'}^G
+        &\left[ z_G, z_B, z_C \right] + \\
+    (-1)^{z_{AEF} + \circlearrowright_{BEF}} K_{B' E' F'}^G
+        &\left[ z_A, z_G, z_C \right] + \\
+    (-1)^{z_{ABEF} + \circlearrowright_{CEF}} K_{C' E' F'}^G
+        &\left[ z_A, z_B, z_G \right] = \\
+    %
+    = (-1)^{\circlearrowright_{AEF} + \circlearrowright_{B'C'G'}}
+        K_{A' E' F'}^G
+        &\left[ z_{B'}, z_{C'}, z_{G'} \right] + \\
+    (-1)^{z_{AEF} + \circlearrowright_{BEF} + \circlearrowright_{A'C'G'}}
+        K_{B' E' F'}^G
+        &\left[ z_{A'}, z_{C'}, z_{G'} \right] + \\
+    (-1)^{z_{ABEF} + \circlearrowright_{CEF} + \circlearrowright_{A'B'G'}}
+        K_{C' E' F'}^G
+        &\left[ z_{A'}, z_{B'}, z_{G'} \right] = \\
+    %
+    = (-1)^{\circlearrowright_{AEF} + \circlearrowright_{B'C'G'}}
+        K_{A' E' F'}^G K_{B' C' G'}^H
+        &\,z_H + \\
+    (-1)^{z_{AEF} + \circlearrowright_{BEF} + \circlearrowright_{A'C'G'}}
+        K_{B' E' F'}^G K_{A' C' G'}^H
+        &\,z_H + \\
+    (-1)^{z_{ABEF} + \circlearrowright_{CEF} + \circlearrowright_{A'B'G'}}
+        K_{C' E' F'}^G K_{A' B' G'}^H
+        &\,z_H.
+\end{align*}
+
+Teisisõnu, me saame kommutaatori $\left[ z_E, z_F, [z_A, z_B, z_C] \right]$
+arvutada ka kujul
+\begin{align*}
+    \left[ z_E, z_F, [z_A, z_B, z_C] \right] = 
+    &(-1)^{\circlearrowright_{AEF} + \circlearrowright_{B'C'G'}}
+        K_{A' E' F'}^G K_{B' C' G'}^H
+        \,z_H + \\
+    &(-1)^{z_{AEF} + \circlearrowright_{BEF} + \circlearrowright_{A'C'G'}}
+        K_{B' E' F'}^G K_{A' C' G'}^H
+        \,z_H + \\
+    &(-1)^{z_{ABEF} + \circlearrowright_{CEF} + \circlearrowright_{A'B'G'}}
+        K_{C' E' F'}^G K_{A' B' G'}^H
+        \,z_H,
+\end{align*}
+ehk meil on tekkinud võrrandid
+\begin{align*}
+    (-1)^{\circlearrowright_{DEF}} K_{ABC}^D K_{D' E' F'}^H z_H =\ 
+    &(-1)^{\circlearrowright_{AEF} + \circlearrowright_{B'C'G'}}
+        K_{A' E' F'}^G K_{B' C' G'}^H
+        \,z_H + \\
+    &(-1)^{z_{AEF} + \circlearrowright_{BEF} + \circlearrowright_{A'C'G'}}
+        K_{B' E' F'}^G K_{A' C' G'}^H
+        \,z_H + \\
+    &(-1)^{z_{ABEF} + \circlearrowright_{CEF} + \circlearrowright_{A'B'G'}}
+        K_{C' E' F'}^G K_{A' B' G'}^H
+        \,z_H,
+\end{align*}
+kus otsitavateks on struktuurikonstandid $K_{ABC}^D$, ning baasivektorid
+$z_H$ on teada. Siit saame iga $H \in \{ 1, 2, m+n \}$ jaoks veel omakorda
+võrrandi
+\begin{align*}
+    (-1)^{\circlearrowright_{DEF}} K_{ABC}^D K_{D' E' F'}^H =\ 
+    &(-1)^{\circlearrowright_{AEF} + \circlearrowright_{B'C'G'}}
+        K_{A' E' F'}^G K_{B' C' G'}^H + \\
+    &(-1)^{z_{AEF} + \circlearrowright_{BEF} + \circlearrowright_{A'C'G'}}
+        K_{B' E' F'}^G K_{A' C' G'}^H + \\
+    &(-1)^{z_{ABEF} + \circlearrowright_{CEF} + \circlearrowright_{A'B'G'}}
+        K_{C' E' F'}^G K_{A' B' G'}^H,
+\end{align*}
+sest igas võrrandis peab vasakul ja paremal pool olema sama vektor, ning
+vektor avaldub baasivektorite lineaarkombinatsioonina üheselt.
+Kokkuvõttes on meil tekkinud ruutvõrrandisüsteem, mille lahenditeks on
+$m|n$ dimensiooniga Lie superalgebra $\g$ võimalikud struktuurikonstantide
+komplektid.
+
+Eelnevalt kirjeldatud algoritm on käesoleva magistriöö tarbeks
+implementeeritud programmeerimiskeeles Python, ning see on kättesaadav
+aadressilt \url{https://github.com/priitlatt/3-lie-superalgebras}.
+Selle programmi abil tekkinud võrrandisüsteemide lahendamiseks on
+kasutatud sümbolarvutustarkvara
+Mathematica 10\footnote{\url{http://www.wolfram.com/mathematica/}}
+funktsiooni \verb+Solve+\footnote{\url{https://reference.wolfram.com/language/ref/Solve.html}}, kus määramispiirkonnaks on antud
+kompleksarvud. \textcolor{red}{TODO: Samas on oluline märkida, et sel viisil
+saadud klassifikatsioon sõltub supervektorruumi baasi valikust ega ole seega
+isomorfismi täpsusega. Invariantsete lahendite kõrvaldamist uurime juba iga
+konkreetse situatsiooni juures juba eraldi.}

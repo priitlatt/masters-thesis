@@ -4,7 +4,7 @@
 %% n-Lie superalgebra  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\texorpdfstring{$n$}\ -Lie superalgebra}
+\section{\texorpdfstring{$n$}{n}-Lie superalgebra}
 
 Järgnevas toome sisse \emph{supermatemaatika} põhimõsted ning defineerime
 nende abil \emph{Lie superalgebra}. Edasi ühendame Lie superalgebra
@@ -27,6 +27,13 @@ Tuletame selleks kõigepealt meelde mõned baasdefinitsioonid.
     \emph{paarisvektoriteks} ja $\V_{\overline{1}}$ elemente
     \emph{paarituteks} vektoriteks.
 \end{dfn}
+
+Kui $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$ on
+lõplikumõõtmeline ning otseliidetavate $\V_{\overline{0}}$ ja
+$\V_{\overline{1}}$ dimensioonid on vastavalt $m$ ja $n$, siis
+me ütleme, et supervektorruumi $\V$ \emph{dimensioon} on $m|n$, ning
+ütleme, et supervektorruumi \emph{kombineeritud dimensioon} on $m+n$.
+\textcolor{red}{TODO: kombineeritud dimensioon?}
 
 Kui supervektorruumi element $x \in \V$ korral
 $x \in \V_{\overline{0}} \cup \V_{\overline{1}}$, siis ütleme, et
@@ -302,7 +309,7 @@ teoreemi.
     mida oligi tarvis.
 \end{proof}
 
-\subsection{\texorpdfstring{$n$}\ -Lie superalgebra}
+\subsection{\texorpdfstring{$n$}{n}-Lie superalgebra}
 
 Kombineerime nüüd Filippovi $n$-Lie algebra ning eelnevas alapeatükis
 tutvustatud Lie superalgebra üheks \emph{$n$-Lie superalgebraks}, nagu
@@ -324,7 +331,7 @@ seda on tehtud artiklis \cite{Abramov:2014}.
         \item $\nbrac{\cdot}{\cdot}$ on kaldsümmeetriline gradueeritud mõttes,
             see tähendab iga $i \in \{1, 2, \dots, n-1\}$ ja suvaliste
             homogeensete elementide $x_1, x_2, \dots, x_n \in \g$ korral
-            \begin{align}
+            \begin{align}\label{def:n-lie-superalg-brac-antikomm}
                 \left[ x_1, \dots, x_i, x_{i+1}, \dots, x_n \right] =
                 -(-1)^{|x_i| |x_{i+1}|} \left[
                     x_1, \dots, x_{i+1}, x_i, \dots, x_n
@@ -333,7 +340,7 @@ seda on tehtud artiklis \cite{Abramov:2014}.
         \item kõikide homogeensete elementide
             $x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_{n-1} \in \g$ korral
             on täidetud gradueeritud Filippovi samasus
-            \begin{align}\begin{split}
+            \begin{align}\begin{split}\label{id:graded-filippov}
                 &\left[ y_1, \dots, y_{n-1}, \nbrac{x_1}{x_n} \right] = \\
                 &= \sum_{i=1}^n (-1)^{|\mathbf{x}|_{i-1} |\mathbf{y}|_{n-1}}
                 \left[
@@ -948,7 +955,7 @@ Arvestades lemmat saame defineerida järgmised mõisted.
     sest lemma järgi $[g, y_1, \dots, y_{n-2}, g] = 0$.
 \end{proof}
 
-\subsection{Indutseeritud \texorpdfstring{$n$}\ -Lie superalgebra}
+\subsection{Indutseeritud \texorpdfstring{$n$}{n}-Lie superalgebra}
 
 Tuginedes artiklile \cite{Abramov:2014} rakendame punktis
 \ref{subsec:indutseeritud-n-lie-alg} tutvustatud eeskirja $n$-Lie superalgebra

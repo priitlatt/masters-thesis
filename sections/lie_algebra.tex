@@ -6,11 +6,10 @@
 
 \section{Lie algebra}
 
-% TODO: kirjuta siia natuke peatüki sissejuhatuseks
 Järgnevas anname minimaalse ülevaate klassikalisest Lie algebrate
 teooriast, mida on tarvis edasiste peatükkide mõistmiseks.
 
-\subsection{Maatriksrühmad ja bilineaarvorm}\label{subsec:mat-ryhmad-ja-bilinvorm}
+\subsection{Maatriksrühmad ja bilineaarvorm}\label{subsec:mat-ryhmad}
 
 Meenutame, et \emph{lineaarkujutus}
 $\phi \col \V_1 \to \V_2$ vektorruumist $\V_1$ vektorruumi $\V_2$ säilitab
@@ -20,12 +19,13 @@ vektorite liitmise ja skalaariga korrutamise, see tähendab
     \quad \text{ja} \quad
     \phi(\lambda x) = \lambda \phi(x),
 \end{align*}
-kus $x, y \in \V_1$ ning $\lambda$ on skalaar. Kui vektorruumid $\V_1$ ja $\V_2$
-langevad kokku, siis ütleme me kujutuse $\phi$ kohta \emph{lineaarteisendus}.
+kus $x, y \in \V_1$ ning $\lambda$ on skalaar. Kui vektorruumid $\V_1$ ja
+$\V_2$ langevad kokku, siis ütleme me kujutuse $\phi$ kohta
+\emph{lineaarteisendus}.
 
 Algebrast on teada, et lineaarteisendusel eksisteerib pöördteisendus siis ja
-ainult siis, kui ta on nii üks-ühene kui ka pealeteisendus. Kõigi vektorruumi $\V$
-pööratavate lineaarteisenduste rühma nimetatakse vektorruumi $\V$
+ainult siis, kui ta on nii üks-ühene kui ka pealeteisendus. Kõigi vektorruumi
+$\V$ pööratavate lineaarteisenduste rühma nimetatakse vektorruumi $\V$
 \emph{pööratavate lineaarteisenduste rühmaks}\footnote{Inglise keeles
 \emph{general linear group}.} ja tähistatakse $\GL(\V)$. Selge, et selle
 rühma korrutamiseks on tavaline lineaarteisenduste kompositsioon.
@@ -58,12 +58,13 @@ pööratavate lineaarteisenduste rühmaks}. Analoogiliselt on kasutusel
 tähistused $\SL(n, \R)$ ja $\SL(n, \C)$.
 
 Rühmal $\GL(n, \C)$ on palju tuntud alamrühmi. Klassikaliseks näiteks on
-$n \times n$ \emph{ortogonaalsete maatriksite rühm} $\Ort(n, \C)$, kuhu kuuluvad
-ortogonaalsed maatriksid, see tähendab sellised maatriksid $A$, mille korral
-$A^T = A^{-1}$. Teise näitena võib tuua unitaarsete maatriksite rühma $\U(n)$,
-mille elementideks on anti-Hermite'i maatriksid $A$, mis rahuldavad tingimust
-$A^\dag = -A$, kus $A^\dag = \overline{A}^T$. Edasi on lihtne konstrueerida saadud alamrühmade
-\emph{spetsiaalsed} analoogid. \emph{Spetsiaalsete komplekssete ortogonaalmaatriksite rühm} on
+$n \times n$ \emph{ortogonaalsete maatriksite rühm} $\Ort(n, \C)$, kuhu
+kuuluvad ortogonaalsed maatriksid, see tähendab sellised maatriksid $A$, mille
+korral $A^T = A^{-1}$. Teise näitena võib tuua unitaarsete maatriksite rühma
+$\U(n)$, mille elementideks on anti-Hermite'i maatriksid $A$, mis rahuldavad
+tingimust $A^\dag = -A$, kus $A^\dag = \overline{A}^T$. Edasi on lihtne
+konstrueerida saadud alamrühmade \emph{spetsiaalsed} analoogid.
+\emph{Spetsiaalsete komplekssete ortogonaalmaatriksite rühm} on
 \begin{align*}
     \SO(n, \C) = \Ort(n, \C) \cap \SL(n, \C),
 \end{align*}
@@ -132,9 +133,9 @@ maatriks $A$ on \emph{jäljeta}.
 \end{naide}
 
 Kasutades bilineaarvormi sümmeetrilisuse või kaldsümmeetrilisuse mõistet
-saame sisse tuua \emph{ortogonaalsuse} mõiste. Me ütleme, et vektorid $x$ ja $y$
-on bilineaarvormi $\blinv$ suhtes ortogonaalsed, kui $(x, y) = 0$. Selge, et
-ortogonaalsuse tingimus ise on sümmeetriline, see tähendab kui $x$ on
+saame sisse tuua \emph{ortogonaalsuse} mõiste. Me ütleme, et vektorid $x$ ja
+$y$ on bilineaarvormi $\blinv$ suhtes ortogonaalsed, kui $(x, y) = 0$. Selge,
+et ortogonaalsuse tingimus ise on sümmeetriline, see tähendab kui $x$ on
 ortogonaalne vektoriga $y$, siis kehtib ka vastupidine, $y$ on ortogonaalne
 vektoriga $x$. Kui vektor $x \neq 0$ on iseenesega ortogonaalne, see tähendab
 $(x, x) = 0$, siis nimetatakse vektorit $x$ \emph{isotroopseks}. Selge, et
@@ -167,8 +168,9 @@ Seda arutelu silmas pidades võime öelda, et ortogonaalsed lineaarsed
 operaatorid moodustavad rühma, mida me nimetame \emph{ortogonaalsete
 lineaarteisenduste rühmaks} bilineaarvormi $\blinv$ suhtes.
 Võttes tarvitusele vektorruumi $\V$ baasi saame konstrueerida ka
-\emph{ortogonaalsete maatriksite rühma}, mida tähistatakse komplekssel juhul
-kui $\Ort(n, \C)$, kus $n \in \N$ märgib, et tegu on $n \times n$ maatriksitega.
+\emph{ortogonaalsete maatriksite rühma}, mida tähistatakse komplekssel
+juhul kui $\Ort(n, \C)$, kus $n \in \N$ märgib, et tegu on $n \times n$
+maatriksitega.
 
 Sümplektiliste teisenduste tarvis tuleb vaadelda kaldsümmeetrilisi
 bilineaarvorme.
@@ -258,10 +260,12 @@ raamatust \cite{hall2003lie}.
         \item\label{om:mat-exp-2} $\left(e^X\right)^T = e^{X^T}$,
         \item\label{om:mat-exp-3} $e^X$ on pööratav ning kehtib
             $\left(e^X\right)^{-1} = e^{-X}$,
-        \item\label{om:mat-exp-4} $e^{(\lambda + \mu)X} = e^{\lambda X} e^{\mu X}$ suvaliste
-            $\lambda, \mu \in \C$ korral,
-        \item\label{om:mat-exp-5} kui $XY = YX$, siis $e^{X+Y} = e^X e^Y = e^Y e^X$,
-        \item\label{om:mat-exp-6}  kui $C$ on pööratav, siis $e^{CXC^{-1}} = C e^X C^{-1}$,
+        \item\label{om:mat-exp-4} $e^{(\lambda + \mu)X} =
+            e^{\lambda X} e^{\mu X}$ suvaliste $\lambda, \mu \in \C$ korral,
+        \item\label{om:mat-exp-5} kui $XY = YX$, siis
+            $e^{X+Y} = e^X e^Y = e^Y e^X$,
+        \item\label{om:mat-exp-6}  kui $C$ on pööratav, siis
+            $e^{CXC^{-1}} = C e^X C^{-1}$,
         \item\label{om:mat-exp-7} $\det e^X = e^{\Tr_\V X}$.
     \end{enumerate}
 \end{lau}
@@ -279,11 +283,11 @@ Niisiis eksponentkujutust kasutades on oht kaotada rühma globaalne struktuur,
 samas kui lokaalne struktuur säilib.
 
 Kui maatriksi $A$ korral soovime, et maatriks $e^A$ kuuluks mõnda puntis
-\ref{subsec:mat-ryhmad-ja-bilinvorm} \nameref{subsec:mat-ryhmad-ja-bilinvorm} nimetatud rühma, tuleb maatriksile
-$A$ seada mingid lineaarsed kitsendused. Näiteks spetsiaalse lineaarse rühma
-$\SL(n)$ korral võime mittelineaarse tingimuse $e^A$ determinandi kohta
-asendada lineaarse tingimusega maatriksi $A$ jälje kohta kasutades lause
-\ref{lau:mat-exp-om} punkti \ref{om:mat-exp-7}. Nii on näiteks
+\ref{subsec:mat-ryhmad} \nameref{subsec:mat-ryhmad} nimetatud rühma, tuleb
+maatriksile $A$ seada mingid lineaarsed kitsendused. Näiteks spetsiaalse
+lineaarse rühma $\SL(n)$ korral võime mittelineaarse tingimuse $e^A$
+determinandi kohta asendada lineaarse tingimusega maatriksi $A$ jälje kohta
+kasutades lause \ref{lau:mat-exp-om} punkti \ref{om:mat-exp-7}. Nii on näiteks
 $\det e^A = 1$ parajasti siis, kui $\Tr_\V A = 0$.
 
 Kokkuvõttes nägime, et eksponentsiaalkujutuse abil on võimalik asendada
@@ -304,8 +308,8 @@ Enne kui anname Lie algebra definitsiooni tuletame meelde, et \emph{algebraks}
 defineeritud bilineaarne korrutamine $\V \times \V \to \V$. Kui algebra
 tehe rahuldab assotsiatiivsuse tingimust, siis nimetatakse seda algebrat
 assotsiatiivseks, ning vastasel korral mitteassotsiatiivseks. Nii on näiteks
-vektorruumi $\V$ lineaarteisenduste vektorruum $\End \V$ assotsiatiivne algebra,
-mille tehteks on teisenduste kompositsioon: $f \circ g$. Samas võime
+vektorruumi $\V$ lineaarteisenduste vektorruum $\End \V$ assotsiatiivne
+algebra, mille tehteks on teisenduste kompositsioon: $f \circ g$. Samas võime
 vektorruumi $\End \V$ varustada ka teistsuguse korrutamisega ning saada uue
 algebralise struktuuri, kui võtame tehteks näiteks $f \circ g - g \circ f$.
 Üldiselt selline korrutamine aga enam kommutatiivne ei ole.
@@ -390,7 +394,7 @@ Niisiis suvalisest assotsiatiivsest algebrast on võimalik konstrueerida
 Lie algebra. Arvestades, et maatriksite ja lineaarteisenduste korrutamine
 rahuldavad assotsiatiivsuse tingimust, on näites
 \ref{naide:lie-algebra-konstrueerimine} esitatud eeskirja abil
-võimalik kõiki punktis \ref{subsec:mat-ryhmad-ja-bilinvorm} toodud
+võimalik kõiki punktis \ref{subsec:mat-ryhmad} toodud
 rühmi võimalik vaadelda kui Lie algebraid. Märgime, et Lie algebrate
 tähistamiseks kasutatakse tavaliselt väikeseid gooti tähti, seega näiteks
 pööratavate lineaarteisenduste rühmale $\GL(n)$ vastavaks Lie algebraks on
@@ -447,9 +451,10 @@ korrutamise operatsiooni. Seda asjaolu sobib hästi ilmestama järgmine näide.
             ). \\
         \end{split} \label{eq:naide_vec_prod_b3}
     \end{align}
-    Liites valemite \eqref{eq:naide_vec_prod_b2} ja \eqref{eq:naide_vec_prod_b3}
-    paremad pooled, saame täpselt valemi \eqref{eq:naide_vec_prod_b1}, mis
-    samasuse \eqref{id:jacobi-modified} põhjal ongi täpselt Jacobi samasus.
+    Liites valemite \eqref{eq:naide_vec_prod_b2} ja
+    \eqref{eq:naide_vec_prod_b3} paremad pooled, saame täpselt valemi
+    \eqref{eq:naide_vec_prod_b1}, mis samasuse \eqref{id:jacobi-modified}
+    põhjal ongi täpselt Jacobi samasus.
 \end{naide}
 
 \subsection{Struktuurikonstandid}
@@ -565,17 +570,20 @@ rahuldama peavad.
             \begin{pmatrix}
                 -2i &  0 \\
                   0 & 2i
-            \end{pmatrix} = -2 \rho_3, \label{eq:str-konst-naide-brac-1}\\[0.1cm]
+            \end{pmatrix} = -2 \rho_3,
+            \label{eq:str-konst-naide-brac-1}\\[0.1cm]
         [\rho_1, \rho_3] &= \rho_1 \rho_3 - \rho_3 \rho_1 =
             \begin{pmatrix}
                  0 & 2 \\
                 -2 & 0
-            \end{pmatrix} = 2 \rho_2, \label{eq:str-konst-naide-brac-2}\\[0.1cm]
+            \end{pmatrix} = 2 \rho_2,
+            \label{eq:str-konst-naide-brac-2}\\[0.1cm]
         [\rho_2, \rho_3] &= \rho_2 \rho_3 - \rho_3 \rho_2 =
             \begin{pmatrix}
                   0 & -2i \\
                 -2i & 0
-            \end{pmatrix} = -2 \rho_1. \label{eq:str-konst-naide-brac-3}
+            \end{pmatrix} = -2 \rho_1.
+            \label{eq:str-konst-naide-brac-3}
     \end{align}
 
     Seega võrduste \eqref{eq:str-konst-naide-brac-1},
@@ -746,10 +754,15 @@ teisi sõnu, esitus täpne parajasti siis, kui ta on üks-ühene.
           &= \brac{x}{\brac{y}{z}} - \brac{y}{\brac{x}{z}} -
              \brac{\brac{x}{y}}{z}
     \end{align*}
-    ehk $\brac{x}{\brac{y}{z}} - \brac{y}{\brac{x}{z}} = \brac{\brac{x}{y}}{z}$.
-    Nüüd, et Lie algebras $\gl(\g)$ arvutatakse kommutaatori
-    väärtusi eeskirja
-    $[\ad_x, \ad_y] = \ad_x \circ \ad_y - \ad_y \circ \ad_x$ järgi, siis
+    ehk
+    \[
+        \brac{x}{\brac{y}{z}} - \brac{y}{\brac{x}{z}} = \brac{\brac{x}{y}}{z}.
+    \]
+    Nüüd, et Lie algebras $\gl(\g)$ arvutatakse kommutaatori väärtusi eeskirja
+    \[
+        [\ad_x, \ad_y] = \ad_x \circ \ad_y - \ad_y \circ \ad_x
+    \]
+    järgi, siis
     \begin{align*}
         [\ad_x, \ad_y](z) = \brac{x}{\brac{y}{z}} - \brac{y}{\brac{x}{z}} =
         \brac{\brac{x}{y}}{z} = \ad_{\brac{x}{y}}(z).
@@ -780,19 +793,21 @@ struktuuride vallast nagu \emph{alamalgebra} ja \emph{ideaal}.
 \begin{dfn}\label{def:lie-alamalgebra}
     Olgu $(\g, [\cdot, \cdot])$ Lie algebra ning olgu $\h \subset \g$ alamruum.
     Me ütleme, et $(\h, [\cdot, \cdot])$ on Lie algebra $(\g, [\cdot, \cdot])$
-    \emph{Lie alamalgebra}, kui iga $h_1, h_2 \in \h$ korral $[h_1, h_2] \in \h$.
+    \emph{Lie alamalgebra}, kui iga $h_1, h_2 \in \h$ korral
+    $[h_1, h_2] \in \h$.
 \end{dfn}
 
-Olgu $\K \in \{\R, \C\}$. Võttes arvesse definitsiooni \ref{def:lie-alamalgebra}
-saame, et Lie algebral $\gl(n, \K)$ on mitmeid Lie alamalgebraid. Nendeks on
-näiteks spetsiaalsete lineaarsete teisenduste Lie algebra $\mathfrak{sl}(n, \K)$
-ja ortogonaalsete lineaarsete teisenduste Lie algebra $\mathfrak{o}(n, \K)$.
+Olgu $\K \in \{\R, \C\}$. Võttes arvesse definitsiooni
+\ref{def:lie-alamalgebra} saame, et Lie algebral $\gl(n, \K)$ on mitmeid
+Lie alamalgebraid. Nendeks on näiteks spetsiaalsete lineaarsete teisenduste
+Lie algebra $\mathfrak{sl}(n, \K)$ ja ortogonaalsete lineaarsete teisenduste
+Lie algebra $\mathfrak{o}(n, \K)$.
 
 \begin{dfn}
     Olgu $(\g, [\cdot, \cdot])$ Lie algebra ning olgu $\h$ vektorruumi $\g$
     alamvektorruum liitmise suhtes. Me ütleme, et $\h$ on Lie algebra
-    $(\g, [\cdot, \cdot])$ \emph{ideaal}, kui iga $x \in \h$ ja $y \in \g$ korral
-    $[x, y] \in \h$.
+    $(\g, [\cdot, \cdot])$ \emph{ideaal}, kui iga $x \in \h$ ja $y \in \g$
+    korral $[x, y] \in \h$.
 \end{dfn}
 
 Võrduse \eqref{eq:bracket-antisymm} järgi on selge, et Lie algebrate

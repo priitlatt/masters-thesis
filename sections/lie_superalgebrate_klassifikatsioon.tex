@@ -6,12 +6,12 @@
 
 \section[Madaladimensionaalsete \texorpdfstring{$3$}{3}-Lie superalgebrate
 klassifikatsioon]{Madaladimensionaalsete \texorpdfstring{$3$}{3}-Lie
-superalgebrate \\ klassifikatsioon}
+superalgebrate \\ klassifikatsioon}\label{section:klassifikatsioon}
 
 \subsection{Meetodi kirjeldus}
 
-Järgnevas peatükis uurime kui palju on erinevaid $3$-Lie superalgebraid üle
-supervektorruumi, mille kombineeritud dimensioon on väiksem kui $4$.
+Järgnevas peatükis uurime kui palju on maksimaalselt erinevaid $3$-Lie
+superalgebraid üle supervektorruumi, dimensiooniga $m|n$, kus $m + n \leq 4$.
 Klassifikatsiooni koostamiseks kasutame Lie superalgebra struktuurikonstante
 ja teeme seda järgmisel viisil.
 
@@ -187,7 +187,7 @@ võrrandi
     &(-1)^{z_{ABEF} + \circlearrowright_{CEF} + \circlearrowright_{A'B'G'}}
         K_{C' E' F'}^G K_{A' B' G'}^H,
 \end{align*}
-sest igas võrrandis on vasakul ja paremal pool olema sama vektor, ning
+sest igas võrrandis on vasakul ja paremal pool sama vektor, ning
 vektor avaldub baasivektorite lineaarkombinatsioonina üheselt.
 Kokkuvõttes on meil tekkinud ruutvõrrandisüsteem, mille lahenditeks on
 $m|n$ dimensiooniga Lie superalgebra $\g$ võimalikud struktuurikonstantide
@@ -200,12 +200,14 @@ Selle programmi abil tekkinud võrrandisüsteemide lahendamiseks on
 kasutatud sümbolarvutustarkvara
 Mathematica 10\footnote{\url{http://www.wolfram.com/mathematica/}}
 funktsiooni \verb+Solve+\footnote{\url{https://reference.wolfram.com/language/ref/Solve.html}}, kus määramispiirkonnaks on antud
-kompleksarvud. \textcolor{red}{TODO: Samas on oluline märkida, et sel viisil
+kompleksarvud.
+
+Samas on oluline märkida, et sel viisil
 saadud klassifikatsioon sõltub supervektorruumi baasi valikust ega ole seega
 isomorfismi täpsusega. Invariantsete lahendite kõrvaldamist uurime juba iga
-konkreetse situatsiooni juures juba eraldi.}
+konkreetse situatsiooni juures juba eraldi.
 
-Lisaks rõhutame, et me ei hakka uurima siin Lie superalgebraid,
+Lisaks rõhutame, et me ei hakka siin uurima Lie superalgebraid,
 mille supervektorruumi dimensioon on $m|0$, kus $m \in \N$, sest
 analoogiliselt lausele \ref{lause:null-otseliidetav} on selline Lie
 superalgebra tegelikult tavaline Lie algebra. Samas kui dimensioon on

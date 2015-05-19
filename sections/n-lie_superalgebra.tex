@@ -31,9 +31,7 @@ Tuletame selleks kõigepealt meelde mõned baasdefinitsioonid.
 Kui $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$ on
 lõplikumõõtmeline ning otseliidetavate $\V_{\overline{0}}$ ja
 $\V_{\overline{1}}$ dimensioonid on vastavalt $m$ ja $n$, siis
-me ütleme, et supervektorruumi $\V$ \emph{dimensioon} on $m|n$, ning
-ütleme, et supervektorruumi \emph{kombineeritud dimensioon} on $m+n$.
-\textcolor{red}{TODO: kombineeritud dimensioon?}
+me ütleme, et supervektorruumi $\V$ \emph{dimensioon} on $m|n$.
 
 Kui supervektorruumi element $x \in \V$ korral
 $x \in \V_{\overline{0}} \cup \V_{\overline{1}}$, siis ütleme, et
@@ -403,13 +401,9 @@ kus $0 < k < n$, $\alpha_1, \alpha_2, \dots, \alpha_n,
 i_1, i_2, \dots, i_n \in \{1, 2, \dots, n\}$, ja $k < l$ korral
 $\alpha_k < \alpha_l$ ning $i_k < i_l$.
 
-\textcolor{red}{
-    TODO: viita siia kui klassifikatsiooni meetodi kirjeldusest
-    kirjutatud on...
-}
-Struktuurikonstantide kasutamise, seda eelkõige just ternaarsete
-Lie superalgebra korral, juurde naaseme hiljem peatüki
-\textcolor{red}{\textbf{???}} juures.
+Struktuurikonstantide kasutamise, seda eelkõige just ternaarsete Lie
+superalgebrate korral, juurde naaseme hiljem peatüki
+\ref{section:klassifikatsioon} juures.
 
 Vaatame järgnevalt lähemalt ühte $n$-Lie superalgebra näidet.
 \cite{Abramov:2014}
@@ -1046,7 +1040,18 @@ Saadud kujutuse tähtsamad omadused võtab kokku järgmine lemma.
     $x_1, x_2, \dots, x_{n+1} \in \V$ suvalised homogeensed elemendid
     ja tähistame $\mathrm{x} = (x_1, x_2, \dots, x_{n+1})$.
     \begin{enumerate}[label=\arabic*)]
-        \item \textcolor{red}{TODO: verifitseeri see siin
+        \item Oletame, et vektorite $x_1, \dots, x_{n+1}$ hulgas on vaid
+            paarisvektorid. Sel juhul iga $i = 1, \dots, n+1$ korral
+            $|x_i| = \overline{0}$, ja seega on ka
+            $\phi(x_1, \dots, \hat{x_i}, \dots, x_{n+1})$ paaris. Kokkuvõttes
+            on selge, et siis on ka $\phi_S(x_1, \dots, x_{n+1})$ paaris.
+
+            Oletame nüüd, et $k < n + 1$ vektorit on paaritud, ning
+            olgu nendeks vektoriteks üldsust kitsendamata $x_{1}, \dots x_{k}$.
+            Siis $S(x_{i}) = 0$ iga $i = 1, \dots, k$ korral ja
+            $\phi(x_1, \dots, \hat{x_i}, \dots, x_{n+1})$ paarsus on
+            $k \bmod{2}$, sest $|x_i| = \overline{0}$, kui $i > k$.
+            Seega
             \begin{align*}
                 | \phi_S (x_1, \dots, x_{n+1}) | =&
                 \left |
@@ -1057,16 +1062,14 @@ Saadud kujutuse tähtsamad omadused võtab kokku järgmine lemma.
                     \right)
                 \right| = \\
                 %
-                =& \sum_{i=1}^{n+1} \left|
+                =& \left| \sum_{i=k+1}^{n+1}
                     \phi \left( x_1, \dots, \hat{x_i}, \dots, x_{n+1} \right)
-                \right| = \\
-                %
-                =& \sum_{i=1}^{n+1} \sum_{\mathclap{
-                        \substack{j=1\\j \ne i}}
-                }^{n+1} |x_j| = n \cdot \sum_{i=1}^{n+1} |x_i| =
-                \sum_{i=1}^{n+1} |x_i| \quad ???
+                \right| = \sum_{i=1}^{n+1} |x_i|.
             \end{align*}
-        }
+
+            Eeldame viimaks, et kõik vektorid $x_i$, $i = 1, \dots, n+1$,
+            on paaritud, ehk $|x_i| = \overline{1}$. \textcolor{red}{TODO:
+            mis edasi?}
 
         \item Rakendame valemit \eqref{def:phi-s} ja arvutame
             \begin{align*}

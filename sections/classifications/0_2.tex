@@ -1,0 +1,116 @@
+%!TEX root = ../../thesis.tex
+
+\subsection{\texorpdfstring{$0|2$}{0|2}-dimensionaalsed
+    \texorpdfstring{$3$}{3}-Lie superalgebrad}
+
+Olgu meil $3$-Lie superalgebra $\g$, mille supervektorruumi dimensioon
+on $0|2$ ja tema vektorruumi baas on $\{ f_1, f_2 \}$. Siis avaldub
+kommutaator baasielementidel järgmiselt:
+\begin{align*}
+    \begin{matrix*}[l]
+        & [f_1, f_1, f_1] = \m_1 f_1 + \m_2 f_2, \quad
+        & [f_1, f_2, f_2] = \m_5 f_1 + \m_6 f_2, \\
+        & [f_1, f_1, f_2] = \m_3 f_1 + \m_4 f_2, \quad
+        & [f_2, f_2, f_2] = \m_7 f_1 + \m_8 f_2, \\
+    \end{matrix*}
+\end{align*}
+kus $\m_1, \m_2, \dots, \m_8 \in \C$ on suvalised skalaarid.
+
+Rakendades neile kommutaatoritele nüüd meie algoritmi saame $24$
+mittetriviaalset kitsendust kitsendust\footnote{Need on leitavad veebilehelt
+\url{https://www.example.com/2_0_restrictions.pdf}},
+mida Lie superalgebra $\g$ struktuurikonstandid rahuldama peavad. Kitsenduste
+lahenditeks sobivad struktuurikonstantide komplektid
+\renewcommand\arraystretch{1.2}
+\begin{align*}
+    \begin{pmatrix}
+        m_1 \\
+        m_2 \vphantom{\frac{m_4^2}{m_6}} \\
+        m_3 \\
+        m_4 \\
+        m_5 \vphantom{\frac{m_4^2}{m_6}} \\
+        m_6 \\
+        m_7 \vphantom{\frac{m_4^2}{m_6}} \\
+        m_8 \vphantom{\frac{m_4^2}{m_6}}
+    \end{pmatrix}
+    =
+    \begin{pmatrix*}[r]
+        -m_4 \\
+        \frac{m_4^2}{m_6} \\
+        -m_6 \\
+        c1 \\
+        -\frac{m_6^2}{m_4} \\
+        c2 \\
+        -\frac{m_6^3}{m_4^2} \\
+        \frac{m_6^2}{m_4}
+    \end{pmatrix*},
+    \quad
+    \begin{pmatrix}
+        m_1 \\
+        m_2 \\
+        m_3 \\
+        m_4 \\
+        m_5 \\
+        m_6 \\
+        m_7 \\
+        m_8
+    \end{pmatrix}
+    =
+    \begin{pmatrix*}[r]
+        0 \\
+        c_3 \\
+        0 \\
+        0 \\
+        0 \\
+        0 \\
+        0 \\
+        0
+    \end{pmatrix*},
+    \quad
+    \begin{pmatrix}
+        m_1 \\
+        m_2 \\
+        m_3 \\
+        m_4 \\
+        m_5 \\
+        m_6 \\
+        m_7 \\
+        m_8
+    \end{pmatrix}
+    =
+    \begin{pmatrix*}[r]
+        0 \\
+        0 \\
+        0 \\
+        0 \\
+        0 \\
+        0 \\
+        c_4 \\
+        0
+    \end{pmatrix*},
+\end{align*}
+\renewcommand\arraystretch{1}
+kus $c_1, c_2, c_3, c_4 \in \C \setminus \{0\}$ on vabad muutujad.
+
+\begin{lau}
+    $3$-Lie superalgebra, mille supervektorruumi dimensioon on $0|2$, on Abeli
+    Lie superalgebra, või tema mittetriviaalsed kommutatsiooniseosed on
+    \renewcommand\arraystretch{1.2}
+    \begin{align}
+        & \left\{
+            \begin{matrix*}[l]
+                [f_1, f_1, f_1] = -\m_4 f_1 + \frac{\m_4^2}{\m_6} f_2, \\
+                [f_1, f_1, f_2] = -\m_6 f_1 + c_1 f_2, \\
+                [f_1, f_2, f_2] = -\frac{\m_6^2}{\m_4} f_1 + c_2 f_2, \\
+                [f_2, f_2, f_2] = -\frac{\m_6^3}{\m_4^2} f_1 +
+                    \frac{\m_6^2}{\m_4} f_2, \\
+            \end{matrix*}
+        \right. \\[0.2cm]
+        %
+        &\ \ \ [f_1, f_1, f_1] = c f_2, \\[0.2cm]
+        %
+        &\ \ \ [f_2, f_2, f_2] = c f_1,
+    \end{align}
+    \renewcommand\arraystretch{1}
+    kus $c, c_1, c_2 \in \C \setminus \{ 0 \}$ on vabad muutujad.
+\end{lau}

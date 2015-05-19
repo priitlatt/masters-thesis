@@ -1,0 +1,47 @@
+%!TEX root = ../../thesis.tex
+
+\subsection{\texorpdfstring{$1|1$}{1|1}-dimensionaalsed
+    \texorpdfstring{$3$}{3}-Lie superalgebrad}
+
+Olgu meil $3$-Lie superalgebra $\g$, mille supervektorruumi dimensioon
+on $1|1$ ja tema vektorruumi baas on $\{ e, f \}$, kus $e$ on paarisvektor
+ning $f$ on paaritu. Siis avaldub kommutaator baasielementidel järgmiselt:
+\begin{align*}
+    \begin{matrix*}[l]
+        &[e, e, e] = 0,\quad
+        &[e, f, f] = \l e, \\
+        &[e, e, f] = 0,\quad
+        &[f, f, f] = \m f
+    \end{matrix*}
+\end{align*}
+kus $l, m \in \C$ on suvalised skalaarid.
+
+Rakendades neile kommutaatoritele nüüd meie algoritmi saame kitsendused,
+mida Lie superalgebra $\g$ struktuurikonstandid rahuldama peavad:
+\begin{align*}
+    \left\{
+        \begin{matrix*}[l]
+            &2\l\m e + \l^2 e =  \l^2 e, \\
+            &3\l^2 e = \l\m e, \\
+            &3\m^2 f = \m^2 f,
+        \end{matrix*}
+    \right.
+    %
+    \quad \iff \quad
+    %
+    \left\{
+        \begin{matrix*}[l]
+            &2\l\m + \l^2 - \l^2 = 0, \\
+            &3\l^2 - \l\m = 0, \\
+            &3\m^2 - \m^2 = 0.
+        \end{matrix*}
+    \right.
+\end{align*}
+Neid kitsendusi rahuldab vaid paar
+$\begin{pmatrix}\l \\ \m\end{pmatrix} = \begin{pmatrix}0 \\ 0\end{pmatrix}$,
+mis tähendab, et kehtib järgmine teoreem.
+
+\begin{thm}
+    Kõik $3$-Lie superalgebraid, mille supervektorruumi dimensioon on $1|1$,
+    on triviaalsed ehk Abeli Lie superalgebrad.
+\end{thm}

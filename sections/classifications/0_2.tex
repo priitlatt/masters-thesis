@@ -3,98 +3,65 @@
 \subsection{\texorpdfstring{$0|2$}{0|2}-dimensionaalsed
     \texorpdfstring{$3$}{3}-Lie superalgebrad}
 
-Olgu meil $3$-Lie superalgebra $\g$, mille supervektorruumi dimensioon
-on $0|2$ ja tema vektorruumi baas on $\{ f_1, f_2 \}$. Siis avaldub
-kommutaator baasielementidel järgmiselt:
+Olgu $3$-Lie superalgebra $\g$ supervektorruumi dimensioon
+$0|2$ ja olgu tema generaatoriteks $\{ f_1, f_2 \}$. Siis
 \begin{align*}
     \begin{matrix*}[l]
         & [f_1, f_1, f_1] = \m_1 f_1 + \m_2 f_2, \quad
         & [f_1, f_2, f_2] = \m_5 f_1 + \m_6 f_2, \\
         & [f_1, f_1, f_2] = \m_3 f_1 + \m_4 f_2, \quad
-        & [f_2, f_2, f_2] = \m_7 f_1 + \m_8 f_2, \\
+        & [f_2, f_2, f_2] = \m_7 f_1 + \m_8 f_2,
     \end{matrix*}
 \end{align*}
 kus $\m_1, \m_2, \dots, \m_8 \in \C$ on suvalised skalaarid.
 
-Rakendades neile kommutaatoritele nüüd meie algoritmi saame $24$
+Rakendades neile kommutaatoritele meie algoritmi saame $24$
 mittetriviaalset kitsendust kitsendust\footnote{Need on leitavad veebilehelt
 \url{https://www.example.com/2_0_restrictions.pdf}},
-mida Lie superalgebra $\g$ struktuurikonstandid rahuldama peavad. Kitsenduste
-lahenditeks sobivad struktuurikonstantide komplektid
-\renewcommand\arraystretch{1}
+mida $\g$ struktuurikonstandid rahuldama peavad. Kitsenduste
+mittetriviaalseteks lahenditeks sobivad struktuurikonstantide komplektid
+\renewcommand\arraystretch{1.3}
 \begin{align*}
-    \begin{pmatrix}
-        m_1 \\
-        m_2 \\
-        m_3 \\
-        m_4 \\
-        m_5 \\
-        m_6 \\
-        m_7 \\
-        m_8
-    \end{pmatrix}
-    =
-    \begin{pmatrix*}[r]
-        -c_1 \\
-        \frac{c_1^2}{c_2} \\
-        -c_2 \\
-        c_1 \\
-        -\frac{c_2^2}{c_1} \\
-        c_2 \\
-        -\frac{c_2^3}{c_1^2} \\
-        \frac{c_2^2}{c_1}
-    \end{pmatrix*},
+    \left\{ \begin{matrix*}[l]
+        \m_1 = -c_1 \\
+        \m_2 = \frac{c_1^2}{c_2} \\
+        \m_3 = -c_2 \\
+        \m_4 = c_1 \\
+        \m_5 = -\frac{c_2^2}{c_1} \\
+        \m_6 = c_2 \\
+        \m_7 = -\frac{c_2^3}{c_1^2} \\
+        \m_8 = \frac{c_2^2}{c_1} \\
+    \end{matrix*} \right.,
     \quad
-    \begin{pmatrix}
-        m_1 \\
-        m_2 \\
-        m_3 \\
-        m_4 \\
-        m_5 \\
-        m_6 \\
-        m_7 \\
-        m_8
-    \end{pmatrix}
-    =
-    \begin{pmatrix*}[r]
-        0 \\
-        c_3 \\
-        0 \\
-        0 \\
-        0 \\
-        0 \\
-        0 \\
-        0
-    \end{pmatrix*},
+    \left\{ \begin{matrix*}[l]
+        \m_1 = 0 \\
+        \m_2 = c_3 \\
+        \m_3 = 0 \\
+        \m_4 = 0 \\
+        \m_5 = 0 \\
+        \m_6 = 0 \\
+        \m_7 = 0 \\
+        \m_8 = 0 \\
+    \end{matrix*} \right.,
     \quad
-    \begin{pmatrix}
-        m_1 \\
-        m_2 \\
-        m_3 \\
-        m_4 \\
-        m_5 \\
-        m_6 \\
-        m_7 \\
-        m_8
-    \end{pmatrix}
-    =
-    \begin{pmatrix*}[r]
-        0 \\
-        0 \\
-        0 \\
-        0 \\
-        0 \\
-        0 \\
-        c_4 \\
-        0
-    \end{pmatrix*},
+    \left\{ \begin{matrix*}[l]
+        \m_1 = 0 \\
+        \m_2 = 0 \\
+        \m_3 = 0 \\
+        \m_4 = 0 \\
+        \m_5 = 0 \\
+        \m_6 = 0 \\
+        \m_7 = c_4 \\
+        \m_8 = 0 \\
+    \end{matrix*} \right.,
 \end{align*}
 \renewcommand\arraystretch{1}
 kus $c_1, c_2, c_3, c_4 \in \C \setminus \{0\}$ on vabad muutujad.
 
 \begin{lau}
-    $3$-Lie superalgebra, mille supervektorruumi dimensioon on $0|2$, on Abeli
-    Lie superalgebra, või tema mittetriviaalsed kommutatsiooniseosed on
+    Olgu $3$-Lie superalgebra $\g$ supervektorruumi dimensioon on $0|2$.
+    Siis $\g$ on kas Abeli Lie superalgebra, või tema mittetriviaalsed
+    kommutatsiooniseosed on
     \renewcommand\arraystretch{1.5}
     \begin{align}
         & \left\{
@@ -106,11 +73,34 @@ kus $c_1, c_2, c_3, c_4 \in \C \setminus \{0\}$ on vabad muutujad.
                     \frac{c_2^2}{c_1} f_2, \\
             \end{matrix*}
         \right. \\[0.2cm]
-        %
         &\ \ \ [f_1, f_1, f_1] = c f_2, \\[0.2cm]
-        %
         &\ \ \ [f_2, f_2, f_2] = c f_1,
     \end{align}
     \renewcommand\arraystretch{1}
     kus $c, c_1, c_2 \in \C \setminus \{ 0 \}$ on vabad muutujad.
 \end{lau}
+
+Sooritades muutujavahetused $f_1 = f_2'$ ja $f_2 = f_1'$ annavad
+eeskirjad $[f_1, f_1, f_1] = c f_2$ ja $[f_2, f_2, f_2] = c f_1$
+tegelikult samad kommutatsiooniseosed. Seega kehtib
+\begin{thm}
+    Olgu $3$-Lie superalgebra $\g$ supervektorruumi dimensioon on $0|2$.
+    Siis $\g$ on kas Abeli Lie superalgebra, või tema mittetriviaalsed
+    kommutatsiooniseosed on
+    \renewcommand\arraystretch{1.5}
+    \begin{align}
+        & \left\{
+            \begin{matrix*}[l]
+                [f_1, f_1, f_1] = -c_1 f_1 + \frac{c_1^2}{c_2} f_2, \\
+                [f_1, f_1, f_2] = -c_2 f_1 + c_1 f_2, \\
+                [f_1, f_2, f_2] = -\frac{c_2^2}{c_1} f_1 + c_2 f_2, \\
+                [f_2, f_2, f_2] = -\frac{c_2^3}{c_1^2} f_1 +
+                    \frac{c_2^2}{c_1} f_2, \\
+            \end{matrix*}
+        \right. \\[0.2cm]
+        &\ \ \ [f_1, f_1, f_1] = c f_2,
+    \end{align}
+    \renewcommand\arraystretch{1}
+    kus $c, c_1, c_2 \in \C \setminus \{ 0 \}$ on vabad muutujad.
+\end{thm}
+

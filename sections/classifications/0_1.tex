@@ -3,14 +3,13 @@
 \subsection{\texorpdfstring{$0|1$}{0|1}-dimensionaalsed
     \texorpdfstring{$3$}{3}-Lie superalgebrad}
 
-Olgu meil $3$-Lie superalgebra $\g$, mille supervektorruumi dimensioon
-on $0|1$ ja tema vektorruumi baas on $\{ f \}$. Kommutaatori saame
-siis baasielementidel välja arvutada kui
+Olgu $3$-Lie superalgebra $\g$ supervektorruumi dimensioon
+on $0|1$ ning olgu $\g$ generaatoriteks $\{ f \}$. Kommutaatori saame
+siis generaatoritel välja arvutada kui
 \[ [f, f, f] = \mu f, \]
 kus $\mu \in \C$ on suvaline skalaar.
 
-Rakendame nüüd eelmises punktis kirjeldatud algoritmi, mis annab meile
-ühelt poolt 
+Rakendame nüüd eelmises punktis kirjeldatud algoritmi, saame ühelt poolt
 \[
     [f, f, [f, f, f]] = \mu [f, f, f] = \mu^2 f
 \]
@@ -20,13 +19,14 @@ ning teisalt
         [[f, f, f], f, f] +
         (-1)^{|f|(|f| + |f|)} [f, [f, f, f], f] + \\
         &\ (-1)^{(|f| + |f|)^2} [f, f, [f, f, f]] = \\
-    =&\ \mu^2 f +  \mu^2 f +  \mu^2 f = 3\mu^2 f.
+    =&\ \mu^2 f +  \mu^2 f +  \mu^2 f = \\
+    =&\ 3\mu^2 f.
 \end{align*}
 
-Kokkuvõttes saime seega täpselt ühe kitsenduse, mida Lie superalgebra $\g$
-struktuurikonstandid rahuldama peavad:
-\[ \mu^2 = 3\mu^2, \]
-mille ainsaks lahendiks on loomulikult $\mu = 0$.
+Kokkuvõttes saime seega täpselt ühe kitsenduse, mida $\g$ struktuurikonstandid
+rahuldama peavad:
+\[ \mu^2 = 3\mu^2. \]
+Selle võrrandi ainsaks lahendiks on loomulikult $\mu = 0$.
 
 \begin{thm}
     Kõik $3$-Lie superalgebraid, mille supervektorruumi dimensioon on $0|1$,

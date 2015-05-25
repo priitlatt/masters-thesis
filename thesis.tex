@@ -16,13 +16,15 @@
 \usepackage{hyperref}
 \usepackage{multicol}
 \usepackage{verbatim}
-\usepackage{lipsum}
+\usepackage{datetime}
+\usepackage{changepage}
 
+\usepackage{lipsum}
 \usepackage{color}
 
-\overfullrule=5pt
+\renewcommand{\dateseparator}{.}
 
-% \everymath{\displaystyle}
+\overfullrule=5pt
 
 \def\author{Priit Lätt}
 \def\title{$n$-Lie superalgebrad}
@@ -125,5 +127,11 @@
 \bibliographystyle{plain}
 \bibliography{references}
 \addcontentsline{toc}{section}{Viited}
+
+\newpage
+\input{sections/lisad.tex}
+
+\newpage
+\input{sections/litsents.tex}
 
 \end{document}

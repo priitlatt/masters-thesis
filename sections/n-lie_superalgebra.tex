@@ -1033,9 +1033,9 @@ Saadud kujutuse tähtsamad omadused võtab kokku järgmine lemma.
 \end{lemma}
 
 \begin{proof}
-    Olgu $\V$ supervektorruum, rahuldagu $n$-lineaarne
-    kujutus $\phi \col \V^n \to \V$ tingimusi
-    \eqref{eq:phi-grading} ja \eqref{eq:phi-graded-anticomm}, ning
+    Olgu $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$ supervektorruum.
+    Eeldame, et $n$-lineaarne kujutus $\phi \col \V^n \to \V$ rahuldab
+    tingimusi \eqref{eq:phi-grading} ja \eqref{eq:phi-graded-anticomm}, ning
     olgu $S \col \V \to K$ kujutuse $\phi$ superjälg. Lisaks olgu
     $x_1, x_2, \dots, x_{n+1} \in \V$ suvalised homogeensed elemendid
     ja tähistame $\mathrm{x} = (x_1, x_2, \dots, x_{n+1})$.
@@ -1068,9 +1068,13 @@ Saadud kujutuse tähtsamad omadused võtab kokku järgmine lemma.
                 \right| = \sum_{i=1}^{n+1} |x_i|.
             \end{align*}
 
-            Eeldame viimaks, et kõik vektorid $x_i$, $i = 1, \dots, n+1$,
-            on paaritud, ehk $|x_i| = \overline{1}$. \textcolor{red}{TODO:
-            mis edasi?}
+            Eeldame viimaks, et kõik vektorid $x_i$, $i \in \{1, \dots, n+1\}$,
+            on paaritud. Siis $S(x_1) = \dots = S(x_{n+1}) = 0$ ja seega kehtib
+            $| \phi_S (x_1, \dots, x_{n+1}) | = |0|$. Samas otseliidetavad
+            $\V_{\overline{0}}$ ja $\V_{\overline{1}}$ on mõlemad vektorruumid
+            ning seega sisaldavad nullelementi. Seega on null ühel ja samal
+            ajal nii paaris- kui ka paaritu vektor ja seega nõutud samasus
+            kehtib.
 
         \item Rakendame valemit \eqref{def:phi-s} ja arvutame
             \begin{align*}

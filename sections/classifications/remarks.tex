@@ -2,4 +2,52 @@
 
 \subsection{Täiendavaid märkuseid}
 
-asdf
+Eelnevas leidsime ülemise tõkke erinevate $3$-Lie superalgebrate arvule,
+kui algebrale aluseks oleva supervektorruumi dimensioon on $m|n$, kus
+$m + n \leq 3$. Saadud tulemused võtab kokku järgnev tabel.
+
+\begin{center}
+    \begin{tabular}{|c|c|} \hline
+        \textbf{
+            \begin{tabular}{c}
+                Supervektorruumi \\
+                dimensioon
+            \end{tabular}
+        } & \textbf{
+            \begin{tabular}{c}
+                Ülimalt erinevaid \\
+                algebraid
+            \end{tabular}
+        } \\ \hline
+        $0|1$ & $1$ \\ \hline
+        $0|2$ & $3$ \\ \hline
+        $1|1$ & $1$ \\ \hline
+        $1|2$ & $3$ \\ \hline
+        $2|1$ & $4$ \\ \hline
+    \end{tabular}
+\end{center}
+
+Kahjuks osutub, et selline meetod ei skaleeru ja seega ei sobi suurema
+generaatorite arvuga $3$-Lie superalgebrate klassifitseerimiseks. Näiteks
+kui supervektorruumi dimensioon on $0|3$ tekib meil $180$ võrrandiga süsteem
+$30$ tundmatu suhtes\footnote{Võrrandid on leitavad veebilehelt
+\url{http://priitlatt.github.io/masters-thesis/kitsendused/0_3.txt}}.
+Selle süsteemi lahendeid Mathematica 10 tavalise
+arvuti peal mõistliku ajaga enam leida ei suuda, rääkimata vabavaralistest
+alternatiividest nagu SymPy\footnote{\url{http://www.sympy.org}}. Põhiliseks
+takistuseks on siin loomulikult teist järku võrrandite süsteemi täpsete
+lahendite leidmise suur arvutuslik keerukus.
+
+Teisalt näiteks dimensioonide $3|1$ ja $2|2$ korral tekib kitsendusi vastavalt
+$112$ ja $192$ ning Mathematica 10 suudab mõlemal juhul lahendid üle $\C$ leida,
+kuid lahendikomplekte on liiga palju, et nende põhjal olulisi järeldusi teha.
+Näiteks dimensiooni $3|1$ korral tekib $55$ lahendikomplekti, mille põhjal
+saame sama palju võimalikke kommutatsiooniseoseid, nagu on näha lisas
+\ref{lisa:3|1 kommutatsiooniseosed}. Samas on selgelt näha, et mitmed
+kommutatsiooniseosed on seal tegelikult üksteisega isomorfsed, kui kasutame
+vaid generaatorite ümbernimetamist. Sellisteks üksteisega samaväärseteks
+on näiteks seosted $33$, $34$ ja $47$ või $41$, $46$, $50$. Nõnda on võimalik
+vähese vaevaga vähendada erinevate kommutatsiooniseoste arvu rohkem kui kümne
+võrra, kuid rohkemate isomorfismide leidmine nõuaks oluliselt põhjalikumat
+analüüsi. Analoogiline on situatsioon ka $3$-Lie superalgebrate korral, mille
+supervektorruumi dimensioon on $2|2$.

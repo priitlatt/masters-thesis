@@ -21,7 +21,8 @@ vektorite liitmise ja skalaariga korrutamise, see tähendab
 \end{align*}
 kus $x, y \in \V_1$ ning $\lambda$ on skalaar. Kui vektorruumid $\V_1$ ja
 $\V_2$ langevad kokku, siis ütleme me kujutuse $\phi$ kohta
-\emph{lineaarteisendus}.
+\emph{lineaarteisendus} või \emph{endomorfism}. Kõigi vektorruumi $\V$
+endomorfismide hulka tähistatakse seejuures $\End \V$.
 
 Algebrast on teada, et lineaarteisendusel eksisteerib pöördteisendus siis ja
 ainult siis, kui ta on nii üks-ühene kui ka pealeteisendus. Kõigi vektorruumi
@@ -49,8 +50,8 @@ selle baasi suhtes on $(a^i_j)$, mis on määratud valemiga
 
 Selge, et vaadeldes rühmi $\GL(\V)$ ja $\SL(\V)$ maatriksrühmadena
 on rühma tehteks juba tavaline maatriksite korrutamine. Ilmselt saab
-nimetatud maatriksrühmad defineerida suvalise korpuste jaoks, ja nii ka
-reaal- ning kompleksarvude korral. Sellest lähtuvalt kasutatakse sageli
+nimetatud maatriksrühmad defineerida nii reaal- kui ka kompleksarvude korral.
+Sellest lähtuvalt kasutatakse sageli
 nullist erineva determinandiga $n \times n$ maatriksrühmade tähistuseks
 $\GL(n, \R)$ või $\GL(n, \C)$, ning neid rühmi nimetame vastavalt
 \emph{reaalsete pööratavate lineaarteisenduste rühmaks} ja \emph{komplekssete
@@ -61,8 +62,8 @@ Rühmal $\GL(n, \C)$ on palju tuntud alamrühmi. Klassikaliseks näiteks on
 $n \times n$ \emph{ortogonaalsete maatriksite rühm} $\Ort(n, \C)$, kuhu
 kuuluvad ortogonaalsed maatriksid, see tähendab sellised maatriksid $A$, mille
 korral $A^T = A^{-1}$. Teise näitena võib tuua unitaarsete maatriksite rühma
-$\U(n)$, mille elementideks on anti-Hermite'i maatriksid $A$, mis rahuldavad
-tingimust $A^\dag = -A$, kus $A^\dag = \overline{A}^T$. Edasi on lihtne
+$\U(n)$, mille elementideks on unitaarsed maatriksid $A$, mis rahuldavad
+tingimust $A^T = \overline{A}^{-1}$. Edasi on lihtne
 konstrueerida saadud alamrühmade \emph{spetsiaalsed} analoogid.
 \emph{Spetsiaalsete komplekssete ortogonaalmaatriksite rühm} on
 \begin{align*}
@@ -104,10 +105,10 @@ $B^T = -B$.
 
 \begin{dfn}
     Olgu $\V$ vektorruum kus on fikseeritud mingi baas, olgu $\phi$
-    vektorruumi $\V$ lineaarteisendus ning olgu $A = (a^i_j)$ on
+    vektorruumi $\V$ lineaarteisendus ning olgu $A = (a^i_j)$
     lineaarteisenduse $\phi$ maatriks fikseeritud baasi suhtes.
-    Lineaarteisenduse $\phi$ \emph{jäljeks} nimetatakse kujutust
-    $\Tr_\V \col \GL(\V) \to K$, kus
+    Lineaarteisenduse $\phi$ \emph{jäljeks} nimetatakse elementi
+    $\Tr_\V(A) \in K$, mis arvutatakse valemiga
     \begin{align*}
         \Tr_\V(A) = \sum_i a^i_i.
     \end{align*}
@@ -117,8 +118,7 @@ Juhul kui maatriksi $A$ korral $\Tr_\V A = 0$, siis ütleme, et
 maatriks $A$ on \emph{jäljeta}.
 
 \begin{naide}
-    On hästi teada, et vektorruumi $\V$ kõigi lineaarteisenduste ehk
-    endomorfismide hulk $\End \V$
+    On hästi teada, et vektorruumi $\V$ endomorfismide hulk $\End \V$
     on ka ise vektorruum, kusjuures kui vektorruumi $\V$ dimensioon
     on $\dim(\V) = n$, siis ruumi $\End \V$ dimendsioon on
     $\dim \left(\End \V\right) = n^2$. Kasutades jälge $\Tr_\V$ saame
@@ -143,7 +143,7 @@ Eukleidilises geomeetrias selliseid vektoreid ei leidu, kuid üldisemates
 situatsioonides esinevad nad küllaltki sageli, näiteks pseudoeukleidilises
 \emph{Minkowski aegruumis}.
 
-Edasises vaatleme ortogonaaseid ja sümplektilisi rühmi ning selleks
+Edasises vaatleme ortogonaalseid ja sümplektilisi rühmi ning selleks
 nõuame, et vaatluse all olevad bilineaarvormid oleksid mittesingulaarsed
 ehk regulaarsed, see tähendab kui $(x, y) = 0$ iga $y \in \V$ korral, siis
 järelikult $x = 0$. Osutub, et bilineaarvorm $\blinv$ on regulaarne parajasti
@@ -151,7 +151,7 @@ siis, kui temale vastav maatiks $B = (b^i_j)$ on pööratav, mis tähendab,
 et $\det B \neq 0$.
 
 \begin{dfn}
-    Me ütleme, et lineaarne operaator $\phi$ on \emph{ortogonaalne}
+    Me ütleme, et lineaarteisendus $\phi$ on \emph{ortogonaalne}
     regulaarse sümmeetrilise bilineaarvormi $\blinv$ suhtes, kui
     \begin{align*}
         (\phi(x), \phi(y)) = (x, y)
@@ -159,13 +159,13 @@ et $\det B \neq 0$.
     kõikide $x$ ja $y$ korral vektorruumist $\V$.
 \end{dfn}
 
-Kui $x$ on ortogonaalse lineaarse operaatori $\phi$ tuumast, siis
+Kui $x$ on ortogonaalse lineaarteisenduse $\phi$ tuumast, siis
 kehtib $\phi(x) = 0$. Viimane aga tähendab, et iga $y \in \V$ korral
 $(x, y) = (\phi(x), \phi(y)) = (0, \phi(y)) = 0$. Kokkuvõttes,
 et $\blinv$ on regulaarne, siis järelikult $x = 0$ ja $\phi$ on üks-ühene.
 Kui nüüd veel $\V$ on lõplikumõõtmeline, siis peab $\phi$ olema pööratav.
-Seda arutelu silmas pidades võime öelda, et ortogonaalsed lineaarsed
-operaatorid moodustavad rühma, mida me nimetame \emph{ortogonaalsete
+Seda arutelu silmas pidades võime öelda, et ortogonaalsed lineaarteisendused
+moodustavad rühma, mida me nimetame \emph{ortogonaalsete
 lineaarteisenduste rühmaks} bilineaarvormi $\blinv$ suhtes.
 Võttes tarvitusele vektorruumi $\V$ baasi saame konstrueerida ka
 \emph{ortogonaalsete maatriksite rühma}, mida tähistatakse komplekssel
@@ -176,7 +176,7 @@ Sümplektiliste teisenduste tarvis tuleb vaadelda kaldsümmeetrilisi
 bilineaarvorme.
 
 \begin{dfn}
-    Me ütleme, et lineaarne operaator $\phi$ on \emph{sümplektiline}
+    Me ütleme, et lineaarteisendus $\phi$ on \emph{sümplektiline}
     regulaarse kaldsümmeetrilise bilineaarvormi $\blinv$ suhtes, kui
     \begin{align*}
         (\phi(x), \phi(y)) = (x, y)
@@ -202,7 +202,7 @@ Need tingimused võib kirja panna maatriksite elementide kaudu, mille
 tulemusel saaame me mittelineaarseid võrrandeid, mis määravad rühma kuulumise.
 Osutub, et need tingimused on võimalik asendada mingi hulga ekvivalentsete
 lineaarsete võrranditega ja selline üleminek mittelineaarselt süsteemilt
-lineaarsele ongi võtmetähtsusega idee üleminekul Lie rühmadest Lie
+lineaarsele ongi võtmetähtsusega idee üleminekul Lie rühmadelt Lie
 algebratele \cite{johan1989survey}.
 
 Klassikaliseks viisiks kuidas sellist üleminekut realiseeritakse on
@@ -253,9 +253,9 @@ mille võrdlemisi lihtsad tõestused võib huvi korral leida näiteks
 raamatust \cite{hall2003lie}.
 
 \begin{lau}\label{lau:mat-exp-om}
-    Olgu $X$ ja $Y$ suvalised $n \times n$ maatriksid. Siis kehtivad järgmised
-    väited:
-    \begin{enumerate}[label=\arabic*)]
+    Olgu $X$ ja $Y$ suvalised $n \times n$ maatriksid üle vektorruumi $\V$.
+    Siis kehtivad järgmised väited:
+    \begin{enumerate}
         \item\label{om:mat-exp-1} $e^0 = I$,
         \item\label{om:mat-exp-2} $\left(e^X\right)^T = e^{X^T}$,
         \item\label{om:mat-exp-3} $e^X$ on pööratav ning kehtib
@@ -273,13 +273,13 @@ raamatust \cite{hall2003lie}.
 Ostutub, et rühma $\GL(n, \C)$ ühikelemendi mingis ümbruses on võimalik
 suvaline maatriks esitada kujul $e^A$, kus $A$ on mingi $n \times n$
 maatriks. Rühma $\GL(n, \R)$ korral on maatriks $A$ reaalne. Oluline on
-tähele panna, et vaadeldes rühma $\GL(n, \R)$, ei ole eksponentfunktsiooni
+tähele panna, et vaadeldes rühma $\GL(n, \R)$, ei ole eksponentsiaalkujutuse
 kujutis terve rühm. Selles veenumiseks piisab võtta $n = 1$ ning näha, et
 $\exp \left(\GL(1, \R)\right) = \R^+$, ehk kujutiseks on reaaltelje positiivne
 osa, samas kui $\GL(1, \R) = \R \setminus \{0\}$ ehk reaaltelg ilma
 nullpunktita.
 
-Niisiis eksponentkujutust kasutades on oht kaotada rühma globaalne struktuur,
+Niisiis eksponentsiaalkujutust kasutades on oht kaotada rühma globaalne struktuur,
 samas kui lokaalne struktuur säilib.
 
 Kui maatriksi $A$ korral soovime, et maatriks $e^A$ kuuluks mõnda puntis
@@ -312,7 +312,7 @@ vektorruumi $\V$ lineaarteisenduste vektorruum $\End \V$ assotsiatiivne
 algebra, mille tehteks on teisenduste kompositsioon: $f \circ g$. Samas võime
 vektorruumi $\End \V$ varustada ka teistsuguse korrutamisega ning saada uue
 algebralise struktuuri, kui võtame tehteks näiteks $f \circ g - g \circ f$.
-Üldiselt selline korrutamine aga enam kommutatiivne ei ole.
+Üldiselt selline korrutamine aga enam assotsiatiivne ei ole.
 
 \begin{dfn}[Lie algebra]\label{def:lie-algebra}
     Algebrat $\g$ üle korpuse $K$ nimetatakse \emph{Lie algebraks}, kui
@@ -361,6 +361,7 @@ kirjutada kujul
 \begin{align}\label{id:jacobi-modified}
     \brac{x}{\brac{y}{z}} = \brac{\brac{x}{y}}{z} + \brac{y}{\brac{x}{z}}.
 \end{align}
+Seega on Jacobi samasusel ka differentseerimise struktuur.
 
 \begin{naide}\label{naide:lie-algebra-konstrueerimine}
     Olgu $\A$ algebra, millel on assotsiatiivne korrutustehe
@@ -371,7 +372,7 @@ kirjutada kujul
     saame algebrast $\A$ moodustada Lie algebra $\A_L$. Valemist
     \eqref{eq:naide-lie-sulg} järeldub vahetult, et Lie algebra
     definitsiooni nõue \eqref{id:bracket-antisymm} kehtib. Jacobi samasuse
-    kehvivuseks märgime, et
+    kehvivuseks märgime, et rakendades korrutise $\star$ assotsiatiivsust
     \begin{align*}
         &\left[x, \left[y, z\right]\right] + 
             \left[y, \left[z, x\right]\right] + 
@@ -395,7 +396,7 @@ Lie algebra. Arvestades, et maatriksite ja lineaarteisenduste korrutamine
 rahuldavad assotsiatiivsuse tingimust, on näites
 \ref{naide:lie-algebra-konstrueerimine} esitatud eeskirja abil
 võimalik kõiki punktis \ref{subsec:mat-ryhmad} toodud
-rühmi võimalik vaadelda kui Lie algebraid. Märgime, et Lie algebrate
+rühmi vaadelda kui Lie algebraid. Märgime, et Lie algebrate
 tähistamiseks kasutatakse tavaliselt väikeseid gooti tähti, seega näiteks
 pööratavate lineaarteisenduste rühmale $\GL(n)$ vastavaks Lie algebraks on
 $\mathfrak{gl(n)}$.
@@ -460,7 +461,7 @@ korrutamise operatsiooni. Seda asjaolu sobib hästi ilmestama järgmine näide.
 \subsection{Struktuurikonstandid}
 
 Eeldame, et järgnevas on meil antud lõplikumõõtmeline Lie algebra $\g$,
-üle korpuse $K$, mille vektorruumil on fikseerutd baas
+üle korpuse $K$, mille vektorruumil on fikseeritud baas
 $\{ e_1, e_2, \dots, e_n \}$. Siinjuures tuletame meelde, et Lie algebra
 aluseks oleva vektorruumi baasi elemente nimetatakse sageli selle
 Lie algebra \emph{generaatoriteks}. Et Lie sulg
@@ -540,7 +541,7 @@ rahuldama peavad.
 
     Tingimuste \eqref{eq:su2-ting1} ja \eqref{eq:su2-ting2} põhjal
     on võimalik näidata, et Lie algebra $\su(2)$ generaatoriteks
-    on maatriksid
+    on Pauli maatriksid
     \begin{align*}
         \rho_1 = \begin{pmatrix}
             0 & i \\

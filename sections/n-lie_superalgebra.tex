@@ -768,16 +768,9 @@ vasak ja parem pool ühtivad.
 
 
 Toome edasises veel mõned olulised $n$-Lie superalgebrate kohta
-käivad definitsioonid ja tulemused.
-
-\textcolor{red}{
-    TODO: korralik tõlge tuletatud rea (derived series) ja
-    kahaneva rea (central descending series) jaoks
-}
-
-
-Märgime, et $n$-Lie superalgebra korral defineeritakse tema
-\emph{ideaal} ning \emph{alamalgebra} täpselt nagu $n$-Lie algebra
+käivad definitsioonid ja tulemused. Seejuures märgime, et $n$-Lie
+superalgebra korral defineeritakse tema \emph{ideaal} ning
+\emph{alamalgebra} täpselt nagu $n$-Lie algebra
 korral (vt definitsioone \ref{def:n-lie-alamalgebra} ja
 \ref{def:n-lie-algebra-ideaal}).
 
@@ -792,7 +785,7 @@ korral (vt definitsioone \ref{def:n-lie-alamalgebra} ja
     $(\g, [\cdot, \dots, \cdot])$ ideaalid ning olgu
     $x_1, x_2, \dots, x_{n-1} \in \g$. Tähistame
     $\h = [\h_1, \h_2, \dots, \h_n]$ ja valime suvalise $h \in \h$.
-    Siis leiduvad $h_i \in \h_i$, $i = 1, 2, \dots, n$ nii, et
+    Siis leiduvad $h_i \in \h_i$, $i \in \{1, 2, \dots, n\}$, nii, et
     $h = [h_1, h_2, \dots, h_n]$ ja gradueeritud Filippovi samasuse
     järgi saame arvutada
     \begin{align*}
@@ -814,16 +807,15 @@ korral (vt definitsioone \ref{def:n-lie-alamalgebra} ja
 
 Arvestades lemmat saame defineerida järgmised mõisted.
 
-\textcolor{red}{TODO: vaata siin definitsioonis mõistete tõlked üle}
 \begin{dfn}
     Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie superalgebra ja $\h$
-    tema ideaal. Ideaali $\h$ poolt \emph{tuletatud reaks} nimetatakse
+    tema ideaal. Ideaali $\h$ \emph{tuletisjadaks} nimetatakse
     alamruumide jada $D^p(\h)$, $p \in \N$, kus
     \[
         D^0(\h) = \h \quad \text{ja} \quad
         D^{p+1}(\h) = [D^p(\h), \dots, D^p(\h)].
     \]
-    Ideaali $\h$ \emph{keskseks kahanevaks reaks} nimetatakse
+    Ideaali $\h$ \emph{kahanevaks tsentraaljadaks} nimetatakse
     alamruumide jada $C^p(\h)$, $p \in \N$, kus
     \[
         C^0(\h) = \h \quad \text{ja} \quad
@@ -1235,17 +1227,16 @@ Lause tõestusest võime teha järelduse.
     $D^p(\g_S) = \{0\}$, kui $p \geq 2$. \hfill \qed
 \end{jar}
 
-\textcolor{red}{TODO: tõlked}
 \begin{lau}
     Olgu $n$-Lie superalgebra $(\g, [\cdot, \dots, \cdot])$
     kommutaatori jälg $S$, millele vastab industeeritud
     $(n+1)$-Lie superalgebra $(\g_S, [\cdot, \dots, \cdot]_S)$.
     Tähistagu $\left(C^p(\g)\right)_{p=0}^\infty$ algebra
     $(\g, [\cdot, \dots, \cdot])$
-    keskset kahanevat jada, ning tähistagu
+    kahanevat tsentraaljada, ning tähistagu
     $\left(C^p(\g_S)\right)_{p=0}^\infty$ algebra
     $(\g, [\cdot, \dots, \cdot]_S)$
-    keskset kahanevat jada. Siis iga $p \in \N$ korral
+    kahanevat tsentraaljada. Siis iga $p \in \N$ korral
     \begin{align*}
         C^p(\g_S) \subseteq C^p(\g).
     \end{align*}

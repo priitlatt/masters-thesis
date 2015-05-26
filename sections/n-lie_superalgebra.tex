@@ -32,9 +32,8 @@ Kui $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$ on
 lõplikumõõtmeline ning otseliidetavate $\V_{\overline{0}}$ ja
 $\V_{\overline{1}}$ dimensioonid on vastavalt $m$ ja $n$, siis
 me ütleme, et supervektorruumi $\V$ \emph{dimensioon} on $m|n$.
-
-Kui supervektorruumi element $x \in \V$ korral
-$x \in \V_{\overline{0}} \cup \V_{\overline{1}}$, siis ütleme, et
+Kui nullist erineva supervektorruumi elemendi $x \in \V \setminus \{0\}$
+korral $x \in \V_{\overline{0}} \cup \V_{\overline{1}}$, siis ütleme, et
 vektor $x$ on \emph{homogeenne}. Homogeensete vektorite korral on
 otstarbekas vaadelda kujutust $|\cdot| \col \V \to \Z_2$, mis on defineeritud
 võrdusega
@@ -1060,13 +1059,11 @@ Saadud kujutuse tähtsamad omadused võtab kokku järgmine lemma.
                 \right| = \sum_{i=1}^{n+1} |x_i|.
             \end{align*}
 
-            Eeldame viimaks, et kõik vektorid $x_i$, $i \in \{1, \dots, n+1\}$,
-            on paaritud. Siis $S(x_1) = \dots = S(x_{n+1}) = 0$ ja seega kehtib
-            $| \phi_S (x_1, \dots, x_{n+1}) | = |0|$. Samas otseliidetavad
-            $\V_{\overline{0}}$ ja $\V_{\overline{1}}$ on mõlemad vektorruumid
-            ning seega sisaldavad nullelementi. Seega on null ühel ja samal
-            ajal nii paaris- kui ka paaritu vektor ja seega nõutud samasus
-            kehtib.
+            Viimaks, kui kõik vektorid $x_1, \dots, x_{n+1}$ on paaritud,
+            siis $S(x_1) = \dots = S(x_{n+1}) = 0$ ja seega kehtib
+            $\phi_S (x_1, \dots, x_{n+1}) = 0$, mis tähendab, et tegu ei ole
+            homogeense elemendiga, ning gradueeringute kooskõla tingimus ei
+            oma sel juhul mõtet.
 
         \item Rakendame valemit \eqref{def:phi-s} ja arvutame
             \begin{align*}

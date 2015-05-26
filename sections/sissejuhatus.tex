@@ -21,6 +21,69 @@ nõndanimetatud \emph{Lie kolmanda teoreemi} tõttu on võimalik
 Lie rühmasid vaadelda Lie algebrate kontekstis ja see teebki Lie algebrad
 äärmiselt oluliseks ja efektiivseks tööriistaks.
 
+Käesolevas magistritöös uurime me Lie algebrate ühte võimalikku üldistust,
+milleks on $n$-Lie superalgebra. Ühelt poolt on sellise konstruktsiooni
+inspiratsiooniks Filippovi poolt artiklis \cite{filippov1985} tutvustatud ja
+uuritud \emph{$n$-Lie algebra} mõiste, kus binaarne kommutaator on asendatud
+$n$-aarse analoogiga. Teiselt poolt võtame aluseks \emph{Lie superalgebra},
+kus aluseks olev vektorruum on vahetatud \emph{supervektorruumi}, või
+teisiti öeldnuna $\Z_2$-gradueeritud vektorruumiga, mis ei ole tegelikult
+muud kui vektorruumide otsesumma,
+$\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$.
+
+Lie superalgebrate uurimine sai alguse 70. aastate esimeses pooles praktilisest
+vajadusest teoreetilises füüsikas kui tekkisid supersümmeetrilised
+väljateooriad, kus ühes formalismis kirjeldatakse nii välja kui ainet.
+Sellise füüsikalise nähtuse uurimiseks sobis hästi $\Z_2$-gradueeritud
+matemaatika, kus ühes tervikstruktuuris peitub tegelikult kaks erinevate
+omaduste alamstruktuuri. Koos sellega selgus ka Lie superalgebrate olulisus,
+ning neid uuriti üsna põhjalikult. Näiteks klassifitseeris Kac\footnote{
+Victor Gershevich Kac (1943), vene ja ameerika matemaatik}
+77. aastal Lie superalgebrad üle algebraliselt kinniste nullkarakteristikaga
+korpuste. Samas pärast seda ei ole pea 30 aasta jooksul selles vallas suuri
+edusamme tehtud ja Lie superalgebrate esituste teooria pole siiani
+täielikult välja arendatud \cite{musson2012lie}.
+
+Tuginedes $n$-Lie algebra ja Lie superalgebra mõistetele defineerime
+\emph{$n$-Lie superalgebra} nagu seda on tehtud artiklis \cite{Abramov:2014}.
+Edasi uurime tema olulisemaid omadusi ning vaatame erijuhul $n = 3$ kuni
+kolme generaatoriga algebrate klassifikatsiooni üle korpuse $\C$.
+
+\bigskip
+
+Käesolev magistritöö koosneb neljast peatükist ning ühest lisast.
+
+Esimeses peatükis tuletame meelde klassikalise Lie algebrate teooria ning
+rikastame seda mitmete näidetega. Selleks vaatleme kõigepealt tuntud
+maatriksrühmi ning toome sisse üldistatud eksponentsiaalkujutuse mõiste,
+mille abil jõuame Lie algebrateni. Lõpetuseks meenutame mõned klassikalised
+definitsioonid algebraliste struktuuride vallast Lie algebrate seades, mida
+on tarvis edasise mõistmisel.
+
+Teises peatükis rakendame Filippovi konstruktsiooni ning defineerime $n$-Lie
+algebra ja tutvustame artiklitest \cite{AKMS:2014, AMS:2011}
+pärinevat konstruktsiooni $n$-Lie algebrast $(n+1)$-Lie algebra indutseerimiseks.
+Samuti tõestame mõned tulemused artiklist \cite{AKMS:2014}, millele autorid
+ei olnud põhjendusi kaasa andnud. Peatüki lõpus toome Nambu mehaanikast
+konkreetse näite $n$-Lie algebra kohta.
+
+Kolmas peatükk algab Lie superalgebra ja tema omaduste tutvustamisega. Seejärel
+anname artikli \cite{Abramov:2014} põhjal $n$-Lie superalgebra definitsiooni,
+mida rikastame näitega, kus näeme, et kasutades teatud gradueeritud
+kommutaatorit moodustavad supervektorruumi endomorfismid $n$-Lie superalgebra.
+Pärast olulisemate omadustega tutvumist rakendame artiklite
+\cite{Abramov:2014,AKMS:2014} ideid ning indutseerime $n$-Lie superalgebra
+põhjal $(n+1)$-Lie superalgebra.
+
+Töö lõpetab peatükk, kus uuritakse ternaarseid Lie superalgebraid, millel
+on kuni $4$ generaatorit ja algebrale aluseks olev supervektorruum on
+üle kompleksarvude korpuse $\C$. Kirjeldame algortimi, mille abil on võimalik
+$3$-Lie superalgebraid klassifitseerida ning rakendame seda algoritmi
+$3$-Lie superalgebrate korral, mille supervektorruumi dimensioon on $m|n$, kus
+$m + n \leq 4$.
+
+\bigskip
+
 Tähistagu kõikjal järgnevas $K$ nullkarakteristikaga korpust ning $\V$
 vektorruumi üle korpuse $K$. Ruumi kokkuhoiu ja mugavuse mõttes
 kasutame edaspidi vajaduse korral summade tähistamisel

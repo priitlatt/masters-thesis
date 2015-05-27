@@ -25,8 +25,8 @@ $2|1$ ja olgu tema generaatoriteks $\{ e_1, e_2, f_1 \}$. Siis
 \end{align*}
 kus $\l_1, \l_2, \l_3, \l_4, \m_1, \m_2 \in \C$ on suvalised skalaarid.
 
-Algoritmi tulemusel saame $24$ mittetriviaalset kitsendust\footnote{
-Need on leitavad veebilehelt
+Algoritmi tulemusel saame $24$ mittetriviaalset
+kitsendust\footnote{Need on leitavad veebilehelt
 \url{http://priitlatt.github.io/masters-thesis/kitsendused/2_1.txt}},
 mida $3$-Lie superalgebra $\g$ struktuurikonstandid rahuldama peavad.
 Kitsenduste mittetriviaalseteks lahenditeks sobivad seejuures
@@ -63,10 +63,10 @@ struktuurikonstantide komplektid
 \renewcommand\arraystretch{1}
 kus $c_1, c_2, c_3, c_4 \in \C \setminus \{0\}$ on vabad muutujad.
 
-\begin{thm}
+\begin{lau}
     Olgu $3$-Lie superalgebra $\g$ supervektorruumi dimensioon $2|1$.
     Siis $\g$ on kas Abeli Lie superalgebra või tema mittetriviaalsed
-    kommutatsiooniseosed on
+    kommutatsiooniseosed avalduvad kujul
     \renewcommand\arraystretch{1.2}
     \begin{align}
         & \left\{
@@ -74,10 +74,45 @@ kus $c_1, c_2, c_3, c_4 \in \C \setminus \{0\}$ on vabad muutujad.
                 [e_1, f_1, f_1] = c_1 e_1 + c_2 e_2, \\
                 [e_2, f_1, f_1] = -\frac{c_1^2}{c_2} e_1 - c_1 e_2, \\
             \end{matrix*}
-        \right. \\[0.2cm]
-        &\ \ \ [e_1, e_2, f_1] = c f_1, \\[0.2cm]
-        &\ \ \ [f_1, f_1, f_1] = c f_1,
+        \right. \label{samasus:2|1 - 1} \\[0.2cm]
+        &\ \ \ [e_1, e_2, f_1] = c f_1, \label{samasus:2|1 - 2} \\[0.2cm]
+        &\ \ \ [f_1, f_1, f_1] = c f_1, \label{samasus:2|1 - 3}
     \end{align}
     \renewcommand\arraystretch{1}
     kus $c, c_1, c_2 \in \C \setminus \{ 0 \}$ on vabad muutujad.
+\end{lau}
+
+Paneme tähele, et sooritades muutujavahetuse $e_1 = c e_1'$ saame samasuse
+\eqref{samasus:2|1 - 2} teisendada kujule
+\[ [e_1', e_2, f_1] = f_1. \]
+Analoogiliselt saame teisenduse $f_1 = \sqrt{c} f_1'$ abil samasuse
+\eqref{samasus:2|1 - 3} asemel
+\[ [f_1', f_1', f_1'] = f_1'. \]
+Lõpetuseks, kui vaatleme muutujavahetusi $e_1 = c_2 e_1'$, $e_2 = c_1 e_2'$
+ja $f_1 = \sqrt{c_1} f_1'$, siis on vahetult kontrollitav, et seosed
+\eqref{samasus:2|1 - 1} saavad kuju
+\[ \left\{
+    \begin{matrix*}[l]
+        [e_1', f_1', f_1'] = e_1' + e_2', \\
+        [e_2', f_1', f_1'] = -e_1' - e_2', \\
+    \end{matrix*}
+\right. \]
+mis kokkuvõttes tähendab, et me oleme tõestanud järgmise teoreemi.
+
+\begin{thm}
+    Olgu $3$-Lie superalgebra $\g$ supervektorruumi dimensioon on $2|1$.
+    Siis $\g$ on kas Abeli Lie superalgebra, või ta on isomorfne $3$-Lie
+    superalgebraga $\h$, mille mittetriviaalsed kommutatsiooniseosed on kas
+    \[ \left\{
+        \begin{matrix*}[l]
+            [e_1, f_1, f_1] = e_1 + e_2, \\
+            [e_2, f_1, f_1] = -e_1 - e_2, \\
+        \end{matrix*}
+    \right. \]
+    \[ [e_1, e_1, f_1] = f_1, \]
+    või
+    \[ [f_1, f_1, f_1] = f_1, \]
+    kus $e_1$ ja $e_2$ on $\h$ paarisgeneraatorid ning $f_1$ on $\h$ paaritu
+    generaator.
 \end{thm}
+

@@ -58,10 +58,10 @@ mittetriviaalseteks lahenditeks sobivad struktuurikonstantide komplektid
 \renewcommand\arraystretch{1}
 kus $c_1, c_2, c_3, c_4 \in \C \setminus \{0\}$ on vabad muutujad.
 
-\begin{lau}
+\begin{lau} \label{lause:0|2 seosed}
     Olgu $3$-Lie superalgebra $\g$ supervektorruumi dimensioon on $0|2$.
     Siis $\g$ on kas Abeli Lie superalgebra, või tema mittetriviaalsed
-    kommutatsiooniseosed on
+    kommutatsiooniseosed on kujul
     \renewcommand\arraystretch{1.5}
     \begin{align}
         & \left\{
@@ -72,35 +72,51 @@ kus $c_1, c_2, c_3, c_4 \in \C \setminus \{0\}$ on vabad muutujad.
                 [f_2, f_2, f_2] = -\frac{c_2^3}{c_1^2} f_1 +
                     \frac{c_2^2}{c_1} f_2, \\
             \end{matrix*}
-        \right. \\[0.2cm]
-        &\ \ \ [f_1, f_1, f_1] = c f_2, \\[0.2cm]
-        &\ \ \ [f_2, f_2, f_2] = c f_1,
+        \right. \label{samasus:0|2 - 1} \\[0.2cm]
+        &\ \ \ [f_1, f_1, f_1] = c f_2, \label{samasus:0|2 - 2} \\[0.2cm]
+        &\ \ \ [f_2, f_2, f_2] = c f_1, \label{samasus:0|2 - 3}
     \end{align}
     \renewcommand\arraystretch{1}
     kus $c, c_1, c_2 \in \C \setminus \{ 0 \}$ on vabad muutujad.
 \end{lau}
 
 Sooritades muutujavahetused $f_1 = f_2'$ ja $f_2 = f_1'$ annavad
-eeskirjad $[f_1, f_1, f_1] = c f_2$ ja $[f_2, f_2, f_2] = c f_1$
-tegelikult samad kommutatsiooniseosed. Seega kehtib
+eeskirjad \eqref{samasus:0|2 - 2} ja \eqref{samasus:0|2 - 3}
+tegelikult samad kommutatsiooniseosed. Enamgi veel, sooritades muutujavahetuse
+$f_2 = \frac{f_2'}{c}$, saame seose \eqref{samasus:0|2 - 2} viia kujule
+\[ [f_1, f_1, f_1] = f_2'. \]
+Vaadeldes muutujavahetusi $f_1 = \sqrt{c_1} f_1'$ ja
+$f_2 = \frac{c_2}{\sqrt{c_1}} f_2'$ on vahetu kontrolli põhjal selge, et
+samasused \eqref{samasus:0|2 - 1} on mistahes $c_1, c_2 \in \C \setminus \{0\}$
+korral võimalik teisendada kujule
+\begin{align*}
+    \left\{
+        \begin{matrix*}[l]
+            [f_1', f_1', f_1'] = -f_1' + f_2', \\
+            [f_1', f_1', f_2'] = -f_1' + f_2', \\
+            [f_1', f_2', f_2'] = -f_1' + f_2', \\
+            [f_2', f_2', f_2'] = -f_1' + f_2'. \\
+        \end{matrix*}
+    \right.
+\end{align*}
+
+Kokkuvõttes kehtib seega järgmine teoreem.
 \begin{thm}
     Olgu $3$-Lie superalgebra $\g$ supervektorruumi dimensioon on $0|2$.
-    Siis $\g$ on kas Abeli Lie superalgebra, või tema mittetriviaalsed
-    kommutatsiooniseosed on
-    \renewcommand\arraystretch{1.5}
-    \begin{align}
-        & \left\{
-            \begin{matrix*}[l]
-                [f_1, f_1, f_1] = -c_1 f_1 + \frac{c_1^2}{c_2} f_2, \\
-                [f_1, f_1, f_2] = -c_2 f_1 + c_1 f_2, \\
-                [f_1, f_2, f_2] = -\frac{c_2^2}{c_1} f_1 + c_2 f_2, \\
-                [f_2, f_2, f_2] = -\frac{c_2^3}{c_1^2} f_1 +
-                    \frac{c_2^2}{c_1} f_2, \\
-            \end{matrix*}
-        \right. \\[0.2cm]
-        &\ \ \ [f_1, f_1, f_1] = c f_2,
-    \end{align}
-    \renewcommand\arraystretch{1}
-    kus $c, c_1, c_2 \in \C \setminus \{ 0 \}$ on vabad muutujad.
+    Siis $\g$ on kas Abeli Lie superalgebra, või ta on isomorfne $3$-Lie
+    superalgebraga $\h$, mille mittetriviaalsed kommutatsiooniseosed on kas
+    \[ \left\{
+        \begin{matrix*}[l]
+            [f_1, f_1, f_1] = -f_1 + f_2, \\
+            [f_1, f_1, f_2] = -f_1 + f_2, \\
+            [f_1, f_2, f_2] = -f_1 + f_2, \\
+            [f_2, f_2, f_2] = -f_1 + f_2, \\
+        \end{matrix*}
+    \right. \]
+    või
+    \[
+        [f_1, f_1, f_1] = f_2,
+    \]
+    kus $f_1$ ja $f_2$ on $\h$ paaritud generaatorid.
 \end{thm}
 

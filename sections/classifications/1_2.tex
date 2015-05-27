@@ -77,18 +77,18 @@ mittetriviaalseteks lahenditeks sobivad struktuurikonstantide komplektid
 \renewcommand\arraystretch{1}
 kus $c_1, c_2, c_3, c_4 \in \C \setminus \{0\}$ on vabad muutujad.
 
-\begin{lau}
+\begin{lau} \label{lause:1|2 seosed}
     $3$-Lie superalgebra, mille supervektorruumi dimensioon on $1|2$, on Abeli
     Lie superalgebra, või tema mittetriviaalsed kommutatsiooniseosed on
     \renewcommand\arraystretch{1.2}
     \begin{align}
         & \left\{
             \begin{matrix*}[l]
-                [f_1, f_1, f_1] = -\m_4 f_1 + \frac{\m_4^2}{\m_6} f_2, \\
-                [f_1, f_1, f_2] = -\m_6 f_1 + c_1 f_2, \\
-                [f_1, f_2, f_2] = -\frac{\m_6^2}{\m_4} f_1 + c_2 f_2, \\
-                [f_2, f_2, f_2] = -\frac{\m_6^3}{\m_4^2} f_1 +
-                    \frac{\m_6^2}{\m_4} f_2, \\
+                [f_1, f_1, f_1] = -c_1 f_1 + \frac{c_1^2}{c_2} f_2, \\
+                [f_1, f_1, f_2] = -c_2 f_1 + c_1 f_2, \\
+                [f_1, f_2, f_2] = -\frac{c_2^2}{c_1} f_1 + c_2 f_2, \\
+                [f_2, f_2, f_2] = -\frac{c_2^3}{c_1^2} f_1 +
+                    \frac{c_2^2}{c_1} f_2, \\
             \end{matrix*}
         \right. \\[0.2cm]
         %
@@ -100,28 +100,25 @@ kus $c_1, c_2, c_3, c_4 \in \C \setminus \{0\}$ on vabad muutujad.
     kus $c, c_1, c_2 \in \C \setminus \{ 0 \}$ on vabad muutujad.
 \end{lau}
 
-Analoogiliselt eelnevale määravad $[f_1, f_1, f_1] = c f_2$ ja
-$[f_2, f_2, f_2] = c f_1$ tegelikult täpselt samad algebrad.
+Kuna lauses \ref{lause:1|2 seosed} on täpselt samad seosed nagu lauses
+\ref{lause:0|2 seosed}, siis saame analoogiliselt eelnevas punktis kirjeldatule
+järgneva teoreemi.
 
 \begin{thm}
     Olgu $3$-Lie superalgebra $\g$ supervektorruumi dimensioon on $1|2$.
-    Siis $\g$ on kas Abeli Lie superalgebra, või tema mittetriviaalsed
-    kommutatsiooniseosed on
-    \renewcommand\arraystretch{1.2}
-    \begin{align}
-        & \left\{
+    Siis $\g$ on kas Abeli Lie superalgebra, või ta on isomorfne $3$-Lie
+    superalgebraga $\h$, mille mittetriviaalsed kommutatsiooniseosed on kas
+    \[ \left\{
             \begin{matrix*}[l]
-                [f_1, f_1, f_1] = -\m_4 f_1 + \frac{\m_4^2}{\m_6} f_2, \\
-                [f_1, f_1, f_2] = -\m_6 f_1 + c_1 f_2, \\
-                [f_1, f_2, f_2] = -\frac{\m_6^2}{\m_4} f_1 + c_2 f_2, \\
-                [f_2, f_2, f_2] = -\frac{\m_6^3}{\m_4^2} f_1 +
-                    \frac{\m_6^2}{\m_4} f_2, \\
+                [f_1, f_1, f_1] = -f_1 + f_2, \\
+                [f_1, f_1, f_2] = -f_1 + f_2, \\
+                [f_1, f_2, f_2] = -f_1 + f_2, \\
+                [f_2, f_2, f_2] = -f_1 + f_2, \\
             \end{matrix*}
-        \right. \\[0.2cm]
-        &\ \ \ [f_1, f_1, f_1] = c f_2,
-    \end{align}
-    \renewcommand\arraystretch{1}
-    kus $c, c_1, c_2 \in \C \setminus \{ 0 \}$ on vabad muutujad.
+    \right. \]
+    või
+    \[ [f_1, f_1, f_1]  = f_2, \]
+    kus $f_1$ ja $f_2$ on $\h$ paaritud generaatorid.
 \end{thm}
 
 Võttes arvesse eelmise punkti tulemusi näeme, et iga $3$-Lie superalgebra

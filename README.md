@@ -1,3 +1,3 @@
-### Induced n-Lie (super)algebras ###
+### n-Lie superalgebras ###
 
-PDF version of the thesis can be seen [here](http://priitlatt.github.io/masters-thesis/thesis.pdf).
+Compiled PDF version of the thesis can be seen [here](http://priitlatt.github.io/masters-thesis/thesis.pdf).

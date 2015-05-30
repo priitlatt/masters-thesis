@@ -625,11 +625,16 @@ Tuues sisse väliskorrutise
     \right),
 \]
 siis võime Poissoni sulu \eqref{eq:poisson-brac-nabla} panna kirja kujul
-\[
+\begin{align}\label{eq:poisson-brac-nabla2}
     \{f_1, f_2\} = \sum_{i=1}^{n} \sum_{j=1}^{n} \eta_{ij}
     \frac{\partial}{\partial x_i} \wedge
     \frac{\partial}{\partial x_j} (f_1, f_2).
-\]
+\end{align}
+
+Et sulg \eqref{eq:poisson-brac-nabla2} määraks Poissoni muutkonna struktuuri,
+peab ta rahuldama ka Jacobi samasust. Osutub, et Jacobi samasuse kehtimine
+sulu \eqref{eq:poisson-brac-nabla2} korral on samaväärne tingimusega,
+et Schouteni sulg tensorvärljast $\eta$ iseenesega on null. \cite{takhtajan1994}
 
 Nambu asendas oma käsitluses binaarse Poissoni sulu ternaarse või koguni
 $n$-aarse operatsiooniga muutkonna $M$ vaadeldavate algebral $A$.

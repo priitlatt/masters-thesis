@@ -348,7 +348,7 @@ seda on tehtud artiklis \cite{Abramov:2014}.
             \end{split}\end{align}
             kus $\mathbf{x} = (x_1, \dots, x_n)$ ja
             $\mathbf{y} = (y_1, \dots, y_{n-1})$ ning
-            $|\mathbf{x}|_i = \sum_{j=1}^{i} |x_i|$.
+            $|\mathbf{x}|_i = \sum_{j=1}^{i} |x_j|$.
     \end{enumerate}
 \end{dfn}
 
@@ -396,8 +396,8 @@ Kokkuvõttes jäävad huvipakkuvate struktuurikonstantidena alles ainult:
             \alpha_1 \alpha_2 \dots \alpha_k i_1 i_2 \dots i_{n-k}
         }^{B} z_{B}$,
 \end{enumerate}
-kus $0 < k < n$, $\alpha_1, \alpha_2, \dots, \alpha_n,
-i_1, i_2, \dots, i_n \in \{1, 2, \dots, n\}$, ja $k < l$ korral
+kus $0 < k < n$, $1 \leq \alpha_1, \alpha_2, \dots, \alpha_n \leq p$,
+$1 \leq i_1, i_2, \dots, i_n \leq q$, ja $k < l$ korral
 $\alpha_k < \alpha_l$ ning $i_k < i_l$.
 
 Struktuurikonstantide kasutamise, seda eelkõige just ternaarsete Lie
@@ -1226,8 +1226,8 @@ Lause tõestusest võime teha järelduse.
 
 \begin{lau}
     Olgu $n$-Lie superalgebra $(\g, [\cdot, \dots, \cdot])$
-    kommutaatori jälg $S$, millele vastab industeeritud
-    $(n+1)$-Lie superalgebra $(\g_S, [\cdot, \dots, \cdot]_S)$.
+    kommutaatori superjälg $S$ ja vastaku superjäljele $S$
+    industeeritud $(n+1)$-Lie superalgebra $(\g_S, [\cdot, \dots, \cdot]_S)$.
     Tähistagu $\left(C^p(\g)\right)_{p=0}^\infty$ algebra
     $(\g, [\cdot, \dots, \cdot])$
     kahanevat tsentraaljada, ning tähistagu

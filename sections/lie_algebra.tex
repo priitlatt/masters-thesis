@@ -25,12 +25,12 @@ $\V_2$ langevad kokku, siis ütleme me kujutuse $\phi$ kohta
 endomorfismide hulka tähistatakse seejuures $\End \V$.
 
 Algebrast on teada, et lineaarteisendusel eksisteerib pöördteisendus siis ja
-ainult siis, kui ta on nii üks-ühene kui ka pealeteisendus. Kõigi vektorruumi
+ainult siis, kui ta on nii üksühene kui ka pealeteisendus. Kõigi vektorruumi
 $\V$ pööratavate lineaarteisenduste rühma nimetatakse vektorruumi $\V$
 \emph{pööratavate lineaarteisenduste rühmaks}\footnote{Inglise keeles
 \emph{general linear group}.} ja tähistatakse $\GL(\V)$. Selge, et selle
 rühma korrutamiseks on tavaline lineaarteisenduste kompositsioon.
-Lõplikumõõtmelise vektorruumi lineaarteisendus on pööratav parajasti siis
+Lõplikumõõtmelise vektorruumi lineaarteisendus on pööratav parajasti siis,
 kui tema determinant on nullist erinev. Seega kuuluvad rühma $\GL(\V)$
 need ja ainult need lineaarteisendused, mille determinant pole null.
 Kui vaatleme vaid lineaarteisendusi, mille determinant on üks, saame olulise
@@ -48,7 +48,7 @@ selle baasi suhtes on $(a^i_j)$, mis on määratud valemiga
     \phi(e_j) = \sum_{i=1}^{n} a^i_j e_i.
 \end{align*}
 
-Selge, et vaadeldes rühmi $\GL(\V)$ ja $\SL(\V)$ maatriksrühmadena
+Selge, et vaadeldes rühmi $\GL(\V)$ ja $\SL(\V)$ maatriksrühmadena,
 on rühma tehteks juba tavaline maatriksite korrutamine. Ilmselt saab
 nimetatud maatriksrühmad defineerida nii reaal- kui ka kompleksarvude korral.
 Sellest lähtuvalt kasutatakse sageli
@@ -89,7 +89,7 @@ Kui vetorruumis $\V$ on antud baas $\{e_1, e_2, \dots, e_n\}$, siis saab
 bilineaarvormi $\blinv \col \V \times \V \to K$ esitada talle vastava maatriksi
 $B = (b_{ij})$ abil, kus $b_{ij} = (e_i, e_j)$. Tõepoolest, kui
 meil on antud vektorid $x = \lambda^i e_i$ ja $y = \mu^j e_j$,
-siis kasutades $\blinv$ lineaarsust mõlema muutuja järgi võime arvutada
+siis kasutades $\blinv$ lineaarsust mõlema muutuja järgi, võime arvutada
 \begin{align*}
     (x, y) = \sum_{i, j} b_{ij} \lambda^i \mu^j.
 \end{align*}
@@ -104,7 +104,7 @@ bilineaarvormi korral rahuldab talle vastav maatriks $B$ seost
 $B^T = -B$.
 
 \begin{dfn}
-    Olgu $\V$ vektorruum kus on fikseeritud mingi baas, olgu $\phi$
+    Olgu $\V$ vektorruum, kus on fikseeritud mingi baas, olgu $\phi$
     vektorruumi $\V$ lineaarteisendus ning olgu $A = (a^i_j)$
     lineaarteisenduse $\phi$ maatriks fikseeritud baasi suhtes.
     Lineaarteisenduse $\phi$ \emph{jäljeks} nimetatakse elementi
@@ -120,8 +120,8 @@ maatriks $A$ on \emph{jäljeta}.
 \begin{naide}
     On hästi teada, et vektorruumi $\V$ endomorfismide hulk $\End \V$
     on ka ise vektorruum, kusjuures kui vektorruumi $\V$ dimensioon
-    on $\dim(\V) = n$, siis ruumi $\End \V$ dimendsioon on
-    $\dim \left(\End \V\right) = n^2$. Kasutades jälge $\Tr_\V$ saame
+    on $\dim(\V) = n$, siis ruumi $\End \V$ dimensioon on
+    $\dim \left(\End \V\right) = n^2$. Kasutades jälge $\Tr_\V$, saame
     defineerida bilineaarvormi
     $\blinv \col \End \V \times \End \V \to K$ järgmiselt:
     \begin{align*}
@@ -129,10 +129,10 @@ maatriks $A$ on \emph{jäljeta}.
     \end{align*}
     kus $A$ ja $B$ on maatriksid, mis vastavad vektorruumi $\End \V$
     teisendustele mingi baasi suhtes. Selge, et selliselt defineeritud
-    bilineaarvorm sümmeetriline.
+    bilineaarvorm on sümmeetriline.
 \end{naide}
 
-Kasutades bilineaarvormi sümmeetrilisuse või kaldsümmeetrilisuse mõistet
+Kasutades bilineaarvormi sümmeetrilisuse või kaldsümmeetrilisuse mõistet,
 saame sisse tuua \emph{ortogonaalsuse} mõiste. Me ütleme, et vektorid $x$ ja
 $y$ on bilineaarvormi $\blinv$ suhtes ortogonaalsed, kui $(x, y) = 0$. Selge,
 et ortogonaalsuse tingimus ise on sümmeetriline, see tähendab kui $x$ on
@@ -147,7 +147,7 @@ Edasises vaatleme ortogonaalseid ja sümplektilisi rühmi ning selleks
 nõuame, et vaatluse all olevad bilineaarvormid oleksid mittesingulaarsed
 ehk regulaarsed, see tähendab kui $(x, y) = 0$ iga $y \in \V$ korral, siis
 järelikult $x = 0$. Osutub, et bilineaarvorm $\blinv$ on regulaarne parajasti
-siis, kui temale vastav maatiks $B = (b^i_j)$ on pööratav, mis tähendab,
+siis, kui temale vastav maatriks $B = (b^i_j)$ on pööratav, mis tähendab,
 et $\det B \neq 0$.
 
 \begin{dfn}
@@ -162,7 +162,7 @@ et $\det B \neq 0$.
 Kui $x$ on ortogonaalse lineaarteisenduse $\phi$ tuumast, siis
 kehtib $\phi(x) = 0$. Viimane aga tähendab, et iga $y \in \V$ korral
 $(x, y) = (\phi(x), \phi(y)) = (0, \phi(y)) = 0$. Kokkuvõttes,
-et $\blinv$ on regulaarne, siis järelikult $x = 0$ ja $\phi$ on üks-ühene.
+et $\blinv$ on regulaarne, siis järelikult $x = 0$ ja $\phi$ on üksühene.
 Kui nüüd veel $\V$ on lõplikumõõtmeline, siis peab $\phi$ olema pööratav.
 Seda arutelu silmas pidades võime öelda, et ortogonaalsed lineaarteisendused
 moodustavad rühma, mida me nimetame \emph{ortogonaalsete
@@ -189,7 +189,7 @@ vektorruumides, mille dimensioon on paarisarvuline, see tähendab
 $\dim \V = 2n$, kus $n \in \N$. Sümplektilised teisendused moodustavad
 \emph{sümplektiliste rühma}, mida tähistatakse kompleksel juhul
 $\Sp(n, \C)$. Reaalsete sümplektiliste
-teisenduste rühma saame kui vaatleme ühisosa rühmaga $\GL(2n, \R)$:
+teisenduste rühma saame, kui vaatleme ühisosa rühmaga $\GL(2n, \R)$:
 \begin{align*}
     \Sp(n, \R) = \Sp(n, \C) \cap \GL(2n, \R).
 \end{align*}
@@ -199,13 +199,13 @@ teisenduste rühma saame kui vaatleme ühisosa rühmaga $\GL(2n, \R)$:
 Kõikide seni vaadeldud maatriksrühmade esindajad peavad
 vastavatesse rühmadesse kuulumiseks rahuldama mingeid algebralisi tingimusi.
 Need tingimused võib kirja panna maatriksite elementide kaudu, mille
-tulemusel saaame me mittelineaarseid võrrandeid, mis määravad rühma kuulumise.
+tulemusel saame me mittelineaarsed võrrandid, mis määravad rühma kuulumise.
 Osutub, et need tingimused on võimalik asendada mingi hulga ekvivalentsete
 lineaarsete võrranditega ja selline üleminek mittelineaarselt süsteemilt
 lineaarsele ongi võtmetähtsusega idee üleminekul Lie rühmadelt Lie
 algebratele \cite{johan1989survey}.
 
-Klassikaliseks viisiks kuidas sellist üleminekut realiseeritakse on
+Klassikaliseks viisiks, kuidas sellist üleminekut realiseeritakse, on
 \emph{eksponentsiaalkujutuse} kasutuselevõtt. Nagu nimigi viitab, on
 tegu analüüsist tuttava kujutuse üldistusega. Kuivõrd meil oli
 siiani tegemist vaid maatriksrühmadega, siis läheme siin ka edasi
@@ -227,28 +227,28 @@ $A^k = \underbrace{A \cdot A \cdot \ldots \cdot A}_{k\ \text{korda}}$.
     \end{align}
 \end{dfn}
 
-Ilmselt tuleks definitsiooni korrektsuses veendumaks näidata, et suvalise
+Veendumaks definitsiooni korrektsuses tuleks näidata, et suvalise
 maatriksi $X$ korral rida \eqref{eq:mat-exp} koondub. Selleks meenutame,
 et $n \times n$ maatriksi $X = (X_{ij})$ normi arvutatakse valemi
 \begin{align}\label{eq:mat-norm}
     \| X \| = \left( \sum_{i,j=1}^n |X_{ij}|^2 \right)^{\frac{1}{2}}
 \end{align}
 järgi. Arvestades, et $\| XY \| \le \|X\| \|Y\|$, siis $\|X^k\| \le \|X\|^k$.
-Rakendades nüüd normi \eqref{eq:mat-norm} rea \eqref{eq:mat-exp} liikmetele
+Rakendades nüüd normi \eqref{eq:mat-norm} rea \eqref{eq:mat-exp} liikmetele,
 saame
 \begin{align*}
     \sum_{k=0}^\infty \left\lVert \frac{X^k}{k!} \right\rVert \le
     \sum_{k=0}^\infty \frac{\|X\|^k}{k!} = e^{\|X\|} < \infty,
 \end{align*}
 mis tähendab, et rida \eqref{eq:mat-exp} koondub absoluutselt ja seega
-ta ka koondub. Märkamaks, et $e^X$ on pidev funktsioon märgime esiteks,
+ta ka koondub. Märkamaks, et $e^X$ on pidev funktsioon, märgime esiteks,
 et $X^k$ on argumendi $X$ suhtes pidev funktsioon ja seega on rea
 \eqref{eq:mat-exp} osasummad pidevad. Teisalt paneme tähele, et
 \eqref{eq:mat-exp} koondub ühtlaselt hulkadel, mis on kujul
 $\{ X : \|X\| \le R \}$, ja seega on rida kokkuvõttes pidev.
 
 Niisiis on maatrikseksponentsiaal korrektselt defineeritud ning ka pidev.
-Järgmises lauses on toodud rida eksponentsiaalkujutuse põhilisi omadusi,
+Järgmises lauses on toodud eksponentsiaalkujutuse põhilised omadused,
 mille võrdlemisi lihtsad tõestused võib huvi korral leida näiteks
 raamatust \cite{hall2003lie}.
 
@@ -274,7 +274,7 @@ Ostutub, et rühma $\GL(n, \C)$ ühikelemendi mingis ümbruses on võimalik
 suvaline maatriks esitada kujul $e^A$, kus $A$ on mingi $n \times n$
 maatriks. Rühma $\GL(n, \R)$ korral on maatriks $A$ reaalne. Oluline on
 tähele panna, et vaadeldes rühma $\GL(n, \R)$, ei ole eksponentsiaalkujutuse
-kujutis terve rühm. Selles veenumiseks piisab võtta $n = 1$ ning näha, et
+kujutis terve rühm. Selles veendumiseks piisab võtta $n = 1$ ning näha, et
 $\exp \left(\GL(1, \R)\right) = \R^+$, ehk kujutiseks on reaaltelje positiivne
 osa, samas kui $\GL(1, \R) = \R \setminus \{0\}$ ehk reaaltelg ilma
 nullpunktita.
@@ -282,20 +282,20 @@ nullpunktita.
 Niisiis eksponentsiaalkujutust kasutades on oht kaotada rühma globaalne struktuur,
 samas kui lokaalne struktuur säilib.
 
-Kui maatriksi $A$ korral soovime, et maatriks $e^A$ kuuluks mõnda puntis
+Kui soovime maatriksi $A$ korral, et maatriks $e^A$ kuuluks mõnda punktis
 \ref{subsec:mat-ryhmad} \nameref{subsec:mat-ryhmad} nimetatud rühma, tuleb
-maatriksile $A$ seada mingid lineaarsed kitsendused. Näiteks spetsiaalse
+maatriksile $A$ seada teatavad lineaarsed kitsendused. Näiteks spetsiaalse
 lineaarse rühma $\SL(n)$ korral võime mittelineaarse tingimuse $e^A$
-determinandi kohta asendada lineaarse tingimusega maatriksi $A$ jälje kohta
+determinandi kohta asendada lineaarse tingimusega maatriksi $A$ jälje kohta,
 kasutades lause \ref{lau:mat-exp-om} punkti \ref{om:mat-exp-7}. Nii on näiteks
 $\det e^A = 1$ parajasti siis, kui $\Tr_\V A = 0$.
 
 Kokkuvõttes nägime, et eksponentsiaalkujutuse abil on võimalik asendada
 klassikalised maatriksrühmad maatrikshulkadega, millele on seatud
-teatud lineaarsed kitsendused. Selge, et need hulgad on kinnised
-lineaarkombinatsioonide suhtes ja nii võib neid vaadelda kui vektorruume.
+teatud lineaarsed kitsendused. Selge, et need hulgad on lineaarkombinatsioonide
+suhtes kinnised, ja nii võib neid vaadelda kui vektorruume.
 Tavalise maatriksite korrutamise osas kahjuks kinnisus säilida ei
-pruugi. Samas kui meil on $n \times n$ maatriksid $A$ ja $B$, mis on vastavalt
+pruugi. Samas, kui meil on $n \times n$ maatriksid $A$ ja $B$, mis on vastavalt
 kas kaldsümmeetrilised, rahuldavad anti-Hermite'i tingimust või neil
 puudub jälg, siis maatriksil $C = AB - BA$ on samuti selline omadus.
 Niisiis saadud maatrikshulgad ei moodusta ainuüksi vektorruumi,
@@ -303,7 +303,7 @@ vaid on kinnised ka teatud binaarse tehte suhtes.
 
 \subsection{Lie algebra definitsioon}
 
-Enne kui anname Lie algebra definitsiooni tuletame meelde, et \emph{algebraks}
+Enne kui anname Lie algebra definitsiooni, tuletame meelde, et \emph{algebraks}
 üle korpuse $K$ nimetatakse vektorruumi $\V$ üle korpuse $K$, millel on
 defineeritud bilineaarne korrutamine $\V \times \V \to \V$. Kui algebra
 tehe rahuldab assotsiatiivsuse tingimust, siis nimetatakse seda algebrat
@@ -314,9 +314,9 @@ vektorruumi $\End \V$ varustada ka teistsuguse korrutamisega ning saada uue
 algebralise struktuuri, kui võtame tehteks näiteks $f \circ g - g \circ f$.
 Üldiselt selline korrutamine aga enam assotsiatiivne ei ole.
 
-\begin{dfn}[Lie algebra]\label{def:lie-algebra}
+\begin{dfn}\label{def:lie-algebra}
     Algebrat $\g$ üle korpuse $K$ nimetatakse \emph{Lie algebraks}, kui
-    tema korrutamine $[\cdot, \cdot] \col \V \times \V \to \V$ rahuldab
+    tema korrutamine $[\cdot, \cdot] \col \g \times \g \to \g$ rahuldab
     kõikide $x, y, z \in \g$ tingimusi
     \begin{gather}
         [x, x] = 0,\label{id:bracket-antisymm} \\
@@ -328,12 +328,12 @@ algebralise struktuuri, kui võtame tehteks näiteks $f \circ g - g \circ f$.
 
 Me ütleme definitsioonis toodud korrutise $[x, y]$ kohta elementide $x$ ja
 $y$ \emph{Lie sulg}, ning bilineaarvormi $[\cdot, \cdot]$ nimetatakse ka
-\emph{kommutaator}. Definitsioonis toodud samasust \eqref{id:jacobi}
+\emph{kommutaatoriks}. Definitsioonis toodud samasust \eqref{id:jacobi}
 nimetatakse \emph{Jacobi samasuseks}. Sageli on otstarbekas tähistada Lie
 algebrat $\g$ paarina $(\g, [\cdot, \cdot])$.
 
 \begin{markus}
-    Mõnes käsitlustes antakse Lie algebrale veidi üldisem definitsioon,
+    Mõnes käsitluses antakse Lie algebrale veidi üldisem definitsioon,
     kui algebrat $\g$ ei vaaldeda mitte vektorruumina üle korpuse,
     vaid moodulina üle ringi, nagu seda on tehtud näiteks raamatus
     \cite{bourbaki1989lie}.
@@ -356,7 +356,7 @@ kommutatiivne Lie algebra.
     $x, y \in \g$ korral $[x, y] = 0$.
 \end{dfn}
 
-Rakendades võrdust \eqref{eq:bracket-antisymm} saame Jacobi samasuse
+Rakendades võrdust \eqref{eq:bracket-antisymm}, saame Jacobi samasuse
 kirjutada kujul
 \begin{align}\label{id:jacobi-modified}
     \brac{x}{\brac{y}{z}} = \brac{\brac{x}{y}}{z} + \brac{y}{\brac{x}{z}}.
@@ -372,7 +372,7 @@ Seega on Jacobi samasusel ka differentseerimise struktuur.
     saame algebrast $\A$ moodustada Lie algebra $\A_L$. Valemist
     \eqref{eq:naide-lie-sulg} järeldub vahetult, et Lie algebra
     definitsiooni nõue \eqref{id:bracket-antisymm} kehtib. Jacobi samasuse
-    kehvivuseks märgime, et rakendades korrutise $\star$ assotsiatiivsust
+    kehtivuseks märgime, et rakendades korrutise $\star$ assotsiatiivsust
     \begin{align*}
         &\left[x, \left[y, z\right]\right] + 
             \left[y, \left[z, x\right]\right] + 
@@ -403,7 +403,7 @@ $\mathfrak{gl(n)}$.
 
 Seni oleme me vaadelnud ainult selliseid Lie algebraid, kus kommutaator
 on antud kujul $[x, y] = xy - yx$. Rõhutame, et tegelikult on Lie algebra
-suvaline vektorruum, kus on anutd bilineaarne kaldsümmeetriline korrutamine,
+suvaline vektorruum, kus on antud bilineaarne kaldsümmeetriline korrutamine,
 mis rahuldab Jacobi samasust. Enamgi veel, kirjutis $xy - yx$ ei oma üldises
 situatsioonis üldse mõtet, kuna vektorruumil $\g$ ei pruugi olla defineeritud
 korrutamise operatsiooni. Seda asjaolu sobib hästi ilmestama järgmine näide.
@@ -463,7 +463,7 @@ korrutamise operatsiooni. Seda asjaolu sobib hästi ilmestama järgmine näide.
 Eeldame, et järgnevas on meil antud lõplikumõõtmeline Lie algebra $\g$,
 üle korpuse $K$, mille vektorruumil on fikseeritud baas
 $\{ e_1, e_2, \dots, e_n \}$. Siinjuures tuletame meelde, et Lie algebra
-aluseks oleva vektorruumi baasi elemente nimetatakse sageli selle
+aluseks oleva vektorruumi baasielemente nimetatakse sageli selle
 Lie algebra \emph{generaatoriteks}. Et Lie sulg
 $[\cdot, \cdot]$ on bilineaarne vorm, siis tema väärtused Lie algebral
 $\g$ on täielikult määratud, kui me teame millega võrduvad
@@ -500,7 +500,7 @@ ja seega jääb meile $[x, y]$ arvutamiseks lõpuks võrdus
     \emph{struktuurikonstantideks}.
 \end{dfn}
 
-Kasutades kommutaatori $[\cdot, \cdot]$ kaldsümmeetrilisust saame
+Kasutades kommutaatori $[\cdot, \cdot]$ kaldsümmeetrilisust, saame
 struktuurikonstantide kohta valemi
 \begin{align}\label{om:str-konst-kald-symm}
     K_{\alpha \beta}^{\lambda} = -K_{\beta \alpha}^{\lambda}.
@@ -563,8 +563,8 @@ rahuldama peavad.
     Arvutame Lie algebra $\su(2)$ generaatoritel Lie sulu väärtused
     ja leiame seeläbi struktuurikonstandid. Ilmselt suvalise
     $\alpha \in \{1, 2, 3\}$ korral $[\rho_\alpha, \rho_\alpha] = 0$.
-    Arvestades veel omadust \eqref{om:str-konst-kald-symm} on meile
-    huvi pakkuvad kommutaatorid on vaid kujul
+    Arvestades veel omadust \eqref{om:str-konst-kald-symm}, on meile
+    huvi pakkuvad kommutaatorid vaid kujul
     $[\rho_\alpha, \rho_\beta]$, kus $\alpha < \beta$.
     \begin{align}
         [\rho_1, \rho_2] &= \rho_1 \rho_2 - \rho_2 \rho_1 =
@@ -669,7 +669,7 @@ rahuldama peavad.
 Ilmselt sõltuvad Lie algebra struktuurikonstandid algebra vektorruumi
 baasist. Olgu $\{ e_1, e_2, \dots, e_n \}$ ja
 $\{ \hat{e}_1, \hat{e}_2, \dots, \hat{e}_n \}$ Lie algebra $\g$
-vektorruumi kaks erinevad baasi, ning olgu nad omavahel seoses
+vektorruumi kaks erinevat baasi, ning olgu nad omavahel seoses
 \begin{align}\label{eq:str-konst-baasi-yleminek-1}
     \hat{e}_\alpha = a_\alpha^\lambda e_\lambda.
 \end{align}
@@ -705,7 +705,7 @@ tähendab iga $x, y \in \g_1$ korral kehtib võrdus
     \varphi([x, y]_{\g_1}) = [\varphi(x), \varphi(y)]_{\g_2}.
 \end{align*}
 Homomorfismi $\varphi$ nimetatakse Lie algebrate \emph{isomorfismiks},
-kui $\varphi$ on ka üks-ühene ning pealekujutus. Klassikalisel viisil on
+kui $\varphi$ on ka üksühene ning pealekujutus. Klassikalisel viisil on
 defineeritud ka Lie algebrate \emph{endomorfismi} ning \emph{automorfismi}
 mõisted.
 
@@ -728,7 +728,7 @@ Lie algebrast $\g$ vektorruumi $\V$ endomorfismide ringi nii, et
 \end{align*}
 kõikide $x, y \in \g$ ja $v \in \V$ korral. Me ütleme, et esitus $\varphi$
 on \emph{täpne}, kui $\varphi(x) = 0$ siis ja ainult siis, kui $x = 0$. Ehk
-teisisõnu, esitus täpne parajasti siis, kui ta on üks-ühene.
+teisisõnu, esitus täpne parajasti siis, kui ta on üksühene.
 
 \begin{naide}\label{naide:adjoint-repr}
     Olgu $\g$ Lie algebra. Vaatleme lineaarset kujutust
@@ -741,10 +741,10 @@ teisisõnu, esitus täpne parajasti siis, kui ta on üks-ühene.
     \end{align}
     Kujutus $\ad \col \g \to \gl(\g)$ on Lie algebra $\g$ esitus. Seda esitust
     nimetatakse $\g$ \emph{adjungeeritud esituseks}. Märkamaks, et $\ad$ on
-    tõepoolest esitus märgime kõigepealt, et arvestades eeskirja
+    tõepoolest esitus, märgime kõigepealt, et arvestades eeskirja
     \eqref{def:ad} ning kommutaatori lineaarsust, on kujutuse $\ad$
     lineaarsus ilmne. Veendumaks, et kujutus $\ad \col \g \to \gl(\g)$ on
-    esitus tuleb kontrollida, et iga $x, y, z \in \g$ korral kehtiks võrdus
+    esitus, tuleb kontrollida, et iga $x, y, z \in \g$ korral kehtiks võrdus
     $\left[ \ad_x, \ad_y \right](z) = \ad_{[x, y]}(z)$, mille saame Jacobi
     samasusest \eqref{id:jacobi}.
     \begin{align*}
@@ -773,7 +773,7 @@ teisisõnu, esitus täpne parajasti siis, kui ta on üks-ühene.
 Esituste teooria üheks väga oluliseks tulemuseks on nõndanimetatud
 \emph{Ado teoreem}, mis väidab, et iga lõplikumõõtmeline Lie algebra $\g$
 korral leidub lõplikumõõtmeline vektorruum $\V$ nii, et $\g$ on
-on Lie alebra $\gl(\V)$ alamalgebra. Niisiis, Lie algebrat $\g$
+Lie alebra $\gl(\V)$ alamalgebra. Niisiis, Lie algebrat $\g$
 on tegelikult võimalik vaadelda kui maatriksalgebrat. \cite{hall2003lie}
 
 \begin{thm}[Ado, 1935]
@@ -788,7 +788,7 @@ kohta. \cite{hochschild1966}
 \subsection{Algebralised struktuurid}\label{subsec:algebralised-struktuurid}
 
 Et meie ülevaade Lie algebratest oleks vähegi täielik, tuleks vähemalt
-definitsiooni tasemel sisse tuua ka sellised standardsed mõisted algebraste
+definitsiooni tasemel sisse tuua ka sellised standardsed mõisted algebraliste
 struktuuride vallast nagu \emph{alamalgebra} ja \emph{ideaal}.
 
 \begin{dfn}\label{def:lie-alamalgebra}
@@ -799,7 +799,7 @@ struktuuride vallast nagu \emph{alamalgebra} ja \emph{ideaal}.
 \end{dfn}
 
 Olgu $\K \in \{\R, \C\}$. Võttes arvesse definitsiooni
-\ref{def:lie-alamalgebra} saame, et Lie algebral $\gl(n, \K)$ on mitmeid
+\ref{def:lie-alamalgebra}, saame, et Lie algebral $\gl(n, \K)$ on mitmeid
 Lie alamalgebraid. Nendeks on näiteks spetsiaalsete lineaarsete teisenduste
 Lie algebra $\mathfrak{sl}(n, \K)$ ja ortogonaalsete lineaarsete teisenduste
 Lie algebra $\mathfrak{o}(n, \K)$.
@@ -815,7 +815,7 @@ Võrduse \eqref{eq:bracket-antisymm} järgi on selge, et Lie algebrate
 korral ei ole mõtet vahet teha vasak- ja
 parempoolsetel ideaalidel, kuna kõik ideaalid on automaatselt kahepoolsed.
 
-Leidmaks näidet ideaalist piisab meil vaid ette kujutada mõnd Abeli
+Leidmaks näidet ideaalist, piisab meil vaid ette kujutada mõnd Abeli
 Lie algebrat. Selge, et iga tema alamruum on ideaal. Teatavasti saab
 algebra $\A$ ja tema ideaali $I$ abil konstrueerida faktoralgebra
 $\A / I$. Analoogiline

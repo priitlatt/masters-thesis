@@ -6,7 +6,7 @@
 
 \section{\texorpdfstring{$n$}{n}-Lie superalgebra}
 
-Järgnevas toome sisse \emph{supermatemaatika} põhimõsted ning defineerime
+Järgnevas toome sisse \emph{supermatemaatika} põhimõisted ning defineerime
 nende abil \emph{Lie superalgebra}. Edasi ühendame Lie superalgebra
 konstruktsiooni Filippovi $n$-Lie algebraga, ning konstrueerime
 \emph{$n$-Lie superalgebra}.
@@ -14,10 +14,11 @@ konstruktsiooni Filippovi $n$-Lie algebraga, ning konstrueerime
 \subsection{Lie superalgebra}
 
 Eelmises peatükis nägime, kuidas Filippov leidis viisi Lie algebra
-üldistamiseks kasutades binaarse operatsiooni asemel $n$-aarset
+üldistamiseks, kasutades binaarse operatsiooni asemel $n$-aarset
 operatsiooni, kuid jättes aluseks oleva algebra samaks. Teine viis
-Lie algebra mõistet üldistada on vaadelda algebra asemel \emph{superalgebrat}.
-Tuletame selleks kõigepealt meelde mõned baasdefinitsioonid.
+Lie algebra mõiste üldistamiseks on vaadelda algebra asemel
+\emph{superalgebrat}. Tuletame selleks kõigepealt meelde mõned
+baasdefinitsioonid.
 
 \begin{dfn}
     Vektorruumi $\V$ nimetatakse \emph{$\Z_2$-gradueeritud vektorruumiks}
@@ -44,7 +45,7 @@ võrdusega
     \end{cases}
 \end{align*}
 Homogeense elemendi $x$ korral nimetame arvu $|x| \in \Z_2$ tema
-paarsuseks. Märgime, et kasutades edaspidises kirjutist $|x|$ eeldame
+paarsuseks. Märgime, et kasutades edaspidises kirjutist $|x|$, eeldame
 vaikimisi, et element $x \in \V$ on homogeenne.
 
 Supervektorruumi $\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$
@@ -68,7 +69,7 @@ $\phi \col \A \times \A \to \A$ nõuab taustal, et supervektorruum
 $\A$ oleks tegelikult algebra. Supervektorruumi ühikelement ja
 assotsiatiivsus defineeritakse tavapärasel viisil.
 
-Sellega on meil olemas piisvad vahendid, et defineerida
+Sellega on meil olemas piisavad vahendid, et defineerida
 \emph{Lie superalgebra}.
 
 \begin{dfn}
@@ -90,7 +91,7 @@ Sellega on meil olemas piisvad vahendid, et defineerida
 \end{dfn}
 
 Supermatemaatikas on standardseks võtteks elementide $x$ ja $y$ järjekorra
-vahetamisel seda operatsiooni balansseerida korrutades saadav tulemus
+vahetamisel seda operatsiooni balansseerida, korrutades saadav tulemus
 läbi suurusega $(-1)^{|x||y|}$, see tähendab võetakse arvesse elementide
 gradueeringuid.
 Seega on definitsiooni tingimus \eqref{def:super-antisymm} põhjendatud.
@@ -216,7 +217,7 @@ gradueering $|f| \in \Z_2$ määratakse seejuures seosest
 Niisiis, $f$ on paaris, kui $f(\g_i) \subseteq \h_i$, ja $f$ on paaritu,
 kui $f(\g_i) \subseteq \h_{i+\overline{1}}$. Samamoodi võib kujutuse
 gradueeringust rääkida ka supervektorruumi või superalgebra korral.
-Homomorfismi, mille lähte- ja sihtalgebra ühtivad nimetame endomorfismiks
+Homomorfismi, mille lähte- ja sihtalgebra ühtivad, nimetame endomorfismiks
 ja supervektorruumi $\V$ kõigi endomorfismide hulka tähistame $\End \V$.
 
 \begin{lemma}
@@ -312,7 +313,7 @@ Kombineerime nüüd Filippovi $n$-Lie algebra ning eelnevas alapeatükis
 tutvustatud Lie superalgebra üheks \emph{$n$-Lie superalgebraks}, nagu
 seda on tehtud artiklis \cite{Abramov:2014}.
 
-\begin{dfn}[$n$-Lie superalgebra]\label{def:n-Lie-superalgebra}
+\begin{dfn}\label{def:n-Lie-superalgebra}
     Olgu $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$
     supervektorruum. Me ütleme, et $\g$ on
     \emph{$n$-Lie superalgebra}, kui $\g$ on varustatud
@@ -459,7 +460,7 @@ järgneva lemma.
 \end{lemma}
 
 \begin{proof}
-    Et üldise juhu tõestus paremini jälgitav oleks tõestame väite
+    Et üldise juhu tõestus paremini jälgitav oleks, tõestame väite
     esmalt juhul $n=3$. Olgu selleks
     $\phi_1, \phi_2, \phi_3 \in \End \V$ ning kasutame samu
     tähistusi nagu teoreemi sõnastuses. Vahetu arvutuse tulemusel
@@ -547,7 +548,7 @@ Siis järleduse \ref{lemma:kompositsiooni-paarsus} järgi
     | \phi_{i_1} \circ \phi_{i_2} \circ \dots \circ \phi_{i_n} | =
     \sum_{i=1}^{n} |\phi_i|.
 \]
-Seega on valemi \eqref{naide:end-v-kommutaator} paremal pool kõigi
+Seega on valemi \eqref{naide:end-v-kommutaator} paremal poolel kõigi
 liidetavate (kompositsioonide) paarsus sama ja seejuures võrdne arvuga
 $\sum_{i=1}^{n} |\phi_i|$. Ilmselt on ka nende summa paarsus siis
 täpselt selline, ehk kokkuvõttes
@@ -577,7 +578,7 @@ Baasjuhu $n = 3$ puhul peab kommutaatori definitsiooni
     } &[\phi_1, \phi_2, [\psi_1, \psi_2, \phi_3]].
 \end{split}\end{align}
 Vaatame kõigepealt selle võrduse vasakut poolt. Rakendades sisemisele
-kommutaatorile lemmat \ref{lemma:n-sulg to (n-1)-sulg} saame kolme
+kommutaatorile lemmat \ref{lemma:n-sulg to (n-1)-sulg}, saame kolme
 ternaarse sulu summa, kus üheski ei esine enam argumendina ternaarset sulgu:
 \begin{align*}
     [\psi_1, \psi_2, [\phi_1, \phi_2, \phi_3]] =\
@@ -658,7 +659,7 @@ $n = 3$ on $\End \V$, varustatuna suluga \eqref{naide:end-v-kommutaator},
 tõepoolest $3$-Lie superalgebra.
 
 Eeldades, et suvalise $k \in \N$, $k > 2$, korral iga $2 \leq l < k$ määrab
-sulguga \eqref{naide:end-v-kommutaator} supervektorruumil $l$-Lie
+suluga \eqref{naide:end-v-kommutaator} supervektorruumil $l$-Lie
 superalgebra struktuuri, saame tänu lemmale
 \ref{lemma:n-sulg to (n-1)-sulg}, et sama sulg annab supervektorruumile
 $\End \V$ ka $k$-Lie superalgebra struktuuri. Tõepoolest, analoogiliselt
@@ -667,7 +668,7 @@ lahti kirjutada ning seal kõigepealt liidetavate argumentidele ning
 seejärel ka liidetavatele endile rakendada lemmat
 \ref{lemma:n-sulg to (n-1)-sulg}. Nii saame juba $(k-1)$-sulud, millele
 kehtib gradueeritud Filippovi samasus. Kasutame seda teadmist ja
-grupeerime need liidetavad kokku. Edasi toimime rekursiivselt kuni
+grupeerime need liidetavad kokku. Edasi toimime rekursiivselt, kuni
 vasak ja parem pool ühtivad.
 
 \begin{markus}
@@ -697,7 +698,7 @@ vasak ja parem pool ühtivad.
         [\psi, \phi_2, \phi_3] \circ \phi_1.
     \end{align*}
 
-    Kirjutades viimases võrduse kommutaatorid definitsiooni järgi
+    Kirjutades viimases võrduses kommutaatorid definitsiooni järgi
     lahti saame, et mistahes $x \in \R$ korral peaks kehtima võrdus
     \begin{align*}
         &\psi \left( \phi_1 \left( \phi_2 \left( \phi_3
@@ -804,7 +805,7 @@ korral (vt definitsioone \ref{def:n-lie-alamalgebra} ja
     ehk $[x_1, x_2, \dots, x_{n-1}, h] \in \h$.
 \end{proof}
 
-Arvestades lemmat saame defineerida järgmised mõisted.
+Arvestades lemmat, saame defineerida järgmised mõisted.
 
 \begin{dfn}
     Olgu $(\g, [\cdot, \dots, \cdot])$ $n$-Lie superalgebra ja $\h$
@@ -922,7 +923,7 @@ Arvestades lemmat saame defineerida järgmised mõisted.
             [x_1, \dots, x_{i+1}, x_i, \dots, x_{n-1}]_g.
     \end{align*}
 
-    Veendumaks, et kehtib ka gradueeritud Filippovi samasus
+    Veendumaks, et kehtib ka gradueeritud Filippovi samasus,
     eeldame täiendavalt, et $y_1, y_2, \dots, y_{n-2} \in \g$ ja tähistame
     $\mathrm{x} = (g, x_1, \dots, x_{n-1})$ ning
     $\mathrm{y} = (g, y_1, \dots, y_{n-2})$. Siis
@@ -944,7 +945,7 @@ Arvestades lemmat saame defineerida järgmised mõisted.
 
 \subsection{Indutseeritud \texorpdfstring{$n$}{n}-Lie superalgebra}
 
-Tuginedes artiklile \cite{Abramov:2014} rakendame punktis
+Tuginedes artiklile \cite{Abramov:2014}, rakendame punktis
 \ref{subsec:indutseeritud-n-lie-alg} tutvustatud eeskirja $n$-Lie superalgebra
 abil $(n+1)$-Lie superalgebra konstrueerimiseks.
 
@@ -991,7 +992,7 @@ rahuldab tingimusi
 see tähenab $\phi$ on kooskõlas gradueeringutega ning
 kaldsümmeetriline gradueeritud mõttes. Lisaks olgu meil antud
 kujutusele $\phi$ vastav superjälg $S \col \V \to K$.
-Kasutades kujutusi $\phi$ ja $S$ defineerime uue kujutuse
+Kasutades kujutusi $\phi$ ja $S$, defineerime uue kujutuse
 $\phi_S \col \G^{n+1} \to G$, mis homogeensete elementide
 jaoks on määratud valemiga
 \begin{align}\label{def:phi-s}
@@ -1137,9 +1138,8 @@ Saadud kujutuse tähtsamad omadused võtab kokku järgmine lemma.
     \end{enumerate}
 \end{proof}
 
-Artiklis \cite{Abramov:2014} on toodud teoreem, mis ütleb, kuidas
-$n$-Lie superalgebrast superjälje abil $(n+1)$-Lie superalgebra
-indutseerida saab.
+Artiklis \cite{Abramov:2014} on toodud teoreem, mis ütleb, kuidas saab $n$-Lie
+superalgebrast superjälje abil indutseerida $(n+1)$-Lie superalgebra.
 
 \begin{thm}
     Olgu $\g = \g_{\overline{0}} \oplus \g_{\overline{1}}$
@@ -1227,7 +1227,7 @@ Lause tõestusest võime teha järelduse.
 \begin{lau}
     Olgu $n$-Lie superalgebra $(\g, [\cdot, \dots, \cdot])$
     kommutaatori superjälg $S$ ja vastaku superjäljele $S$
-    industeeritud $(n+1)$-Lie superalgebra $(\g_S, [\cdot, \dots, \cdot]_S)$.
+    indutseeritud $(n+1)$-Lie superalgebra $(\g_S, [\cdot, \dots, \cdot]_S)$.
     Tähistagu $\left(C^p(\g)\right)_{p=0}^\infty$ algebra
     $(\g, [\cdot, \dots, \cdot])$
     kahanevat tsentraaljada, ning tähistagu

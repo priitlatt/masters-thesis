@@ -689,7 +689,7 @@ vasak ja parem pool ühtivad.
         \end{split}
     \end{align}
     Paraku see nii ei ole. Vaatame näiteks supervektoruumi
-    $\g = \R \oplus \{0\}$, mis on varustatud kommutaatoriga
+    $\g = \R^2 \oplus \{0\}$, mis on varustatud kommutaatoriga
     \eqref{naide:end-v-kommutaator}, kus $n = 3$.
     Sel juhul võtab valem \eqref{eq:komp in komm yldistus} kuju
     \begin{align*}
@@ -699,7 +699,8 @@ vasak ja parem pool ühtivad.
     \end{align*}
 
     Kirjutades viimases võrduses kommutaatorid definitsiooni järgi
-    lahti saame, et mistahes $x \in \R$ korral peaks kehtima võrdus
+    lahti saame, et mistahes $x \in \R^2$ ja paarisendomorfismide
+    korral peaks kehtima võrdus
     \begin{align*}
         &\psi \left( \phi_1 \left( \phi_2 \left( \phi_3
             \left( x \right) \right) \right) \right) -
@@ -740,27 +741,45 @@ vasak ja parem pool ühtivad.
         \phi_3 \left( \phi_2 \left( \psi \left(
             \phi_1 \left( x \right) \right) \right) \right),
     \end{align*}
-    sest meie valitud supervektorruumis $\g$ on kõik endomorfismid
-    paaris ja seega nende paarsusi sisuliselt arvestama ei pea.
+    sest paarisendomorfismide korral gradueeringud sisuliselt
+    arvestama ei pea.
 
-    Võttes nüüd
+    Lineaaralgebrast on hästi teada, et kui
+    $M \in \mathrm{Mat}_{m,n} \R$, siis kujutus
+    \[ T \colon \R^n \to \R^m, \quad T(v) = M v,\ v \in \R^n, \]
+    on lineaarne.
+
+    Võttes nüüd $M_1 =
+    \begin{pmatrix}
+        1 & 1 \\
+        1 & 1
+    \end{pmatrix}$ ja $M_2 =
+    \begin{pmatrix}
+        1 & 2 \\
+        3 & 4
+    \end{pmatrix}$, ning defineerides
     \[
         \psi(x) = x, \quad
-        \phi_1 (x) = 1, \quad
-        \phi_2 (x) = 2, \quad
-        \phi_3 (x) = 3,
+        \phi_1 (x) = x, \quad
+        \phi_2 (x) = M_1 x, \quad
+        \phi_3 (x) = M_2 x,
     \]
-    jääb eelnevas vasakule poolele
-    \[ \psi(1) - \psi(1) - 2 + 2 + 3 - 3 = 1 - 1 = 0, \]
-    ning paremale poolele
-    \begin{align*}
-        &\psi(1) - \psi(1) - \psi(2) + \psi(2) + \psi(3) - \psi(3) +
-            \psi(2) - \psi(3) - 2 + 2 + 3 - 3 = \\
-        =\ &\psi(2) - \psi(3) = 2 - 3 = -1.
-    \end{align*}
-    $0 \neq -1$, ja seega sellisel kujul üldistus ei kehti.
-    Enamgi veel, meie kontranäitest tuleb välja, et lauset
-    \ref{lause:kompositsioon sulus} ei olegi
+    saame
+    \[
+        [\psi \circ \phi_1, \phi_2, \phi_3]
+            \begin{pmatrix} 1 \\ 1\end{pmatrix} =
+        \begin{pmatrix*}[r] 4 \\ -4 \end{pmatrix*},
+        \quad
+        \left( \psi \circ [\phi_1, \phi_2, \phi_3] +
+        [\psi, \phi_2, \phi_3] \circ \phi_1 \right)
+            \begin{pmatrix} 1 \\ 1\end{pmatrix} =
+        \begin{pmatrix*}[r] 8 \\ -8 \end{pmatrix*}.
+    \]
+
+    Samas $\begin{pmatrix*}[r] 4 \\ -4 \end{pmatrix*} \neq
+    \begin{pmatrix*}[r] 8 \\ -8 \end{pmatrix*}$, ja seega sellisel
+    kujul üldistus ei kehti. Enamgi veel, meie kontranäitest tuleb
+    välja, et lauset \ref{lause:kompositsioon sulus} ei olegi
     võimalik isegi valemis \eqref{eq:komp in komm yldistus}
     elementide paarsusi mõnel teisel viisil arvesse võttes
     üldistada.
